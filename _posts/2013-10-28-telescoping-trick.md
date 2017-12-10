@@ -3,8 +3,10 @@ layout: post
 title:  "Telescoping trick"
 categories: blog
 tags: tricks math.GM
+excerpt:
+  In mathematics, a telescoping series is a series whose partial sums eventually only have a fixed number of terms after cancellation.
 ---
-In mathematics, a telescoping series is a series whose partial sums eventually only have a fixed number of terms after cancellation.<!--more-->
+In mathematics, a telescoping series is a series whose partial sums eventually only have a fixed number of terms after cancellation.
 
 Yesterday, I was helping [Po-Shen Loh](http://www.math.cmu.edu/~ploh/) to proctor the Annual Virginia Regional Mathematics Contest at CMU. The last problem is to find:
 $$

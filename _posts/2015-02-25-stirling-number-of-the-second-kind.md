@@ -3,8 +3,10 @@ layout: post
 title:  "Stirling number of the second kind"
 categories: blog
 tags: probabilistic-method math.CO
+excerpt:
+  We shall show an upper bound on the Stirling number of the second kind, a byproduct of a homework exercise of Probabilistic Combinatorics offered by Prof. Tom Bohman.
 ---
-We shall show an upper bound on the Stirling number of the second kind, a byproduct of a homework exercise of Probabilistic Combinatorics offered by Prof. [Tom Bohman](http://www.math.cmu.edu/~tbohman/).<!--more-->
+We shall show an upper bound on the Stirling number of the second kind, a byproduct of a homework exercise of Probabilistic Combinatorics offered by Prof. [Tom Bohman](http://www.math.cmu.edu/~tbohman/).
 
 **Definition** A Stirling number of the second kind (or Stirling partition number), denoted by $$S(n,k)$$, is the number of ways to partition a set of $$n$$ objects into $$k$$ non-empty subsets.
 

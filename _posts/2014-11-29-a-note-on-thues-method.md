@@ -3,8 +3,10 @@ layout: post
 title:  "On Thue's method"
 categories: blog
 tags: polynomial-method math.NT
+excerpt:
+  This note is based on my talk Introduction to Diophantine Approximation at Carnegie Mellon University on November 4, 2014.
 ---
-This note is based on my talk Introduction to Diophantine Approximation at Carnegie Mellon University on November 4, 2014. Due to limit of time, details of Thue's method were not fully presented in the talk. The note is supposed to serve as a complement to that talk.<!--more-->
+This note is based on my talk Introduction to Diophantine Approximation at Carnegie Mellon University on November 4, 2014. Due to limit of time, details of Thue's method were not fully presented in the talk. The note is supposed to serve as a complement to that talk.
 
 Diophantine Approximation
 

@@ -3,8 +3,10 @@ layout: post
 title:  "On Hardy–Littlewood maximal function"
 categories: blog
 tags: calderón-zygmund singular-measure math.CA
+excerpt:
+  In this exposition, we explore the behavior of the Hardy–Littlewood maximal function of measures that are singular with respect to Lebesgue measure.
 ---
-In this exposition, we explore the behavior of the Hardy–Littlewood maximal function of measures that are singular with respect to Lebesgue measure.<!--more-->
+In this exposition, we explore the behavior of the Hardy–Littlewood maximal function of measures that are singular with respect to Lebesgue measure.
 
 We are going to prove that for every positive Borel measure $$s$$ that is singular with respect to Lebesgue measure $$m$$,
 

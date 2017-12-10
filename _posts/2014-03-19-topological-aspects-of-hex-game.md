@@ -4,8 +4,10 @@ title:  "Topological aspects of Hex game"
 categories: blog
 tags: handshaking-lemma math.CO
 series: "Hex game"
+excerpt:
+  In the previous post, I asserted without proof that the Hex Game will never result a draw. In *An Invitation to Discrete Mathematics*, Jiri Matousek gave an elegant proof for the assertion, which requires only a little bit of elementary graph theory.
 ---
-In the previous post, I asserted without proof that the Hex Game will never result a draw. In *An Invitation to Discrete Mathematics*, Jiri Matousek gave an elegant proof for the assertion, which requires only a little bit of elementary graph theory. The idea of the proof can also prove Sperner's Lemma. Moreover, I will present later how to extrapolate this idea to discover something new. The only bit of elementary graph theory we are going to use is the Handshaking lemma.<!--more-->
+In the previous post, I asserted without proof that the Hex Game will never result a draw. In *An Invitation to Discrete Mathematics*, Jiri Matousek gave an elegant proof for the assertion, which requires only a little bit of elementary graph theory. The idea of the proof can also prove Sperner's Lemma. Moreover, I will present later how to extrapolate this idea to discover something new. The only bit of elementary graph theory we are going to use is the Handshaking lemma.
 
 **Handshaking Lemma** Every finite undirected graph has an even number of vertices with odd degree.
 

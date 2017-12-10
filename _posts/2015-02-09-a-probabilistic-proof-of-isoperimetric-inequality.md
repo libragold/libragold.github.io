@@ -3,10 +3,12 @@ layout: post
 title:  "A Probabilistic Proof of Isoperimetric Inequality"
 categories: blog
 tags: isoperimetric-inequality probabilistic-method math.MG
+excerpt:
+  This note is based on Nicolas Garcia Trillos' talk, *Some Problems and Techniques in Geometric Probability*, at Carnegie Mellon University on January 29, 2015.
 ---
 This note is based on Nicolas Garcia Trillos' talk, *Some Problems and Techniques in Geometric Probability*, at Carnegie Mellon University on January 29, 2015.
 
-In particular, we demonstrate a probabilistic proof of the isoperimetric inequality. The proof can also be found in Integral Geometry and Geometric Probability by Luis A. Santaló.<!--more-->
+In particular, we demonstrate a probabilistic proof of the isoperimetric inequality. The proof can also be found in Integral Geometry and Geometric Probability by Luis A. Santaló.
 
 Theorem For a convex set with perimeter $$L$$ and area $$A$$, the isoperimetric inequality states that $$4\pi A\leq L^2$$, and that equality holds if and only if the convex set is a disk. (Assume that the boundary is a closed convex curve of class $$C^1$$.)
 

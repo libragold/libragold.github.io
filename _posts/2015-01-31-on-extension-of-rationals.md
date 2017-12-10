@@ -3,8 +3,10 @@ layout: post
 title:  "On extension of rationals"
 categories: blog
 tags: p-adic non-archimedean math.NT
+excerpt:
+  This note is based on my talk An Expedition to the World of $$p$$-adic Numbers at Carnegie Mellon University on January 15, 2014.
 ---
-This note is based on my talk An Expedition to the World of $$p$$-adic Numbers at Carnegie Mellon University on January 15, 2014.<!--more-->
+This note is based on my talk An Expedition to the World of $$p$$-adic Numbers at Carnegie Mellon University on January 15, 2014.
 
 Construction from Cauchy Sequences
 

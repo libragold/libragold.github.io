@@ -3,8 +3,10 @@ layout: post
 title:  "Communicating through randomness"
 categories: blog
 tags: hamming-code math.CO
+excerpt:
+  A room contains a normal 8 by 8 chessboard together with 64 identical coins, each with one "heads" side and one "tails" side. Two prisoners are at the mercy of a typically eccentric jailer who has decided to play a game with them for their freedom.
 ---
-This week Staren sent me a puzzle on WeChat. After we discovered a solution, I tried to track back to the source. I found it appeared in the blog post [Yet another prisoner puzzle](https://web.archive.org/web/20161207071105/http://ocfnash.wordpress.com/2009/10/31/yet-another-prisoner-puzzle/) by Oliver Nash. The author seemed to work at a quantitative trading company SIG at that time. Given that Staren is working at JP Morgan, I guess this is one of those brain-teasers that was circulating among the traders around year 2010. Here is a version of the puzzle that was used in that blog post.<!--more-->
+This week Staren sent me a puzzle on WeChat. After we discovered a solution, I tried to track back to the source. I found it appeared in the blog post [Yet another prisoner puzzle](https://web.archive.org/web/20161207071105/http://ocfnash.wordpress.com/2009/10/31/yet-another-prisoner-puzzle/) by Oliver Nash. The author seemed to work at a quantitative trading company SIG at that time. Given that Staren is working at JP Morgan, I guess this is one of those brain-teasers that was circulating among the traders around year 2010. Here is a version of the puzzle that was used in that blog post.
 
     A room contains a normal 8 by 8 chessboard together with 64 identical coins, each with one "heads" side and one "tails" side. Two prisoners are at the mercy of a typically eccentric jailer who has decided to play a game with them for their freedom. The rules are the game are as follows.
 

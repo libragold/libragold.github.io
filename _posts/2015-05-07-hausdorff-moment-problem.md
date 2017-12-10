@@ -3,8 +3,10 @@ layout: post
 title:  "Hausdorff moment problem"
 categories: blog
 tags: tricks math.PR
+excerpt:
+  Hausdorff moment problem asks for the necessary and sufficient conditions for a sequence $$(m_n)$$ with $$m_0=1$$ to be the sequence of the moments of a random variable $$X$$ supported on $$[0,1]$$.
 ---
-Hausdorff moment problem asks for the necessary and sufficient conditions for a sequence $$(m_n)$$ with $$m_0=1$$ to be the sequence of the moments of a random variable $$X$$ supported on $$[0,1]$$, that is, $$\mathrm{E}X_n=m_n$$ for all $$n$$.<!--more-->
+Hausdorff moment problem asks for the necessary and sufficient conditions for a sequence $$(m_n)$$ with $$m_0=1$$ to be the sequence of the moments of a random variable $$X$$ supported on $$[0,1]$$, that is, $$\mathrm{E}X_n=m_n$$ for all $$n$$.
 
 In 1921, Hausdorff showed that $$(m_n)$$ is such a moment sequence if and only if the sequence is *completely monotonic*, that is, its difference sequences satisfy the equation $$(D^rm)_s \ge 0$$ for all $$r,s \ge 0$$. Here $$D$$ is the difference operator on the space of real sequences $$(a_n)$$ given by $$D_a=(a_n–a_{n+1})$$.
 

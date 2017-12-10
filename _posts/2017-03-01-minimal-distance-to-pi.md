@@ -3,10 +3,12 @@ layout: post
 title:  "Minimal distance to Pi"
 categories: blog
 tags: math.NT
+excerpt:
+  Given two integers $$q_1$$ and $$q_2$$ ($$1 \le q_1 \le q_2 \le 10^{15}$$), find and print a common fraction $$p/q$$ such that $$q_1 \le q \le q_2$$ and $$\vert p/q−\pi \vert$$ is minimal. If there are several fractions having minimal distance to $$\pi$$, choose the one with the smallest denominator.
 ---
 Here is a problem from Week of Code 29 hosted by [Hackerrank](http://hackerrank.com/).
 
-**Problem** Given two integers $$q_1$$ and $$q_2$$ ($$1 \le q_1 \le q_2 \le 10^{15}$$), find and print a common fraction $$p/q$$ such that $$q_1 \le q \le q_2$$ and $$\vert p/q−\pi \vert$$ is minimal. If there are several fractions having minimal distance to $$\pi$$, choose the one with the smallest denominator.<!--more-->
+**Problem** Given two integers $$q_1$$ and $$q_2$$ ($$1 \le q_1 \le q_2 \le 10^{15}$$), find and print a common fraction $$p/q$$ such that $$q_1 \le q \le q_2$$ and $$\vert p/q−\pi \vert$$ is minimal. If there are several fractions having minimal distance to $$\pi$$, choose the one with the smallest denominator.
 
 Note that checking all possible denominators does not work as iterating for $$10^{15}$$ times would exceed the time limit (2 seconds for C or 10 seconds for Ruby).
 

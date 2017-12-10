@@ -20,12 +20,21 @@
 
 .post--small {
 	padding: 15px;
+	margin-bottom: 30px;
+
+		@include media('>=medium') {
+			margin-bottom: 60px;
+	}
 
 	.post__title {
 		@include post-title;
 	}
 
 	.post__body p {
+		margin-bottom: 0;
+	}
+
+	&.no-margin {
 		margin-bottom: 0;
 	}
 }

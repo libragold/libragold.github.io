@@ -3,8 +3,10 @@ layout: post
 title:  "Nash-Williams' partition theorem"
 categories: blog
 tags: ramsey-theory math.LO
+excerpt:
+  The Nash-Williams' partition theorem can be seen as a strengthening of the infinite Ramsey theorem.
 ---
-The infinite Ramsey theorem, in its simplest form, states that for every partition $$\binom{\mathbb{N}}{k} = \mathcal{F}_1 \sqcup \dots \sqcup \mathcal{F}_r$$, there exists an infinite set $$M\subset \mathbb{N}$$ such that $$\binom{M}{k}\subset \mathcal{F}_i$$ for some $$i\in [r]$$. The Nash-Williams' partition theorem can be seen as a strengthening of the infinite Ramsey theorem, which considers a partition of a subset of $$\binom{\mathbb{N}}{<\omega}$$.<!--more-->
+The infinite Ramsey theorem, in its simplest form, states that for every partition $$\binom{\mathbb{N}}{k} = \mathcal{F}_1 \sqcup \dots \sqcup \mathcal{F}_r$$, there exists an infinite set $$M\subset \mathbb{N}$$ such that $$\binom{M}{k}\subset \mathcal{F}_i$$ for some $$i\in [r]$$. The Nash-Williams' partition theorem can be seen as a strengthening of the infinite Ramsey theorem, which considers a partition of a subset of $$\binom{\mathbb{N}}{<\omega}$$.
 
 **Notations**
 

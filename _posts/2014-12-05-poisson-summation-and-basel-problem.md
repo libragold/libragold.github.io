@@ -3,10 +3,12 @@ layout: post
 title:  "Poisson summation and Basel problem"
 categories: blog
 tags: poisson-summation math.CA
+excerpt:
+  A classical mathematical analysis problem, also known as the Basel problem, first posed by Pietro Mengoli in 1644 and solved by Leonhard Euler in 1735, asks the precise sum in closed form of the infinite series $$\sum_{n=1}^\infty \frac{1}{n^2}$$.
 ---
 This note is based on Professor [Noam Elkies](http://www.math.harvard.edu/~elkies/)' talk at Carnegie Mellon University on December 2, 2014.
 
-A classical mathematical analysis problem, also known as the Basel problem, first posed by Pietro Mengoli in 1644 and solved by Leonhard Euler in 1735, asks the precise sum in closed form of the infinite series $$\sum_{n=1}^\infty \frac{1}{n^2} = \lim_{n\to\infty}\left(\frac{1}{1^2}+\frac{1}{2^2}+\ldots+\frac{1}{n^2}\right).$$<!--more-->
+A classical mathematical analysis problem, also known as the Basel problem, first posed by Pietro Mengoli in 1644 and solved by Leonhard Euler in 1735, asks the precise sum in closed form of the infinite series $$\sum_{n=1}^\infty \frac{1}{n^2} = \lim_{n\to\infty}\left(\frac{1}{1^2}+\frac{1}{2^2}+\ldots+\frac{1}{n^2}\right).$$
 
 Here we present an attack to the Basel problem using the Poisson summation formula.
 Poisson Summation Formula
