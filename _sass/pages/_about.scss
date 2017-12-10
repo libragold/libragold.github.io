@@ -1,0 +1,46 @@
+.about {
+	@include constrain(800px);
+
+	margin-top: 15px;
+	margin-bottom: 15px;
+
+	@include media('>=medium') {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+}
+
+.about__image {
+	display: none;
+	margin: 0 auto 40px 40px;
+	width: 302px;
+	height: 403px;
+	float: right;
+	@include media('>=medium') {
+		display: block;
+	}
+}
+
+.about__copy {
+	p:first-of-type {
+		@include drop-cap;
+	}
+}
+
+.about__links {
+	text-align: center;
+}
+
+.about__link {
+	@include transition(transform opacity);
+	display: inline-block;
+
+  &:hover {
+    transform: translateY(-3px);
+    opacity: 0.6;
+  }	
+
+	& + & {
+		margin-left: 20px;
+	}
+}

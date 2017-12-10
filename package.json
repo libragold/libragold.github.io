@@ -1,0 +1,35 @@
+{
+  "name": "zilin.one",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "jekyll serve --port 4100 --host=0.0.0.0 --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/libragold/libragold.github.io.git"
+  },
+  "keywords": [
+    "front-end",
+    "css",
+    "sass"
+  ],
+  "author": "Zilin Jiang <libragold@gmail.com> (https://zilin.one/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/libragold/libragold.github.io/issues"
+  },
+  "homepage": "https://github.com/libragold/libragold.github.io#readme",
+  "dependencies": {
+    "include-media": "^1.4.1",
+    "include-media-columns": "^1.1.0",
+    "include-media-export": "^1.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^2.0.0"
+  }
+}
