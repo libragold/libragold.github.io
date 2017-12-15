@@ -28,7 +28,7 @@ Let $$A$$ be the set of all atoms of $$s$$, i.e., $$A=\{x: s(x)>0\}\subset\mathb
 
 Fix $$h>s(\mathbb{T})$$. Now we are ready to apply the Calderón-Zygmund decomposition according to the height $$h$$.
 
-We can chop the torus into two disjoint intervals $$(0, 1/2)$$ and $$(1/2, 1)$$ both of length $$1/2$$. Notice that at most one of them, denoted as $$I_1$$ if any, whose average, namely $$s(I_1)/m(I_1)$$, is greater than or equal to $$h$$. Since $$s(\mathbb{T})<h$$, we get an upper bound for the average of $$I_1$$, $$h\leq s(I_1)/m(I_1) ds < 2h$$.
+We can chop the torus into two disjoint intervals $$(0, 1/2)$$ and $$(1/2, 1)$$ both of length $$1/2$$. Notice that at most one of them, denoted as $$I_1$$ if any, whose average, namely $$s(I_1)/m(I_1)$$, is greater than or equal to $$h$$. Since $$s(\mathbb{T})< h$$, we get an upper bound for the average of $$I_1$$, $$h\leq s(I_1)/m(I_1) ds < 2h$$.
 
 We can keep chopping those intervals whose average is less than $$h$$ into half and pick out sub-intervals whose average is no less than $$h$$. Inductively, we can generate an enumerable sequence of mutually disjoint open intervals $$\{I_n\}$$, each satisfying $$h \leq s(I_n)/m(I_n) < 2h$$, which implies $$s(I_n)<2hm(I_n)$$.
 
@@ -42,16 +42,15 @@ Left to prove the claim. To prove $$s(I)=s(\mathbb{T})$$, we only need to show $
 
 Let $$K$$ be a compact set contained in $$S-I-E$$. Since for a positive Borel measure, one can always approximate a Borel set from inside by compact sets, it is enough to show $$s(K)=0$$.
 
-For any $$\epsilon>0$$, as $$m(S)=0$$, we may choose an open set $$U$$ such that $$S\subset U$$ and $$m(U)<\epsilon$$. We want to show for all $$x$$ in $$K\subset S-I-E$$, we can always find two intervals $$J_x$$ and $$J_x^+$$ both containing $$x$$ such that $$4m(J_x)=m(J_x^+)$$, $$s(J_x^+)<hm(J_x^+)$$ and $$3J_x\subset J_x^+\subset U$$, where $$3J$$ denotes the open interval that has the same center as $$J$$ but three times the radius.
+For any $$\epsilon>0$$, as $$m(S)=0$$, we may choose an open set $$U$$ such that $$S\subset U$$ and $$m(U)<\epsilon$$. We want to show for all $$x$$ in $$K\subset S-I-E$$, we can always find two intervals $$J_x$$ and $$J_x^+$$ both containing $$x$$ such that $$4m(J_x)=m(J_x^+)$$, $$s(J_x^+)< hm(J_x^+)$$ and $$3J_x\subset J_x^+\subset U$$, where $$3J$$ denotes the open interval that has the same center as $$J$$ but three times the radius.
 
-According to the decomposition process, we can find an infinite sequence of descending open intervals $$\{J_n\}_{n=1}^\infty$$ containing $$x$$ such that $$J_{n+1}$$ is the left or right half of $$J_n$$ and $$s(J_n)<hm(J_n)$$ for all $$n$$. This is possible because $$x\notin I\cup E$$. Note that $$x$$ cannot always lie in the left half of $$J_n$$ for all sufficiently large $$n$$ and similarly $$x$$ cannot always lies in the right half of $$J_n$$ for all sufficiently large $$n$$. In other words, for infinitely many times, $$J_{n+2}$$ is the right half of $$J_{n+1}$$ which is the left half of $$J_{n}$$.
+According to the decomposition process, we can find an infinite sequence of descending open intervals $$\{J_n\}_{n=1}^\infty$$ containing $$x$$ such that $$J_{n+1}$$ is the left or right half of $$J_n$$ and $$s(J_n)< hm(J_n)$$ for all $$n$$. This is possible because $$x\notin I\cup E$$. Note that $$x$$ cannot always lie in the left half of $$J_n$$ for all sufficiently large $$n$$ and similarly $$x$$ cannot always lies in the right half of $$J_n$$ for all sufficiently large $$n$$. In other words, for infinitely many times, $$J_{n+2}$$ is the right half of $$J_{n+1}$$ which is the left half of $$J_{n}$$.
 
-**FIGURE**
+{% include helpers/image.html name="halves.png" caption="Intervals that choose different halves" %}
 
-Intervals that choose different halves
 
-Therefore we can always find sufficiently large $$n$$ such that $$J_n\subset U$$. Now for every $$x\in K\subset U$$, there exist $$J_x$$ which is $$J_{n+2}$$ above, and $$J_x^+$$ which is $$J_n$$ above such that $$x\in J_x$$, $$3J_x\subset J_x^+\subset U$$, $$m(J_x^+)=4m(J_x)$$, and $$s(J_x^+)<hm(J_x^+)$$. Hence $$\{J_x\}_{x\in K}$$ is an open cover of the compact set $$K$$. We can choose a finite sub-cover, pass it to Vitali covering lemma and spit out a sub-collection $$\{J_{x_n}\}_{n=1}^N$$ which are disjoint balls such that $$K\subset\bigcup_{n=1}^N 3J_{x_n}$$. Now we have
+Therefore we can always find sufficiently large $$n$$ such that $$J_n\subset U$$. Now for every $$x\in K\subset U$$, there exist $$J_x$$ which is $$J_{n+2}$$ above, and $$J_x^+$$ which is $$J_n$$ above such that $$x\in J_x$$, $$3J_x\subset J_x^+\subset U$$, $$m(J_x^+)=4m(J_x)$$, and $$s(J_x^+)< hm(J_x^+)$$. Hence $$\{J_x\}_{x\in K}$$ is an open cover of the compact set $$K$$. We can choose a finite sub-cover, pass it to Vitali covering lemma and spit out a sub-collection $$\{J_{x_n}\}_{n=1}^N$$ which are disjoint balls such that $$K\subset\bigcup_{n=1}^N 3J_{x_n}$$. Now we have
 
-$$s(K)\leq s\left(\bigcup_{n=1}^N 3J_{x_n}\right)\leq s\left(\bigcup_{n=1}^N J_{x_n}^+\right)\leq\sum_{n=1}^N s(J_{x_n}^+)<h\sum_{n=1}^N m(J_{x_n}^+)\\=4h\sum_{n=1}^N m(J_{x_n})=4hm\left(\bigcup_{n=1}^N J_{x_n}\right)\leq 4hm(U)<4h\epsilon.$$
+$$s(K)\leq s\left(\bigcup_{n=1}^N 3J_{x_n}\right)\leq s\left(\bigcup_{n=1}^N J_{x_n}^+\right)\leq\sum_{n=1}^N s(J_{x_n}^+)< h\sum_{n=1}^N m(J_{x_n}^+)\\=4h\sum_{n=1}^N m(J_{x_n})=4hm\left(\bigcup_{n=1}^N J_{x_n}\right)\leq 4hm(U)<4h\epsilon.$$
 
 As $$\epsilon>0$$ is chosen arbitrarily, we have $$s(K)=0$$, which yields the claim.

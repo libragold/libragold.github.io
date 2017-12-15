@@ -6,9 +6,9 @@ title: Writings
 <main id="main" role="main" class="main constrain--padding">
   {% assign collaborators = site.data.collaborators %}
   {% for writing in site.data.writings %}
-    {% if writing.featured == true %}
-      <article class="post post--feature">
-        <h1 class="post__title feature-title">{% include helpers/generate-feature-title.html title=writing.title %}</h1>
+    <div class="post-wrapper col col--1-1 col--1-2@medium col--1-3@large">
+      <article class="post post--small no-margin">
+        <h1 class="post__title">{{ writing.title }}</h1>
         <div class="post__body">
           {% if writing.coauthors != null %}
           <h2 class="post__coauthors">
@@ -30,32 +30,6 @@ title: Writings
           </svg>
         </a>
       </article>
-    {% else %}
-      <div class="post-wrapper col col--1-1 col--1-2@medium col--1-3@large">
-        <article class="post post--small no-margin">
-          <h1 class="post__title">{{ writing.title }}</h1>
-          <div class="post__body">
-            {% if writing.coauthors != null %}
-            <h2 class="post__coauthors">
-              With
-              {% for coauthor in writing.coauthors %}
-                {% if coauthor == writing.coauthors.last and coauthor != writing.coauthors.first %}and{% endif %}
-                <a href="{{ collaborators[coauthor].website }}" target="_blank">{{ collaborators[coauthor].name }}</a>{% if coauthor != writing.coauthors.last and coauthor != writing.coauthors[-2] %},{% endif %}
-              {% endfor %}
-            </h2>
-            {% endif %}
-            {{ writing.summary | markdownify }}
-          </div>
-          <a class="cta post__cta" href="https://arxiv.org/abs/{{ writing.arxiv.id }}" target="_blank">
-            <span class="cta__inner">
-              Read on arXiv
-            </span>
-            <svg class="cta__icon">
-              <use xlink:href="#icon-external"></use>
-            </svg>
-          </a>
-        </article>
-      </div>    
-    {% endif %}
+    </div>    
   {% endfor %}
 </main>
