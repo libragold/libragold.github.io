@@ -1,89 +1,101 @@
-- title: "On the metric dimension of Cartesian products of a graph"
-  coauthors:
-    - npoly
+- title: "A slight improvement to the colored Bárány’s theorem"
   summary: >
-    A set of vertices $$S$$ resolves a graph if every vertex is uniquely determined by its vector of distances to the vertices in $$S$$. The metric dimension of a graph is the minimum cardinality of a resolving set of the graph. We prove that the metric dimension of the Cartesian product of $$n$$ copies of the complete graph on $$q$$ vertices is $$(2+o(1))n/\log_q n$$.
-  arxiv:
-    id: "1712.02723"
-    category: "math.CO"
-
-- title: "On spectral radii of unraveled balls"
-  summary: >
-    If the average degree of $$G$$ after deleting any ball of radius $$r$$ is at least $$d$$, then its second largest eigenvalue is at least $$2\sqrt{d-1}\cos\left(\frac{\pi}{r+1}\right)$$.
-  arxiv:
-    id: "1710.06719"
-    category: "math.CO"
-
-- title: "Ramsey-nice families of graphs"
-  coauthors:
-    - aharoni
-    - alon
-    - amir
-    - haxell
-    - hefetz
-    - kronenberg
-    - naor
-  summary: >
-    A finite family $$\mathcal{F}$$ of graphs is $$k$$-nice if for every graph $$G$$ with $$\chi(G) = R_k(\mathcal{F})$$ (the chromatic number equals to the Ramsey number) and for every coloring of $$E(G)$$ there exists a monochromatic copy of some $$F\in\mathcal{F}$$. It seems conceivable that for any finite family of graphs $$\mathcal{F}$$ that contains at least one forest, $$\mathcal{F}$$ is $$k$$-nice for all $$k \ge k_0(\mathcal{F})$$. We show that the conjecture holds for each of the three families consisting of two connected graphs with 3 edges each.
-  arxiv:
-    id: "1708.07369"
-    category: "math.CO"
-
-- title: "Forbidden subgraphs for graphs of bounded spectral radius, with applications to equiangular lines"
-  coauthors:
-    - polyanom
-  summary: >
-    We find the threshold $$\lambda^* = \sqrt{2+\sqrt{5}}$$ such that, for every $$\lambda < \lambda^*$$, the family of graphs of spectral radius $$\le \lambda$$ has a finite forbidden subgraphs characterization. As a consequence, we establish the asymptotic formula of the maximum cardinality of equiangular lines with angle $$\arccos\alpha$$ in $$\mathbb{R}^n$$ for every $$\alpha > \frac{1}{1+2\lambda^*}$$.
-  arxiv:
-    id: "1708.02317"
-    category: "math.CO"
-
-- title: "Finding a best approximation pair of points for two polyhedra"
-  coauthors:
-    - aharoni
-    - censor
-  summary: >
-    Given two disjoint convex polyhedra, we propose a process, based on projections onto the half-spaces defining the two polyhedra, for finding a pair of points, one in each polyhedron, attaining the minimum distance.
-  arxiv:
-    id: "1707.09639"
-    category: "math.OC"
-
-- title: "Proof of László Fejes Tóth's zone conjecture"
-  coauthors:
-    - polyanom
-  summary: >
-    A zone of width $$\omega$$ on the unit sphere is the set of points within spherical distance $$\omega/2$$ of a given great circle. We show that the total width of any collection of zones covering the unit sphere is at least $$\pi$$.
-  arxiv:
-    id: "1703.10550"
-    category: "math.MG"
-
-- title: "Bipartite algebraic graphs without quadrilaterals"
-  coauthors:
-    - bbukh
-  summary: >
-    We conjecture that every algebraic hypersurface that gives rise to a $$K_{s,t}$$-free graph is equivalent, in a suitable sense, to a low-degree hypersurface. We establish a version of this conjecture for $$K_{2,2}$$-free graphs.
-  arxiv:
-    id: "1511.04719"
-    category: "math.CO"
-
+    Let $$P_0, \dots, P_d$$ be $$d + 1$$ disjoint $$n$$-point sets in $$\mathbb{R}^d$$. A colorful simplex is the convex hull of $$d + 1$$ points each of which comes from a distinct $$P_i$$. There always exists a point that is contained in at least $$\frac{2d}{(d+1)(d+1)!}n^d$$ colorful simplices.
+  arxiv: "1405.2503"
+  slides: "topological_method_for_colored_baranys_theorem"
+  journal:
+    citation: "The Electronic Journal of Combinatorics (2014) 21: P4.39"
+    url: "http://www.combinatorics.org/ojs/index.php/eljc/article/view/v21i4p39"
 - title: "A bound on the number of edges in graphs without an even cycle"
   coauthors:
     - bbukh
   summary: >
     For each fixed $$k$$, an $$n$$-vertex graph not containing a cycle of length $$2k$$ has at most $$80\sqrt{k}\log k \cdot n^{1+1/k}+O(n)$$ edges.
+  arxiv: "1403.1601"
+  slides: "a_bound_on_turan_number_for_cycles_of_even_length"
   journal:
-    citation: "Comb. Probab. Comput. 26, no. 1 (2017): 1-15."
+    citation: "Combinatorics, Probability and Computing (2017) 26: 1-15"
     url: "https://doi.org/10.1017/S0963548316000134"
-  arxiv:
-    id: "1403.1601"
-    category: "math.CO"
-
-- title: "A slight improvement to the colored Bárány’s theorem"
+  erratum: "https://doi.org/10.1017/S0963548317000396"
+- title: "Bipartite algebraic graphs without quadrilaterals"
+  coauthors:
+    - bbukh
   summary: >
-    Let $$P_0, \dots, P_d$$ be $$d + 1$$ disjoint $$n$$-point sets in $$\mathbb{R}^d$$. A colorful simplex is the convex hull of $$d + 1$$ points each of which comes from a distinct $$P_i$$. There always exists a point that is contained in at least $$\frac{2d}{(d+1)(d+1)!}n^d$$ colorful simplices.
+    We conjecture that every algebraic hypersurface that gives rise to a $$K_{s,t}$$-free graph is equivalent, in a suitable sense, to a low-degree hypersurface. We establish a version of this conjecture for $$K_{2,2}$$-free graphs.
+  arxiv: "1511.04719"
+  slides: "bipartite_algebraic_graphs_without_quadrilaterals"
   journal:
-    citation: "Electron. J. Combin. 21 (2014), no. 4, Paper 4.39, 8 pp"
-    url: "http://www.combinatorics.org/ojs/index.php/eljc/article/view/v21i4p39"
-  arxiv:
-    id: "1405.2503"
-    category: "math.CO"
+    citation: "Discrete Mathematics (2018) 341: 1597-1604"
+    url: "https://doi.org/10.1016/j.disc.2018.03.005"
+- title: "Proof of László Fejes Tóth's zone conjecture"
+  coauthors:
+    - apolyanskii
+  summary: >
+    A zone of width $$\omega$$ on the unit sphere is the set of points within spherical distance $$\omega/2$$ of a given great circle. We show that the total width of any collection of zones covering the unit sphere is at least $$\pi$$.
+  arxiv: "1703.10550"
+  slides: "on_spherical_tarskis_plank_problem"
+  journal:
+    citation: "Geometric and Functional Analysis (2017) 27: 1367-1377"
+    url: "https://doi.org/10.1007/s00039-017-0427-6"
+- title: "Finding a best approximation pair of points for two polyhedra"
+  coauthors:
+    - raharoni
+    - ycensor
+  summary: >
+    Given two disjoint convex polyhedra, we propose a process, based on projections onto the half-spaces defining the two polyhedra, for finding a pair of points, one in each polyhedron, attaining the minimum distance.
+  arxiv: "1707.09639"
+  journal:
+    citation: "Computational Optimization and Applications"
+    url: "https://doi.org/10.1007/s10589-018-0021-3"
+- title: "Forbidden subgraphs for graphs of bounded spectral radius, with applications to equiangular lines"
+  coauthors:
+    - apolyanskii
+  summary: >
+    We find the threshold $$\lambda^* = \sqrt{2+\sqrt{5}}$$ such that, for every $$\lambda < \lambda^*$$, the family of graphs of spectral radius $$\le \lambda$$ has a finite forbidden subgraphs characterization. As a consequence, we establish the asymptotic formula of the maximum cardinality of equiangular lines with angle $$\arccos\alpha$$ in $$\mathbb{R}^n$$ for every $$\alpha > \frac{1}{1+2\lambda^*}$$.
+  arxiv: "1708.02317"
+  slides: "forbidden_subgraphs_and_equiangular_lines"
+- title: "Ramsey-nice families of graphs"
+  coauthors:
+    - raharoni
+    - nalon
+    - mamir
+    - phaxell
+    - dhefetz
+    - gkronenberg
+    - anaor
+  summary: >
+    A finite family $$\mathcal{F}$$ of graphs is $$k$$-nice if for every graph $$G$$ with $$\chi(G) = R_k(\mathcal{F})$$ (the chromatic number equals to the Ramsey number) and for every coloring of $$E(G)$$ there exists a monochromatic copy of some $$F\in\mathcal{F}$$. It seems conceivable that for any finite family of graphs $$\mathcal{F}$$ that contains at least one forest, $$\mathcal{F}$$ is $$k$$-nice for all $$k \ge k_0(\mathcal{F})$$. We show that the conjecture holds for each of the three families consisting of two connected graphs with 3 edges each.
+  arxiv: "1708.07369"
+  journal:
+    citation: "European Journal of Combinatorics (2018) 72: 29-44"
+    url: "https://doi.org/10.1016/j.ejc.2018.04.007"
+- title: "On spectral radii of unraveled balls"
+  summary: >
+    If the average degree of $$G$$ after deleting any ball of radius $$r$$ is at least $$d$$, then its second largest eigenvalue is at least $$2\sqrt{d-1}\cos\left(\frac{\pi}{r+1}\right)$$.
+  arxiv: "1710.06719"
+- title: "On the metric dimension of Cartesian products of a graph"
+  coauthors:
+    - npolyanskii
+  summary: >
+    A set of vertices $$S$$ resolves a graph if every vertex is uniquely determined by its vector of distances to the vertices in $$S$$. The metric dimension of a graph is the minimum cardinality of a resolving set of the graph. We prove that the metric dimension of the Cartesian product of $$n$$ copies of the complete graph on $$q$$ vertices is $$(2+o(1))n/\log_q n$$.
+  arxiv: "1712.02723"
+- title: "On capacities of the two-user union channel with complete feedback"
+  coauthors:
+    - npolyanskii
+    - ivorobyev
+  summary: >
+    We complete the line of research on the optimal symmetric rate point in the chanel capacity region of the two-user union channel, and we construct a practical near-optimal zero-error communication scheme.
+  arxiv: "1804.08599"
+- title: "Rainbow fractional matchings"
+  coauthors:
+    - raharoni
+    - rholzman
+  summary: >
+    Any family $$E_1, \dots, E_{\lceil rn\rceil}$$ of sets of edges in an $$r$$-uniform hypergraph, each having a fractional matchings number of size $$n$$, has a rainbow matching of size $$n$$ (that is, a set of edges from distinct $$E_i$$'s which supports such a fractional matching).
+  arxiv: "1805.09732"
+- title: "An isoperimetric inequality for Hamming balls and local expansion in hypercubes"
+  coauthors:
+    - ayehudayoff
+  summary: >
+    Denote by $$\mathcal{B}_n(R)$$ the $$n$$-dimensional Hamming ball of radius $$R$$. If $$n/4 \le R \le n/2$$ and the size of a subset $$\mathcal{A}$$ of $$\mathcal{B}_n(R)$$ satisfies $$\vert\mathcal{B}_n(n/4)\vert \le \vert\mathcal{A}\vert \le \tfrac{1}{2}\vert\mathcal{B}_n(R)\vert$$, then the vertex boundary of $$\mathcal{A}$$ is at least $$\Omega(\vert\mathcal{A}\vert/\sqrt{n})$$.
+  arxiv: "1807.00626"

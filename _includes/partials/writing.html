@@ -1,0 +1,33 @@
+<article class="item">
+  {% assign writing = include.writing %}
+  <div class="item__primary-actions">
+    <span><a href="https://arxiv.org/abs/{{ writing.arxiv }}" target="_blank">arxiv</a></span>
+  {% if writing.slides != null %}
+    <span><a href="slides/{{ writing.slides }}/index.html" target="_blank">slides</a></span>
+  {% endif %}
+  </div>
+  <h3>
+  {{ writing.title }}
+  {% if writing.coauthors != null %}
+    <span>
+      (with
+      {% for coauthor in writing.coauthors %}
+        {% if coauthor == writing.coauthors.last and coauthor != writing.coauthors.first %}and{% endif %}
+        <a href="{{ collaborators[coauthor].url }}" target="_blank">{{ collaborators[coauthor].name }}</a>{% if coauthor != writing.coauthors.last and coauthor != writing.coauthors[-2] %},{% endif %}
+      {%- endfor %})
+    </span>
+  {% endif %}
+  </h3>
+  <p>
+    {{ writing.summary | markdownify }}
+  </p>
+  <p class="item__secondary-actions">
+    {% if writing.journal != null %}
+      <span>{{ writing.journal.citation }}</span>
+      <span><a href="{{ writing.journal.url }}" target="_blank">article</a></span>
+      {% if writing.erratum != null %}
+        <span><a href="{{ writing.erratum }}" target="_blank">erratum</a></span>
+      {% endif %}    
+    {% endif %}
+  </p>
+</article>

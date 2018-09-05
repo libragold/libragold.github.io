@@ -1,34 +1,42 @@
 bbukh:
   name: "Boris Bukh"
-  website: "http://www.borisbukh.org"
-polyanom:
+  url: "http://www.borisbukh.org"
+apolyanskii:
   name: "Alexandr Polyanskii"
-  website: "http://polyanskii.com"
-aharoni:
+  url: "http://polyanskii.com"
+raharoni:
   name: "Ron Aharoni"
-  website: "http://raharoni.net.technion.ac.il"
-censor:
+  url: "http://raharoni.net.technion.ac.il"
+ycensor:
   name: "Yair Censor"
-  website: "http://math.haifa.ac.il/yair/"
-alon:
+  url: "http://math.haifa.ac.il/yair/"
+nalon:
   name: "Noga Alon"
-  website: "http://www.tau.ac.il/~nogaa/"
-amir:
+  url: "http://www.tau.ac.il/~nogaa/"
+mamir:
   name: "Michal Amir"
-  website: "https://en-exact-sciences.tau.ac.il/math"
-haxell:
+  url: "https://en-exact-sciences.tau.ac.il/math"
+phaxell:
   name: "Penny Haxell"
-  website: "https://uwaterloo.ca/combinatorics-and-optimization/people-profiles/penny-haxell"
-hefetz:
+  url: "https://uwaterloo.ca/combinatorics-and-optimization/people-profiles/penny-haxell"
+dhefetz:
   name: "Dan Hefetz"
-  website: "https://dannyhefetz.wixsite.com/homepage"
-kronenberg:
+  url: "https://dannyhefetz.wixsite.com/homepage"
+gkronenberg:
   name: "Gal Kronenberg"
-  website: "http://www.math.tau.ac.il/~galkrone/"
-naor:
+  url: "http://www.math.tau.ac.il/~galkrone/"
+anaor:
   name: "Alon Naor"
-  website: "http://www.tau.ac.il/~alonnaor/"
-npoly:
+  url: "http://www.tau.ac.il/~alonnaor/"
+npolyanskii:
   name: "Nikita Polyanskii"
-  website: "http://dblp.uni-trier.de/pers/hd/p/Polyanskii:Nikita"
-  
+  url: "https://scholar.google.com/citations?user=4Y8b6l8AAAAJ"
+ivorobyev:
+  name: "Ilya Vorobyev"
+  url: "https://scholar.google.ru/citations?user=sBNnIT0AAAAJ"
+rholzman:
+  name: "Ron Holzman"
+  url: "https://holzman.technion.ac.il"
+ayehudayoff:
+  name: "Amir Yehudayoff"
+  url: "https://yehudayoff.net.technion.ac.il"

@@ -1,0 +1,29 @@
+---
+layout: default
+permalink: /talks
+title: Talks
+---
+<main id="main" role="main" class="main">
+  {% assign talks = site.data.talks %}
+  {% capture today_date %}{{'now' | date: '%s'}}{% endcapture %}
+  {% capture last_talk_date %}{{talks.last.date | date: '%s'}}{% endcapture %}
+  <div class="items">
+    {% if today_date < last_talk_date %}
+    <h2>Upcoming</h2>
+      {% for talk in talks reversed %}
+        {% capture talk_date %}{{talk.date | date: '%s'}}{% endcapture %}
+        {% if today_date < talk_date %}
+          {% include partials/talk.html talk=talk %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    <h2>Previous</h2>
+    {% for talk in talks reversed %}
+        {% capture talk_date %}{{talk.date | date: '%s'}}{% endcapture %}
+        {% if today_date > talk_date %}
+          {% include partials/talk.html talk=talk %}
+        {% endif %}
+      {% endfor %}
+  </div>
+
+</main>

@@ -1,0 +1,306 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Forbidden subgraphs and equiangular lines
+    meta(name="author" content="Zilin Jiang")
+    link(rel="stylesheet" href="../reveal.js-3.6.0/css/reveal.css")
+    link(rel="stylesheet" href="../reveal.js-3.6.0/css/theme/simple.css")
+    link(rel="stylesheet" href="custom.css")
+  body
+    .reveal
+      .slides
+        section.title-slide
+          h3
+            | Forbidden Subgraphs
+            br
+            | and Equiangular Lines
+          p
+            small.red 姜子麟 (Zilin Jiang)
+            br
+            small Joint work with Саша Полянский (Alexandr Polyanskii)
+        section
+          section
+            h3
+              span $\lambda^* = \sqrt{2 + \sqrt{5}} = $ 
+              span(style="font-size:100%") 2.
+              span(style="font-size:90%") 0
+              span(style="font-size:80%") 5
+              span(style="font-size:70%") 8
+              span(style="font-size:60%") 1
+              span(style="font-size:50%") 7
+              span(style="font-size:40%") 1
+              span(style="font-size:30%") 0
+              span(style="font-size:20%") 2
+              span(style="font-size:10%") 7
+              span ...
+        section
+          section(data-background-color="#fafafa")
+            p.fragment.grow(data-fragment-index="1") Forbidden subgraphs
+            p.fragment.highlight-blue(data-fragment-index="1") Equiangular lines
+            .stretch(style="position: relative;")
+              img.absolute.simple(src="sketches_7a.png")
+              img.absolute.fragment.simple(src="sketches_7b.png" data-fragment-index="1")
+          section(data-background-color="#fafafa")
+            h3 Spectral radius
+            p Largest eigenvalue $\lambda_1(G)$ of adjacency matrix
+            p.fragment
+              | $\lambda_1\big($
+              img.inline(src="g1.png")
+              | $\big) = 1$, $\lambda_1\big($
+              img.inline(src="g2.png")
+              | $\big) = \sqrt{2}$, $\lambda_1\big($
+              img.inline(src="g3.png")
+              | $\big) = 2$ 
+            p.fragment
+              span.red $\lambda_1$ is monotone
+              br
+              | subgraphs have smaller spectral radius
+            p.fragment $F(\lambda) := \{$ graphs with spectral radius $\le \lambda\,\}$
+            p.fragment closed under taking subgraphs
+          section
+            h3 Hereditary property
+            p Graph properties closed under taking subgraphs
+            p.fragment induced-hereditary, minor-hereditary
+            img.fragment.simple(src="hereditarnia.jpg" height="100px")
+            p.fragment
+              span.red Robertson–Seymour theorem
+              br
+              | Minor-hereditary property can be defined by
+              br
+              | a finite set of 
+              span.red forbidden minors
+          section
+            h3 Forbidden subgraphs characterization
+            p $F(\lambda) = \{$ graphs with spectral radius $\le \lambda\,\}$
+            p.fragment
+              span.red Question. 
+              | Can $F(\lambda)$ be defined by
+              br
+              | a finite set of forbidden subgraphs?
+            p.fragment
+              span.red Answer (J.–Polyanskii). 
+              | Yes, if and only if $\lambda < \lambda^*$.
+          section
+            h3 When $\lambda \ge \lambda^*$...
+            p.fragment
+              span.blue Lemma 
+              span (Shearer). $\exists G$ s.t. $\lambda_1(G) \in (\lambda, \lambda + \epsilon)$.
+            p.fragment Assume $G_1, \dots, G_n$ is a finite f.s.c. for $F(\lambda)$
+            p.fragment Choose $G$ s.t. $\lambda < \lambda_1(G) < \lambda_1(G_i)$ for $i \in [n]$
+            p.fragment $G_i$ is not a subgraph of $G$
+            p.fragment.red Contradiction
+          section(data-background-color="#fafafa")
+            h3 When $\lambda < 2$...
+            p.fragment
+              | $\lambda_1\big($
+              img.inline(src="s4.png")
+              | $\big) = 2$, $\lambda_1\big($
+              img.inline.big(src="pn.png")
+              | $\big) > \lambda$
+            p.fragment
+              | If $G$ contains neither
+              img.inline(src="s4.png")
+              | nor
+              img.inline.big(src="pn.png")
+              | , then
+            .flex-container
+              .flex-col(style="flex: 1")
+              .flex-col(style="flex: 2")
+                img.fragment.simple(src="bfs.png" height="200px")
+              .flex-col(style="flex: 6")
+                p.fragment $\implies G$ has $\le 3^n$ vertices
+                p.fragment Further forbid graphs outside $F(\lambda)$ with $\le 3^n$ vertices
+              .flex-col(style="flex: 1")
+          section
+            h3 When $2 \le \lambda < \lambda^*$...
+            .fragment
+              p.red Work harder
+              img.stretch.simple(src="cooper-3.png")
+        section
+          section(data-background-color="#fafafa")
+            p.fragment.highlight-blue(data-fragment-index="1") Forbidden subgraphs
+            p.fragment.grow(data-fragment-index="1") Equiangular lines
+            .stretch(style="position: relative;")
+              img.absolute.simple(src="sketches_7b.png")
+              img.absolute.fragment.simple(src="sketches_7c.png" data-fragment-index="1")
+          section
+            h3 Equiangular lines
+            p
+              | Lines through origin in $\mathbb{R}^n$, 
+              br
+              | angle between every pair is the same
+            .fragment
+              h3 Spherical $L$-code
+              p
+                | Unit vectors $v_1, \dots, v_m$ in $\mathbb{R}^n$,
+                br
+                | $\langle v_i, v_j \rangle \in L$, where $L \subseteq [-1,1)$
+            p.fragment
+              span.red Observation. 
+              | Equiangular lines $\Leftrightarrow \{\pm \alpha\}$-code
+          section
+            h3 Maximum number of equiangular lines
+            p $E_\alpha(n) := $ maximum cardinality of $\{\pm \alpha\}$-code in $\mathbb{R}^n$
+            table
+              tbody
+                tr.fragment
+                  td 1973
+                  td Lemmens, Seidel
+                  td $E_{1/3}(n) \approx 2n$
+                tr.fragment
+                  td 1989
+                  td Neumaier
+                  td $E_{1/5}(n) \approx \frac{3}{2}n$
+                tr.fragment
+                  td 1973
+                  td Neumann
+                  td $E_{\alpha}(n) \le 2n$, $\alpha \neq 1/3, 1/5, \dots$
+          section
+            table
+              tbody
+                tr
+                  td 2016
+                  td Bukh
+                  td $E_{\alpha}(n) \le c_\alpha n$
+                tr.fragment
+                  td 2018
+                  td Balla, Dräxler, Keevash, Sudakov
+                  td $E_{\alpha}(n) \lesssim 1.93n$, $\alpha \neq 1/3$
+            .fragment
+              .avatars
+                img.avatar(src="jiang.png")
+                img.avatar(src="polyanskii.png")
+              p
+                span.red Theorem 
+                | (J.–Polyanskii).
+                br
+                | For every $\lambda < \lambda^*$, 
+                span.red $E_{1/(1+2\lambda)}(n) \approx \frac{k}{k-1}n$
+                br
+                | where $k := \min\{v(G) : \lambda_1(G) = \lambda\}$
+          section(data-background-color="#fafafa")
+            p.red $E_{1/(1+2\lambda)}(n) \approx \frac{k}{k-1}n$
+            table
+              tbody
+                tr
+                  td.fragment(data-fragment-index="1")
+                    | $\lambda_1\big($
+                    img.inline(src="g1.png")
+                    | $\big) = 1$
+                  td.fragment(data-fragment-index="2") $E_{1/3}(n) \approx 2n$
+                tr
+                  td.fragment(data-fragment-index="1")
+                    | $\lambda_1\big($
+                    img.inline(src="g2.png")
+                    | $\big) = \sqrt{2}$
+                  td.fragment(data-fragment-index="2")
+                    span.highlight-red.fragment(data-fragment-index="3") $E_{1/(1+2\sqrt{2})}(n) \approx \frac{3}{2}n$
+                tr
+                  td.fragment(data-fragment-index="1")
+                    | $\lambda_1\big($
+                    img.inline(src="g3.png")
+                    | $\big) = 2$
+                  td.fragment(data-fragment-index="2") $E_{1/5}(n) \approx \frac{3}{2}n$
+          section
+            h3 Connection to forbidden subgraphs
+            p.fragment.fragment(data-fragment-index="0")
+              span.blue Lemma 
+              | (Balla et al.).
+              br
+              | For fixed $\epsilon > 0$, $E_{1/(1+2\lambda)}(n) \lesssim E_L(n)$,
+              br
+              | where $L = \big\{-\frac{1-\epsilon}{\lambda}+\epsilon, \epsilon\big\}$.
+            hr.fragment(data-fragment-index="0")
+            p.fragment(data-fragment-index="1")
+              | Suppose $C$ is $L$-code in $\mathbb{R}^n$, define $G$ on $C$:
+              br
+              | $v_i \sim v_j \Leftrightarrow \langle v_i, v_j \rangle < 0$.
+            p.fragment(data-fragment-index="2")
+              span.fragment.highlight-red(data-fragment-index="6") $A := $ adjacency matrix of $G$
+              span , $M := $ Gram matrix of $C$
+            p.fragment(data-fragment-index="3")
+              span.fragment.highlight-red(data-fragment-index="6") $(\lambda I - A) + \frac{\epsilon\lambda}{1-\epsilon}J$ 
+              span $ = \frac{\lambda}{1-\epsilon}M$ 
+              span.fragment.highlight-red(data-fragment-index="6") $\succeq 0$
+            p.fragment(data-fragment-index="4")
+              | Maximize $\left|C\right|$ s.t. $\mathrm{rank}(M) \le n$
+              span.fragment(data-fragment-index="5") , or 
+                span.fragment.highlight-red(data-fragment-index="6") $\mathrm{rank}(\lambda I - A) \lesssim n$.
+          section
+            p
+              | $A := $ adjacency matrix of $G$ with vertex set $C$
+              br
+              | $(\lambda I - A) + \frac{\epsilon\lambda}{1-\epsilon}J \succeq 0$, $\mathrm{rank}(\lambda I - A) \lesssim n$
+            .fragment
+              p
+                span.red Claim 
+                | $\lambda_1(G) \le \lambda$
+              hr
+            p.fragment
+              span.blue Special case: 
+              | $G$ is connected
+            p
+              span.fragment
+                span.blue If 
+                | $\lambda_1(G) = \lambda$, 
+              span.fragment
+                span.blue then 
+                | $|C| \ge k$, and Perron–Frobenius says $\mathrm{rank}(\lambda I - A) \ge |C| - 1 \ge \frac{k-1}{k}|C|$;
+              br
+              span.fragment
+                span.blue Otherwise 
+                | $\mathrm{rank}(\lambda I - A) = |C|$.
+            p.fragment
+              span.blue General case: 
+              | work on connected components
+          section
+            p
+              | $A := $ adjacency matrix of $G$ with vertex set $C$
+              br
+              | $(\lambda I - A) + \frac{\epsilon\lambda}{1-\epsilon}J \succeq 0$
+            hr
+            p
+              span.red Claim 
+              | $\lambda_1(G) \le \lambda$ 
+              span.fragment $\Leftrightarrow G \in F(\lambda)$
+            p.fragment
+              | Suppose $\{G_1, \dots, G_n\}$ is a f.s.c. for $F(\lambda)$,
+              br
+              | assume that some $G_i \subseteq G$
+            p
+              span.fragment $(\lambda I - A_i) + \frac{\epsilon\lambda}{1-\epsilon} J \succeq 0$
+              br
+              span.fragment $\implies \lambda - \lambda_1(G_i) + \frac{\epsilon\lambda}{1-\epsilon}v(G_i) \ge 0$
+            p.fragment
+              span.red Punchline 
+              br
+              span.fragment Choose $\epsilon$ so small that above is $< 0$ for all $G_i$
+        section
+          section
+            h3.red Conjecture beyond $\lambda^*$
+            p $E_{1/(1+2\lambda)}(n) \approx \frac{k}{k-1}n$, for all $\lambda$
+            p.fragment In particular, $E_{1/7}(n) \approx \frac{4}{3}n$
+            .fragment
+              h3.red Further results
+              p $E_{1/(1+2\lambda)}(n) \gtrsim \frac{k}{k-1}n$, for all $\lambda$
+              p.fragment $E_{1/7}(n) \lesssim \big(\frac{4}{3}+\frac{1}{36}\big)n$
+              p.fragment $E_{1/(1+2\lambda)}(n) \lesssim 1.49n$, for $\lambda \neq 1, \sqrt{2}, 2$
+    script(src="../reveal.js-3.6.0/lib/js/head.min.js")
+    script(src="../reveal.js-3.6.0/js/reveal.js")
+    script.
+      Reveal.initialize({
+        allottedTime: 25 * 60 * 1000,
+        slideNumber: true,
+        controls: false,
+        progress: true,
+        history: true,
+        //- math: {
+        //-   mathjax: '../mathjax/MathJax.js',
+        //-   config: 'TeX-AMS_HTML-full'
+        //- },
+        dependencies: [
+          { src: '../reveal.js-3.4.1/plugin/math/math.js', async: true },
+          { src: '../reveal.js-3.4.1/plugin/elapsed-time-bar/elapsed-time-bar.js' }
+        ],
+      });

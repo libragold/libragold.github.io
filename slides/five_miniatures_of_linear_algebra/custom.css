@@ -1,0 +1,7 @@
+.reveal .red, .reveal .slides section .fragment.highlight-red.visible {
+  color: #94070A;
+}
+.reveal section img.no-shadow {
+  box-shadow: none;
+  border: none;
+}

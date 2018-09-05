@@ -3,33 +3,21 @@ layout: default
 permalink: /writings
 title: Writings
 ---
-<main id="main" role="main" class="main constrain--padding">
+<main id="main" role="main" class="main">
   {% assign collaborators = site.data.collaborators %}
-  {% for writing in site.data.writings %}
-    <div class="post-wrapper col col--1-1 col--1-2@medium col--1-3@large">
-      <article class="post post--small no-margin">
-        <h1 class="post__title">{{ writing.title }}</h1>
-        <div class="post__body">
-          {% if writing.coauthors != null %}
-          <h2 class="post__coauthors">
-            With
-            {% for coauthor in writing.coauthors %}
-              {% if coauthor == writing.coauthors.last and coauthor != writing.coauthors.first %}and{% endif %}
-              <a href="{{ collaborators[coauthor].website }}" target="_blank">{{ collaborators[coauthor].name }}</a>{% if coauthor != writing.coauthors.last and coauthor != writing.coauthors[-2] %},{% endif %}
-            {% endfor %}
-          </h2>
-          {% endif %}
-          {{ writing.summary | markdownify }}
-        </div>
-        <a class="cta post__cta" href="https://arxiv.org/abs/{{ writing.arxiv.id }}" target="_blank">
-          <span class="cta__inner">
-            Read on arXiv
-          </span>
-          <svg class="cta__icon">
-            <use xlink:href="#icon-external"></use>
-          </svg>
-        </a>
-      </article>
-    </div>    
-  {% endfor %}
+  {% assign writings = site.data.writings %}
+  <div class="items">
+    <h2>Preprints</h2>
+    {% for writing in writings reversed %}
+      {% if writing.journal == null %}
+        {% include partials/writing.html writing=writing %}
+      {% endif %}
+    {% endfor %}
+    <h2>Publication</h2>
+    {% for writing in writings reversed %}
+      {% if writing.journal %}
+        {% include partials/writing.html writing=writing %}
+      {% endif %}
+    {% endfor %}
+  </div>
 </main>

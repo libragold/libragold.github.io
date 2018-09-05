@@ -4,8 +4,6 @@ const uglify = require('gulp-uglify')
 
 gulp.task('scripts', function() {
   const scriptsToMerge = [
-    './_src/jquery.unveil.js',
-    './_src/masonry.pkgd.js',
     './_src/main.js'
   ]
 

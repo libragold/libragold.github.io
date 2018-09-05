@@ -1,8 +1,32 @@
 .masthead {
-	position: relative;
-	z-index: 2;
-	background-color: $colour-background;
-	text-align: center;
-	padding: 0 $layout-side-padding;
-  overflow: hidden;
+  font-family: $font-family-brand;
+  margin-top: 25px;
+  @include media('>=medium') {
+    margin-top: 60px;
+  }
+  @include constrain(800px);
+  padding: 0 20px;
+}
+
+.masthead__wrapper {
+  position: relative;
+}
+
+.masthead-bar__menu {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  @include media('>=medium') {
+    margin-top: 0;
+    position: absolute;
+    right: 16px;
+    top: 8px;
+  }
+  .masthead-bar__menu-item:not(:first-child) {
+    margin-left: 4px;
+  }
+}
+
+.masthead-title {
+  font-size: 2rem;
+  font-weight: bold;
 }

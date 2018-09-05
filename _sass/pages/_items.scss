@@ -1,0 +1,38 @@
+.items {
+  margin-top: $post-vertical-rythm;
+  p, h3, .item__primary-actions {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  p {
+    color: #6C7A89;
+  }
+
+  a {
+    @include link(true);
+  }
+
+  h2 {
+    @include heading2;
+    margin-top: $post-vertical-rythm * 1.8;
+    margin-bottom: $post-vertical-rythm * 0.6;
+  }
+}
+
+.item {
+  margin-top: $post-vertical-rythm;
+}
+
+.item__primary-actions {
+  float: right;
+  margin-left: 1rem;
+}
+
+.item__primary-actions, .item__secondary-actions {
+  &> span:not(:first-child)::before
+  {
+    content: "\00b7";
+    margin-right: 0.3rem;
+  }
+}

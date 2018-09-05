@@ -44,45 +44,27 @@
 		text-decoration: line-through;		
 	}
 
-	// Twitter embed
-	.twitter-tweet {
-		margin: ($post-vertical-rythm * 3) auto !important;
+	article {
+		position: relative;
+    padding: 5rem 0rem;
+  }
+
+	section {
+		padding-top: 1rem;
+	  padding-bottom: 1rem;
 	}
 
-	// CodePen embed
-	.cp_embed_iframe {
-		max-width: 1400px;
-		margin: ($post-vertical-rythm * 3) auto;
-		display: block;
-	}
-
-	p,
-	li, {
-		@include constrain($post-body-max-width, true);
-
-		// Probably wrap in a media query
-		font-size: 20px;
-		line-height: 1.6;
-
-		@include media('>=medium') {
-			font-size: 24px;
-		}
+	p, ol, ul {
+		font-size: 1.4rem;
+		line-height: 2rem;
 	}
 
 	h2 {
 		@include heading2;
-		@include constrain($post-body-max-width, true);
-
-		margin-top: $post-vertical-rythm * 1.8;
-		margin-bottom: $post-vertical-rythm * 0.6;
 	}
 
 	h3 {
 		@include heading3;
-		@include constrain($post-body-max-width, true);
-
-		margin-top: $post-vertical-rythm * 1.8;
-		margin-bottom: $post-vertical-rythm * 0.6;
 	}
 
 	a {

@@ -3,10 +3,14 @@
 
 	margin-top: $post-vertical-rythm;
 	overflow: hidden;
-}
 
-.search-toggle:checked ~ .main,
-.search-toggle:checked ~ .paginator {
-	transform: translateY(-80px);
-	opacity: 0;
+  @include constrain(800px);
+
+  padding: 0 20px;
+
+  margin-bottom: 15px;
+
+  @include media('>=medium') {
+    margin-bottom: 30px;
+  }
 }
