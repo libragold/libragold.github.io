@@ -1,42 +1,51 @@
-bbukh:
-  name: "Boris Bukh"
-  url: "http://www.borisbukh.org"
-apolyanskii:
-  name: "Alexandr Polyanskii"
-  url: "http://polyanskii.com"
-raharoni:
-  name: "Ron Aharoni"
-  url: "http://raharoni.net.technion.ac.il"
-ycensor:
-  name: "Yair Censor"
-  url: "http://math.haifa.ac.il/yair/"
-nalon:
-  name: "Noga Alon"
-  url: "http://www.tau.ac.il/~nogaa/"
-mamir:
-  name: "Michal Amir"
-  url: "https://en-exact-sciences.tau.ac.il/math"
-phaxell:
-  name: "Penny Haxell"
-  url: "https://uwaterloo.ca/combinatorics-and-optimization/people-profiles/penny-haxell"
-dhefetz:
-  name: "Dan Hefetz"
-  url: "https://dannyhefetz.wixsite.com/homepage"
-gkronenberg:
-  name: "Gal Kronenberg"
-  url: "http://www.math.tau.ac.il/~galkrone/"
 anaor:
   name: "Alon Naor"
   url: "http://www.tau.ac.il/~alonnaor/"
-npolyanskii:
-  name: "Nikita Polyanskii"
-  url: "https://scholar.google.com/citations?user=4Y8b6l8AAAAJ"
-ivorobyev:
-  name: "Ilya Vorobyev"
-  url: "https://scholar.google.ru/citations?user=sBNnIT0AAAAJ"
-rholzman:
-  name: "Ron Holzman"
-  url: "https://holzman.technion.ac.il"
+apolyanskii:
+  name: "Alexandr Polyanskii"
+  url: "http://polyanskii.com"
 ayehudayoff:
   name: "Amir Yehudayoff"
   url: "https://yehudayoff.net.technion.ac.il"
+bbukh:
+  name: "Boris Bukh"
+  url: "http://www.borisbukh.org"
+dhefetz:
+  name: "Dan Hefetz"
+  url: "https://dannyhefetz.wixsite.com/homepage"
+eberger:
+  name: "Eli Berger"
+  url: "http://math.haifa.ac.il/berger/"
+fhavet:
+  name: "Frédéric Havet"
+  url: "http://www-sop.inria.fr/members/Frederic.Havet/"
+gkronenberg:
+  name: "Gal Kronenberg"
+  url: "http://www.math.tau.ac.il/~galkrone/"
+ivorobyev:
+  name: "Ilya Vorobyev"
+  url: "https://scholar.google.ru/citations?user=sBNnIT0AAAAJ"
+mamir:
+  name: "Michal Amir"
+  url: "https://en-exact-sciences.tau.ac.il/math"
+mchudnovsky:
+  name: "Maria Chudnovsky"
+  url: "https://web.math.princeton.edu/~mchudnov/"
+nalon:
+  name: "Noga Alon"
+  url: "http://www.tau.ac.il/~nogaa/"
+npolyanskii:
+  name: "Nikita Polyanskii"
+  url: "https://scholar.google.com/citations?user=4Y8b6l8AAAAJ"
+phaxell:
+  name: "Penny Haxell"
+  url: "https://uwaterloo.ca/combinatorics-and-optimization/people-profiles/penny-haxell"
+raharoni:
+  name: "Ron Aharoni"
+  url: "http://raharoni.net.technion.ac.il"
+rholzman:
+  name: "Ron Holzman"
+  url: "https://holzman.technion.ac.il"
+ycensor:
+  name: "Yair Censor"
+  url: "http://math.haifa.ac.il/yair/"

@@ -93,6 +93,15 @@
   summary: >
     Any family $$E_1, \dots, E_{\lceil rn\rceil}$$ of sets of edges in an $$r$$-uniform hypergraph, each having a fractional matchings number of size $$n$$, has a rainbow matching of size $$n$$ (that is, a set of edges from distinct $$E_i$$'s which supports such a fractional matching).
   arxiv: "1805.09732"
+- title: "Cooperative colorings of trees and bipartite graphs"
+  coauthors:
+    - raharoni
+    - eberger
+    - mchudnovsky
+    - fhavet
+  summary: >
+    Given a system $$\mathcal{G}=(G_1, \ldots ,G_m)$$ of graphs on the same vertex set $$V$$, a cooperative coloring for $$\mathcal{G}$$ is a choice of vertex sets $$I_1, \ldots ,I_m$$, such that $$I_j$$ is independent in $$G_j$$ and $$\bigcup_{j=1}^{m}I_j = V$$. We give bounds on the minimal $$m$$ such that every $$m$$ graphs with maximum degree $$d$$ have a cooperative coloring, in the cases that (a) the graphs are trees, (b) the graphs are all bipartite.
+  arxiv: "1806.06267"
 - title: "An isoperimetric inequality for Hamming balls and local expansion in hypercubes"
   coauthors:
     - ayehudayoff
