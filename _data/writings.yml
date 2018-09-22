@@ -73,6 +73,9 @@
   summary: >
     If the average degree of $$G$$ after deleting any ball of radius $$r$$ is at least $$d$$, then its second largest eigenvalue is at least $$2\sqrt{d-1}\cos\left(\frac{\pi}{r+1}\right)$$.
   arxiv: "1710.06719"
+  journal:
+    citation: "Journal of Combinatorial Theory, Series B"
+    url: "https://doi.org/10.1016/j.jctb.2018.09.003"
 - title: "On the metric dimension of Cartesian products of a graph"
   coauthors:
     - npolyanskii
