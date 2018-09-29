@@ -1,9 +1,7 @@
 $font-family-primary: 'AdobeGaramond', Georgia, Times, serif;
-$font-family-secondary: 'AlternateGothicW01-No3', sans-serif;
-$font-family-tertiary: 'Helvetica', sans-serif;
+$font-family-tertiary: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Arial, sans-serif;
 $font-family-monospace: 'Monaco','Consolas','Menlo', monospace;
 $font-family-quotes: Georgia, serif, Times;
-$font-family-brand: 'Nunito', sans-serif;
 
 $font-weight-light: 300;
 $font-weight-normal: 400;
@@ -15,16 +13,6 @@ $font-size-normal: 20px;
 $font-size-large: 35px;
 
 $line-height-normal: 1.2;
-
-@font-face {
-  font-family: "AlternateGothicW01-No3";
-  src: url("/assets/fonts/d204d256-fb7f-488b-a5f2-57979585e00a.eot?#iefix");
-  src: url("/assets/fonts/d204d256-fb7f-488b-a5f2-57979585e00a.eot?#iefix") format("eot"),
-     url("/assets/fonts/836ee743-8a38-45fb-8076-f78de89ed923.woff2") format("woff2"),
-     url("/assets/fonts/6e86a433-85a2-40a6-8dc7-58cc16a6cb9b.woff") format("woff"),
-     url("/assets/fonts/72fb6a94-41e4-4db6-b19b-88ad54f05d97.ttf") format("truetype"),
-     url("/assets/fonts/e3670e54-4d1a-499a-a84b-cf19198f20a5.svg#e3670e54-4d1a-499a-a84b-cf19198f20a5") format("svg");
-}
 
 @font-face  {
   font-family: "AdobeGaramond";

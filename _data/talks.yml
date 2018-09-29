@@ -125,7 +125,7 @@
   date: 2018-03-16
   slides: "on_spherical_tarskis_plank_problem/2018-03-16.html"
   arxiv: "1703.10550"
-- title: "Sperical Tarski's plank problem"
+- title: "Spherical Tarski's plank problem"
   occasion: "ERC Workshop: Geometric Transversal and Epsilon-Nets"
   location: "Ein Gedi"
   date: 2018-03-20
@@ -177,4 +177,9 @@
   date: 2018-09-05
   slides: "on_spherical_tarskis_plank_problem/2018-09-05.html"
   arxiv: "1703.10550"
-  
+- title: "Rainbow fractional matchings"
+  announcement: "http://www.math.emory.edu/events/seminars/seminar.php?SEMID=1251"
+  occasion: "Combinatorics Seminar"
+  location: "Emory University"
+  date: 2018-10-19
+  arxiv: "1805.09732"
