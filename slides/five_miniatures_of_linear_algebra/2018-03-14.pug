@@ -3,10 +3,8 @@ html
   head
     meta(charset="utf-8")
     title 关于线性代数的五个小故事
-    meta(name="description" content="2018年数学一小时科普讲座")
-    meta(name="author" content="Zilin Jiang")
-    link(rel="stylesheet" href="../reveal.js-3.4.1/css/reveal.css")
-    link(rel="stylesheet" href="../reveal.js-3.4.1/css/theme/white.css")
+    link(rel="stylesheet" href="../reveal.js-3.7.0/css/reveal.css")
+    link(rel="stylesheet" href="../reveal.js-3.7.0/css/theme/white.css")
     link(rel="stylesheet" href="custom.css")
   body
     .reveal
@@ -18,8 +16,7 @@ html
             br
             small 以色列理工学院
             br
-            small
-              | 2018 年 3 月 14 日 于 北京大学
+            small 2018 年 3 月 14 日 于 北京大学
         section
           section
             img.stretch(src="book_1.jpeg")
@@ -350,8 +347,8 @@ html
           small 以色列理工学院
           br
           small jiangzilin@technion.ac.il
-    script(src="../reveal.js-3.4.1/lib/js/head.min.js")
-    script(src="../reveal.js-3.4.1/js/reveal.js")
+    script(src="../reveal.js-3.7.0/lib/js/head.min.js")
+    script(src="../reveal.js-3.7.0/js/reveal.js")
     script.
       Reveal.initialize({
         allottedTime: 60 * 60 * 1000,
@@ -360,7 +357,7 @@ html
         progress: true,
         history: true,
         dependencies: [
-          { src: '../reveal.js-3.4.1/plugin/math/math.js', async: true },
-          { src: '../reveal.js-3.4.1/plugin/elapsed-time-bar/elapsed-time-bar.js' }
+          { src: '../reveal.js-3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../reveal.js-3.7.0/plugin/math/math.js', async: true },
         ],
       });

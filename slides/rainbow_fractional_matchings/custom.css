@@ -1,0 +1,29 @@
+.reveal .red {
+  color: #db3236;
+}
+.reveal .blue {
+  color: #4885ed;
+}
+.reveal .avatar {
+  border-radius: 50%;
+  height: 4em;
+  width: 4em;
+  border: none;
+  margin: 0 0.5em;
+}
+.reveal img.simple {
+  border: none;
+  box-shadow: none;
+}
+.reveal h3.white-text-3d {
+  color: white;
+  text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black;
+}
+.reveal table.simple td {
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+  text-align: center;
+}
+.reveal p.left {
+  text-align: left;
+}

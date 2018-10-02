@@ -1,27 +1,29 @@
 doctype html
 html
+  - var title = "On spherical Tarski's plank problems"
+  - var institute = "Technion – Israel Institute of Technology"
+  - var date = "28th May 2017"
+  - var coauthors = "Саша Полянский (Alexandr Polyanskii)"
+  - var email = "zilinj@mit.edu"
+  - var revealjs_version = "3.7.0"
   head
     meta(charset="utf-8")
-    title On spherical Tarski's plank problems
-    meta(name="description" content="An invited talk at IMU 2016")
+    title= title
     meta(name="author" content="Zilin Jiang")
-    link(rel="stylesheet" href="../reveal.js-3.4.1/css/reveal.css")
-    link(rel="stylesheet" href="../reveal.js-3.4.1/css/theme/simple.css")
+    link(rel="stylesheet" href="../reveal.js-3.7.0/css/reveal.css")
+    link(rel="stylesheet" href="../reveal.js-3.7.0/css/theme/simple.css")
     link(rel="stylesheet" href="2017-05-28-custom.css")
   body
     .reveal
       .slides
         section.title-slide
-          h3
-            | On Spherical Tarski's
-            br
-            | Plank Problem
+          h3= title
           p
             small.blue 姜子麟 Zilin Jiang
             br
-            small Technion – Israel Institute of Technology
+            small= institute
             br
-            small 28th May 2017.
+            small= date
           p
             small Joint work with
             | 
@@ -203,23 +205,5 @@ html
               | total width of planks covering 
               span.fragment(data-fragment-index=2) punctured 
               | disk is at least diameter.
-        section
-          small.blue 姜子麟 Zilin Jiang
-          br
-          small Technion – Israel Institute of Technology
-          br
-          small jiangzilin@technion.ac.il
-    script(src="../reveal.js-3.4.1/lib/js/head.min.js")
-    script(src="../reveal.js-3.4.1/js/reveal.js")
-    script.
-      Reveal.initialize({
-        allottedTime: 25 * 60 * 1000,
-        controls: false,
-        slideNumber: true,
-        progress: true,
-        history: true,
-        dependencies: [
-          { src: '../reveal.js-3.4.1/plugin/math/math.js', async: true },
-          { src: '../reveal.js-3.4.1/plugin/elapsed-time-bar/elapsed-time-bar.js' }
-        ],
-      });
+        include ../includes/contact.pug
+    include ../includes/script.pug

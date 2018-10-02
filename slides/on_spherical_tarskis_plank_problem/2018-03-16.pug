@@ -1,26 +1,25 @@
 doctype html
 html
-  head
-    meta(charset="utf-8")
-    title 球面上的 Tarski 平板覆盖问题
-    meta(name="description" content="Peking University, School of Mathematical Sciences, School Colloquium")
-    meta(name="author" content="Zilin Jiang")
-    link(rel="stylesheet" href="../reveal.js-3.4.1/css/reveal.css")
-    link(rel="stylesheet" href="../reveal.js-3.4.1/css/theme/simple.css")
-    link(rel="stylesheet" href="custom.css")
+  - var title = "球面上的 Tarski 平板覆盖问题"
+  - var institute = "以色列理工学院"
+  - var date = " 2018 年 3 月 16 日 于北京大学"
+  - var coauthors = "Саша Полянский / Alexandr Polyanskii"
+  - var email = "jiangzilin@technion.ac.il"
+  - var revealjs_version = "3.7.0"
+  include ../includes/head.pug
   body
     .reveal
       .slides
         section.title-slide
-          h3 球面上的 Tarski 平板覆盖问题
+          h3= title
           p
             small.red 姜子麟
             br
-            small 以色列理工学院
+            small= institute
             br
-            small 2018 年 3 月 16 日 于北京大学
+            small= date
           p
-            small 与 Саша Полянский / Alexandr Polyanskii 合作
+            small 与 #{coauthors} 合作
         section
           section
             h3 平板
@@ -226,20 +225,7 @@ html
         section
           small.red 姜子麟
           br
-          small 以色列理工学院
+          small= institute
           br
-          small jiangzilin@technion.ac.il
-    script(src="../reveal.js-3.4.1/lib/js/head.min.js")
-    script(src="../reveal.js-3.4.1/js/reveal.js")
-    script.
-      Reveal.initialize({
-        allottedTime: 60 * 60 * 1000,
-        controls: false,
-        slideNumber: true,
-        progress: true,
-        history: true,
-        dependencies: [
-          { src: '../reveal.js-3.4.1/plugin/math/math.js', async: true },
-          { src: '../reveal.js-3.4.1/plugin/elapsed-time-bar/elapsed-time-bar.js' }
-        ],
-      });
+          small= email
+    include ../includes/script.pug
