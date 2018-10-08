@@ -45,7 +45,7 @@
     Given two disjoint convex polyhedra, we propose a process, based on projections onto the half-spaces defining the two polyhedra, for finding a pair of points, one in each polyhedron, attaining the minimum distance.
   arxiv: "1707.09639"
   journal:
-    citation: "Computational Optimization and Applications"
+    citation: "Computational Optimization and Applications (2018) 71: 509–523"
     url: "https://doi.org/10.1007/s10589-018-0021-3"
 - title: "Forbidden subgraphs for graphs of bounded spectral radius, with applications to equiangular lines"
   coauthors:
