@@ -1,11 +1,13 @@
 section
   section
-    img.simple(src="rainbow.png" height="160px")
+    img.simple(src="rainbow.png" height="100px")
     h3 Rainbow set
     p
       | Given sets $P_1, \dots, P_m$
       br
-      | $P \subseteq \cup P_i$ is rainbow if $\vert P \cap P_i\vert \le 1$
+      | $P = \{e_1, \dots, e_n\}$ is rainbow
+      br
+      | if $e_i \in P_{\sigma(i)}$ and $\sigma(i)$'s are distinct
     .fragment
       h3 Rainbow matching
       p
@@ -47,7 +49,6 @@ section
       span.blue Drisko
       | : $2n-1$ perfect matchings in $K_{n,n}$ have a rainbow perfect matching.
   section
-    h3 Drisko is sharp
     p
       span.blue Drisko's theorem
       | : $2n-1$ 
@@ -61,7 +62,7 @@ section
       | $2n-1$ perfect matchings in $K_{n,n}$ have a rainbow perfect matching.
     p.fragment
       span.blue EGZ Theorem 
-      | Given $2n-1$ numbers in $\mathbb{Z}_n$
+      | Given $2n-1$ numbers in $\mathbb{Z}/n \mathbb{Z}$
       br
       | there exist $n$ of them that sum to $0$.
     p.fragment.blue Alon's proof of EGZ
@@ -142,9 +143,9 @@ section
       br
       | there is a rainbow set $E$ with $\nu^*(E) \ge n$.
     p.fragment
-      | Here $\mu^*(E) = \max_f\sum_{e\in E} f(e)$
+      | Here $\nu^*(E) = \max_f\sum_{e\in E} f(e)$
       br
-      | s.t. $f(e)\ge 0$ for $e\in E$ and $\sum_{e\ni v} f(e)$ for $v\in V$.
+      | s.t. $f(e)\ge 0$ for $e\in E$ and $\sum_{e\ni v} f(e) \le 1$ for $v\in V$.
 section
   section
     h3 Plan of talk
@@ -183,10 +184,10 @@ section
       | If $\rho(X\setminus \sigma) > d$ for every $\sigma \in \mathcal{C}$, then $M\setminus \mathcal{C}\neq \emptyset$.
     p
       span.blue.fragment(data-fragment-index="1") Application 
-      span.fragment(data-fragment-index="2") Given $E_1, \dots, E_{2n-1}$ with $\mu^*(E_i) \ge n$
+      span.fragment(data-fragment-index="2") Given $E_1, \dots, E_{2n-1}$ with $\nu^*(E_i) \ge n$
       br
       span.fragment(data-fragment-index="3") $d = 2n-2$, $X = \cup E_i$, 
-      span.fragment(data-fragment-index="4") $\mathcal{C} = \{E \subseteq X : \mu^*(E) < n\}$
+      span.fragment(data-fragment-index="4") $\mathcal{C} = \{E \subseteq X : \nu^*(E) < n\}$
       br
       span.fragment(data-fragment-index="5") $M = \{\text{rainbow sets}\}$, 
       span.fragment(data-fragment-index="6") $\rho(E) = \#$ of $E_i$ s.t. $E\cap E_i\neq\emptyset$
