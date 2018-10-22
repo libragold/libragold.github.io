@@ -76,7 +76,7 @@
   journal:
     citation: "Journal of Combinatorial Theory, Series B"
     url: "https://doi.org/10.1016/j.jctb.2018.09.003"
-- title: "On the metric dimension of Cartesian products of a graph"
+- title: "On the metric dimension of Cartesian powers of a graph"
   coauthors:
     - npolyanskii
   summary: >
@@ -87,7 +87,7 @@
     - npolyanskii
     - ivorobyev
   summary: >
-    We complete the line of research on the optimal symmetric rate point in the chanel capacity region of the two-user union channel, and we construct a practical near-optimal zero-error communication scheme.
+    We complete the line of research on the optimal symmetric rate point in the channel capacity region of the two-user union channel, and we construct a practical near-optimal zero-error communication scheme.
   arxiv: "1804.08599"
 - title: "Rainbow fractional matchings"
   coauthors:
