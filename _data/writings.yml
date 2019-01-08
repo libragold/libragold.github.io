@@ -51,7 +51,7 @@
   coauthors:
     - apolyanskii
   summary: >
-    We find the threshold $$\lambda^* = \sqrt{2+\sqrt{5}}$$ such that, for every $$\lambda < \lambda^*$$, the family of graphs of spectral radius $$\le \lambda$$ has a finite forbidden subgraphs characterization. As a consequence, we establish the asymptotic formula of the maximum cardinality of equiangular lines with angle $$\arccos\alpha$$ in $$\mathbb{R}^n$$ for every $$\alpha > \frac{1}{1+2\lambda^*}$$.
+    We show that the family of graphs of spectral radius $$\le \lambda$$ has a finite forbidden subgraphs characterization if and only if $$\lambda < \lambda^*$$ and $$\lambda \not\in \{\alpha_2, \alpha_3, \ldots$$, where $$\alpha_m = \beta_m^{1/2} + \beta_m^{-1/2}$$ and $$\beta_m$$ is the largest root of $$x^{m+1} = 1 + x + \ldots + x^{m-1}$$. As a consequence, we establish the asymptotic formula of the maximum cardinality of equiangular lines with angle $$\arccos\alpha$$ in $$\mathbb{R}^n$$ for every $$\alpha > \frac{1}{1+2\lambda^*}$$.
   arxiv: "1708.02317"
   slides: "forbidden_subgraphs_and_equiangular_lines"
 - title: "Ramsey-nice families of graphs"
@@ -82,6 +82,9 @@
   summary: >
     A set of vertices $$S$$ resolves a graph if every vertex is uniquely determined by its vector of distances to the vertices in $$S$$. The metric dimension of a graph is the minimum cardinality of a resolving set of the graph. We prove that the metric dimension of the Cartesian product of $$n$$ copies of the complete graph on $$q$$ vertices is $$(2+o(1))n/\log_q n$$.
   arxiv: "1712.02723"
+  journal:
+    citation: "Journal of Combinatorial Theory, Series A"
+    url: ""
 - title: "On capacities of the two-user union channel with complete feedback"
   coauthors:
     - npolyanskii
@@ -89,6 +92,9 @@
   summary: >
     We complete the line of research on the optimal symmetric rate point in the channel capacity region of the two-user union channel, and we construct a practical near-optimal zero-error communication scheme.
   arxiv: "1804.08599"
+  journal:
+    citation: "IEEE Transactions on Information Theory"
+    url: "https://doi.org/10.1109/TIT.2018.2889250"
 - title: "Rainbow fractional matchings"
   coauthors:
     - raharoni
