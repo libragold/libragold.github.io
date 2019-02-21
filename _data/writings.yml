@@ -51,7 +51,7 @@
   coauthors:
     - apolyanskii
   summary: >
-    We show that the family of graphs of spectral radius $$\le \lambda$$ has a finite forbidden subgraphs characterization if and only if $$\lambda < \lambda^*$$ and $$\lambda \not\in \{\alpha_2, \alpha_3, \ldots$$, where $$\alpha_m = \beta_m^{1/2} + \beta_m^{-1/2}$$ and $$\beta_m$$ is the largest root of $$x^{m+1} = 1 + x + \ldots + x^{m-1}$$. As a consequence, we establish the asymptotic formula of the maximum cardinality of equiangular lines with angle $$\arccos\alpha$$ in $$\mathbb{R}^n$$ for every $$\alpha > \frac{1}{1+2\lambda^*}$$.
+    We show that the family of graphs of spectral radius $$\le \lambda$$ has a finite forbidden subgraphs characterization if and only if $$\lambda < \lambda^*$$ and $$\lambda \not\in \{\alpha_2, \alpha_3, \ldots\}$$, where $$\alpha_m = \beta_m^{1/2} + \beta_m^{-1/2}$$ and $$\beta_m$$ is the largest root of $$x^{m+1} = 1 + x + \ldots + x^{m-1}$$. As a consequence, we establish the asymptotic formula of the maximum cardinality of equiangular lines with angle $$\arccos\alpha$$ in $$\mathbb{R}^n$$ for every $$\alpha > \frac{1}{1+2\lambda^*}$$.
   arxiv: "1708.02317"
   slides: "forbidden_subgraphs_and_equiangular_lines"
 - title: "Ramsey-nice families of graphs"
@@ -83,8 +83,8 @@
     A set of vertices $$S$$ resolves a graph if every vertex is uniquely determined by its vector of distances to the vertices in $$S$$. The metric dimension of a graph is the minimum cardinality of a resolving set of the graph. We prove that the metric dimension of the Cartesian product of $$n$$ copies of the complete graph on $$q$$ vertices is $$(2+o(1))n/\log_q n$$.
   arxiv: "1712.02723"
   journal:
-    citation: "Journal of Combinatorial Theory, Series A"
-    url: ""
+    citation: "Journal of Combinatorial Theory, Series A (2019) 165: 1-14"
+    url: "https://doi.org/10.1016/j.jcta.2019.01.002"
 - title: "On capacities of the two-user union channel with complete feedback"
   coauthors:
     - npolyanskii
