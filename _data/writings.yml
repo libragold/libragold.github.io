@@ -74,7 +74,7 @@
     If the average degree of $$G$$ after deleting any ball of radius $$r$$ is at least $$d$$, then its second largest eigenvalue is at least $$2\sqrt{d-1}\cos\left(\frac{\pi}{r+1}\right)$$.
   arxiv: "1710.06719"
   journal:
-    citation: "Journal of Combinatorial Theory, Series B"
+    citation: "Journal of Combinatorial Theory, Series B (2019) 136: 72-80"
     url: "https://doi.org/10.1016/j.jctb.2018.09.003"
 - title: "On the metric dimension of Cartesian powers of a graph"
   coauthors:
@@ -93,7 +93,7 @@
     We complete the line of research on the optimal symmetric rate point in the channel capacity region of the two-user union channel, and we construct a practical near-optimal zero-error communication scheme.
   arxiv: "1804.08599"
   journal:
-    citation: "IEEE Transactions on Information Theory"
+    citation: "IEEE Transactions on Information Theory (2019) 65: 2774-2781"
     url: "https://doi.org/10.1109/TIT.2018.2889250"
 - title: "Rainbow fractional matchings"
   coauthors:
