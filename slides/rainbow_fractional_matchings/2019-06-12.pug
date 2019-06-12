@@ -1,6 +1,6 @@
 doctype html
 html
-  - var title = "Rainbow structures via algebraic topology"
+  - var title = "Rainbow structures<br>via algebraic topology"
   - var institute = "Massachusetts Institute of Technology"
   - var coauthors = "Ron Aharoni and Ron Holzman"
   - var date = "June 12, 2019"
@@ -11,6 +11,13 @@ html
     .reveal
       .slides
         include ../includes/title_slide.pug
-        include main.pug
+        include iccm.pug
         include ../includes/contact.pug
     include ../includes/script.pug
+    script.
+      Reveal.configure({
+        keyboard: {
+          39: 'next',
+          37: 'prev'
+        }
+      })

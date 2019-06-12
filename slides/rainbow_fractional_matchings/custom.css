@@ -1,8 +1,14 @@
 .reveal .red {
   color: #db3236;
 }
+.reveal .slides section .fragment.highlight-red.visible {
+  color: #db3236;
+}
 .reveal .blue {
   color: #4885ed;
+}
+.reveal .green {
+  color: #3cba54;
 }
 .reveal .avatar {
   border-radius: 50%;
@@ -26,4 +32,52 @@
 }
 .reveal p.left {
   text-align: left;
+}
+.reveal span.underline-block {
+  text-decoration: underline;
+}
+.reveal .flex-container {
+  display: flex;
+}
+.reveal .flex-container .flex-1 {
+  flex: 1;
+}
+.reveal .flex-container .flex-2 {
+  flex: 2;
+}
+.reveal .theorem {
+  border-radius: 0.5rem;
+  border: 0.5rem solid #4885ed;
+}
+.reveal .ninety {
+  font-size: 90%;
+}
+.reveal .eighty {
+  font-size: 80%;
+}
+.reveal .theorem > p:first-child {
+  margin: 0;
+  color: white;
+  padding-bottom: 0.5rem;
+  background: #4885ed;
+}
+.reveal .theorem > p:last-child {
+  margin: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.reveal .left-aligned {
+  text-align: left;
+}
+.reveal .latin {
+  margin-top: 0rem;
+  margin-bottom: 0.5rem;
+}
+.reveal table.latin td:first-child {
+  border-left: none;
+}
+.reveal table.latin td {
+  border-left: 1px solid rgb(128,128,128);
+}
+.reveal .latin-graph {
+  margin-top: 3rem;
 }
