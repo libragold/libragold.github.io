@@ -185,17 +185,26 @@
   slides: "rainbow_fractional_matchings/2018-10-19.html"
   arxiv: "1805.09732"
 - title: "Rainbow structures via algebraic topology"
+  announcement: "http://www.scms.fudan.edu.cn/Data/List/Regular/?year=2019"
   occasion: "Discrete Mathematics Seminar"
   location: "Shanghai Center for Mathematical Sciences"
   date: 2019-06-05
   arxiv: "1805.09732"
 - title: "Rainbow structures via algebraic topology"
+  announcement: "https://iccm2019.cn/speakers"
   occasion: "The 8th International Congress of Chinese Mathematicians"
   location: "Tsinghua University"
   date: 2019-06-12
   slides: "rainbow_fractional_matchings/2019-06-12.html"
   arxiv: "1805.09732"
+- title: "Cooperative colorings"
+  announcement: "http://math.ustc.edu.cn/new/bencandy.php?fid=35&aid=3878"
+  occasion: "Combinatorics and Graph Theory Seminar"
+  location: "University of Science and Technology of China"
+  date: 2019-06-19
+  arxiv: "1806.06267"
 - title: "Forbidden subgraphs and equiangular Lines"
+  announcement: "http://math.ahu.edu.cn/2019/0619/c10777a204435/page.htm"
   occasion: "The 18th AHU–USTC Joint Seminar"
   location: "Anhui University"
   date: 2019-06-22
