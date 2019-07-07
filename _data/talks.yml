@@ -203,9 +203,15 @@
   location: "University of Science and Technology of China"
   date: 2019-06-19
   arxiv: "1806.06267"
-- title: "Forbidden subgraphs and equiangular Lines"
+- title: "Forbidden subgraphs and equiangular lines"
   announcement: "http://math.ahu.edu.cn/2019/0619/c10777a204435/page.htm"
   occasion: "The 18th AHU–USTC Joint Seminar"
   location: "Anhui University"
   date: 2019-06-22
   arxiv: "1708.02317"
+- title: "Spectral radius: local and global"
+  announcement: "http://math.sjtu.edu.cn/conference/Bannai/2019/talk.php?20190705A"
+  occasion: "Combinatorics Seminar"
+  location: "Shanghai Jiaotong University"
+  date: 2019-07-05
+  arxiv: "1710.06719"
