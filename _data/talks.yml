@@ -215,3 +215,10 @@
   location: "Shanghai Jiaotong University"
   date: 2019-07-05
   arxiv: "1710.06719"
+- title: "Colored Bárány's theorem"
+  announcement: "https://kam.mff.cuni.cz/rise/news/post/workshop-and-school-topological-methods"
+  occasion: "Topological Methods in Combinatorics"
+  location: "Charles University"
+  date: 2019-07-22
+  slides: "topological_method_for_colored_baranys_theorem/2019-07-22.html"
+  arxiv: "1405.2503"
