@@ -1,4 +1,5 @@
-script(src=`../reveal.js-${revealjs_version}/lib/js/head.min.js`)
+if revealjs_version < "3.8.0"
+  script(src=`../reveal.js-${revealjs_version}/lib/js/head.min.js`)
 script(src=`../reveal.js-${revealjs_version}/js/reveal.js`)
 script.
   Reveal.initialize({
