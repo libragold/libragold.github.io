@@ -25,6 +25,9 @@ gkronenberg:
 ivorobyev:
   name: "Ilya Vorobyev"
   url: "https://scholar.google.ru/citations?user=sBNnIT0AAAAJ"
+jtidor:
+  name: "Jonathan Tidor"
+  url: "https://math.mit.edu/directory/profile.php?pid=2037"
 mamir:
   name: "Michal Amir"
   url: "https://en-exact-sciences.tau.ac.il/math"
@@ -46,6 +49,15 @@ raharoni:
 rholzman:
   name: "Ron Holzman"
   url: "https://holzman.technion.ac.il"
+szhang:
+  name: "Shengtong Zhang"
+  url: "https://www.imo-official.org/participant_r.aspx?id=26658"
 ycensor:
   name: "Yair Censor"
   url: "http://math.haifa.ac.il/yair/"
+yyao:
+  name: "Yuan Yao"
+  url: "https://www.imo-official.org/participant_r.aspx?id=26588"
+yzhao:
+  name: "Yufei Zhao"
+  url: "http://yufeizhao.com"
