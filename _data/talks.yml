@@ -222,3 +222,15 @@
   date: 2019-07-22
   slides: "topological_method_for_colored_baranys_theorem/2019-07-22.html"
   arxiv: "1405.2503"
+- title: "Equiangular lines with a fixed angle"
+  announcement: "https://www.math.uic.edu/MSCS/seminars/poster?seminar_id=6065"
+  occasion: "Combinatorics and Probability Seminar"
+  location: "University of Illinois at Chicago"
+  date: 2019-10-14
+  arxiv: "1907.12466"
+- title: "Equiangular lines with a fixed angle"
+  announcement: "https://calendar.math.illinois.edu/?year=2019&month=10&day=15&interval=day"
+  occasion: "Graph Theory and Combinatorics Seminar"
+  location: "University of Illinois at Urbana-Champaign"
+  date: 2019-10-15
+  arxiv: "1907.12466"
