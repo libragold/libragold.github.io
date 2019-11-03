@@ -103,6 +103,9 @@
     Any family $$E_1, \dots, E_{\lceil rn\rceil}$$ of sets of edges in an $$r$$-uniform hypergraph, each having a fractional matchings number of size $$n$$, has a rainbow matching of size $$n$$ (that is, a set of edges from distinct $$E_i$$'s which supports such a fractional matching).
   arxiv: "1805.09732"
   slides: "rainbow_fractional_matchings"
+  journal:
+    citation: "Combinatorica (2019)"
+    url: "https://doi.org/10.1007/s00493-019-4019-y"
 - title: "Cooperative colorings of trees and bipartite graphs"
   coauthors:
     - raharoni
