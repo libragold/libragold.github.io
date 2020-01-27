@@ -74,7 +74,7 @@
 - title: "Bipartite algebraic graphs without quadrilaterals"
   announcement: "http://www.math.technion.ac.il/Site/events/EvntOffices/files/view/cms/104-301-189.pdf"
   occasion: "Hungarian–Israeli Combinatorial Days"
-  location: "Technion"
+  location: "Technion – Israel Institute of Technology"
   date: 2016-08-23
   slides: "bipartite_algebraic_graphs_without_quadrilaterals/2016-08-23.html"
   arxiv: "1511.04719"
@@ -85,7 +85,7 @@
   date: 2017-03-06
 - title: "On spherical Tarski's plank problem"
   occasion: "Combinatorics Gathering"
-  location: "Technion"
+  location: "Technion – Israel Institute of Technology"
   date: 2017-04-05
   arxiv: "1703.10550"
 - title: "On spherical Tarski's plank problem"
@@ -98,7 +98,7 @@
 - title: "Finding the closest pair of points on two polyhedra"
   announcement: "http://www.math.technion.ac.il/Site/events/EvntOffices/event.php?eid=eo526"
   occasion: "Nonlinear Analysis and Optimization Seminar"
-  location: "Technion"
+  location: "Technion – Israel Institute of Technology"
   date: 2017-08-20
   arxiv: "1707.09639"
 - title: "Finding the closest pair of points on two polyhedra"
@@ -110,7 +110,7 @@
 - title: "On spherical Tarski's plank problem"
   announcement: "http://www.math.technion.ac.il/Site/events/EvntOffices/event.php?eid=eo626"
   occasion: "Nonlinear Analysis and Optimization Seminar"
-  location: "Technion"
+  location: "Technion – Israel Institute of Technology"
   date: 2018-01-21
   arxiv: "1703.10550"
 - title: "Five miniatures of linear algebra (in Chinese)"
@@ -241,4 +241,39 @@
   date: 2019-11-18
   arxiv: "1907.12466"
   video: "https://youtu.be/MPDjE4WcIxk"
-  
+- title: "Equiangular lines with a fixed angle"
+  announcement: "https://www.math.technion.ac.il/Site/events/EvntOffices/event.php?eid=tm2440"
+  occasion: "Combinatorics Seminar"
+  location: "Technion – Israel Institute of Technology"
+  date: 2019-12-18
+  arxiv: "1907.12466"
+- title: "Extremal Problems in Discrete Geometry"
+  announcement: "https://math.gatech.edu/seminars-colloquia/series/job-candidate-talk/zilin-jiang-20200114"
+  occasion: "Job Candidate Talk"
+  location: "Georgia Institute of Technology"
+  date: 2020-01-14
+  slides: "extremal_problems_in_discrete_geometry/2020-01-14.html"
+- title: "Equiangular lines with a fixed angle"
+  announcement: "https://www.math.umass.edu/calendar/discrete-math-seminar/19910"
+  occasion: "Discrete Mathematics Seminar"
+  location: "University of Massachusetts Amherst"
+  date: 2020-01-30
+  arxiv: "1907.12466"
+- title: "Extremal Problems in Discrete Geometry"
+  announcement: "https://mcgill.ca/mathstat/channels/event/zilin-jiang-mit-303864"
+  occasion: "Job Candidate Talk"
+  location: "McGill University"
+  date: 2020-02-04
+  slides: "extremal_problems_in_discrete_geometry/2020-02-04.html"
+- title: "The colorful world of rainbow sets"
+  announcement: "http://people.brandeis.edu/~bernardi/combinatorics-seminar/combinatorics.html"
+  occasion: "Combinatorics Seminar"
+  location: "Brandeis University"
+  date: 2020-03-10
+  # arxiv: "xxxx.xxxxx"
+- title: "Equiangular lines with a fixed angle"
+  announcement: "https://www.mathsci.udel.edu/events/seminars-and-colloquia/discrete-mathematics"
+  occasion: "Discrete Mathematics Seminar"
+  location: "University of Delaware"
+  date: 2020-03-26
+  arxiv: "1907.12466"
