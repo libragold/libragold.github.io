@@ -265,12 +265,24 @@
   location: "McGill University"
   date: 2020-02-04
   slides: "extremal_problems_in_discrete_geometry/2020-02-04.html"
+- title: "Extremal Problems in Discrete Geometry"
+  announcement: "https://math.asu.edu/news-events/events/colloquium/2020-02-10/1030"
+  occasion: "Job Candidate Talk"
+  location: "Arizona State University"
+  date: 2020-02-10
+  slides: "extremal_problems_in_discrete_geometry/2020-02-10.html"
 - title: "The colorful world of rainbow sets"
   announcement: "http://people.brandeis.edu/~bernardi/combinatorics-seminar/combinatorics.html"
   occasion: "Combinatorics Seminar"
   location: "Brandeis University"
   date: 2020-03-10
   # arxiv: "xxxx.xxxxx"
+- title: "Equiangular lines with a fixed angle"
+  # announcement: "http://aco.math.cmu.edu/abs-19-20/may17.html"
+  occasion: "ACO Seminar"
+  location: "Carnegie Mellon University"
+  date: 2020-03-19
+  arxiv: "1907.12466"
 - title: "Equiangular lines with a fixed angle"
   announcement: "https://www.mathsci.udel.edu/events/seminars-and-colloquia/discrete-mathematics"
   occasion: "Discrete Mathematics Seminar"
