@@ -5,7 +5,7 @@
   slides: "topological_method_for_colored_baranys_theorem"
   journal:
     citation: "The Electronic Journal of Combinatorics (2014) 21: P4.39"
-    url: "http://www.combinatorics.org/ojs/index.php/eljc/article/view/v21i4p39"
+    url: "https://doi.org/10.37236/4374"
 - title: "A bound on the number of edges in graphs without an even cycle"
   coauthors:
     - bbukh
@@ -54,6 +54,9 @@
     We show that the family of graphs of spectral radius $$\le \lambda$$ has a finite forbidden subgraphs characterization if and only if $$\lambda < \lambda^*$$ and $$\lambda \not\in \{\alpha_2, \alpha_3, \ldots\}$$, where $$\alpha_m = \beta_m^{1/2} + \beta_m^{-1/2}$$ and $$\beta_m$$ is the largest root of $$x^{m+1} = 1 + x + \ldots + x^{m-1}$$. As a consequence, we establish the asymptotic formula of the maximum cardinality of equiangular lines with angle $$\arccos\alpha$$ in $$\mathbb{R}^n$$ for every $$\alpha > \frac{1}{1+2\lambda^*}$$.
   arxiv: "1708.02317"
   slides: "forbidden_subgraphs_and_equiangular_lines"
+  journal:
+    citation: "Israel Journal of Mathematics (2020)"
+    url: "https://doi.org/10.1007/s11856-020-1983-2"
 - title: "Ramsey-nice families of graphs"
   coauthors:
     - raharoni
@@ -104,7 +107,7 @@
   arxiv: "1805.09732"
   slides: "rainbow_fractional_matchings"
   journal:
-    citation: "Combinatorica (2019)"
+    citation: "Combinatorica (2019) 39: 1191-1202"
     url: "https://doi.org/10.1007/s00493-019-4019-y"
 - title: "Cooperative colorings of trees and bipartite graphs"
   coauthors:
@@ -115,6 +118,9 @@
   summary: >
     Given a system $$\mathcal{G}=(G_1, \ldots ,G_m)$$ of graphs on the same vertex set $$V$$, a cooperative coloring for $$\mathcal{G}$$ is a choice of vertex sets $$I_1, \ldots ,I_m$$, such that $$I_j$$ is independent in $$G_j$$ and $$\bigcup_{j=1}^{m}I_j = V$$. We give bounds on the minimal $$m$$ such that every $$m$$ graphs with maximum degree $$d$$ have a cooperative coloring, in the cases that (a) the graphs are trees, (b) the graphs are all bipartite.
   arxiv: "1806.06267"
+  journal:
+    citation: "The Electronic Journal of Combinatorics (2020) 27: P1.41"
+    url: "https://doi.org/10.37236/8111"
 - title: "An isoperimetric inequality for Hamming balls and local expansion in hypercubes"
   coauthors:
     - ayehudayoff
