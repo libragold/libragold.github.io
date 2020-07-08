@@ -150,5 +150,5 @@
     - tjiang
     - jma
   summary: >
-    For every rational number $$r \in (1,2)$$ of the form $$2 - a/b$$, where $$a, b \in \mathbb{N}^+$$ satisfy $$(a-1)(\lfloor b/a \rfloor +1) \le b$$, there exists a graph $F_r$ such that the Tur\'an number $$\operatorname{ex}(n, F_r) = \Theta(n^r)$$.
+    For every rational number $$r \in (1,2)$$ of the form $$2 - a/b$$, where $$a, b \in \mathbb{N}^+$$ satisfy $$(a-1)(\lfloor b/a \rfloor +1) \le b$$, there exists a graph $$F_r$$ such that the Turán number $$\operatorname{ex}(n, F_r) = \Theta(n^r)$$.
   arxiv: "2007.02975"
