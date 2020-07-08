@@ -28,6 +28,9 @@ ivorobyev:
 jbriggs:
   name: "Joseph Briggs"
   url: "https://josephguybriggs.wordpress.com"
+jma:
+  name: "Jie Ma"
+  url: "http://staff.ustc.edu.cn/~jiema/"
 jtidor:
   name: "Jonathan Tidor"
   url: "https://math.mit.edu/directory/profile.php?pid=2037"
@@ -55,6 +58,9 @@ rholzman:
 szhang:
   name: "Shengtong Zhang"
   url: "https://www.imo-official.org/participant_r.aspx?id=26658"
+tjiang:
+  name: "Tao Jiang"
+  url: "http://www.users.miamioh.edu/jiangt/"
 ycensor:
   name: "Yair Censor"
   url: "http://math.haifa.ac.il/yair/"
