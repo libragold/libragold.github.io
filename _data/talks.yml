@@ -276,7 +276,7 @@
   occasion: "Combinatorics Seminar"
   location: "Brandeis University"
   date: 2020-03-10
-  # arxiv: "xxxx.xxxxx"
+  arxiv: "1805.09732"
 - title: "Equiangular lines with a fixed angle"
   announcement: "https://www.mathsci.udel.edu/events/seminars-and-colloquia/discrete-mathematics"
   occasion: "Discrete Mathematics Seminar"
@@ -290,10 +290,11 @@
   location: "National Taiwan University (Webex)"
   date: 2020-07-03
   arxiv: "2006.06633"
+  slides: "spherical_two_distance_sets_and_spectral_theory_of_signed_graphs/2020-07-03.pdf"
 - title: "Rainbow odd cycles"
   announcement: "https://kam.mff.cuni.cz/rise/news/post/cosp-zoom-seminar-topological-combinatorics"
   occasion: "Seminar on topological combinatorics"
   location: "Combinatorial Structures and Processes (Zoom)"
   date: 2020-07-09
   # arxiv: "xxxx.xxxxx"
-  
+  slides: "rainbow_odd_cycles/2020-07-09.pdf"
