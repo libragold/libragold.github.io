@@ -1,14 +1,28 @@
 if revealjs_version < "3.8.0"
   script(src=`../reveal.js-${revealjs_version}/lib/js/head.min.js`)
-script(src=`../reveal.js-${revealjs_version}/js/reveal.js`)
-script.
-  Reveal.initialize({
-    controls: false,
-    slideNumber: true,
-    progress: true,
-    history: true,
-    dependencies: [
-      { src: '../reveal.js-#{revealjs_version}/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-      { src: "../reveal.js-#{revealjs_version}/plugin/math/math.js", async: true }
-    ],
-  });
+else if revealjs_version < "4.0.0"
+  script(src=`../reveal.js-${revealjs_version}/js/reveal.js`)
+  script.
+    Reveal.initialize({
+      controls: false,
+      slideNumber: true,
+      progress: true,
+      history: true,
+      dependencies: [
+        { src: '../reveal.js-#{revealjs_version}/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: "../reveal.js-#{revealjs_version}/plugin/math/math.js", async: true }
+      ],
+    });
+else
+  script(src=`../reveal.js-${revealjs_version}/dist/reveal.js`)
+  script(src=`../reveal.js-${revealjs_version}/plugin/math/math.js`)
+  script.
+    Reveal.initialize({
+      controls: false,
+      progress: true,
+      history: true,
+      math: {
+        TeX: { Macros: macros },
+      },
+      plugins: [ RevealMath ],
+    });

@@ -1,0 +1,55 @@
+.reveal .slides{
+    font-size: 75%;
+}
+
+.reveal .red {
+    color: #DB4437;
+}
+
+.reveal .blue {
+    color: #4285F4;
+}
+
+.reveal .green {
+    color: #0F9D58;
+}
+
+.reveal .conj {
+    border-radius: 0.5rem;
+    border: 0.5rem solid #DB4437;
+    margin-top: 1rem;
+}
+
+.reveal .conj > p:first-child {
+    margin: 0;
+    color: white;
+    padding-bottom: 0.5rem;
+    background: #DB4437;
+}
+
+.reveal .conj > p:last-child, .reveal .thm > p:last-child {
+    margin: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.reveal .thm > ol:last-child {
+    margin: 0.5rem;
+    margin-left: 4rem;
+}
+  
+.reveal .thm {
+    border-radius: 0.5rem;
+    border: 0.5rem solid #4885ed;
+    margin-top: 1rem;
+}
+
+.reveal .thm > p:first-child {
+    margin: 0;
+    color: white;
+    padding-bottom: 0.5rem;
+    background: #4885ed;
+}
+
+.reveal .flex-container {
+    display: flex;
+}
