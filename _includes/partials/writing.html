@@ -13,7 +13,11 @@
       (with
       {% for coauthor in writing.coauthors %}
         {% if coauthor == writing.coauthors.last and coauthor != writing.coauthors.first %}and{% endif %}
-        <a href="{{ collaborators[coauthor].url }}" target="_blank">{{ collaborators[coauthor].name }}</a>{% if coauthor != writing.coauthors.last and coauthor != writing.coauthors[-2] %},{% endif %}
+        {% if collaborators[coauthor].url != null %}
+          <a href="{{ collaborators[coauthor].url }}" target="_blank">{{ collaborators[coauthor].name }}</a>{% if coauthor != writing.coauthors.last and coauthor != writing.coauthors[-2] %},{% endif %}
+        {% else %}
+          {{ collaborators[coauthor].name }}{% if coauthor != writing.coauthors.last and coauthor != writing.coauthors[-2] %},{% endif %}
+        {% endif %}
       {%- endfor %})
     </span>
   {% endif %}

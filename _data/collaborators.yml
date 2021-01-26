@@ -1,6 +1,5 @@
 anaor:
   name: "Alon Naor"
-  url: "http://www.tau.ac.il/~alonnaor/"
 apolyanskii:
   name: "Alexandr Polyanskii"
   url: "http://polyanskii.com"
@@ -33,16 +32,17 @@ jma:
   url: "http://staff.ustc.edu.cn/~jiema/"
 jtidor:
   name: "Jonathan Tidor"
-  url: "https://math.mit.edu/directory/profile.php?pid=2037"
+  url: "https://scholar.google.com/citations?user=u0561GMAAAAJ"
 mamir:
   name: "Michal Amir"
-  url: "https://en-exact-sciences.tau.ac.il/math"
 mchudnovsky:
   name: "Maria Chudnovsky"
   url: "https://web.math.princeton.edu/~mchudnov/"
+mho:
+  name: "Matthew Ho"
 nalon:
   name: "Noga Alon"
-  url: "http://www.tau.ac.il/~nogaa/"
+  url: "https://web.math.princeton.edu/~nalon/"
 npolyanskii:
   name: "Nikita Polyanskii"
   url: "https://scholar.google.com/citations?user=4Y8b6l8AAAAJ"
@@ -55,9 +55,10 @@ raharoni:
 rholzman:
   name: "Ron Holzman"
   url: "https://holzman.technion.ac.il"
+sflorin:
+  name: "Sam Florin"
 szhang:
   name: "Shengtong Zhang"
-  url: "https://www.imo-official.org/participant_r.aspx?id=26658"
 tjiang:
   name: "Tao Jiang"
   url: "http://www.users.miamioh.edu/jiangt/"
@@ -66,7 +67,6 @@ ycensor:
   url: "http://math.haifa.ac.il/yair/"
 yyao:
   name: "Yuan Yao"
-  url: "https://www.imo-official.org/participant_r.aspx?id=26588"
 yzhao:
   name: "Yufei Zhao"
   url: "http://yufeizhao.com"
