@@ -309,7 +309,16 @@
 - title: "Negligible obstructions and Turán exponents"
   announcement: "http://www.ams.org/meetings/sectional/2281_program_ss3.html"
   occasion: "Special Session on Structural and Extremal Graph Theory"
-  location: "Fall Southeastern Sectional Meeting (Virtual)"
+  location: "Fall Southeastern Sectional Meeting (Zoom)"
   date: 2020-10-10
   arxiv: "2007.02975"
   slides: "negligible_obstructions_and_turan_exponents/2020-10-10.html"
+- title: "Spherical two-distance sets and spectral theory of signed graphs"
+  announcement: "https://www.math.colostate.edu/~king/codex/abstracts/jiang2021.html"
+  occasion: "Codes and Expansions Seminar"
+  location: "Virtual (Zoom)"
+  date: 2021-03-23
+  arxiv: "2006.06633"
+  slides: "spherical_two_distance_sets_and_spectral_theory_of_signed_graphs/2021-03-23.pdf"
+  video: "https://youtu.be/aLC75fjkfSE"
+  
