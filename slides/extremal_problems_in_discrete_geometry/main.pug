@@ -697,8 +697,11 @@ section
         td.red 3-4
         td 5
         td 6
-        td.red 7-13
-        td 14
+        if date == "July 23, 2021"
+          td.red 7-14
+        else
+          td.red 7-13
+          td 14
         td ...
         td.red 23-41
         td 42
@@ -709,8 +712,11 @@ section
         td.red 6
         td 10
         td 16
-        td.red 28
-        td 28-29
+        if date == "July 23, 2021"
+          td 28
+        else
+          td 28
+          td 28-29
         td ...
         td.red 276
         td 276-288
