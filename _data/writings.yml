@@ -145,6 +145,9 @@
   summary: >
     For fixed $$-1 \le \beta < 0 \le \alpha < 1$$, let $$N_{\alpha, \beta}(d)$$ denote the maximum number of unit vectors in $$\mathbb{R}^d$$ where all pairwise inner products lie in $$\{\alpha, \beta\}$$. We determine the limit of $$N_{\alpha, \beta}(d)/d$$ as $$d \to \infty$$ when $$\alpha + 2\beta < 0$$ or $$(1-\alpha)/(\alpha - \beta) \in \{1,\sqrt{2},\sqrt{3}\}$$.
   arxiv: "2006.06633"
+  journal:
+    citation: "Annals of Mathematics (2021) 194: 729-743"
+    url: "https://doi.org/10.4007/annals.2021.194.3.3"
 - title: "Negligible obstructions and Turán exponents"
   coauthors:
     - tjiang
