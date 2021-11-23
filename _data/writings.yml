@@ -173,3 +173,10 @@
   summary: >
     We determine that the average zero-error capacity of the binary adder channel with complete feedback is $$h(1/2-\delta)$$, where $$h$$ is the binary entropy function and $$\delta = 1/(2\log_2(2+\sqrt3))$$.
   arxiv: "2101.09898"
+- title: "Forbidden induced subgraphs for graphs and signed graphs with eigenvalues bounded from below"
+  coauthors:
+    - apolyanskii
+  summary: >
+    We show that the family of graphs with smallest eigenvalue at least $$-\lambda$$ has a finite forbidden subgraphs characterization if and only if $$\lambda < \lambda^*$$, where $$\lambda^* = \beta^{1/2} + \beta^{-1/2}$$ and $$\beta$$ is the unique real root of $$x^3 = 1 + x$$. We also prove the same conclusion for signed graphs. As a consequence, we establish the asymptotic formula of the maximum cardinality of spherical two-distance set with two fixed inner products $$\alpha$$ and $$\beta$$ for all $$-1 \le \beta < 0 \le \alpha < 1$$ satisfying $$(1-\alpha)/(\alpha-\beta) < \lambda^*$$.
+    arxiv: "2111.10366"
+    
