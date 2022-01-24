@@ -1,29 +1,21 @@
-script.
-  const macros = {
-    ex: "{\\mathrm{ex}}",
-    Q: "{\\mathbb{Q}}",
-    N: "{\\mathbb{N}}",
-    abs: ["{\\lvert #1 \\rvert}", 1],
-    floor: ["\\lfloor #1 \\rfloor", 1],
-  };
 section
   section
     h3 Turán number
-    p $\ex(n ,F) = $ max number of edges in $n$-vertex graph, contains no $F$ (forbidden subgraph) as subgraph
+    p $\mathrm{ex}(n ,F) = $ max number of edges in $n$-vertex graph, contains no $F$ (forbidden subgraph) as subgraph
     .conj
       p Rational exponents conjecture
-      p $\forall$ bipartite $F$ $\exists r \in \mathbb{Q}$ s.t. $\ex(n, F) = \Theta(n^r)$.
+      p $\forall$ bipartite $F$ $\exists r \in \mathbb{Q}$ s.t. $\mathrm{ex}(n, F) = \Theta(n^r)$.
     blockquote At present these conjectures which are about 20 years old are beyond our reach. – Erdős 1988
     .conj
       p Realizability conjecture
-      p $\forall r \in \mathbb{Q} \cap (1,2)$ $\exists$ bipartite $F$ s.t. $\ex(n, F) = \Theta(n^r)$.
+      p $\forall r \in \mathbb{Q} \cap (1,2)$ $\exists$ bipartite $F$ s.t. $\mathrm{ex}(n, F) = \Theta(n^r)$.
   section
     .conj
       p Realizability conjecture
-      p $\forall r \in \mathbb{Q} \cap (1,2)$ $\exists$ bipartite $F$ s.t. $\ex(n, F) = \Theta(n^r)$.
+      p $\forall r \in \mathbb{Q} \cap (1,2)$ $\exists$ bipartite $F$ s.t. $\mathrm{ex}(n, F) = \Theta(n^r)$.
     .thm
       p Bukh and Conlon 2015 breakthrough
-      p $\forall r \in \mathbb{Q} \cap (1,2)$ $\exists$ finite family $\mathcal{F}$ s.t. $\ex(n, \mathcal{F}) = \Theta(n^r)$.
+      p $\forall r \in \mathbb{Q} \cap (1,2)$ $\exists$ finite family $\mathcal{F}$ s.t. $\mathrm{ex}(n, \mathcal{F}) = \Theta(n^r)$.
     p
       span.red Rooted graph 
       | $F$ is graph $F$ equipped with $R(F) \subset V(F)$.
@@ -66,7 +58,7 @@ section
     .flex-container
       .conj(style="flex: 3")
         p Bukh–Conlon conjecture
-        p $\forall$ balanced rooted tree $F$ and $p$, $\ex(n, F^p) = O(n^{2-1/\rho_F})$.
+        p $\forall$ balanced rooted tree $F$ and $p$, $\mathrm{ex}(n, F^p) = O(n^{2-1/\rho_F})$.
       div
         svg(width="60" height='150')
           line(x1='10' y1='120' x2='45' y2='120' stroke="black" stroke-width='2')
@@ -74,7 +66,7 @@ section
           polygon(points='40 115, 55 122.5, 40 130')
       .conj(style="flex: 4")
         p Intermediate conjecture
-        p $\forall$ rational $\rho > 1$ $\exists$ balanced rooted tree $F$ with density $\rho$ s.t. $\ex(n, F^p) = O(n^{2-1/\rho})$ for every $p$.
+        p $\forall$ rational $\rho > 1$ $\exists$ balanced rooted tree $F$ with density $\rho$ s.t. $\mathrm{ex}(n, F^p) = O(n^{2-1/\rho})$ for every $p$.
     .flex-container
       div(style="flex: 1")
         svg(width="20" height="160")
@@ -84,7 +76,7 @@ section
       .thm(style="flex: 12")
         p Bukh and Conlon
         ol
-          li $\forall$ balanced rooted tree $F$ $\exists$ p, $\ex(n, F^p) = \Omega(n^{2-1/\rho_F})$.
+          li $\forall$ balanced rooted tree $F$ $\exists$ p, $\mathrm{ex}(n, F^p) = \Omega(n^{2-1/\rho_F})$.
           li $\forall$ $\rho > 1$ $\exists$ balanced rooted tree $F$ with density $\rho$.
       div(style="flex: 1")
         svg(width="20" height="160")
@@ -93,12 +85,12 @@ section
           polygon(points='5 145, 12.5 160, 20 145')
     .conj
       p Realizability conjecture
-      p $\forall r \in \mathbb{Q} \cap (1,2)$ $\exists$ bipartite $F$ s.t. $\ex(n, F) = \Theta(n^r)$.
+      p $\forall r \in \mathbb{Q} \cap (1,2)$ $\exists$ bipartite $F$ s.t. $\mathrm{ex}(n, F) = \Theta(n^r)$.
   section
     .conj
       p Intermediate conjecture
       p
-        | $\forall \rho \in \mathbb{Q}$ with $\rho > 1$ $\exists$ balanced rooted tree $F$ with density $\rho$ s.t. $\ex(n, F^p) = O(n^{2-1/\rho})$ for every $p$.
+        | $\forall \rho \in \mathbb{Q}$ with $\rho > 1$ $\exists$ balanced rooted tree $F$ with density $\rho$ s.t. $\mathrm{ex}(n, F^p) = O(n^{2-1/\rho})$ for every $p$.
     .thm
       p
         | Kővári, Sós, Turán 1954, Faudree, Simonovits 1983
@@ -127,7 +119,7 @@ section
       | An 
       span.red embedding 
       | $\eta$ from $F$ to $G$ is an injection $\eta\colon V(F) \to V(G)$ s.t. $\{u_1, u_2\} \in E(F) \implies \{\eta(u_1), \eta(u_2)\} \in E(G)$.
-    p Observation 1: $\# \{F \hookrightarrow G\} = \Omega(nd^{e(F)}) = \omega(n^{\abs{R(F)}})$.
+    p Observation 1: $\# \{F \hookrightarrow G\} = \Omega(nd^{e(F)}) = \omega(n^{\lvert{R(F)}\rvert})$.
     p
       | Observation 2: $\exists \sigma\colon R(F) \to V(G)$ s.t. $\# \{F \hookrightarrow G \mid \sigma\} = \omega(1)$,
       br
@@ -294,11 +286,11 @@ section
     p
       | Given $F_0 \in \mathcal{F}_0$ and $F$, $F_0$ is 
       span.red negligible 
-      | for $F$ if for every $p \in \N^+, \epsilon > 0$ $\exists c_0 > 0, M \in \N$ s.t. $\forall c > c_0$ and $n$-vertex graph $G$, if degrees of $G$ are between $d$ and $5^{4/\alpha}d$, where $\alpha = 1-1/\rho_F$ and $d = cn^\alpha$, and $\{F \hookrightarrow_p G\} = \emptyset$ then $\#\{F_0 \hookrightarrow_M G\} < (\epsilon + o(1))nd^{e(F_0)}$.
+      | for $F$ if for every $p \in \mathbb{N}^+, \epsilon > 0$ $\exists c_0 > 0, M \in \mathbb{N}$ s.t. $\forall c > c_0$ and $n$-vertex graph $G$, if degrees of $G$ are between $d$ and $5^{4/\alpha}d$, where $\alpha = 1-1/\rho_F$ and $d = cn^\alpha$, and $\{F \hookrightarrow_p G\} = \emptyset$ then $\#\{F_0 \hookrightarrow_M G\} < (\epsilon + o(1))nd^{e(F_0)}$.
     p "The undesirable scenarios rarely happen."
     .thm
       p Negligibility lemma
-      p Given $\mathcal{F}_0$, if every member of $\mathcal{F}_0$ is negligible for $F$, then $\ex(n, F^p) = O(n^{2-1/\rho_F})$ for every $p$.
+      p Given $\mathcal{F}_0$, if every member of $\mathcal{F}_0$ is negligible for $F$, then $\mathrm{ex}(n, F^p) = O(n^{2-1/\rho_F})$ for every $p$.
     p
       span.blue Strategy: 
       | 1. Identify an obstruction family; 2. Certify its negligibility.
