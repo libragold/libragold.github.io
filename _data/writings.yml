@@ -179,4 +179,4 @@
   summary: >
     We show that the family of graphs with smallest eigenvalue at least $$-\lambda$$ has a finite forbidden subgraphs characterization if and only if $$\lambda < \lambda^*$$, where $$\lambda^* = \beta^{1/2} + \beta^{-1/2}$$ and $$\beta$$ is the unique real root of $$x^3 = 1 + x$$. We also prove the same conclusion for signed graphs. As a consequence, we establish the asymptotic formula of the maximum cardinality of spherical two-distance set with two fixed inner products $$\alpha$$ and $$\beta$$ for all $$-1 \le \beta < 0 \le \alpha < 1$$ satisfying $$(1-\alpha)/(\alpha-\beta) < \lambda^*$$.
   arxiv: "2111.10366"
-  
+  slides: "forbidden_subgraphs_and_spherical_two_distance_sets"

@@ -351,5 +351,13 @@
   announcement: "http://www.math.ac.cn/xshd/hlgqnlt/202107/t20210721_653420.html"
   occasion: "Hua Loo-Keng Young Mathematicians Forum"
   location: "Virtual (VooV)"
+  arxiv: "2111.10366"
   date: 2021-07-27
-  sildes: "forbidden_subgraphs_and_spherical_two_distance_sets/2021-07-27.pdf"
+  slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2021-07-27.pdf"
+- title: "Forbidden subgraphs and spherical two-distance sets"
+  announcement: "https://www.math.sinica.edu.tw/www/file_upload/conference/202201Alg/index.html"
+  occasion: "Workshop on Algebraic Combinatorics"
+  location: "Virtual (Webex)"
+  arxiv: "2111.10366"
+  date: 2022-01-24
+  slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2022-01-24.html"
