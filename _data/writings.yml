@@ -127,6 +127,9 @@
   summary: >
     Denote by $$\mathcal{B}_n(R)$$ the $$n$$-dimensional Hamming ball of radius $$R$$. If $$n/4 \le R \le n/2$$ and the size of a subset $$\mathcal{A}$$ of $$\mathcal{B}_n(R)$$ satisfies $$\vert\mathcal{B}_n(n/4)\vert \le \vert\mathcal{A}\vert \le \tfrac{1}{2}\vert\mathcal{B}_n(R)\vert$$, then the vertex boundary of $$\mathcal{A}$$ is at least $$\Omega(\vert\mathcal{A}\vert/\sqrt{n})$$.
   arxiv: "1807.00626"
+  journal:
+    citation: "The Electronic Journal of Combinatorics (2022) 29: P1.15"
+    url: "https://doi.org/10.37236/9860"
 - title: "Equiangular lines with a fixed angle"
   coauthors:
     - jtidor
@@ -173,6 +176,9 @@
   summary: >
     We determine that the average zero-error capacity of the binary adder channel with complete feedback is $$h(1/2-\delta)$$, where $$h$$ is the binary entropy function and $$\delta = 1/(2\log_2(2+\sqrt3))$$.
   arxiv: "2101.09898"
+  journal:
+    citation: "IEEE Transactions on Information Theory (Early access)"
+    url: "https://doi.org/10.1109/TIT.2021.3137965"
 - title: "Forbidden induced subgraphs for graphs and signed graphs with eigenvalues bounded from below"
   coauthors:
     - apolyanskii
