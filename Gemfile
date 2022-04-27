@@ -6,3 +6,4 @@ gem 'bundler'
 gem 'jekyll'
 gem 'rack-jekyll'
 gem 'jemoji'
+gem "webrick"
