@@ -10,12 +10,12 @@
   date: 2012-11-08
 - title: "A taste of topological methods in combinatorics"
   announcement: "http://math.cmu.edu/graduate/graduateseminar.php?SeminarSelect=1019"
-  occasion: "Gradaute Student Seminar"
+  occasion: "Graduate Student Seminar"
   location: "Carnegie Mellon University"
   date: 2014-09-23
 - title: "Introduction to Diophantine approximation"
   announcement: "http://math.cmu.edu/graduate/graduateseminar.php?SeminarSelect=1041"
-  occasion: "Gradaute Student Seminar"
+  occasion: "Graduate Student Seminar"
   location: "Carnegie Mellon University"
   date: 2014-11-04
   blog: "http://www.libragold.com/blog/2014/11/a-note-on-thues-method/"
@@ -361,3 +361,16 @@
   arxiv: "2111.10366"
   date: 2022-01-24
   slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2022-01-24.html"
+- title: "Forbidden subgraphs and spherical two-distance sets"
+  announcement: "https://www.math.emory.edu/events/seminars/seminar.php?SEMID=1455"
+  occasion: "Discrete Math Seminar"
+  location: "Emory University"
+  arxiv: "2111.10366"
+  date: 2022-04-01
+  slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2022-04-01.html"
+- title: "Extremal Problems in Discrete Geometry"
+  announcement: "https://math.asu.edu/node/8209"
+  occasion: "Bridge to Research Seminar"
+  location: "Arizona State University"
+  date: 2022-04-13
+  slides: "extremal_problems_in_discrete_geometry/2022-04-13.html"
