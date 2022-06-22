@@ -7,6 +7,9 @@
 .red {
     color: #db3236;
 }
+.green {
+    color: #0F9D58;
+}
 .avatars img {
     height: 4em;
     margin: 0 0.5em;
@@ -15,4 +18,10 @@
     border-radius: 50%;
     height: 4em;
     width: 4em;
+}
+.container {
+    display: flex;
+}
+.container .col {
+    flex: 1
 }
