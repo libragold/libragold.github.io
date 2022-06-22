@@ -374,3 +374,17 @@
   location: "Arizona State University"
   date: 2022-04-13
   slides: "extremal_problems_in_discrete_geometry/2022-04-13.html"
+- title: "Eigenvalues, forbidden subgraphs, and Ramsey"
+  announcement: "https://meetings.siam.org/sess/dsp_talk.cfm?p=123488"
+  occasion: "SIAM Conference on Discrete Mathematics"
+  location: "Carnegie Mellon University"
+  date: 2022-06-15
+  slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2022-06-16.html"
+  arxiv: "2111.10366"
+- title: "Forbidden subgraphs and spherical two-distance sets"
+  announcement: "https://www.math.colostate.edu/~king/codex/abstracts/jiang2022.html"
+  occasion: "Codes and Expansions Seminar"
+  location: "Virtual (Zoom)"
+  date: 2022-06-21
+  slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2022-06-21.html"
+  arxiv: "2111.10366"
