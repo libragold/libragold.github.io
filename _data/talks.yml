@@ -388,3 +388,23 @@
   date: 2022-06-21
   slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2022-06-21.html"
   arxiv: "2111.10366"
+- title: "Rainbow structures via topological methods"
+  announcement: "https://researchseminars.org/talk/CJCS/80/"
+  occasion: "Copenhagen-Jerusalem Combinatorics Seminar"
+  location: "Virtual (Zoom)"
+  date: 2022-07-07
+  slides: "rainbow_fractional_matchings/2022-07-07.html"
+  arxiv: "1805.09732"
+- title: "Eigenvalues, forbidden subgraphs, and Ramsey"
+  announcement: "https://meetings.ams.org/math/fall2022se/meetingapp.cgi/Paper/16330"
+  occasion: "AMS Fall Southeastern Sectional Meeting"
+  location: "University of Tennessee at Chattanooga"
+  date: 2022-10-16
+  slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2022-10-16.html"
+  arxiv: "2111.10366"
+- title: "Forbidden subgraphs and spherical two-distance sets"
+  announcement: "https://meetings.ams.org/math/fall2022w/meetingapp.cgi/Paper/15908"
+  occasion: "AMS Fall Western Sectional Meeting"
+  location: "University of Utah"
+  date: 2022-10-23
+  arxiv: "2006.06633"

@@ -1,6 +1,6 @@
 section
   section
-    img.simple.fragment.fade-in(src="rainbow.png" height="100px")
+    img.simple.fade-in(src="rainbow.png" height="100px")
     h3 Rainbow phenomena
   section
     .flex-container
@@ -78,7 +78,7 @@ section
           circle(cx='50' cy='210' r='4' stroke='grey' stroke-width='2' fill='white')
           circle(cx='170' cy='210' r='4' stroke='grey' stroke-width='2' fill='white')
       .flex-2
-        .theorem
+        .theorem.eighty
           p Caccetta–Häggkvist conjecture
           p Every digraph on $n$ vertices with minimum out-degree $\ge n / r$ has a directed cycle of length $\le r$.
     .flex-container
@@ -103,7 +103,7 @@ section
           circle(cx='50' cy='210' r='4' stroke='grey' stroke-width='2' fill='white')
           circle(cx='170' cy='210' r='4' stroke='grey' stroke-width='2' fill='white')
       .flex-2.fragment
-        .theorem
+        .theorem.eighty
           p Rainbow generalization
           p
             | Let $G$ be an edge-colored graph on $n$ vertices.
@@ -284,12 +284,12 @@ section
       .theorem.flex-1.eighty(style="margin-left: 0.25rem")
         p Bárány
         p If $x \in \mathbb{R}^d$ lies in $\mathrm{conv}(P_k)$ for $k=1,2, \dots, d+1$ then $x$ lies in the convex hull of a rainbow set.
-    p
+    p.ninety
       span.fragment
         span.blue Proof sketch 
         | (Kalai–Meshulam $\implies$ Bárány)
       br
-      span.fragment Construct $\mathcal{C}$ on $V$ such that $x\in \mathrm{conv}(P_k) \Leftrightarrow V_k \not\in \mathcal{C}$
+      span.fragment Construct $\mathcal{C}$ on $V$ such that $x\in \mathrm{conv}(P) \Leftrightarrow P \not\in \mathcal{C}$
       br
       span.fragment Kalai–Meshulam: if $\mathcal{C}$ is $d$-Leray then a rainbow set $\not\in\mathcal{C}$
       br
@@ -348,7 +348,7 @@ section
       .theorem.flex-1(style='margin-left: 0.25rem')
         p Aharoni–Berger
         p $2n-1$ matchings of size $n$ in a bipartite graph have a rainbow matching of size $n$.
-    p
+    p.ninety
       span.blue.fragment Proof sketch (Kalai–Meshulam $\implies$ Aharoni–Berger)
       br
       span.fragment
