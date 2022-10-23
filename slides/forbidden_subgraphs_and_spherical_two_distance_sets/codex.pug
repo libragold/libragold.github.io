@@ -59,27 +59,27 @@ section
     p $\mathcal{G}(\lambda) = \{$ graphs with smallest eigenvalue $\ge -\lambda \}$
     p
       span.red Bussemaker and Neumaier 1992: 
-      | For which $\lambda \in \mathbb{R}$ can $\mathcal{G}(\lambda)$ be defined by 
+      | For which $\lambda \in \mathbb{R}$, can $\mathcal{G}(\lambda)$ be defined by 
       span.red finite 
       | forbidden subgraphs?
     p.fragment $\mathcal{G}(2)$ is complex; it contains all the line graphs
     p.fragment
       span.blue Cameron, Goethals, Seidel, and Shult: 
-      | For every connected graph, it is in $\mathcal{G}(2)$ if and only if it is represented by a subset of $D_n$ or $E_8$ (root systems).
+      | For every connected graph, it is in $\mathcal{G}(2)$ if and only if it is "generalized line graph" or "exceptional graph".
     p.fragment
-      span.blue Kumar, Rao and Singhi 
+      span.blue Kumar, Rao and Singhi: 
       | $\mathcal{G}(2)$ can be defined by forbidden subgraphs with $\le 10$ vertices      
   section(data-auto-animate)
     p
       span.red Bussemaker and Neumaier 1992: 
-      | For which $\lambda \in \mathbb{R}$ can $\mathcal{G}(\lambda)$ be defined by finite forbidden subgraphs?
+      | For which $\lambda \in \mathbb{R}$, can $\mathcal{G}(\lambda)$ be defined by finite forbidden subgraphs?
     p.fragment "however, these seem to be very difficult problems"
     .fragment
       .avatars
         img.avatar(src="jiang.png")
         img.avatar(src="polyanskii.png")
       p
-        span.blue J. and Polyanskii 2022+: 
+        span.blue J. and Polyanskii 2022: 
         | For $\lambda < \lambda^* \approx 2.01980$, yes; otherwise, no.
   section
     img(src='forb_dn.png' width=600 style='margin: 0')
@@ -89,28 +89,31 @@ section
     p.fragment $\mathcal{G}^\pm(\lambda) = \{$ signed graphs with smallest e.v. $\ge -\lambda\}$
     p.fragment
       span.red Question: 
-      | Define $\mathcal{G}^\pm(\lambda)$ by forbidden subgraphs?
+      | Can $\mathcal{G}^\pm(\lambda)$ be defined by finite forbidden subgraphs?
     p.fragment
-      span.blue J. and Polyanskii 2022+ 
+      span.blue J. and Polyanskii 2022: 
       | Yes if and only if $\lambda < \lambda^*$
     p.fragment $G^\mp(\lambda) = \{$ signed graphs with largest e.v. $\le \lambda\}$
     p.fragment
       span.red Question: 
-      | Define $\mathcal{G}^\mp(\lambda)$ by forbidden subgraphs?
+      | Can $\mathcal{G}^\mp(\lambda)$ be defined by finite forbidden subgraphs?
     p.fragment
       span.blue Corollary 
       | Yes if and only if $\lambda < \lambda^*$
   section
-    p.fragment
+    p
       span.blue Application 
-      | For every $λ < λ^*$, there exists $n$ s.t.
+      | For every $λ < λ^*$, there exists $n_0$ s.t.
       br
       span for every symmetric integer matrix
       span $$A = \begin{bmatrix}0 & * & \dots & * \\ * & 0 & \dots & * \\ \vdots  & \vdots  & \ddots & \vdots \\ * & * & \cdots & 0 \end{bmatrix},$$
-      span.fragment if $\lambda_1(A_0) \ge -λ$ for every principal submatrix $A_0$ of order at $\le n$, then $\lambda_1(A) \ge -λ$.
-      br
+      span.fragment(data-fragment-index=1) $\lambda_1(A) \ge -λ$
+      span.fragment.red(data-fragment-index=4) $\Leftarrow$
+      span.fragment(data-fragment-index=2) $\Rightarrow$
+      span.fragment(data-fragment-index=3) $\lambda_1(A_0) \ge -λ$ for every principal submatrix $A_0$ of order at most $n_0$
+    p.fragment(data-fragment-index=5)
       span.blue Vijayakumar 1987: 
-      | for $λ = 2$, $n = 10$
+      | for $λ = 2$, $n_0 = 10$
 section
   section
     p Forbidden subgraphs
@@ -134,7 +137,7 @@ section
       span.blue J., Tidor, Yao, Zhang, and Zhao 2021 
       br
       | For "equiangular" case $\beta = -\alpha$
-      | $$N_{\alpha, -\alpha} = \frac{k}{k-1}d + O(1)$$
+      | $$N_{\alpha, -\alpha}(d) = \frac{k}{k-1}d + O(1)$$
       | where $k$ is "spectral radius order" of $\frac{1-\alpha}{2\alpha}$
   section
     img(src='mit-team.jpg')
@@ -146,7 +149,7 @@ section
     p.blue.fragment J., Tidor, Yao, Zhang, Zhao 2022
     ul
       li.fragment Lower bound on $N_{\alpha, \beta}(d)$, which depends only on $p := \lfloor -\alpha/\beta \rfloor + 1$ and $\lambda = \frac{1-\alpha}{\alpha-\beta}$
-      li.fragment Matching upper bound for large $d$ when $p \in \{1,2\}$ or $\lambda \in \{1, \sqrt2, \sqrt3\}$; e.g. $N_{2/5,-1/5} = 3d + O(1)$
+      li.fragment Matching upper bound for large $d$ when $p \in \{1,2\}$ or $\lambda \in \{1, \sqrt2, \sqrt3\}$; e.g. $N_{2/5,-1/5}(d) = 3d + O(1)$
       li.fragment Conjectured lower bound is tight for large $d$
   section(data-auto-animate)
     p How to get an upper bound on $N_{\alpha, \beta}(d)$?
@@ -203,7 +206,7 @@ section
       br
       | largest eigenvalue of $G^\pm$ is $\le \lambda$
     p.fragment
-      span.blue J. and Polyanskii 2022+: 
+      span.blue J. and Polyanskii 2022: 
       | Matching upper bound for large $d$ when $\lambda < \lambda^*$
 section
   section
@@ -216,4 +219,4 @@ section
       | Same problem but for signed graphs
     p.fragment
       span.blue Problem C: 
-      | Prove matching upper bound for $N_{\alpha, \beta}(d)$ when $p \ge 3$ and $\lambda \ge \lambda^*$
+      | Prove matching upper bound for $N_{\alpha, \beta}(d)$ when $p \ge 3$ and $\lambda \ge \lambda^*$. Breaking the $\lambda^*$ barrier.
