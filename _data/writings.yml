@@ -158,6 +158,9 @@
   summary: >
     For every rational number $$r \in (1,2)$$ of the form $$2 - a/b$$, where $$a, b \in \mathbb{N}^+$$ satisfy $$\lfloor b/a \rfloor^3 \le a \le b / (\lfloor b/a \rfloor +1) + 1$$, there exists a graph $$F_r$$ such that the Turán number $$\operatorname{ex}(n, F_r) = \Theta(n^r)$$.
   arxiv: "2007.02975"
+  journal:
+    citation: "Annals of Applied Mathematics (2022) 38: 356-384"
+    url: "https://doi.org/10.4208/aam.OA-2022-0008"
 - title: "Rainbow odd cycles"
   coauthors:
     - raharoni
