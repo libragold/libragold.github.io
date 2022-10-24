@@ -4,48 +4,27 @@ permalink: /teaching
 title: Teaching
 ---
 <main id="main" role="main" class="main">
+  {% assign courses = site.data.teaching %}
   <div class="items">
-    <h2>Current (Spring 2022)</h2>
-    <div class='item'>
-      <h3>
-        <a href='https://canvas.asu.edu/courses/108623'>MAT 598 Random Structures and Algorithms (Canvas)</a>
-      </h3>
-    </div>
+    <h2>Current</h2>
+    {% for course in courses %}
+      {% if course.canvas %}
+      <div class='item'>
+        <h3>
+          <a href="{{ course.canvas }}">{{ course.number }} {{ course.title }} {{course.semester }}</a>
+        </h3>
+      </div>
+      {% endif %}
+    {% endfor %}
     <h2>Previous</h2>
-    <div class='item'>
-      <h3>
-        <a href='https://blog.zilin.one/mat-415-mat-512-spring-2021/'>MAT 415 / MAT 512 Introduction to Combinatorics</a>
-      </h3>
-    </div>
-    <div class='item'>
-      <h3>
-        <a href='https://blog.zilin.one/cse-598-spring-2021'>CSE 598 Quantum Computation</a>
-      </h3>
-    </div>
-    <div class="item">
-      <h3>
-        <a href="https://blog.zilin.one/18-211-fall-2020/">18.211 Combinatorial Analysis</a>
-      </h3>
-    </div>
-    <div class="item">
-      <h3>
-        <a href="https://blog.zilin.one/18-204-spring-2020">18.204 Undergraduate Seminar in Discrete Mathematics</a>
-      </h3>
-    </div>
-    <div class="item">
-      <h3>
-        <a href="https://blog.zilin.one/18-204-fall-2019">18.204 Undergraduate Seminar in Discrete Mathematics</a>
-      </h3>
-    </div>
-    <div class="item">
-      <h3>
-        <a href="https://blog.zilin.one/18-204-spring-2019">18.204 Undergraduate Seminar in Discrete Mathematics</a>
-      </h3>
-    </div>
-    <div class="item">
-      <h3>
-        <a href="https://blog.zilin.one/18-204-fall-2018">18.204 Undergraduate Seminar in Discrete Mathematics</a>
-      </h3>
-    </div>
+    {% for in writings reversed %}
+      {% if course.archive %}
+      <div class='item'>
+        <h3>
+          <a href="{{ course.archive }}">{{ course.number }} {{ course.title }} {{course.semester }}</a>
+        </h3>
+      </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </main>
