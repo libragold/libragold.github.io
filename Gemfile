@@ -5,5 +5,4 @@ gem 'jekyll-github-metadata'
 gem 'bundler'
 gem 'jekyll'
 gem 'rack-jekyll'
-gem 'jemoji'
-gem "webrick"
+gem 'webrick'

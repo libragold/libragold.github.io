@@ -11,17 +11,17 @@ title: Teaching
       {% if course.canvas %}
       <div class='item'>
         <h3>
-          <a href="{{ course.canvas }}">{{ course.number }} {{ course.title }} {{course.semester }}</a>
+          <a href="{{ course.canvas }}">{{ course.number }} {{ course.title }} ({{course.semester }})</a>
         </h3>
       </div>
       {% endif %}
     {% endfor %}
     <h2>Previous</h2>
-    {% for in writings reversed %}
+    {% for course in courses reversed %}
       {% if course.archive %}
       <div class='item'>
         <h3>
-          <a href="{{ course.archive }}">{{ course.number }} {{ course.title }} {{course.semester }}</a>
+          <a href="{{ course.archive }}">{{ course.number }} {{ course.title }} ({{course.semester }})</a>
         </h3>
       </div>
       {% endif %}

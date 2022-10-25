@@ -22,7 +22,6 @@ googleAnalyticsId: UA-110604791-1
 plugins:
   - jekyll-paginate
   - jekyll-github-metadata
-  - jemoji
 
 excerpt_separator: <!--more-->
 
