@@ -81,8 +81,6 @@ section
       p
         span.blue J. and Polyanskii 2022: 
         | For $\lambda < \lambda^* \approx 2.01980$, yes; otherwise, no.
-  section
-    img(src='forb_dn.png' width=600 style='margin: 0')
 section
   section
     h3 Generalization to signed graphs
@@ -172,7 +170,7 @@ section
       | There exists $\Delta$ s.t. $G$ after removing at most $\Delta$ vertices, is a $\Delta$-modification of a complete $p$-partite graph $K$
     p(style='font-size: 24px')
       span.blue Step 3: 
-      | Work with signed graph $G^\pm$ with signed adjacency matrix $A_G - A_K$
+      | Obtain signed graph $G^\pm$ defined by $A_G - A_K$
     p
       span.red Forbidden subgraph framework
       br
@@ -194,7 +192,7 @@ section
       | There exists $\Delta$ s.t. $G$ after removing at most $\Delta$ vertices, is a $\Delta$-modification of a complete $p$-partite graph $K$
     p(style='font-size: 24px')
       span.blue Step 3: 
-      | Work with signed graph $G^\pm$ with signed adjacency matrix $A_G - A_K$
+      | Obtain signed graph $G^\pm$ defined by $A_G - A_K$
     p(style='font-size: 24px')
       span.red Forbidden subgraph framework
       br
@@ -208,6 +206,82 @@ section
     p.fragment
       span.blue J. and Polyanskii 2022: 
       | Matching upper bound for large $d$ when $\lambda < \lambda^*$
+section
+  section
+    h3 Proof technique
+  section(data-auto-animate)
+    p $\mathcal{G}(\lambda) = \{$ graphs with smallest eigenvalue $\ge -\lambda \}$
+    p
+      | $\mathcal{G}(\lambda)$ can be defined by finite forbidden subgraphs
+      br
+      | if and only if $\lambda < \lambda^* \approx 2.01980$
+    p.red Two cases
+    p $\lambda < \lambda^*$ and $\lambda \ge \lambda^*$
+  section
+    p
+      span.blue Case: 
+      | For $\lambda < \lambda^*$, $\mathcal{G}(\lambda)$ can be defined by finite forbidden subgraphs
+    p.fragment
+      span.blue Step 1: 
+      | Forbid $K_{1,5}$ because $\lambda_1(K_{1,5}) = -\sqrt{5}$
+    p.fragment
+      span.red Step 2 (Ramsey-type result): 
+      | For every $\ell, m$ and $F$, for every sufficiently large $K_{1,5}$-free connected graph $G$, if $G$ contains $F$, then $G$ contains
+      img(src='ext_family.png')
+      span.fragment "Forbidding $(\ell, m)$-extensions of $F$ effectively forbids $F$ itself in sufficiently large connected graphs"
+  section
+    p
+      span.blue Subcase: 
+      | $2 \le \lambda < \lambda^*$
+    p
+      span.blue Step 1: 
+      | Forbid $K_{1,5}$
+    p
+      span.blue Step 2: 
+      | Forbidding $(\ell, m)$-extensions of $F$ effectively forbids $F$ itself in sufficiently large connected graphs
+    p
+      span.blue Step 3: 
+      | Find $\ell, m$ such that all $(\ell, m)$-extensions of $F$ are disjoint from $\mathcal{G}(\lambda)$, for every minimal forbidden subgraph $F$ for "generalized line graphs"
+  section
+      img(src='forb_dn.png' width=550 style='margin: 0')
+  section
+    p
+      span.blue Subcase: 
+      | $2 \le \lambda < \lambda^*$
+    p
+      span.blue Step 1: 
+      | Forbid $K_{1,5}$
+    p
+      span.blue Step 2: 
+      | Forbidding $(\ell, m)$-extensions of $F$ effectively forbids $F$ itself in sufficiently large connected graphs
+    p
+      span.blue Step 3: 
+      | Find $\ell, m$ such that all $(\ell, m)$-extensions of $F$ are disjoint from $\mathcal{G}(\lambda)$, for every minimal forbidden subgraph $F$ for "generalized line graphs"
+    p
+      span.blue Step 4: 
+      | Forbid all these extensions
+  section
+    p
+      span.blue Subcase: 
+      | $\lambda < 2$
+    p Computationally simpler, but conceptually complicated
+    p.fragment ...
+    p.fragment
+      | Last step uses non-effective Ramsey-type result
+      br
+      span.blue Dickson's lemma 
+      br
+      | The poset $(\mathbb{N}^n, ≤)$ does not contain infinite antichains
+  section
+    p
+      span.blue Case: 
+      | For $\lambda \ge \lambda^*$, $\mathcal{G}(\lambda)$ cannot be defined by finite forbidden subgraphs
+    p.fragment
+      span.red Observation: 
+      | if $\mathcal{G}(\lambda)$ can be defined by finite forbidden subgraphs, then $\mathcal{G}(\lambda + \varepsilon) \setminus \mathcal{G}(\lambda) = \varnothing$ for some $\varepsilon$
+    p.fragment
+      | Suffices to construct graphs to densely fill $(-\infty, -\lambda^*)$
+      img(src='rowing.png' width=800)
 section
   section
     h3 Open problems
