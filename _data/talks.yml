@@ -416,3 +416,17 @@
   date: 2022-11-02
   arxiv: "2006.06633"
   slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2022-11-02.html"
+- title: "Forbidden subgraphs and spherical two-distance sets"
+  announcement: "https://math.illinoisstate.edu/assets/documents/23S_DMSTalk2.pdf"
+  occasion: "Illinois State University Discrete Mathematics Seminar"
+  location: "Virtual (Zoom)"
+  date: 2023-02-16
+  arxiv: "2006.06633"
+  slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2023-02-16.html"
+- title: "Rainbow odd cycles"
+  announcement: "https://meetings.ams.org/math/spring2023se/meetingapp.cgi/Paper/23448"
+  occasion: "AMS Spring Southeastern Sectional Meeting"
+  location: "Georgia Institute of Technology"
+  date: 2023-03-18
+  arxiv: "2007.09719"
+  slides: "rainbow_odd_cycles/2023-03-18.html"
