@@ -12,7 +12,6 @@ section
       span.red rainbow 
       br
       | if $e \in \sigma(e)$ for every $e \in R$ and $\sigma$ is injective
-    //- p.fragment Say $\sigma(e)$ is represented by $e$ in $R$.
 
 section
   section(data-auto-animate)
@@ -113,11 +112,9 @@ section
           img.fragment(src="cactus-2.jpg" height=600)
       .col
         p.fragment Each cycle of length $n$ repeats $n-1$ times
-        p.fragment
-          span.green Observations
-        ol.fragment
-          li No rainbow cycle 
-          li Each odd cycle repeats even number of times
+        p.fragment.green Observations
+        p.fragment No rainbow cycle 
+        p.fragment Each odd cycle repeats even number of times
   section(data-auto-animate)
     p.blue Theorem (Aharoni, Briggs, Holzman, and J.)
     p(style="margin-bottom: 6pt") For every family of $n-1$ odd cycles in $K_n$, if there exists no rainbow odd cycle, then ...
