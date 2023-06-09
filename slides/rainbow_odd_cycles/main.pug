@@ -1,7 +1,7 @@
 section
   section(data-auto-animate)
     h3 Romanian Master in Mathematics 2020
-    p Let $n \ge 3$ be an integer. In a country there are $n$ airports and $n$ airlines operating two-way flights. For each airline, there is an odd integer $m \ge 3$, and $m$ distinct airports $c_1, \dots, c_m$ where the flights offered by the arline are exactly those between the following pairs of airports: $c_1$ and $c_2$, $c_2$ and $c_3$, ..., $c_{m-1}$ and $c_m$, $c_m$ and $c_1$. Prove  that there is a closed route consisting of an odd number of flights where no two flights are operated by the same airline.
+    p There are $n$ airports and $n$ airlines. Each airline operates cyclically between an odd number of airports. Prove that there is a closed route consisting of an odd number of flights where no two flights are operated by the same airline.
 
   section(data-auto-animate)
     h3.rainbow-text Romanian Master in Mathematics 2020
@@ -115,6 +115,7 @@ section
         p.fragment.green Observations
         p.fragment No rainbow cycle 
         p.fragment Each odd cycle repeats even number of times
+        p.fragment # cycles $=$ # vertices $- 1$
   section(data-auto-animate)
     p.blue Theorem (Aharoni, Briggs, Holzman, and J.)
     p(style="margin-bottom: 6pt") For every family of $n-1$ odd cycles in $K_n$, if there exists no rainbow odd cycle, then ...
@@ -141,7 +142,7 @@ section
       span.green Proof of Case 3 
       | For every $\mathcal{K} \subsetneq \mathcal{O}$, $v(\cup \mathcal{K}) > \lvert \mathcal{K} \rvert + 1$, and some odd cycle in $\mathcal{O}$ is not Hamiltonian
     p Suppose $\mathcal{O} = \{O_1, \dots, O_n\}$ and $v \not\in O_n$
-    p.fragment Consider $\mathcal{O}' = \{O_1-v, \dots, O_n - v\}$
+    p.fragment Consider $\mathcal{O}' = \{O_1-v, \dots, O_{n-1} - v\}$
     p.fragment
       | They are connected subgraphs, and
       br

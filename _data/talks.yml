@@ -430,3 +430,17 @@
   date: 2023-03-18
   arxiv: "2007.09719"
   slides: "rainbow_odd_cycles/2023-03-18.html"
+- title: "Forbidden subgraphs and spherical two-distance sets"
+  announcement: "https://www.auburn.edu/cosam/events/2023/03/dms_combinatorics_seminar2.htm"
+  occasion: "Auburn University DMS Combinatorics Seminar"
+  location: "Virtual (Zoom)"
+  date: 2023-03-23
+  arxiv: "2006.06633"
+  slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2023-03-23.html"
+- title: "Rainbow odd cycles"
+  announcement: "https://www.canadam.ca/program.html"
+  occasion: "Canadian Discrete and Algorithmic Mathematics"
+  location: "University of Winnipeg"
+  date: 2023-06-08
+  arxiv: "2007.09719"
+  slides: "rainbow_odd_cycles/2023-06-08.html"
