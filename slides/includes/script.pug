@@ -21,6 +21,15 @@ else
       controls: false,
       progress: true,
       history: true,
-      plugins: [ RevealMath.KaTeX ],
       keyboard: { 39: 'next', 37: 'prev' },
+      mathjax3: {
+        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+        tex: {
+          inlineMath: [ [ '$', '$' ], [ '\\(', '\\)' ]  ]
+        },
+        options: {
+          skipHtmlTags: [ 'script', 'noscript', 'style', 'textarea', 'pre' ]
+        },
+      },
+      plugins: [ RevealMath.MathJax3 ]
     });
