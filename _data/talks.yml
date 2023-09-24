@@ -444,3 +444,32 @@
   date: 2023-06-08
   arxiv: "2007.09719"
   slides: "rainbow_odd_cycles/2023-06-08.html"
+- title: "Extremal Problems in Discrete Geometry"
+  occasion: "Workshop on Graph Theory and Combinatorics"
+  location: "Luoyang, Henan, China"
+  date: 2023-07-13
+  slides: "extremal_problems_in_discrete_geometry/2023-07-13.html"
+- title: "Spherical Tarski's plank problem"
+  announcement: "https://sxxy.hebtu.edu.cn/a/2023/07/14/471C4F77F0DC423983A8C81620676371.html"
+  occasion: "Hebei Normal University Seminar"
+  location: "Virtual (Zoom)"
+  date: 2018-07-21
+  arxiv: "1703.10550"
+  slides: "on_spherical_tarskis_plank_problem/2023-07-21.html"
+- title: "Forbidden subgraphs and spherical two-distance sets"
+  occasion: "Hebei Normal University Seminar"
+  location: "Virtual (Zoom)"
+  date: 2023-07-22
+  arxiv: "2006.06633"
+  slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2023-07-22.html"
+- title: "Forbidden subgraphs and spherical two-distance sets"
+  occasion: "Soochow University Summer School on Combinatorics"
+  location: "Virtual (Zoom)"
+  date: 2023-08-21
+  arxiv: "2006.06633"
+  slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2023-08-21.html"
+- title: "Open problems in discrete geometry"
+  occasion: "Tsinghua Open Problems Seminar"
+  location: "Virtual (VooV)"
+  date: 2023-09-28
+  slides: "open_problems/2023-09-28.html"

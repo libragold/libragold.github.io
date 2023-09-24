@@ -1,0 +1,16 @@
+doctype html
+html
+  - var title = "Spherical Tarski's Plank Problem"
+  - var institute = "Arizona State University"
+  - var date = "July 21, 2023"
+  - var coauthors = "Саша Полянский (Alexandr Polyanskii)"
+  - var email = "zilinj@mit.edu"
+  - var revealjs_version = "3.7.0"
+  include ../includes/head.pug
+  body
+    .reveal
+      .slides
+        include ../includes/title_slide.pug
+        include main.pug
+        include ../includes/contact.pug
+    include ../includes/script.pug

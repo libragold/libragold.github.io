@@ -12,7 +12,7 @@ else if revealjs_version < "4.0.0"
         { src: '../reveal.js-#{revealjs_version}/lib/js/classList.js', condition: function() { return !document.body.classList; } },
         { src: "../reveal.js-#{revealjs_version}/plugin/math/math.js", async: true }
       ],
-    });
+    })
 else
   script(src=`../reveal.js-${revealjs_version}/dist/reveal.js`)
   script(src=`../reveal.js-${revealjs_version}/plugin/math/math.js`)
