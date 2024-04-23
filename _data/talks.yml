@@ -473,3 +473,10 @@
   location: "Virtual (VooV)"
   date: 2023-09-28
   slides: "open_problems/2023-09-28.html"
+- title: "Beyond the classification theorem of Cameron, Goethals, Seidel and Shult"
+  occasion: "Shanks Workshop on Combinatorics & Graph Theory"
+  location: "Vanderbilt University"
+  announcement: "https://my.vanderbilt.edu/cgt2024/"
+  date: 2024-04-13
+  arxiv: "2404.13136"
+  
