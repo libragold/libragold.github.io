@@ -20,7 +20,10 @@ fhavet:
   url: "http://www-sop.inria.fr/members/Frederic.Havet/"
 gkronenberg:
   name: "Gal Kronenberg"
-  url: "http://www.math.tau.ac.il/~galkrone/"
+  url: "https://scholar.google.com/citations?user=q4MvbrwAAAAJ"
+hacharya:
+  name: "Hricha Acharya"
+  url: "https://sites.google.com/asu.edu/hrichaacharya"
 ivorobyev:
   name: "Ilya Vorobyev"
   url: "https://scholar.google.ru/citations?user=sBNnIT0AAAAJ"
@@ -59,6 +62,7 @@ sflorin:
   name: "Sam H. Florin"
 szhang:
   name: "Shengtong Zhang"
+  url: "https://sites.google.com/view/shengtong-zhang/"
 tjiang:
   name: "Tao Jiang"
   url: "http://www.users.miamioh.edu/jiangt/"

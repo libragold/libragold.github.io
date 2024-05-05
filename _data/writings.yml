@@ -45,7 +45,7 @@
     Given two disjoint convex polyhedra, we propose a process, based on projections onto the half-spaces defining the two polyhedra, for finding a pair of points, one in each polyhedron, attaining the minimum distance.
   arxiv: "1707.09639"
   journal:
-    citation: "Computational Optimization and Applications (2018) 71: 509–523"
+    citation: "Computational Optimization and Applications (2018) 71: 509-523"
     url: "https://doi.org/10.1007/s10589-018-0021-3"
 - title: "Forbidden subgraphs for graphs of bounded spectral radius, with applications to equiangular lines"
   coauthors:
@@ -55,7 +55,7 @@
   arxiv: "1708.02317"
   slides: "forbidden_subgraphs_and_equiangular_lines"
   journal:
-    citation: "Israel Journal of Mathematics (2020) 236: 393–421"
+    citation: "Israel Journal of Mathematics (2020) 236: 393-421"
     url: "https://doi.org/10.1007/s11856-020-1983-2"
 - title: "Ramsey-nice families of graphs"
   coauthors:
@@ -151,6 +151,9 @@
   summary: >
     For fixed $$-1 \le \beta < 0 \le \alpha < 1$$, let $$N_{\alpha, \beta}(d)$$ denote the maximum number of unit vectors in $$\mathbb{R}^d$$ where all pairwise inner products lie in $$\{\alpha, \beta\}$$. We determine the limit of $$N_{\alpha, \beta}(d)/d$$ as $$d \to \infty$$ when $$\alpha + 2\beta < 0$$ or $$(1-\alpha)/(\alpha - \beta) \in \{1,\sqrt{2},\sqrt{3}\}$$.
   arxiv: "2006.06633"
+  journal:
+    citation: "Combinatorica (2023) 43: 203-232"
+    url: "https://doi.org/10.1007/s00493-023-00002-1"
 - title: "Negligible obstructions and Turán exponents"
   coauthors:
     - tjiang
@@ -171,7 +174,7 @@
     Every family of odd cycles $$O_1, \dots, O_{2\lceil n/2 \rceil - 1}$$ in the complete graph on $$n$$ vertices has a rainbow odd cycle (that is, a set of edges from distinct $$O_i$$'s, forming an odd cycle).
   arxiv: "2007.09719"
   journal:
-    citation: "SIAM Journal on Discrete Mathematics (2020) 35, 2293-2303"
+    citation: "SIAM Journal on Discrete Mathematics (2020) 35: 2293-2303"
     url: "https://doi.org/10.1137/20M1380557"
   slides: "rainbow_odd_cycles"
 - title: "On the binary adder channel with complete feedback, with an application to quantitative group testing"
@@ -182,7 +185,7 @@
     We determine that the average zero-error capacity of the binary adder channel with complete feedback is $$h(1/2-\delta)$$, where $$h$$ is the binary entropy function and $$\delta = 1/(2\log_2(2+\sqrt3))$$.
   arxiv: "2101.09898"
   journal:
-    citation: "IEEE Transactions on Information Theory (2022) 68, 2839-2856"
+    citation: "IEEE Transactions on Information Theory (2022) 68: 2839-2856"
     url: "https://doi.org/10.1109/TIT.2021.3137965"
 - title: "Forbidden induced subgraphs for graphs and signed graphs with eigenvalues bounded from below"
   coauthors:
@@ -191,3 +194,9 @@
     We show that the family of graphs with smallest eigenvalue at least $$-\lambda$$ has a finite forbidden subgraphs characterization if and only if $$\lambda < \lambda^*$$, where $$\lambda^* = \beta^{1/2} + \beta^{-1/2}$$ and $$\beta$$ is the unique real root of $$x^3 = 1 + x$$. We also prove the same conclusion for signed graphs. As a consequence, we establish the asymptotic formula of the maximum cardinality of spherical two-distance set with two fixed inner products $$\alpha$$ and $$\beta$$ for all $$-1 \le \beta < 0 \le \alpha < 1$$ satisfying $$(1-\alpha)/(\alpha-\beta) < \lambda^*$$.
   arxiv: "2111.10366"
   slides: "forbidden_subgraphs_and_spherical_two_distance_sets"
+- title: "Beyond the classification theorem of Cameron, Goethals, Seidel, and Shult"
+  coauthors:
+    - hacharya
+  summary: >
+    We give a complete classification of all connected graphs with smallest eigenvalue in $$(-\lambda^*,-2)$$, where $$\lambda^*=\rho^{1/2}+\rho^{-1/2} \approx 2.01980$$, and $$\rho$$ is the unique real root of $$x^3=x+1$$. Our result is the first classification of infinitely many connected graphs with their smallest eigenvalue in $$(-\lambda,-2)$$ for any constant $$\lambda>2$$.
+  arxiv: "2404.13136"
