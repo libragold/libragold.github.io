@@ -479,4 +479,10 @@
   announcement: "https://my.vanderbilt.edu/cgt2024/"
   date: 2024-04-13
   arxiv: "2404.13136"
-  
+- title: "Rainbow odd cycles"
+  announcement: "https://www.irif.fr/wtc24#programme"
+  occasion: "Workshop on Topological Combinatorics"
+  location: "L'Institut de Recherche en Informatique Fondamentale"
+  date: 2024-06-21
+  arxiv: "2007.09719"
+  slides: "rainbow_odd_cycles/2024-06-21.html"
