@@ -1,0 +1,17 @@
+doctype html
+html
+  - var head_title = "Rainbow odd cycles and other short stories"
+  - var title = "Rainbow odd cycles<br>and other short stories"
+  - var institute = "Arizona State University"
+  - var date = "June 21, 2024"
+  - var coauthors = "Ron Aharoni, Joseph Briggs and Ron Holzman"
+  - var email = "zilinj@asu.edu"
+  - var revealjs_version = "5.1.0"
+  - var revealjs_theme = "simple"
+  include ../includes/head.pug
+  body
+    .reveal
+      .slides
+        include ../includes/title_slide.pug
+        include wtc.pug
+    include ../includes/script.pug

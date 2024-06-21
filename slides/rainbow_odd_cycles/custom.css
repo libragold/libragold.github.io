@@ -38,3 +38,21 @@
     position: absolute;
     transform: skewY(-5deg) rotate(5deg);
 }
+
+.reveal .theorem {
+    border-radius: 0.5rem;
+    border: 0.5rem solid #4885ed;
+    margin-top: 0.5rem;
+}
+
+.reveal .theorem > p:first-child {
+    margin: 0;
+    color: white;
+    padding-bottom: 0.5rem;
+    background: #4885ed;
+}
+
+.reveal .conjecture > p:last-child, .reveal .theorem > p:last-child {
+    margin: 0.5rem;
+    padding-bottom: 0.5rem;
+}
