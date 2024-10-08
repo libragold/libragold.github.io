@@ -1,5 +1,5 @@
-baseURL = 'https://www.zilin.one/'
-languageCode = 'en-us'
+baseURL = "https://www.zilin.one/"
+languageCode = "en-us"
 title = "Zilin Jiang"
 [menus]
     [[menus.main]]

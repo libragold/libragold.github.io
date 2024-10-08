@@ -27,7 +27,7 @@ nav {
 nav a {
     text-decoration: none;
     color: #999;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 nav li a:hover {
     color: #333;
@@ -43,9 +43,11 @@ nav .brand {
     line-height: 40px;
     text-transform: uppercase;
 }
+nav .menu-collapse {
+    float: right;
+}
 nav ul {
     list-style: none;
-    float: right;
     margin-top: 6px;
 }
 nav li {
@@ -59,6 +61,31 @@ nav li > a {
     margin-left: 6px;
     padding: 0 10px;
     font-size: 14px;
+}
+
+/* menu icon */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    padding: 10px 4px;
+}
+
+.menu-icon .bar1, .menu-icon .bar2, .menu-icon .bar3 {
+    width: 18px;
+    height: 2px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+.menu-icon.menu-open .bar1 {
+    transform: translate(0, 5px) rotate(-45deg);
+}
+
+.menu-icon.menu-open .bar2 {opacity: 0;}
+
+.menu-icon.menu-open .bar3 {
+    transform: translate(0, -5px) rotate(45deg);
 }
 
 /* footer */
@@ -208,6 +235,30 @@ nav li > a {
         padding: 5px;
         width: 100%;
     }
+    nav .menu-collapse {
+        height: 0;
+        overflow: hidden;
+        transition: 0.4s;
+        display: block;
+    }
+    nav .menu-collapse {
+        float: none;
+    }
+    nav .menu-collapse ul {
+        margin: 0;
+        padding: 0;
+    }
+    nav .menu-collapse ul li {
+        display: block;
+        float: none;
+    }
+    nav .show-menu {
+        height: 90px;
+    }
+    .menu-icon {
+        display: block;
+        float: right;
+    }
     #about {
         margin-top: 24px;
         display: block;
@@ -218,5 +269,14 @@ nav li > a {
     }
     #vita img {
         display: none;
+    }
+    .writing p.publication {
+        padding-right: 70px;
+    }
+    .talk .occasion {
+        padding-right: 90px;
+    }
+    .course p {
+        padding-right: 56px;
     }
 }
