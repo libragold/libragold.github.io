@@ -113,7 +113,7 @@ nav li > a {
     display: flex;
     align-items: center;
     gap: 34px;
-    margin: -18px 0;
+    margin: 0;
 }
 #about img {
     width: 240px;
@@ -141,25 +141,26 @@ nav li > a {
 .writing p.title {
     font-size: 16px;
 }
-.writing p.authors, .writing p.publication {
-    font-size: 14px;
-    color: #777;
-}
-.writing p.authors a, .writing p.publication a {
-    color: #777;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 3px;
-}
 .writing p.authors a {
     text-decoration-color: #fde995;
-}
-.writing p.publication a {
-    text-decoration-color: #e1a7fb;
 }
 /* writings and talks */
 #writings .info, #talks .info, #teaching .info {
     font-family: Georgia, Times, "Times New Roman", serif;
     text-align: center;
+}
+/* writings and teaching */
+.writing p.authors, .writing p.publication, .course p.title {
+    font-size: 14px;
+    color: #777;
+}
+.writing p.authors a, .writing p.publication a, .course p.title a {
+    color: #777;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 3px;
+}
+.writing p.publication a, .course p.title a {
+    text-decoration-color: #e1a7fb;
 }
 /* talks and teaching */
 .year-group, .institution-group {

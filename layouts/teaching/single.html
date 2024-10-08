@@ -10,7 +10,7 @@
         {{ range .Site.Data.courses }}
         {{ $year := replaceRE "[^0-9]" "" .semester }}
         {{ if eq $currentYear "" }}
-            
+        
         {{ end }}
         {{ if and (eq $currentYear "2021") (eq $year "2020") }}
         </article>
@@ -20,12 +20,13 @@
         <div class="course">
             <p>
                 {{ if .ongoing }}<span class="new">ONGOING</span>{{ end }}
-                {{ .semester }} &middot; {{ .number }} &middot; {{ .title }}
+                {{ .semester }} &middot; {{ .number }}
             </p>
-            <div class="links">
+            <p class="title">
+                {{ .title }} &middot;
                 {{ if .canvas }}<a href="{{.canvas}}">Canvas</a>{{ end }}
                 {{ if .archive }}<a href="{{.archive}}">Archive</a>{{ end }}
-            </div>
+            </p>
         </div>
         {{ $currentYear = $year }}
     {{ end }}
