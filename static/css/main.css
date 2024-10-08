@@ -1,5 +1,5 @@
 body {
-    margin: 120px auto 0;
+    margin: 100px auto 0;
     max-width: 700px;
     line-height: 1.6;
     font-size: 18px;
@@ -222,7 +222,7 @@ nav li > a {
     padding: 0 2px;
 }
 /* Media query for screen sizes 720px and smaller */
-@media (max-width: 979px) {
+@media (max-width: 799px) {
     body {
         margin: 0;
         max-width: 100%;
@@ -265,7 +265,7 @@ nav li > a {
         margin-bottom: 32px;
     }
     #about img {
-        margin: auto;
+        margin-bottom: -10px;
     }
     #vita img {
         display: none;
