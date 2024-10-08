@@ -1,0 +1,19 @@
+doctype html
+html
+  - var head_title = "Colored Bárány's theorem"
+  - var title = "<span class='colored-text'>Colored</span> Bárány's theorem"
+  - var institute = "Massachusetts Institute of Technology"
+  - var date = "July 22, 2019"
+  - var revealjs_version = "3.8.0"
+  - var email = "zilinj@mit.edu"
+  include ../includes/head.pug
+  body
+    .reveal
+      .slides
+        include ../includes/title_slide.pug
+        include main.pug
+        include ../includes/contact.pug
+    include ../includes/script.pug
+    script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous")
+    script(src="../raphael.js-2.1.4/raphael.min.js")
+    script(src='raphael-diagram.js')

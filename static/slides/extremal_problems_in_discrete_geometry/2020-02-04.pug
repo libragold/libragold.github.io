@@ -1,0 +1,17 @@
+doctype html
+html
+  - var head_title = "Problèmes extrémaux en Géométrie discrète"
+  - var title = "Problèmes extrémaux<br>en Géométrie discrète"
+  - var institute = "Institut de technologie du Massachusetts"
+  - var date = "4 février 2020"
+  - var revealjs_version = "3.8.0"
+  - var revealjs_theme = "serif"
+  - var email = "zilinj@mit.edu"
+  include ../includes/head.pug  
+  body
+    .reveal
+      .slides
+        include main.pug
+    include ../includes/script.pug
+  script.
+    Reveal.configure({ transition: 'fade' })

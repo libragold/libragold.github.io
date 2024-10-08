@@ -1,0 +1,222 @@
+body {
+    margin: 120px auto 0;
+    max-width: 700px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #444;
+    width: 100%;
+}
+section {
+    margin-bottom: 32px;
+}
+h1,h2,h3 {
+    line-height: 1.2
+}
+
+/* navbar */
+nav {
+    background: rgba(255,255,255,0.9);
+    font-family: 'Spinnaker', sans-serif;
+    border-bottom: 1px solid #93a1a1;
+    position: fixed;
+    top: 0;
+    padding-top: 40px;
+    width: 700px;
+    z-index: 1000;
+}
+nav a {
+    text-decoration: none;
+    color: #999;
+    transition: 0.5s;
+}
+nav li a:hover {
+    color: #333;
+}
+nav li.active a {
+    color: #333;
+}
+nav .brand {
+    padding: 0px;
+    margin: 0;
+    color: black;
+    font-size: 24px;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+nav ul {
+    list-style: none;
+    float: right;
+    margin-top: 6px;
+}
+nav li {
+    display: block;
+    float: left;
+}
+nav li > a {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 24px;
+    margin-left: 6px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+/* footer */
+.footer {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #93a1a1;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 40px;
+    font-size: 10px;
+}
+
+/* home */
+#about p, #vita p {
+    font-family: Georgia, Times, "Times New Roman", serif;    
+}
+#about a, #vita a {
+    color: #333;
+    text-decoration-color: #fde995;
+    /* https://www.color-hex.com/color-palette/103743 */
+    text-underline-offset: 3px;
+    text-decoration-thickness: 3px;
+}
+#about {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    margin: -18px 0;
+}
+#about img {
+    width: 240px;
+    border-radius: 6px;
+}
+#about .text-content {
+    flex: 1;
+}
+#vita img {
+    float: right;
+    height: 60px;
+}
+/* writings */
+.writing {
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+.writing p {
+    margin: 0;
+    color: #222;
+    line-height: 1.4;
+    margin-bottom: 2px;
+}
+.writing p.title {
+    font-size: 16px;
+}
+.writing p.authors, .writing p.publication {
+    font-size: 14px;
+    color: #777;
+}
+.writing p.authors a, .writing p.publication a {
+    color: #777;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 3px;
+}
+.writing p.authors a {
+    text-decoration-color: #fde995;
+}
+.writing p.publication a {
+    text-decoration-color: #e1a7fb;
+}
+/* writings and talks */
+#writings .info, #talks .info, #teaching .info {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    text-align: center;
+}
+/* talks and teaching */
+.year-group, .institution-group {
+    padding: 16px 0 0;
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    margin-bottom: 28px;
+    position: relative;
+    font-size: 16px;
+}
+.year-group h3, .institution-group h3 {
+    text-align: center;
+    margin: 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #dadce0;
+    font-size: 16px;
+}
+.talk:not(:last-child), .course:not(:last-child) {
+    border-bottom: 1px solid #dadce0;
+}
+.talk p, .course p {
+    margin: 0;
+    color: #222;
+    line-height: 1.4;
+    margin-bottom: 2px;
+    font-size: 16px;
+}
+.talk p.title, .talk p.occasion {
+    font-size: 14px;
+    color: #777;   
+}
+/* writings, talks, teaching */
+#writings, #talks, #teaching {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.writing, .talk, .course {
+    padding: 16px 18px;
+    position: relative;
+}
+.writing p.title span.new, .talk p span.new, .course p span.new {
+    font-size: 10px;
+    color: white;
+    background-color: #ff9fae;
+    padding: 4px;
+    border-radius: 2px;
+    vertical-align: 1.5px;
+    margin-right: 2px;
+}
+.writing .links, .talk .links, .course .links {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-size: 14px;
+}
+.writing .links a, .talk .links a, .course .links a {
+    color: #555;
+    text-decoration-color: #a7e0f6;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 3px;
+    padding: 0 2px;
+}
+/* Media query for screen sizes 720px and smaller */
+@media (max-width: 979px) {
+    body {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box; /* Ensure padding is included in the width */
+    }
+    nav {
+        position: relative;
+        padding: 5px;
+        width: 100%;
+    }
+    #about {
+        margin-top: 24px;
+        display: block;
+        margin-bottom: 32px;
+    }
+    #about img {
+        margin: auto;
+    }
+    #vita img {
+        display: none;
+    }
+}

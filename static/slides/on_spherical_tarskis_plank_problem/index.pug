@@ -1,0 +1,13 @@
+doctype html
+html
+  - var title = "Spherical Tarski's Plank Problem"
+  - var coauthors = "Саша Полянский (Alexandr Polyanskii)"
+  - var revealjs_version = "3.7.0"
+  - var revealjs_theme = "simple"
+  include ../includes/head.pug
+  body
+    .reveal
+      .slides
+        include ../includes/title_slide.pug
+        include main.pug
+    include ../includes/script.pug

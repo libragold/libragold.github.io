@@ -1,0 +1,231 @@
+doctype html
+html
+  - var title = "球面上的 Tarski 平板覆盖问题"
+  - var institute = "以色列理工学院"
+  - var date = " 2018 年 3 月 16 日 于北京大学"
+  - var coauthors = "Саша Полянский / Alexandr Polyanskii"
+  - var email = "jiangzilin@technion.ac.il"
+  - var revealjs_version = "3.7.0"
+  include ../includes/head.pug
+  body
+    .reveal
+      .slides
+        section.title-slide
+          h3= title
+          p
+            small.red 姜子麟
+            br
+            small= institute
+            br
+            small= date
+          p
+            small 与 #{coauthors} 合作
+        section
+          section
+            h3 平板
+            img.stretch(src="plank.png")
+            p
+              span 宽度为 $w$ 平板是 $\mathbb{R}^d$ 中
+              br
+              span 落在距离相距 $w$ 的平行超平面之间的部分
+          section
+            h3 Tarski 平板覆盖问题
+            .avatars
+              img.avatar(src="tarski.jpg")
+              img.fragment(src="disc.png")
+              img.fragment(src="convex.png")
+            p.fragment $C$ 的宽度是覆盖 $C$ 的单个平板的最小宽度
+            p
+              span 若凸集 $C$ 被平板覆盖，则平板总宽度至少
+              span.fragment 是 $C$ 的宽度
+            p.fragment
+              span.red Alfred Tarski 
+              | 于 1932 年证明了圆盘的情况
+            p.fragment
+              span.red Thøger Bang 
+              | 于 1950 年证明了凸集的情况
+          section
+            h3 球带
+            img.stretch(src="zone.png")
+            p
+              span 宽度为 $\omega$ 的球带是
+              span.fragment.red 单位
+              span 球面上
+              br
+              span 距离某大圆至多 $\omega/2$ 的部分
+          section
+            h3 Fejes Tóth 的球带猜想
+            .avatars
+              img.avatar(src="fejes.jpg")
+              img.fragment(data-fragment-index=1 src="satellite.png")
+            p
+              | 覆盖球面的球带总宽度至少是 ... 
+              span.fragment(data-fragment-index=0) $\pi$
+            p.fragment(data-fragment-index=2)
+              | Research Problems: Exploring a Planet.
+              br
+              | 1973 年《美国数学月刊》
+          section
+            p 1972 Rosta: 三个等宽的球带
+            p.fragment 1974 Linhart: 四个等宽的球带
+            p.fragment
+              | 2016 Fodor, Vígh and Zarnócz:
+              br
+              | 若 100 个宽均为 $w$ 的球带覆盖球面，则 $w \ge 0.02032$
+            .fragment
+              .avatars
+                img.avatar(src="jiang.png")
+                img.avatar(src="polyanskii.png")
+              p
+                | 2017 J.–Polyanskii: 任意球带
+                span.fragment ，任意维度
+                br
+                span.fragment 刻画取等条件
+        section
+          section
+            h3 报告大纲
+            p.fragment.grow Tarski 平板覆盖问题的证明
+            p Fejes Tóth 球带猜想的证明
+          section
+            h3 Tarski 的证明
+            p 平面上覆盖圆盘球带的总宽度至少是直径
+            p 不妨设直径为 1
+          section
+            img.stretch(src="pach.png")
+            p
+              | 覆盖圆盘
+              span.fragment $\implies$ 覆盖半球面
+              span.fragment $\implies \sum \pi w_i / 2 \ge \pi / 2$
+          section
+            p Tarski 的证明适用于
+            .avatars
+              img(src="disc.png")
+              img.fragment(src="convex.png")
+            p.fragment 凸集 $C$ 的最大内接圆直径等于 $C$ 的宽度
+            p.fragment 但不适用于一般凸集，例如正三角形
+          section
+            h3 Bang 的证明
+            figure.stretch
+              img(src="w.png" height="100%")
+              img.fragment(src="ws.png" height="100%" data-fragment-index=2)
+              img.fragment(src="L.png" data-fragment-index=2 height="100%")
+            p $\vec{w}_i :=$ 代表平板 $i$ 的向量
+            p.fragment(data-fragment-index=1)
+              | $L := \{\pm \vec{w}_1 \pm \dots \pm \vec{w}_n\}$ 
+              span.fragment(data-fragment-index=3) = $\{\pm 1\}^n$ 的线性变换
+            .fragment(data-fragment-index=4)
+              p.fragment.highlight-red(data-fragment-index=6) 想法 1: $L$ 不会被平板覆盖
+            p.fragment(data-fragment-index=5) 想法 2: 若 $C$ 宽度够大，则可嵌入 $L$
+          section
+            h3 Bognár 的证明
+            p 特殊情况: 所有平板以 O 为对称中心
+            figure.stretch
+              img(src="max.png" height="100%")
+              img.fragment(src="bognar.png" data-fragment-index=2 height="100%")
+            p.fragment(data-fragment-index=1) 断言: $L$ 中达到最大模长的向量 $\vec{w}$ 不被覆盖
+            p.fragment(data-fragment-index=2) $|\vec{w}| \ge |\vec{w} \pm 2\vec{w}_i| \implies w$ 不被平板 $i$ 覆盖
+          section
+            h3 一般情况
+            p $\vec{w} = \pm \vec{w}_1 \pm \dots \pm \vec{w}_n \in L$ 达到最大模长
+            p $\Leftrightarrow$ $|\epsilon_1 \vec{w}_1 + \dots + \epsilon_n \vec{w}_n|^2$ 在 $\{\pm 1\}^n$ 中最大化
+            .fragment(data-fragment-index=1)
+              p
+                span.blue.fragment(data-fragment-index=2) 一般地，
+                | 平板 $i$：$|\vec{v} \cdot \vec{w}_i$
+                span.blue.fragment(data-fragment-index=2) $+ b_i$
+                | $| \le |\vec{w}_i|^2$
+              p 最大化二次函数
+              p
+                | $\sum \epsilon_i\epsilon_j (\vec{w}_i\cdot\vec{w}_j)$ 
+                span.blue.fragment(data-fragment-index=2) $+\sum b_i\epsilon_i$
+        section
+          section
+            h3 报告大纲
+            p.grown.fragment.shrink(data-fragment-index=1) Tarski 平板覆盖问题的证明
+            p.fragment.grow(data-fragment-index=1) Fejes Tóth 球带猜想的证明
+          section
+            h3 Fejes Tóth 球带猜想
+            img.stretch(src="zw.png")
+            p 设向量 $\vec{w}_i$ 代表球带 $i$
+            p.fragment(data-fragment-index=0)
+              | Bang 说某 $\vec{w} = $
+              span.fragment.fade-out(data-fragment-index=1) $\epsilon_1$
+              | $\vec{w}_1 + \dots +$
+              span.fragment.fade-out(data-fragment-index=1) $\epsilon_n$
+              | $\vec{w}_n$ 没被平板覆盖
+          section
+            h3 Bang 或 ... ？
+            figure.stretch
+              img(src="zbang.png")
+              img.fragment(src="zmerge.png" data-fragment-index=2)
+            p 若 $|\vec{w}| \le 1$，则 $\hat{w}$ 没被球带覆盖
+            p.fragment(data-fragment-index=1) 否则，$\vec{w} = \vec{w}_1 + \dots + \vec{w}_n$ 模长大……
+            p.fragment.red 说不定可以合并球带！
+          section
+            h3 何时可以合并？
+            img.stretch(src="merge.png")
+            p.fragment $\angle(\vec{w}_1, \vec{w}_2) \le \alpha_1 + \alpha_2$
+          section
+            h3 三角运算
+            p $\angle(\vec{w}_1, \vec{w}_2) \le \alpha_1 + \alpha_2$
+            p.fragment $\cos \angle(\vec{w}_1, \vec{w}_2) \ge \cos(\alpha_1 + \alpha_2)$
+            p.fragment $|\vec{w}_1 + \vec{w}_2|^2 = |\vec{w}_1|^2 + 2|\vec{w}_1||\vec{w}_2|\cos\angle(\vec{w}_1, \vec{w}_2) + |\vec{w}_2|^2$
+            p.fragment $\ge \sin^2\alpha_1 + 2\sin\alpha_1\sin\alpha_2\cos(\alpha_1 + \alpha_2) + \sin^2\alpha_2$
+            p.fragment $= \dots = \sin(\alpha_1 + \alpha_2)^2$.
+            p.fragment 当 $|\vec{w}_1 + \vec{w}_2| \ge \sin(\alpha_1 + \alpha_2)$ 时，可以合并球带
+          section
+            h3 汇总
+            p.fragment.highlight-red(data-fragment-index="4") 一般地，当 $|\vec{w}_1 + \dots + \vec{w}_n| \ge \sin(\alpha_1 + \dots + \alpha_n)$ 时可以合并其中一些球带
+            p.fragment(data-fragment-index="1") 反证法，假设总的半宽度 $\alpha_1 + \dots + \alpha_n &lt; \pi / 2$
+            p.fragment(data-fragment-index="2") 若 $|\vec{w}| \leq 1 $，则 $\hat{w}$ 没被球带覆盖
+            p.fragment(data-fragment-index="3") 否则 $|\vec{w}| &gt; 1 &gt; \sin(\alpha_1 + \dots + \alpha_n)$，可以合并！
+          section
+            h3 Goodman–Goodman 定理
+            p.fragment
+              | 若平面上半径为 $r_1, \dots, r_n$ 的 $n$ 个圆盘无法用直线分成两拨，
+              | 则圆盘可以用 $r_1 + \dots + r_n$ 的圆盘覆盖
+            p.fragment 想法：设圆盘圆心为 $\vec{x}_1, \dots, \vec{x}_n$，考虑圆心在 $r_1\vec{x}_1 + \dots + r_n\vec{x}_n$ 半径为 $r_1 + \dots + r_n$ 的圆盘
+            p.fragment 受此启发，用方向为 $\vec{w}$ 的球带去替代原有的球带
+        section
+          section
+            h3 推论与未解决的问题
+          section
+            h3 射影对偶
+            figure.stretch
+              img(src="dual.png")
+              img.fragment(src="zdual.png" data-fragment-index=1)
+            p 大圆 $\leftrightarrow$ 对径点
+            p.fragment(data-fragment-index=1) 球带 $\leftrightarrow$ 对径球冠
+            p.fragment 如果每个大圆都与某个球冠相交 ...
+            p.fragment 则球冠总半径至少是 $\pi/2$
+          section
+            h3 球冠覆盖
+            p
+              | 覆盖半径为 $r$ 球冠的球带总宽度至少是...
+              span.fragment(data-fragment-index="2") $2r$
+            figure.stretch
+              img(src="cap.png")
+              img.fragment(src="zcap.png" data-fragment-index="1")
+            p.fragment Fejes Tóth 的猜想：覆盖球面凸区域 $D$ 的球带总宽度至少是 $D$ 的“宽度”
+          section
+            h3 Bang 平板覆盖问题
+            p 从与平板垂直的方向，相对于 $C$ 测量平板的相对宽度
+            img.stretch(src="rw.png")
+            p.fragment 猜想：覆盖凸集 $C$ 的平板总相对宽度至少为 $1$
+          section
+            h3 Bezdek 环形覆盖问题
+            .annulus
+              img.stretch(src="disc.png")
+              .hole.fragment(data-fragment-index=1)
+            p
+              span.fragment(data-fragment-index=2) 猜想：
+              | 覆盖
+              span.fragment(data-fragment-index=2) 中心有洞
+              | 圆盘的平板总宽度至少是直径
+        section
+          small.red 姜子麟
+          br
+          small= institute
+          br
+          small= email
+    include ../includes/script.pug

@@ -1,0 +1,233 @@
+- title: "A bound on the number of edges in graphs without an even cycle"
+  authors:
+    - bbukh
+    - zjiang
+  summary: >
+    For each fixed $k$, an $n$-vertex graph not containing a cycle of length $2k$ has at most $80\sqrt{k}\log k \cdot n^{1+1/k}+O(n)$ edges.
+  journal: "Combinatorics, Probability and Computing"
+  year: 2017
+  doi: "https://doi.org/10.1017/S0963548316000134"
+  erratum: "https://doi.org/10.1017/S0963548317000396"
+  arxiv: "1403.1601"
+  slides: "a_bound_on_turan_number_for_cycles_of_even_length"
+- title: "A slight improvement to the colored Bárány's theorem"
+  authors:
+  - zjiang
+  summary: >
+    Let $$P_0, \dots, P_d$$ be $$d + 1$$ disjoint $$n$$-point sets in $$\mathbb{R}^d$$. A colorful simplex is the convex hull of $$d + 1$$ points each of which comes from a distinct $$P_i$$. There always exists a point that is contained in at least $$\frac{2d}{(d+1)(d+1)!}n^d$$ colorful simplices.
+  journal: "The Electronic Journal of Combinatorics"
+  year: 2014
+  doi: "https://doi.org/10.37236/4374"
+  arxiv: "1405.2503"
+  slides: "topological_method_for_colored_baranys_theorem"
+- title: "Bipartite algebraic graphs without quadrilaterals"
+  authors:
+    - bbukh
+    - zjiang
+  summary: >
+    We conjecture that every algebraic hypersurface that gives rise to a $$K_{s,t}$$-free graph is equivalent, in a suitable sense, to a low-degree hypersurface. We establish a version of this conjecture for $$K_{2,2}$$-free graphs.
+  journal: "Discrete Mathematics"
+  year: 2018
+  doi: "https://doi.org/10.1016/j.disc.2018.03.005"
+  arxiv: "1511.04719"
+  slides: "bipartite_algebraic_graphs_without_quadrilaterals"
+- title: "Proof of László Fejes Tóth's zone conjecture"
+  authors:
+    - zjiang
+    - apolyanskii
+  summary: >
+    A zone of width $$\omega$$ on the unit sphere is the set of points within spherical distance $$\omega/2$$ of a given great circle. We show that the total width of any collection of zones covering the unit sphere is at least $$\pi$$.
+  journal: "Geometric and Functional Analysis"
+  year: 2017
+  doi: "https://doi.org/10.1007/s00039-017-0427-6"
+  arxiv: "1703.10550"
+  slides: "on_spherical_tarskis_plank_problem"
+- title: "Finding a best approximation pair of points for two polyhedra"
+  authors:
+    - raharoni
+    - ycensor
+    - zjiang
+  summary: >
+    Given two disjoint convex polyhedra, we propose a process, based on projections onto the half-spaces defining the two polyhedra, for finding a pair of points, one in each polyhedron, attaining the minimum distance.
+  journal: "Computational Optimization and Applications"
+  year: 2018
+  doi: "https://doi.org/10.1007/s10589-018-0021-3"
+  arxiv: "1707.09639"
+- title: "Forbidden subgraphs for graphs of bounded spectral radius, with applications to equiangular lines"
+  authors:
+    - zjiang
+    - apolyanskii
+  summary: >
+    We show that the family of graphs of spectral radius $$\le \lambda$$ has a finite forbidden subgraphs characterization if and only if $$\lambda < \lambda^*$$ and $$\lambda \not\in \{\alpha_2, \alpha_3, \ldots\}$$, where $$\alpha_m = \beta_m^{1/2} + \beta_m^{-1/2}$$ and $$\beta_m$$ is the largest root of $$x^{m+1} = 1 + x + \ldots + x^{m-1}$$. As a consequence, we establish the asymptotic formula of the maximum cardinality of equiangular lines with angle $$\arccos\alpha$$ in $$\mathbb{R}^n$$ for every $$\alpha > \frac{1}{1+2\lambda^*}$$.
+  journal: "Israel Journal of Mathematics"
+  year: 2020
+  doi: "https://doi.org/10.1007/s11856-020-1983-2"
+  arxiv: "1708.02317"
+  slides: "forbidden_subgraphs_and_equiangular_lines"
+- title: "Ramsey-nice families of graphs"
+  authors:
+    - raharoni
+    - nalon
+    - mamir
+    - phaxell
+    - dhefetz
+    - zjiang
+    - gkronenberg
+    - anaor
+  summary: >
+    A finite family $$\mathcal{F}$$ of graphs is $$k$$-nice if for every graph $$G$$ with $$\chi(G) = R_k(\mathcal{F})$$ (the chromatic number equals to the Ramsey number) and for every coloring of $$E(G)$$ there exists a monochromatic copy of some $$F\in\mathcal{F}$$. It seems conceivable that for any finite family of graphs $$\mathcal{F}$$ that contains at least one forest, $$\mathcal{F}$$ is $$k$$-nice for all $$k \ge k_0(\mathcal{F})$$. We show that the conjecture holds for each of the three families consisting of two connected graphs with 3 edges each.
+  journal: "European Journal of Combinatorics"
+  year: 2018
+  doi: "https://doi.org/10.1016/j.ejc.2018.04.007"
+  arxiv: "1708.07369"
+- title: "On spectral radii of unraveled balls"
+  authors:
+    - zjiang
+  summary: >
+    If the average degree of $$G$$ after deleting any ball of radius $$r$$ is at least $$d$$, then its second largest eigenvalue is at least $$2\sqrt{d-1}\cos\left(\frac{\pi}{r+1}\right)$$.
+  journal: "Journal of Combinatorial Theory, Series B"
+  year: 2019
+  doi: "https://doi.org/10.1016/j.jctb.2018.09.003"
+  arxiv: "1710.06719"
+- title: "On the metric dimension of Cartesian powers of a graph"
+  authors:
+    - zjiang
+    - npolyanskii
+  summary: >
+    A set of vertices $$S$$ resolves a graph if every vertex is uniquely determined by its vector of distances to the vertices in $$S$$. The metric dimension of a graph is the minimum cardinality of a resolving set of the graph. We prove that the metric dimension of the Cartesian product of $$n$$ copies of the complete graph on $$q$$ vertices is $$(2+o(1))n/\log_q n$$.
+  journal: "Journal of Combinatorial Theory, Series A"
+  year: 2019
+  doi: "https://doi.org/10.1016/j.jcta.2019.01.002"
+  arxiv: "1712.02723"
+- title: "On capacities of the two-user union channel with complete feedback"
+  authors:
+    - zjiang
+    - npolyanskii
+    - ivorobyev
+  summary: >
+    We complete the line of research on the optimal symmetric rate point in the channel capacity region of the two-user union channel, and we construct a practical near-optimal zero-error communication scheme.
+  journal: "IEEE Transactions on Information Theory"
+  year: 2019
+  doi: "https://doi.org/10.1109/TIT.2018.2889250"
+  arxiv: "1804.08599"
+- title: "Rainbow fractional matchings"
+  authors:
+    - raharoni
+    - rholzman
+    - zjiang
+  summary: >
+    Any family $$E_1, \dots, E_{\lceil rn\rceil}$$ of sets of edges in an $$r$$-uniform hypergraph, each having a fractional matchings number of size $$n$$, has a rainbow matching of size $$n$$ (that is, a set of edges from distinct $$E_i$$'s which supports such a fractional matching).
+  arxiv: "1805.09732"
+  slides: "rainbow_fractional_matchings"
+  journal: "Combinatorica"
+  year: 2019
+  doi: "https://doi.org/10.1007/s00493-019-4019-y"
+- title: "Cooperative colorings of trees and bipartite graphs"
+  authors:
+    - raharoni
+    - eberger
+    - mchudnovsky
+    - fhavet
+    - zjiang
+  summary: >
+    Given a system $$\mathcal{G}=(G_1, \ldots ,G_m)$$ of graphs on the same vertex set $$V$$, a cooperative coloring for $$\mathcal{G}$$ is a choice of vertex sets $$I_1, \ldots ,I_m$$, such that $$I_j$$ is independent in $$G_j$$ and $$\bigcup_{j=1}^{m}I_j = V$$. We give bounds on the minimal $$m$$ such that every $$m$$ graphs with maximum degree $$d$$ have a cooperative coloring, in the cases that (a) the graphs are trees, (b) the graphs are all bipartite.
+  arxiv: "1806.06267"
+  journal: "The Electronic Journal of Combinatorics"
+  year: 2020
+  doi: "https://doi.org/10.37236/8111"
+- title: "An isoperimetric inequality for Hamming balls and local expansion in hypercubes"
+  authors:
+    - zjiang
+    - ayehudayoff
+  summary: >
+    Denote by $$\mathcal{B}_n(R)$$ the $$n$$-dimensional Hamming ball of radius $$R$$. If $$n/4 \le R \le n/2$$ and the size of a subset $$\mathcal{A}$$ of $$\mathcal{B}_n(R)$$ satisfies $$\vert\mathcal{B}_n(n/4)\vert \le \vert\mathcal{A}\vert \le \tfrac{1}{2}\vert\mathcal{B}_n(R)\vert$$, then the vertex boundary of $$\mathcal{A}$$ is at least $$\Omega(\vert\mathcal{A}\vert/\sqrt{n})$$.
+  arxiv: "1807.00626"
+  journal: "The Electronic Journal of Combinatorics"
+  year: 2022
+  doi: "https://doi.org/10.37236/9860"
+- title: "Equiangular lines with a fixed angle"
+  authors:
+    - zjiang
+    - jtidor
+    - yyao
+    - szhang
+    - yzhao
+  summary: >
+    We determine the maximum cardinality $$N_{\alpha}(n)$$ of lines pairwise separated by the angle $$\arccos\alpha$$ in $$\mathbb{R}^n$$ for every $$\alpha$$ and all sufficiently large $$n$$. In particular, $$N_{1/(2k-1)}(n) = \lfloor k(n-1)/(k-1) \rfloor$$ for every integer $$k \ge 2$$ and all sufficiently large $$n$$.
+  arxiv: "1907.12466"
+  journal: "Annals of Mathematics"
+  year: 2021
+  doi: "https://doi.org/10.4007/annals.2021.194.3.3"
+- title: "Spherical two-distance sets and eigenvalues of signed graphs"
+  authors:
+    - zjiang
+    - jtidor
+    - yyao
+    - szhang
+    - yzhao
+  summary: >
+    For fixed $$-1 \le \beta < 0 \le \alpha < 1$$, let $$N_{\alpha, \beta}(d)$$ denote the maximum number of unit vectors in $$\mathbb{R}^d$$ where all pairwise inner products lie in $$\{\alpha, \beta\}$$. We determine the limit of $$N_{\alpha, \beta}(d)/d$$ as $$d \to \infty$$ when $$\alpha + 2\beta < 0$$ or $$(1-\alpha)/(\alpha - \beta) \in \{1,\sqrt{2},\sqrt{3}\}$$.
+  arxiv: "2006.06633"
+  journal: "Combinatorica"
+  year: 2023
+  doi: "https://doi.org/10.1007/s00493-023-00002-1"
+- title: "Negligible obstructions and Turán exponents"
+  authors:
+    - tjiang
+    - zjiang
+    - jma
+  summary: >
+    For every rational number $$r \in (1,2)$$ of the form $$2 - a/b$$, where $$a, b \in \mathbb{N}^+$$ satisfy $$\lfloor b/a \rfloor^3 \le a \le b / (\lfloor b/a \rfloor +1) + 1$$, there exists a graph $$F_r$$ such that the Turán number $$\operatorname{ex}(n, F_r) = \Theta(n^r)$$.
+  arxiv: "2007.02975"
+  journal: "Annals of Applied Mathematics"
+  year: 2022
+  doi: "https://doi.org/10.4208/aam.OA-2022-0008"
+  slides: "negligible_obstructions_and_turan_exponents"
+- title: "Rainbow odd cycles"
+  authors:
+    - raharoni
+    - jbriggs
+    - rholzman
+    - zjiang
+  summary: >
+    Every family of odd cycles $$O_1, \dots, O_{2\lceil n/2 \rceil - 1}$$ in the complete graph on $$n$$ vertices has a rainbow odd cycle (that is, a set of edges from distinct $$O_i$$'s, forming an odd cycle).
+  journal: "SIAM Journal on Discrete Mathematics"
+  year: 2021
+  doi: "https://doi.org/10.1137/20M1380557"
+  arxiv: "2007.09719"
+  slides: "rainbow_odd_cycles"
+- title: "On the binary adder channel with complete feedback, with an application to quantitative group testing"
+  authors:
+    - sflorin
+    - mho
+    - zjiang
+  summary: >
+    We determine that the average zero-error capacity of the binary adder channel with complete feedback is $$h(1/2-\delta)$$, where $$h$$ is the binary entropy function and $$\delta = 1/(2\log_2(2+\sqrt3))$$.
+  journal: "IEEE Transactions on Information Theory"
+  year: 2022
+  doi: "https://doi.org/10.1109/TIT.2021.3137965"
+  arxiv: "2101.09898"
+- title: "Forbidden induced subgraphs for graphs and signed graphs with eigenvalues bounded from below"
+  authors:
+    - zjiang
+    - apolyanskii
+  summary: >
+    We show that the family of graphs with smallest eigenvalue at least $$-\lambda$$ has a finite forbidden subgraphs characterization if and only if $$\lambda < \lambda^*$$, where $$\lambda^* = \beta^{1/2} + \beta^{-1/2}$$ and $$\beta$$ is the unique real root of $$x^3 = 1 + x$$. We also prove the same conclusion for signed graphs. As a consequence, we establish the asymptotic formula of the maximum cardinality of spherical two-distance set with two fixed inner products $$\alpha$$ and $$\beta$$ for all $$-1 \le \beta < 0 \le \alpha < 1$$ satisfying $$(1-\alpha)/(\alpha-\beta) < \lambda^*$$.
+  arxiv: "2111.10366"
+  slides: "forbidden_subgraphs_and_spherical_two_distance_sets"
+  year: 2021
+- title: "Beyond the classification theorem of Cameron, Goethals, Seidel, and Shult"
+  authors:
+    - hacharya
+    - zjiang
+  summary: >
+    We give a complete classification of all connected graphs with smallest eigenvalue in $$(-\lambda^*,-2)$$, where $$\lambda^*=\rho^{1/2}+\rho^{-1/2} \approx 2.01980$$, and $$\rho$$ is the unique real root of $$x^3=x+1$$. Our result is the first classification of infinitely many connected graphs with their smallest eigenvalue in $$(-\lambda,-2)$$ for any constant $$\lambda>2$$.
+  arxiv: "2404.13136"
+  year: 2024
+- title: "On symmetric hollow integer matrices with eigenvalues bounded from below"
+  authors:
+    - zjiang
+  summary: >
+    A hollow matrix is a square matrix whose diagonal entries are all equal to zero. Define $$\lambda^*=\rho^{1/2}+\rho^{-1/2} \approx 2.01980$$, where $$\rho$$ is the unique real root of $$x^3=x+1$$. We show that for every $$\lambda < \lambda^*$$, there exists $$n \in \mathbb{N}$$ such that if a symmetric hollow integer matrix has an eigenvalue less than $$-\lambda$$, then one of its principal submatrices of order at most $$n$$ does as well. However, the same conclusion does not hold for any $$\lambda \ge \lambda^*$$.
+  arxiv: "2408.16860"
+  year: 2024

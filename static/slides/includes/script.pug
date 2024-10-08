@@ -1,0 +1,56 @@
+if revealjs_version < "3.8.0"
+  script(src=`../reveal.js-${revealjs_version}/lib/js/head.min.js`)
+else if revealjs_version < "4.0.0"
+  script(src=`../reveal.js-${revealjs_version}/js/reveal.js`)
+  script.
+    Reveal.initialize({
+      controls: false,
+      slideNumber: true,
+      progress: true,
+      history: true,
+      dependencies: [
+        { src: '../reveal.js-#{revealjs_version}/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: "../reveal.js-#{revealjs_version}/plugin/math/math.js", async: true }
+      ],
+    })
+else if revealjs_version < "5.0.0"
+  script(src=`../reveal.js-${revealjs_version}/dist/reveal.js`)
+  script(src=`../reveal.js-${revealjs_version}/plugin/math/math.js`)
+  script.
+    Reveal.initialize({
+      controls: false,
+      progress: true,
+      history: true,
+      keyboard: { 39: 'next', 37: 'prev' },
+      mathjax3: {
+        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+        tex: {
+          inlineMath: [ [ '$', '$' ], [ '\\(', '\\)' ]  ]
+        },
+        options: {
+          skipHtmlTags: [ 'script', 'noscript', 'style', 'textarea', 'pre' ]
+        },
+      },
+      plugins: [ RevealMath.MathJax3 ]
+    });
+else
+  script(src=`../reveal.js-${revealjs_version}/dist/reveal.js`)
+  script(src=`../reveal.js-${revealjs_version}/plugin/math/math.js`)
+  script.
+    Reveal.initialize({
+      controls: false,
+      progress: true,
+      history: true,
+      view: 'scroll',
+      keyboard: { 39: 'next', 37: 'prev' },
+      mathjax3: {
+        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+        tex: {
+          inlineMath: [ [ '$', '$' ], [ '\\(', '\\)' ]  ]
+        },
+        options: {
+          skipHtmlTags: [ 'script', 'noscript', 'style', 'textarea', 'pre' ]
+        },
+      },
+      plugins: [ RevealMath.MathJax3 ]
+    });

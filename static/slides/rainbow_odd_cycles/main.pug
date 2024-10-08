@@ -1,0 +1,214 @@
+section
+  section(data-auto-animate)
+    h3 Romanian Master in Mathematics 2020
+    p There are $n$ airports and $n$ airlines. Each airline operates cyclically between an odd number of airports. Prove that there is a closed route consisting of an odd number of flights where no two flights are operated by the same airline.
+
+  section(data-auto-animate)
+    h3.rainbow-text Romanian Master in Mathematics 2020
+    p Let $C_1, C_2, \dots, C_n$ be subgraphs of a complete graph $K_n$. If $C_1, \dots, C_n$ are odd cycles, then there exists a rainbow odd cycle.
+    p.fragment
+      span.green Definition 
+      | Given a family (multiset) $\mathcal{F}$ of subsets of $E$, a subset $R \subseteq E$ with $\sigma \colon R \to \mathcal{F}$ is 
+      span.red rainbow 
+      br
+      | if $e \in \sigma(e)$ for every $e \in R$ and $\sigma$ is injective
+
+section
+  section(data-auto-animate)
+    p
+      span.red Problem 
+      | Given a property $\mathcal{P}$, find smallest $m$ such that for every family $\mathcal{F}$ if $\lvert \mathcal{F} \rvert \ge m$ and every member of $\mathcal{F}$ satisfies $\mathcal{P}$, then there exists a rainbow set $R$ with $\mathcal{P}$.
+    p.fragment
+      span.blue Bárány's colorful Carathéodory theorem 
+      | For every family of 
+      span.red $n+1$ 
+      | subsets of $\mathbb{R}^n$, each containing $\vec{a}$ in its convex hull, there exists a rainbow set with the same property.
+  section(data-auto-animate)
+    p
+      span.red Problem 
+      | Given a property $\mathcal{P}$, find smallest $m$ such that for every family $\mathcal{F}$ if $\lvert \mathcal{F} \rvert \ge m$ and every member of $\mathcal{F}$ satisfies $\mathcal{P}$, then there exists a rainbow set $R$ with $\mathcal{P}$.
+    p
+      span.blue Theorem 
+      | (Drisko '98, Aharoni and Berger '09) 
+      | For every family of 
+      span.red $2n-1$ 
+      | matchings, each of size $n$, in a bipartite graph, there is a rainbow matching of size $n$.
+    p.fragment
+      span.blue Theorem 
+      | (Aharoni, Kotlar and Ziv '18') For every 
+      span.red $2n-2$ 
+      | matchings, each of size $n$, in a bipartite graph, if there exists no rainbow matching of size $n$, then ...
+  section(data-auto-animate)
+    p
+      span.blue Theorem 
+      | (Aharoni, Kotlar and Ziv '18') For every 
+      span.red $2n-2$ 
+      | matchings, each of size $n$, in a bipartite graph, if there exists no rainbow matching of size $n$, then ...
+    svg(viewBox="-120 -120 240 240" height="200")
+      line(x1="110" y1="46" x2="110" y2="-46" stroke="#db3236" stroke-width="4")
+      line(x1="-46" y1="110" x2="46" y2="110" stroke="#db3236" stroke-width="4")
+      line(x1="-110" y1="46" x2="-110" y2="-46" stroke="#db3236" stroke-width="4")
+      line(x1="-46" y1="-110" x2="46" y2="-110" stroke="#db3236" stroke-width="4")
+      line(x1="110" y1="46" x2="46" y2="110" stroke="#4885ed" stroke-width="4")
+      line(x1="-110" y1="-46" x2="-46" y2="-110" stroke="#4885ed" stroke-width="4")
+      line(x1="110" y1="-46" x2="46" y2="-110" stroke="#4885ed" stroke-width="4")
+      line(x1="-110" y1="46" x2="-46" y2="110" stroke="#4885ed" stroke-width="4")
+      circle(cx='110' cy='46' r='4' stroke='grey' stroke-width='2' fill='white')
+      circle(cx='-110' cy='46' r='4' stroke='grey' stroke-width='2' fill='white')
+      circle(cx='110' cy='-46' r='4' stroke='grey' stroke-width='2' fill='white')
+      circle(cx='-110' cy='-46' r='4' stroke='grey' stroke-width='2' fill='white')
+      circle(cx='46' cy='110' r='4' stroke='grey' stroke-width='2' fill='white')
+      circle(cx='-46' cy='110' r='4' stroke='grey' stroke-width='2' fill='white')
+      circle(cx='46' cy='-110' r='4' stroke='grey' stroke-width='2' fill='white')
+      circle(cx='-46' cy='-110' r='4' stroke='grey' stroke-width='2' fill='white')
+    br
+    p
+      | $(n-1)$ 
+      span.red red 
+      | matchings
+      | + $(n-1)$ 
+      span.blue blue 
+      | matchings
+
+section
+  section(data-auto-animate)
+    p
+      span.blue RMM 2020 
+      | For every family of $n$ odd cycles in $K_n$, there exists a rainbow odd cycle.
+    p
+      span.fragment
+        span.green Proof 
+        span Take a maximal rainbow forest
+      br
+      span.fragment At least one odd cycle is not used
+      br
+      span.fragment This odd cycle is fully contained in a rainbow tree
+      br
+      span.fragment An edge doesn't respect bipartition of rainbow tree
+  section(data-auto-animate)
+    p
+      span.blue RMM 2020 
+      | For every family of $n$ odd cycles in $K_n$, there exists a rainbow odd cycle.
+    p.fragment
+      span.blue Observation 
+      span For $n-1$ identical cycles, each of length $n$, there exists no rainbow cycle. 
+    p.fragment RMM 2020 is sharp for odd $n$.
+    p.fragment
+      span.red Question 
+      | Improvement for even $n$?
+section
+  section
+    p For every family of $n-1$ odd cycles in $K_n$, if there exists no rainbow odd cycle, then ...
+    p.fragment
+      span.green Definition 
+      | A family $\mathcal{O}$ of cycles is a 
+      span.red pruned cactus 
+      | if all the cycles are identical to a cycle on $\lvert \mathcal{O} \rvert + 1$ vertices, or $\mathcal{O}$ can be partitioned into two pruned cacti $\mathcal{O}_1$ and $\mathcal{O}_2$ such that $\cup \mathcal{O}_1$ and $\cup \mathcal{O}_2$ share exactly one vertex
+  section
+    .container
+      .col
+        .r-stack
+          img(src="cactus-1.jpg" height=600)
+          img.fragment(src="cactus-2.jpg" height=600)
+      .col
+        p.fragment Each cycle of length $n$ repeats $n-1$ times
+        p.fragment.green Observations
+        p.fragment No rainbow cycle 
+        p.fragment Each odd cycle repeats even number of times
+        p.fragment # cycles $=$ # vertices $- 1$
+  section(data-auto-animate)
+    p.blue Theorem (Aharoni, Briggs, Holzman, and J.)
+    p(style="margin-bottom: 6pt") For every family of $n-1$ odd cycles in $K_n$, if there exists no rainbow odd cycle, then ...
+    span the family is a pruned cactus.
+    p.fragment
+      span.green Observation 
+      | Every pruned cactus that consists of odd cycles only has even number of cycles
+    p.fragment
+      span.blue Corollary 
+      | When $n$ is even, for every family of $n-1$ odd cycles in $K_n$, there exists a rainbow odd cycle.
+  section
+    p
+      span.blue Theorem 
+      | For every family $\mathcal{O}$ of $n$ odd cycles in $K_{n+1}$, if no rainbow odd cycle, then $\mathcal{O}$ is a pruned cactus.
+    p.fragment
+      span.green Proof sketch 
+      | Break into 3 cases: 
+      ol
+        li.fragment There exists $\mathcal{K} \subsetneq \mathcal{O}$ such that $v(\cup \mathcal{K}) \le \lvert \mathcal{K} \rvert + 1$
+        li.fragment Every odd cycle in $\mathcal{O}$ is Hamiltonian
+        li.fragment For every $\mathcal{K} \subsetneq \mathcal{O}$, $v(\cup \mathcal{K}) > \lvert \mathcal{K} \rvert + 1$, and some odd cycle in $\mathcal{O}$ is not Hamiltonian
+  section
+    p
+      span.green Proof of Case 3 
+      | For every $\mathcal{K} \subsetneq \mathcal{O}$, $v(\cup \mathcal{K}) > \lvert \mathcal{K} \rvert + 1$, and some odd cycle in $\mathcal{O}$ is not Hamiltonian
+    p Suppose $\mathcal{O} = \{O_1, \dots, O_n\}$ and $v \not\in O_n$
+    p.fragment Consider $\mathcal{O}' = \{O_1-v, \dots, O_{n-1} - v\}$
+    p.fragment
+      | They are connected subgraphs, and
+      br
+      | for every $\mathcal{K}' \subseteq \mathcal{O}'$, $v(\cup \mathcal{K}') \ge \lvert \mathcal{K}' \rvert + 1$
+    p.fragment Rado's matroid theorem: $\mathcal{O}'$ has a rainbow tree spanning $K_{n+1} - v$
+    p.fragment Odd cycle $O_n$ is fully contained in this rainbow tree ...
+
+section
+  section
+    h3.redacted
+      | Rainbow 
+      span odd 
+      |  cycles
+    p
+      span.blue Proposition 
+      | For every family of $n$ cycles in $K_n$, there exists a rainbow cycle
+    p.fragment
+      span.blue Observation 
+      span For a pruned cacti with $n-1$ cycles (on $n$ vertices), there exists no rainbow cycle. 
+  section(data-auto-animate)
+    p For every family of $n-1$ cycles in $K_n$, if there exists no rainbow cycle, then ...
+    p.fragment
+      span.green Definition 
+      | A family $\mathcal{O}$ of cycles is a 
+      span.red saguaro 
+      | if $\mathcal{O}$ is a pruned cactus, or $\mathcal{O}$ can be partitioned into two saguaros $\mathcal{O}_1$ and $\mathcal{O}_2$ and a single cycle $O$ such that $\cup \mathcal{O}_1$ and $\cup \mathcal{O}_2$ share no vertex, and $O$ is an even cycle that alternates between $\cup \mathcal{O}_1$ and $\cup \mathcal{O}_2$
+  section(data-auto-animate)
+    p.blue Theorem (Aharoni, Briggs, Holzman, and J.)
+    p(style="margin-bottom: 6pt") For every family of $n-1$ cycles in $K_n$, if there exists no rainbow cycle, then ...
+    span the family is a saguaro.
+
+section
+  section
+    h3 Rainbow even cycles
+    p
+      span.blue Theorem 
+      | (Zichao Dong and Zijian Xu)
+      br
+      | For every family of 
+      span.red $\lfloor{(6n-1)/5}\rfloor$ 
+      | even cycles in $K_n$, there exists a rainbow even cycle.
+
+section
+  h3 Open problems
+  p Characterize families of $\lfloor{(6n-1)/5}\rfloor - 1$ even cycles in $K_n$ with no rainbow even cycle
+  p.fragment
+    span.blue Theorem 
+    | (Drisko '98, Aharoni and Berger '09) 
+    | For every 
+    span.red $2n-1$ 
+    | matchings, each of size $n$, in a bipartite graph, there exists a rainbow matching of size $n$.
+  p.fragment
+    span.blue Conjecture 
+    | For every 
+    span.red $2n$ 
+    | matchings, each of size $n$, 
+    s in a bipartite graph,
+    |  there is a rainbow matching of size $n$.
+  
+section
+  .container
+    .col
+      img(src='spike.jpg' height="500")
+    .col
+      small.red 姜子麟 Zilin Jiang
+      br
+      small= institute
+      br
+      small= email

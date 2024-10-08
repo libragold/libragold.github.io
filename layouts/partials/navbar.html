@@ -1,0 +1,10 @@
+<nav aria-label="main navigation">
+    <a class="brand" href="/">{{ $.Site.Title }}</a>
+    <ul>
+        {{ range .Site.Menus.main }}
+        <li{{ if or ($.Page.IsMenuCurrent "main" .) ($.Page.HasMenuCurrent "main" .) }} class="active"{{ end }}>
+            <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</nav>

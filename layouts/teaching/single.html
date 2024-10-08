@@ -1,0 +1,34 @@
+{{ define "main" }}
+<section id="teaching">
+    <div class="info">{{ .Content }}</div>
+
+    <article class="institution-group">
+        <h3>Arizona State University</h3>
+        <!-- Initialize a variable to track the current year -->
+        {{ $currentYear := "" }}
+
+        {{ range .Site.Data.courses }}
+        {{ $year := replaceRE "[^0-9]" "" .semester }}
+        {{ if eq $currentYear "" }}
+            
+        {{ end }}
+        {{ if and (eq $currentYear "2021") (eq $year "2020") }}
+        </article>
+        <article class="institution-group">
+            <h3>Massachusetts Institute of Technology</h3>
+        {{ end }}
+        <div class="course">
+            <p>
+                {{ if .ongoing }}<span class="new">ONGOING</span>{{ end }}
+                {{ .semester }} &middot; {{ .number }} &middot; {{ .title }}
+            </p>
+            <div class="links">
+                {{ if .canvas }}<a href="{{.canvas}}">Canvas</a>{{ end }}
+                {{ if .archive }}<a href="{{.archive}}">Archive</a>{{ end }}
+            </div>
+        </div>
+        {{ $currentYear = $year }}
+    {{ end }}
+    </article>
+</section>
+{{ end }}

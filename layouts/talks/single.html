@@ -1,0 +1,39 @@
+{{ define "main" }}
+<section id="talks">
+    <div class="info">{{ .Content }}</div>
+    <!-- Initialize a variable to track the current year -->
+    {{ $currentYear := "" }}
+
+    <!-- Sort talks by date in reverse chronological order -->
+    {{ range (sort .Site.Data.talks "date" "desc") }}
+    {{ $year := .date | time.Format "2006" }}
+
+    <!-- Check if the year has changed, and display it if so -->
+    {{ if ne $year $currentYear }}
+    {{ if ne $currentYear "" }}</article>{{ end }} <!-- Close the previous year's tag -->
+    <article class="year-group">
+    <h3>{{ $year }}</h3>
+    {{ $currentYear = $year }}
+    {{ end }}
+    <div class="talk">
+        <p>
+            {{ if gt (time.AsTime .date) now }}
+            <span class="new">UPCOMING</span>
+            {{ end }}
+            {{ .date | time.Format "Jan 2" }}
+            {{ if .endDate }} – {{ .endDate | time.Format "Jan 2" }}{{ end }}
+            &middot; {{ .location }}
+        </p>
+        <p class="title">{{ .title }}</p>
+        <p class="occasion">{{ .occasion }}</p>
+        <div class="links">
+            {{ if .slides }}<a href="/slides/{{ .slides }}">Slides</a>{{ end }}
+            {{ if .blog }}<a href="{{ .blog }}">Blog</a>{{ end }}
+            {{ if .video }}<a href="{{ .video }}">Video</a>{{ end }}
+            {{ if .arxiv }}<a href="{{ .publicationUrl }}" target="_blank">Paper</a>{{ end }}
+        </div>
+    </div>
+    {{ end }}
+    </article> <!-- Close the last year's tag -->
+</section>
+{{ end }}

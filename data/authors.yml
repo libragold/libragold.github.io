@@ -1,0 +1,78 @@
+anaor:
+  name: "Alon Naor"
+apolyanskii:
+  name: "Alexandr Polyanskii"
+  url: "http://polyanskii.com"
+ayehudayoff:
+  name: "Amir Yehudayoff"
+  url: "https://yehudayoff.net.technion.ac.il"
+bbukh:
+  name: "Boris Bukh"
+  url: "https://www.borisbukh.org"
+dhefetz:
+  name: "Dan Hefetz"
+  url: "https://dannyhefetz.wixsite.com/homepage"
+eberger:
+  name: "Eli Berger"
+  url: "https://math.haifa.ac.il/berger"
+fhavet:
+  name: "Frédéric Havet"
+  url: "https://www-sop.inria.fr/members/Frederic.Havet"
+gkronenberg:
+  name: "Gal Kronenberg"
+  url: "https://www.maths.ox.ac.uk/people/gal.kronenberg"
+hacharya:
+  name: "Hricha Acharya"
+  url: "https://sites.google.com/asu.edu/hrichaacharya"
+ivorobyev:
+  name: "Ilya Vorobyev"
+  url: "https://scholar.google.ru/citations?user=sBNnIT0AAAAJ"
+jbriggs:
+  name: "Joseph Briggs"
+  url: "https://josephguybriggs.wordpress.com"
+jma:
+  name: "Jie Ma"
+  url: "https://staff.ustc.edu.cn/~jiema"
+jtidor:
+  name: "Jonathan Tidor"
+  url: "https://web.stanford.edu/~jtidor"
+mamir:
+  name: "Michal Amir"
+mchudnovsky:
+  name: "Maria Chudnovsky"
+  url: "https://web.math.princeton.edu/~mchudnov"
+mho:
+  name: "Matthew H. Ho"
+nalon:
+  name: "Noga Alon"
+  url: "https://web.math.princeton.edu/~nalon"
+npolyanskii:
+  name: "Nikita Polyanskii"
+  url: "https://scholar.google.com/citations?user=4Y8b6l8AAAAJ"
+phaxell:
+  name: "Penny Haxell"
+  url: "https://uwaterloo.ca/combinatorics-and-optimization/people-profiles/penny-haxell"
+raharoni:
+  name: "Ron Aharoni"
+  url: "https://raharoni.net.technion.ac.il"
+rholzman:
+  name: "Ron Holzman"
+  url: "https://holzman.technion.ac.il"
+sflorin:
+  name: "Sam H. Florin"
+szhang:
+  name: "Shengtong Zhang"
+  url: "https://sites.google.com/view/shengtong-zhang/"
+tjiang:
+  name: "Tao Jiang"
+  url: "https://sites.miamioh.edu/jiangt"
+ycensor:
+  name: "Yair Censor"
+  url: "https://math.haifa.ac.il/yair"
+yyao:
+  name: "Yuan Yao"
+yzhao:
+  name: "Yufei Zhao"
+  url: "https://yufeizhao.com"
+zjiang:
+  name: "Zilin Jiang"

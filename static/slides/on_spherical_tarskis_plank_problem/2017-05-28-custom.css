@@ -1,0 +1,44 @@
+.reveal .blue {
+  color: #1b91ff;
+}
+.reveal figcaption {
+  font-size: 60%;
+}
+.reveal section img {
+  border: none;
+}
+.reveal .avatar {
+  border-radius: 50%;
+  height: 4em;
+  width: 4em;
+}
+.reveal .avatars img {
+  height: 4em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+.reveal .grown {
+  transform: scale(1.3);
+}
+.reveal .slides section .fragment.shrink.visible {
+  transform: scale(1);
+}
+.reveal figure img {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+.annulus {
+  position: relative;
+}
+.annulus .hole {
+  background: white;
+  height: 1em;
+  width: 1em;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -0.6em;
+  margin-left: -0.5em;
+}

@@ -1,0 +1,16 @@
+baseURL = 'https://zilin.one/'
+languageCode = 'en-us'
+title = "Zilin Jiang"
+[menus]
+    [[menus.main]]
+        name = "Writings"
+        pageRef = "/writings/"
+        weight = 10
+    [[menus.main]]
+        name = "Talks"
+        pageRef = "/talks/"
+        weight = 20
+    [[menus.main]]
+        name = "Teaching"
+        pageRef = "/teaching/"
+        weight = 30

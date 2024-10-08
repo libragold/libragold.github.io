@@ -1,0 +1,17 @@
+doctype html
+html
+  - var head_title = "Beyond classification theorem of Cameron, Geothals, Seidel and Shult"
+  - var title = "Beyond classification theorem of<br>Cameron, Geothals, Seidel and Shult"
+  - var institute = "Arizona State University"
+  - var date = "October 11, 2024"
+  - var revealjs_version = "5.1.0"
+  - var revealjs_theme = "serif"
+  - var email = "zilinj@asu.edu"
+  include ../includes/head.pug  
+  body
+    .reveal
+      .slides
+        include main.pug
+    include ../includes/script.pug
+  script.
+    Reveal.configure({ transition: 'fade' })

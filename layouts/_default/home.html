@@ -1,0 +1,34 @@
+{{ define "main" }}
+  <!-- Main Content -->
+    <!-- About Section -->
+    {{ with .Site.GetPage "about.md" }}
+    <section id="about">
+      {{ with .Params.profile }}
+        <img src="{{ .src | safeURL }}" alt="{{ .label }}">
+      {{ end }}
+      <div class="text-content">
+        {{ .Content }}
+      </div>
+    </section>
+    {{ end }}
+
+    <!-- Vita Section -->
+    <section id="vita">
+      {{ with .Site.GetPage "education.md" }}
+        {{ .Content}}
+      {{end }}
+    </section>
+
+    <!-- Contact Section -->
+    {{ with .Site.GetPage "contact.md" }}
+    <section id="contact">
+      <h2>{{ .Title }}</h2>
+      {{ with .Params.map }}
+      <div class="map-container">
+        <iframe width="100%" height="400" frameborder="0" scrolling="no" aria-label="{{ .label }}" src="{{ .src | safeURL }}"></iframe>
+      </div>
+      {{ end }}
+      {{ .Content }}
+    </section>
+    {{ end }}
+{{ end }}

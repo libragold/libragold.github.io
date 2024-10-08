@@ -1,0 +1,43 @@
+{{ define "main" }}
+<section id="writings">
+    <div class="info">{{ .Content }}</div>
+    {{ range (sort .Site.Data.writings "arxiv" "desc") }}
+    <article class="writing">
+        <p class="title">
+            {{ if eq (now.Year) .year }}
+                <span class="new">NEW</span>
+            {{ end }}
+            {{ .title }}
+        </p>
+        <p class="authors">
+            {{ $total := len .authors }}
+            {{ range $index, $author := .authors }}
+                {{ $authorData := index $.Site.Data.authors $author }}
+                {{- if $authorData.url -}}
+                    <a href="{{ $authorData.url }}">{{ $authorData.name }}</a>
+                {{- else -}}
+                    {{ $authorData.name }}
+                {{- end -}}
+                {{- if lt (add $index 1) $total -}},
+                {{- end -}}
+            {{- end -}}
+        <p class="publication">
+            {{ if .journal }}
+                {{ .journal }} &middot; {{ .year }} &middot; <a href="{{ .doi }}">DOI</a>
+                {{ if .erratum }}
+                &middot; <a href="{{ .erratum }}">ERRATUM</a>
+                {{ end }}
+            {{ else }}
+                arXiv preprint &middot; {{ .year }}
+            {{ end }}
+        </p>
+        <div class="links">
+            <a href="http://arxiv.org/pdf/{{ .arxiv }}">PDF</a>
+            {{ if .slides }}
+            <a href="/slides/{{ .slides }}/index.html">Talk</a>
+            {{ end }}
+        </div>
+    </article>
+    {{ end }}
+</section>
+{{ end }}
