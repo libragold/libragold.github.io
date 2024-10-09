@@ -13,4 +13,4 @@ hugo.linux
 /.hugo_build.lock
 
 # Generated files by node
-/node_modules
+/node_modules/
