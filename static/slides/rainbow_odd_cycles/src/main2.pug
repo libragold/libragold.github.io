@@ -1,0 +1,225 @@
+include ../../layouts/title_slide.pug
+section
+  section(data-auto-animate)
+    .theorem
+      p Bárány's colorful Carathéodory theorem
+      p For every family of $n+1$ subsets of $\mathbb{R}^n$, each containing $\vec{a}$ in its convex hull, there exists a rainbow set with the same property.
+    p.fragment
+      span.green Definition 
+      | Given a family $\mathcal{F}$ of subsets $F_1, \dots, F_m$ of $E$ a subset $\{x_1, \dots, x_r\}$ is 
+      span.red rainbow 
+      | if there exist distinct $i_1, \dots, i_r$ such that $x_1 \in F_{i_1}, \dots, x_r \in F_{i_r}$
+    p.fragment
+      span.blue Recurring theme 
+      | How large does $\mathcal{F}$ need to be to guarantee a rainbow set satisfying property $\mathcal{P}$ assuming that every member of $\mathcal{F}$ satisfies $\mathcal{P}$?
+  section(data-auto-animate)
+    p
+      span.blue Recurring theme 
+      | How large does $\mathcal{F}$ need to be to guarantee a rainbow set satisfying property $\mathcal{P}$ assuming that every member of $\mathcal{F}$ satisfies $\mathcal{P}$?
+    .theorem.fragment
+      p Drisko's theorem improved by Aharoni and Berger
+      p $2n-1$ matchings of size $n$ in a bipartite graph have a rainbow matching of size $n$
+    .theorem.fragment
+      p Aharoni, Holzman and J.
+      p $rn - r + 1$ fractional matchings of size $n$ in an $r$-partite hypergraph have a rainbow fractional matching of size $n$
+  section(data-auto-animate)
+    p
+      span.blue Recurring theme 
+      | How large does $\mathcal{F}$ need to be to guarantee a rainbow set satisfying property $\mathcal{P}$ assuming that every member of $\mathcal{F}$ satisfies $\mathcal{P}$?
+    p
+      span.green Odd cycles: 
+      | $\mathcal{P} =$ "being an odd cycle in a fixed $K_n$"
+    p.fragment How many odd cycles in a fixed $K_n$ are needed to guarantee a rainbow odd cycle?
+    p
+      span.fragment $n = 3$? 
+      span.fragment Three odd cycles suffice
+      br
+      span.fragment What's the answer in general?
+  section(data-auto-animate)
+    p How many odd cycles in a fixed $K_n$ are needed to guarantee a rainbow odd cycle?
+    p.fragment
+      span.red Answer 
+      span $n$ odd cycles suffice
+    p
+      span.fragment
+        span.green Proof 
+        span Take a maximal rainbow forest
+      br
+      span.fragment At least one odd cycle is not used
+      br
+      span.fragment This odd cycle is fully contained in a rainbow tree
+      br
+      span.fragment Some edge doesn't respect bipartition of rainbow tree
+      br
+      span.fragment Add that edge to the rainbow tree
+  section(data-auto-animate)
+    p How many odd cycles in a fixed $K_n$ are needed to guarantee a rainbow odd cycle?
+    p
+      span.red Answer 
+      span $n$ odd cycles suffice
+    p.fragment
+      span.blue Example 
+      span $n-1$ identical cycles of length $n$ have no rainbow cycle
+    p.fragment When $n$ is odd: $n$ odd cycles are necessary
+    p.fragment When $n$ is even: $n-1$ odd cycles are necessary
+    p.fragment
+      span.red Question 
+      | Improvement for even $n$?
+section
+  section
+    p For every family of $n-1$ odd cycles in $K_n$, if no rainbow odd cycle exists, then ...
+    p Think about $n = 5$...
+    p.fragment
+      span.green Definition 
+      | A family $\mathcal{O}$ of cycles is a 
+      span.red pruned cactus 
+      | if all the cycles are identical to a cycle on $\lvert \mathcal{O} \rvert + 1$ vertices, 
+      span.fragment or $\mathcal{O}$ can be partitioned into two pruned cacti $\mathcal{O}_1$ and $\mathcal{O}_2$ such that $\cup \mathcal{O}_1$ and $\cup \mathcal{O}_2$ share exactly one vertex
+  section
+    .container
+      .col
+        .r-stack
+          img(src="cactus-1.jpg" height=600)
+          img.fragment(src="cactus-2.jpg" height=600)
+      .col
+        p.fragment.green Pruned cactus
+        p.fragment Each cycle of length $n$ repeats $n-1$ times
+        p.fragment # cycles $=$ # vertices $- 1$
+        p.fragment No rainbow cycle 
+  section(data-auto-animate)
+    .theorem 
+      p Aharoni, Briggs, Holzman, and J.
+      p For every family of $n-1$ odd cycles in $K_n$, if there exists no rainbow odd cycle, then the family is a pruned cactus.
+    p.fragment In a pruned cactus, (a) each cycle of length $n$ repeats $n-1$ times, and (b) # cycles $=$ # vertices $- 1$
+    p.fragment Pruned cactus of odd cycles has even number of cycles
+    p.fragment
+      span.blue Corollary 
+      | When $n$ is even, $n-1$ odd cycles suffice
+  section
+    .theorem 
+      p Aharoni, Briggs, Holzman, and J.
+      p For every family $\mathcal{O}$ of $n$ odd cycles in $K_{n+1}$, if no rainbow odd cycle, then $\mathcal{O}$ is a pruned cactus.
+    p.fragment
+      span.green Proof: 
+      | Break into 3 cases.
+      ol
+        li.fragment There exists $\mathcal{K} \subsetneq \mathcal{O}$ such that $v(\cup \mathcal{K}) \le \lvert \mathcal{K} \rvert + 1$
+        li.fragment Every odd cycle in $\mathcal{O}$ is Hamiltonian
+        li.fragment For every $\mathcal{K} \subsetneq \mathcal{O}$, $v(\cup \mathcal{K}) > \lvert \mathcal{K} \rvert + 1$, and some odd cycle in $\mathcal{O}$ is not Hamiltonian
+  section
+    p
+      span.green Case 1: 
+      span There exists $\mathcal{K} \subsetneq \mathcal{O}$ such that $v(\cup \mathcal{K}) \le \lvert \mathcal{K} \rvert + 1$
+    p.fragment
+      span.green Proof sketch 
+      span "induction helps"
+    p.fragment By induction, $\mathcal{K}$ is a pruned cactus
+    p.fragment Without loss of generality, $\mathcal{K}$ consists of identical odd cycles $O$
+    p.fragment Each odd cycle $O_i$ in $\mathcal{O}\setminus\mathcal{K}$ is partitioned by $V(O)$ into arcs, one of which is odd, say $P_i$
+    p.fragment After contracting $V(O)$, odd arc $P_i$ becomes odd cycle
+    p.fragment (a) rainbow cycle exists, or (b) new odd cycles form a pruned cactus
+  section
+    p
+      span.green Case 2: 
+      span Every odd cycle in $\mathcal{O}$ is Hamiltonian
+    p.fragment
+      span.green Proof sketch 
+    p.fragment Let $S$ be a rainbow star of maximum size
+    p.fragment As in Case 1, contract the leaves of $S$ and apply induction
+  section
+    p
+      span.green Proof of Case 3 
+      | For every $\mathcal{K} \subsetneq \mathcal{O}$, $v(\cup \mathcal{K}) > \lvert \mathcal{K} \rvert + 1$, and some odd cycle in $\mathcal{O}$ is not Hamiltonian
+    p Suppose $\mathcal{O} = \{O_1, \dots, O_n\}$ and $v \not\in O_n$
+    p.fragment Consider $\mathcal{O}' = \{O_1-v, \dots, O_{n-1} - v\}$
+    p.fragment
+      | They are connected subgraphs, and
+      br
+      | for every $\mathcal{K}' \subseteq \mathcal{O}'$, $v(\cup \mathcal{K}') \ge \lvert \mathcal{K}' \rvert + 1$
+  section
+    .theorem
+      p Rado's matroid theorem
+      p Given a matroid with ground set $E$, for every subsets $E_1, \dots, E_m$ of $E$, a rainbow independent set of size $m$ exists if and only if $\mathrm{rank}(\bigcup_{i\in I} E_i) \ge |I|$ for every $I \subseteq [m]$
+    .theorem
+      p Corollary
+      p For every connected subgraphs $E_1, \dots, E_m$ in $K_{m+1}$ a rainbow spanning tree exists if and only if $v(\bigcup_{i\in I} E_i) \ge |I| + 1$ for every $I \subseteq [m]$
+  section
+    p
+      span.green Proof of Case 3 
+      | For every $\mathcal{K} \subsetneq \mathcal{O}$, $v(\cup \mathcal{K}) > \lvert \mathcal{K} \rvert + 1$, and some odd cycle in $\mathcal{O}$ is not Hamiltonian
+    p Suppose $\mathcal{O} = \{O_1, \dots, O_n\}$ and $v \not\in O_n$
+    p Consider $\mathcal{O}' = \{O_1-v, \dots, O_{n-1} - v\}$
+    p
+      | They are connected subgraphs, and
+      br
+      | for every $\mathcal{K}' \subseteq \mathcal{O}'$, $v(\cup \mathcal{K}') \ge \lvert \mathcal{K}' \rvert + 1$
+    p.fragment Rainbow spanning tree exists
+    p.fragment Odd cycle $O_n$ is fully contained in this rainbow tree ...
+
+section
+  section
+    h3.redacted
+      | Rainbow 
+      span odd 
+      |  cycles
+    p
+      span.blue Proposition 
+      | For every family of $n$ cycles in $K_n$, there exists a rainbow cycle
+    p.fragment
+      span.blue Observation 
+      span For a pruned cactus with $n-1$ cycles (on $n$ vertices), there exists no rainbow cycle. 
+  section(data-auto-animate)
+    p For every family of $n-1$ cycles in $K_n$, if there exists no rainbow cycle, then ...
+    p.fragment
+      span.green Definition 
+      | A family $\mathcal{O}$ of cycles is a 
+      span.red saguaro 
+      | if $\mathcal{O}$ is a pruned cactus, 
+      span.fragment or $\mathcal{O}$ can be partitioned into two saguaros $\mathcal{O}_1$ and $\mathcal{O}_2$ and a single cycle $O$ 
+      span.fragment such that $\cup \mathcal{O}_1$ and $\cup \mathcal{O}_2$ share no vertex, 
+      span.fragment and $O$ is an even cycle that alternates between $\cup \mathcal{O}_1$ and $\cup \mathcal{O}_2$
+    .theorem.fragment
+      p Aharoni, Briggs, Holzman, and J.
+      p For every family of $n-1$ cycles in $K_n$, if there exists no rainbow cycle, then the family is a saguaro.
+section
+  section
+    h3 Rainbow even cycles
+    .theorem 
+      p Zichao Dong and Zijian Xu
+      p For every family of $\lfloor{(6n-1)/5}\rfloor$ even cycles in $K_n$, there exists a rainbow even cycle
+    p.fragment
+      span.green Example 
+      span there exist 6 squares on 6 vertices without rainbow even cycles
+    p.fragment Glue a new copy at one vertex to the union of the previous ones
+  section
+    h3 Rainbow triangles
+    .theorem
+      p Györi, independently Frankl, Füredi and Simonyi, independently Goorevitch and Holzman
+      p More than $n^2/8$ distinct triangles in $K_n$ have a rainbow triangle
+    p.fragment
+      span.green Observation 
+      span Take $n/4$ disjoint pairs of vertices, and connecting each pair to each of the remaining $n/2$ vertices with a triangle
+section
+  h3 Open problems
+  p.fragment How many cycles of length $a\mathbb{Z}+b$ are needed in $K_n$ to guarantee a rainbow cycle of length $a\mathbb{Z}+b$?
+  p.fragment
+    span.blue Theorem 
+    span.red $2n-1$ 
+    | matchings of size $n$ in a bipartite graph have a rainbow matching of size $n$
+  p.fragment
+    span.blue Conjecture 
+    span.red $2n$ 
+    | matchings of size $n$ 
+    s in a bipartite graph
+    |  have a rainbow matching of size $n$
+if date
+  section
+    .container
+      .col
+        img(src='spike.jpg' height="500")
+      .col
+        small.red Zilin Jiang
+        br
+        small= institute
+        br
+        small= email

@@ -1,18 +1,12 @@
-doctype html
-html
-  - var head_title = "Rainbow structures via algebraic topology"
-  - var title = "Rainbow structures<br>via algebraic topology"
-  - var institute = "Arizona State University"
-  - var coauthors = "Ron Aharoni and Ron Holzman"
+extends ../layouts/default.pug
+
+block head
+  include src/head.pug
   - var date = "July 7, 2022"
-  - var revealjs_version = "4.3.1"
+  - var institute = "Arizona State University"
   - var email = "zilinj@asu.edu"
-  - var revealjs_theme = "simple"
-  include ../includes/head.pug
-  body
-    .reveal
-      .slides
-        include ../includes/title_slide.pug
-        include iccm.pug
-        include ../includes/contact.pug
-    include ../includes/script.pug
+  - head_title = "Rainbow structures via algebraic topology"
+  - title = "Rainbow structures<br>via algebraic topology"
+
+block main
+  include src/iccm.pug

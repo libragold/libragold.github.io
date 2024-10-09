@@ -1,0 +1,13 @@
+extends ../../layouts/head.pug
+
+block meta_date
+    - var head_title = "Colored Bárány's theorem"
+    - var title = "<span class='colored-text'>Colored</span> Bárány's theorem"
+    - var theme = "simple"
+    if date == "July 30, 2015"
+        theme = "solarized"
+
+block css
+    link(rel='stylesheet' href='src/custom.css')
+    if date == "July 30, 2015"
+        link(rel="stylesheet" href="src/custom-2015-07-30.css")

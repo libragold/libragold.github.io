@@ -1,0 +1,13 @@
+extends ../layouts/default.pug
+
+block head
+    include src/head.pug
+    - var date = "August 23, 2016"
+    - var institute = "Technion – Israel Institute of Technology"
+    - var email = "jiangzilin@technion.ac.il"
+
+block css
+    link(rel="stylesheet" href="src/custom.css")
+
+block main
+    include src/main.pug

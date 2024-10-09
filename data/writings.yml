@@ -41,7 +41,7 @@
   year: 2017
   doi: "https://doi.org/10.1007/s00039-017-0427-6"
   arxiv: "1703.10550"
-  slides: "on_spherical_tarskis_plank_problem"
+  slides: "spherical_tarskis_plank_problem"
 - title: "Finding a best approximation pair of points for two polyhedra"
   authors:
     - raharoni

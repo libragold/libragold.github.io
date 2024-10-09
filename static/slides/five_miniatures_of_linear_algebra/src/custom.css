@@ -1,0 +1,14 @@
+.reveal .red, .reveal .slides section .fragment.highlight-red.visible {
+  color: #94070A;
+}
+.reveal section img.no-shadow {
+  box-shadow: none;
+  border: none;
+}
+.reveal p, .reveal ul, .reveal table {
+  font-size: 32px;
+}
+.reveal p {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}

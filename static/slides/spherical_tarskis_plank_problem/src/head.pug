@@ -1,0 +1,11 @@
+extends ../../layouts/head.pug
+
+block meta_date
+    - var title = "Spherical Tarski's Plank Problem"
+    - var coauthors = "Alexandr Polyanskii"
+    - var theme = "simple"
+block css
+    if date == "May 28, 2017"
+        link(rel='stylesheet' href='src/custom-2017-05-28.css')
+    else
+        link(rel='stylesheet' href='src/custom.css')

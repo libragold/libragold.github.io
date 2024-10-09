@@ -1,0 +1,264 @@
+include ../../layouts/title_slide.pug
+section
+  section
+    img.simple(src="rainbow.png" height="100px")
+    h3 Rainbow set
+    p
+      | Given sets $P_1, \dots, P_m$
+      br
+      | $P = \{e_1, \dots, e_n\}$ is rainbow
+      br
+      | if $e_i \in P_{\sigma(i)}$ and $\sigma(i)$'s are distinct
+    .fragment
+      h3 Rainbow matching
+      p
+        | Given edge sets $E_1, \dots, E_m$
+        br
+        | a rainbow matching $E$ is a matching and a rainbow set
+  section
+    p Example: 3 matchings of size 3
+    img.simple(src="simple.png")
+    p.fragment Rainbow matching of size 3
+  section(data-background-image="3d.jpg")
+    h3.white-text-3d
+      | Rainbow matchings are 
+      br
+      | matchings in one dimension higher
+  section
+    h3 Latin square
+    p
+      span.blue Conjecture 
+      | (Ryser 1967) Every Latin square of odd order has one transversal.
+    figure.stretch
+      img.simple.fragment(src="latin.png")
+      img.simple.fragment(src="simple.png" style="margin: 0 0 60px 60px")
+    p.fragment
+      span.blue Equivalently 
+      | If $n$ is odd and edge set of $K_{n,n}$ is decomposed into prefect matchings $E_1, \dots, E_n$ then there is a rainbow perfect matching
+  section
+    figure
+      img.avatar(src="pokrovskiy.jpg")
+      img.fragment.avatar(src="woolbright.jpg" data-fragment-index="1")
+      img.fragment.avatar(src="drisko.jpg" data-fragment-index="2")
+    p
+      span.blue Pokrovskiy
+      | : $n$ matchings of size $n+o(n)$ in a bipartite graph have a rainbow matching of size $n$.
+    p.fragment(data-fragment-index="1")
+      span.blue Woolbright
+      | : $n$ matchings of size $n$ in a bipartite graph have a rainbow matching of size $n - \sqrt{n}$.
+    p.fragment(data-fragment-index="2")
+      span.blue Drisko
+      | : $2n-1$ perfect matchings in $K_{n,n}$ have a rainbow perfect matching.
+  section
+    p
+      span.blue Drisko's theorem
+      | : $2n-1$ 
+      span.red.fragment (sharp) 
+      | perfect matchings in $K_{n,n}$ have a rainbow perfect matching.
+    img.fragment.simple(src="sharp.png" height="300px")
+  section
+    h3 Drisko and Erdős–Ginzburg–Ziv
+    p
+      span.blue Drisko's theorem 
+      | $2n-1$ perfect matchings in $K_{n,n}$ have a rainbow perfect matching.
+    p.fragment
+      span.blue EGZ Theorem 
+      | Given $2n-1$ numbers in $\mathbb{Z}/n \mathbb{Z}$
+      br
+      | there exist $n$ of them that sum to $0$.
+    p.fragment.blue Alon's proof of EGZ
+    p
+      span.fragment For each number $a_i$, let $E_i$ be matching $\{ x \sim x + a_i\}$
+      br
+      span.fragment By Drisko's theorem, there is a rainbow matching
+      br
+      span.fragment $$1 \sim 1 + a_{i_1}, \dots, n \sim n + a_{i_n}$$
+      span.fragment $$\implies 1 + \dots + n = (1 + a_{i_1}) + \dots + (n + a_{i_n})$$
+section
+  section
+    h3 Plan of talk
+    p.fragment.grow Geometric proof of Drisko
+    p Generalizations of Drisko
+    p Topological proof of "fractional" Drisko
+  section
+    h3 Bárány's colorful Carathéodory theorem
+    p.fragment
+      span.blue Carathéodory's theorem (cone version):
+      br
+      | If $x \in \mathbb{R}^d$ lies in cone $\{\sum c_ip_i : c_i \ge 0, p_i \in P\}$ of $P$
+      br
+      | then $x =$ the cone combination of $\le d$ points in $P$.
+    p.fragment
+      span.blue Bárány's theorem (cone version):
+      br
+      | If $x \in \mathbb{R}^d$ lies in $\mathrm{cone}(P_i)$ for $i\in[d]$
+      br
+      | then $x$ lies in the cone of a rainbow set.
+  section
+    h3 Geometric proof of Drisko
+    p
+      span.fragment(data-fragment-index="1") edge set $E_i$ $\Leftrightarrow$ point set $P_i := \big\{\vec{e}_{ij} : i\sim j \text{ in }E_i\big\}$
+      br
+      span.fragment(data-fragment-index="2") $E_i$ is perfect matching $\implies$ $\vec{1} \in \mathrm{cone}(P_i)$
+      br
+      span.red.fragment(data-fragment-index="6") Fix: $P_i$ and $\vec{1}$ live in a 1-codimensional subspace of $\mathbb{R}^{2n}$
+      br
+      span.fragment(data-fragment-index="3") Bárány's theorem says $\vec{1}$ is in the cone of a rainbow set
+      br
+      span.fragment(data-fragment-index="4") $\Leftrightarrow$ fractional matching number $\nu^*($rainbow set$)=n$
+      br
+      span.fragment(data-fragment-index="5") Fact: $\nu^*$ = $\nu$ in bipartite graphs
+section
+  section
+    h3 Plan of talk
+    p Geometric proof of Drisko
+    p.fragment.grow Generalizations of Drisko
+    p Topological proof of "fractional" Drisko  
+  section
+    h3 Not necessarily perfect matchings
+    figure
+      img.avatar(src="aharoni.png")
+      img.avatar.fragment.shrink(data-fragment-index="1" src="berger.png")
+      img.avatar.fragment.fade-in(data-fragment-index="1" src="kotlar.png")
+      img.avatar.fragment.fade-in(data-fragment-index="1" src="ziv.png")
+    p
+      span.blue Theorem 
+      | (Aharoni and Berger) $2n-1$ bipartite matchings of size $n$ have a rainbow matching of size $n$.
+    p.red.fragment(data-fragment-index="0") Geometric proof fails due to arbitrarily large dimension
+    p.fragment(data-fragment-index="1")
+      span.blue Theorem 
+      | (Aharoni, Kotlar and Ziv) $2n-1$ bipartite matchings of size $1,2,\dots,n,n,n,\dots, n$ have a rainbow matching of size $n$.
+  section
+    h3 Hypergraph generalization
+    figure
+      img.avatar(src="aharoni.png")
+      img.avatar(src="holzman.png")
+      img.avatar(src="jiang.png")
+    p
+      span.blue Theorem 
+      | (Aharoni, Holzman, J.)
+      br
+      | Given $r\in\mathbb{N}$, $n\in\mathbb{N}$ and $r$-partite edge sets
+      br
+      | $E_1, \dots, E_{rn-r+1}$ with $\nu^*(E_i) \ge n$
+      br
+      | there is a rainbow set $E$ with $\nu^*(E) \ge n$.
+    p.fragment
+      | Here $\nu^*(E) = \max_f\sum_{e\in E} f(e)$
+      br
+      | s.t. $f(e)\ge 0$ for $e\in E$ and $\sum_{e\ni v} f(e) \le 1$ for $v\in V$.
+section
+  section
+    h3 Plan of talk
+    p Geometric proof of Drisko
+    p Generalizations of Drisko
+    p.fragment.grow Topological proof of "fractional" Drisko
+  section
+    p
+      span.blue Simplicial complex 
+      | $\mathcal{C}$ is a family of sets such that $\sigma \subseteq \tau, \tau \in \mathcal{C} \implies \sigma\in \mathcal{C}$.
+    img.stretch.simple(src="simplicial_complex_example.png")
+  section
+    figure
+      img.avatar(src="kalai.png")
+      img.avatar(src="meshulam.png")
+    p
+      span.blue Theorem 
+      | (Kalai–Meshulam)
+      br
+      span.fragment Given $d\in\mathbb{N}$, 
+      span.fragment $d$-Leray simplicial complex $\mathcal{C}$
+      br
+      span.fragment matroid $M$ with rank function $\rho$, 
+      span.fragment both on ground set $X$
+      br
+      span.fragment If $\rho(X\setminus \sigma) > d$ for every $\sigma \in \mathcal{C}$, then $M\setminus \mathcal{C}\neq \emptyset$.
+  section
+    p
+      span.blue Theorem 
+      | (Kalai–Meshulam)
+      br
+      | Given $d\in\mathbb{N}$, $d$-Leray simplicial complex $\mathcal{C}$
+      br
+      | matroid $M$ with rank function $\rho$, both on ground set $X$
+      br
+      | If $\rho(X\setminus \sigma) > d$ for every $\sigma \in \mathcal{C}$, then $M\setminus \mathcal{C}\neq \emptyset$.
+    p
+      span.blue.fragment(data-fragment-index="1") Application 
+      span.fragment(data-fragment-index="2") Given $E_1, \dots, E_{2n-1}$ with $\nu^*(E_i) \ge n$
+      br
+      span.fragment(data-fragment-index="3") $d = 2n-2$, $X = \cup E_i$, 
+      span.fragment(data-fragment-index="4") $\mathcal{C} = \{E \subseteq X : \nu^*(E) < n\}$
+      br
+      span.fragment(data-fragment-index="5") $M = \{\text{rainbow sets}\}$, 
+      span.fragment(data-fragment-index="6") $\rho(E) = \#$ of $E_i$ s.t. $E\cap E_i\neq\emptyset$
+      br
+      span.red.fragment(data-fragment-index="8") Cheated! $M$ not a matroid; can be fixed.
+      br
+      span.fragment(data-fragment-index="7") Kalai–Meshulam: $\exists E\in M\setminus\mathcal{C}$ assuming $\mathcal{C}$ is $d$-Leray
+  section
+    h3 How to prove $\mathcal{C}$ is $d$-Leray?
+    p.fragment(data-fragment-index="4")
+      span.blue Theorem 
+      | (Wegner)
+    table.simple
+      tr
+        td
+          span.fragment(data-fragment-index="1") $d$-representable
+          br
+          span.fragment(data-fragment-index="2") Bárány
+          br
+          span.fragment(data-fragment-index="3") geometric
+        td.fragment(data-fragment-index="4") $\subset$
+        td
+          span.fragment(data-fragment-index="4") $d$-collapsible
+          br
+          span.fragment(data-fragment-index="2") $\Leftarrow$
+          br
+          span.fragment(data-fragment-index="5") combinatorial
+        td.fragment(data-fragment-index="4") $\subset$
+        td
+          | $d$-Leray
+          br
+          | Kalai–Meshulam
+          br
+          span.fragment(data-fragment-index="3") topological
+  section
+    p.blue Elementary $d$-collapse
+    p
+      span.fragment 1. Pick $\sigma \in \mathcal{C}$ s.t. $|\sigma|\le d$ &amp; max face $\tau \supseteq \sigma$ is unique;
+      br
+      span.fragment 2. Remove $[\sigma, \tau]$ from $\mathcal{C}$
+    img.fragment.simple(src="collapse.png" height="240px")
+    p.fragment
+      | $\mathcal{C}$ is 
+      span.blue $d$-collapsible 
+      | if $\mathcal{C}$ becomes $\{\emptyset\}$
+      br
+      | through a chain of elementary $d$-collapsings
+section
+  section
+    h3 Variation and open problems
+  section
+    h3 Not neccessarily $r$-partite
+    p
+      span.blue Theorem 
+      | (Aharoni, Holzman, J.)
+      br
+      | Given $r\in\mathbb{N}$ and $m\in\mathbb{R}^+$.
+      br
+      | For $r$-edge sets $E_1, \dots, E_{\lceil rm\rceil}$ with $\nu^*(E_i) \ge m$
+      br
+      | there is a rainbow set $E$ with $\nu^*(E) \ge m$.
+  section
+    p
+      span.blue Conjecture 
+      | $2n$ 
+      span.fragment.red (sharp) 
+      | matchings (not necessarily bipartite) of size $n$ have a rainbow matching of size $n$.
+    img.simple.fragment(src="conjecture_sharp.png" height="240px")
+    p.fragment
+      span.blue Theorem 
+      | (Aharoni, Berger, Chudnovsky, Howard, Seymour) $3n-2$ matchings of size $n$ have a rainbow matching of size $n$.
+if date
+  include ../../layouts/contact.pug

@@ -1,0 +1,416 @@
+extends ../layouts/default.pug
+
+block head
+  - var date = "July 30, 2015"
+  include src/head.pug
+
+block main
+  section.title-slide
+    h3 Topological Method for
+    h3
+      span.colored-text
+        span C
+        span o
+        span l
+        span o
+        span r
+        span e
+        span d
+      |  B&aacute;r&aacute;ny&apos;s Theorem
+    br
+    p
+      small.blue Zilin Jiang
+      br
+      small Carnegie Mellon University
+      br
+      small= date
+  section
+    section
+      h3 Point selection problem
+      figure.fragment.centering
+        #d1(data-height='420')
+      p.fragment.centering
+        | How to define &quot;median&quot; for point set on plane?
+      .dummy.fragment(data-toggle='diagram' data-target='#d1')
+      p.fragment.centering
+        | Is there always a point in many triangles?
+    section
+      h3 The planar case
+      p Given $n$ points on the plane in general position.
+      .fragment.panel
+        .panel-header Boros&ndash;F&uuml;redi Theorem
+        .panel-body
+          p
+            | There exists a point in $\ge$
+            span.fragment.highlight-red $\frac{2}{9}$
+            | ${n\choose 3}-O(n^2)$ triangles.
+      br
+      .fragment.panel
+        .panel-header Bukh&ndash;Matou&scaron;ek&ndash;Nivasch Theorem
+        .panel-body
+          p The constant $\frac{2}{9}$ is the best possible by stretched grid!
+    section
+      h3 Higher dimensional case
+      p Given $n$ points in $\mathbb{R}^d$ in general position.
+      p.fragment A simplex is the convex hull of $d+1$ points.
+      .fragment.panel
+        .panel-header B&aacute;r&aacute;ny&apos;s Theorem
+        .panel-body
+          p There exists a point in $\ge c_d{n \choose d+1}$ simplices.
+      p
+      .panel.fragment
+        .panel-header Bukh&ndash;Matou&scaron;ek&ndash;Nivasch Theorem
+        .panel-body
+          p We cannot hope for $c_d &gt; \frac{(d+1)!}{(d+1)^d}$ by stretched grid.
+    section
+      h3 Timeline
+      .centering
+        p
+          img.round-200(src='barany.png')
+          img.round-200.fragment(src='wagner.png' data-fragment-index='2')
+          img.round-200.fragment(src='gromov.png' data-fragment-index='3')
+        p
+          | B&aacute;r&aacute;ny: a point is in $\ge$ 
+          span.fragment.highlight-red(data-fragment-index='0') $c_d$
+          | $n\choose d+1$ simplices.
+      table.simple
+        tr.fragment(data-fragment-index='1')
+          td 1982
+          td B&aacute;r&aacute;ny
+          td $\frac{1}{(d+1)^d}$
+          td
+        tr.fragment(data-fragment-index='2')
+          td 2003
+          td Wagner
+          td $\frac{(d^2+1)}{(d+1)^{d+1}}$
+          td
+        tr.fragment(data-fragment-index='3')
+          td 2010
+          td Gromov
+          td
+            | $\frac{2d}{(d+1)(d+1)!}$ 
+            span.fragment(data-fragment-index='4') $&lt; \frac{(d+1)!}{(d+1)^d}$
+          td
+  section
+    h3 Plan of talk
+    table.simple.left-aligned
+      tr
+        td.fragment.indicator(data-fragment-index='2') &#x25B6;
+        td.fragment(data-fragment-index='0')
+          | Introduce a 
+          span.colored-text
+            span c
+            span o
+            span l
+            span o
+            span r
+            span e
+            span d
+          |  variant
+      tr
+        td
+        td.fragment(data-fragment-index='1') Karasev&apos;s proof with a twist
+    .centering
+      img.art.art-1(src='copper_observer.png')
+      figcaption
+        small images from boltcity.com
+  section
+    section
+      h3
+        | A 
+        span.colored-text
+          span c
+          span o
+          span l
+          span o
+          span r
+          span e
+          span d
+        |  variant
+      figure.centering
+        #d2(data-height='280')
+      p.fragment
+        | Given 
+        span.red-text $n$ red
+        |  points, 
+        span.green-text $n$ green
+        |  points and 
+        span.blue-text $n$ blue
+        |  points.
+      .panel.fragment(data-toggle='diagram' data-target='#d2')
+        .panel-header
+          | Colored B&aacute;r&aacute;ny&apos;s Theorem
+        .panel-body
+          p There is a point in at least $pn^3$ colorful triangles.
+    section
+      h3 Probabilistic equivalence
+      p
+        | Given 
+        span.red-text $n$ red
+        |  points, 
+        span.green-text $n$ green
+        |  points and 
+        span.blue-text $n$ blue
+        |  points.
+      .panel.fragment(data-fragment-index='1')
+        .panel-header
+          | Probabilistic Equivalence
+        .panel-body
+          p A point in random colorful triangle with probability $\ge p$.
+      p.fragment(data-fragment-index='2')
+        | Given 3 (continuous) probability measures 
+        span.red-text $m_0$
+        | , 
+        span.green-text $m_1$
+        |  and 
+        span.blue-text $m_2$
+        | .
+      .panel.fragment(data-fragment-index='3')
+        .panel-header
+          | Continuous Equivalence
+        .panel-body
+          p
+            | A point in random colorful triangle with probability $\ge$ 
+            span.fragment.highlight-red(data-fragment-index='4') $p$
+            | .
+    section
+      h3 Timeline (cont.)
+      .centering
+        p
+          img.round-200.fragment(src='gromov.png' data-fragment-index='1')
+          img.round-200.fragment(src='karasev.png' data-fragment-index='2')
+          img.round-200.fragment(src='jiang.png' data-fragment-index='3')
+      table.simple
+        tr.fragment(data-fragment-index='1')
+          td 2010
+          td Gromov
+          td
+            | $\frac{2}{9}$ 
+            span $\to \frac{2d}{(d+1)(d+1)!}$
+          td
+          td $m_i = m_j$
+        tr.fragment(data-fragment-index='2')
+          td 2012
+          td Karasev
+          td
+            | $\frac{1}{6}$ 
+            span.fragment(data-fragment-index='4') $\to \frac{1}{(d+1)!}$
+          td
+        tr.fragment(data-fragment-index='2')
+          td
+          td
+          td
+            | $\frac{2}{9}$ 
+            span.fragment(data-fragment-index='4') $\to \frac{2d}{(d+1)(d+1)!}$
+          td
+            span.green-text $m_1$
+            |  $=$ 
+            span.blue-text $m_2$
+        tr.fragment(data-fragment-index='3')
+          td 2014
+          td J.
+          td
+            | $\frac{2}{9}$ 
+            span.fragment(data-fragment-index='4') $\to \frac{2d}{(d+1)(d+1)!}$
+          td
+  section
+    h3 Plan of talk
+    table.simple.left-aligned
+      tr
+        td.fragment.indicator.fade-out(data-fragment-index='1') &#x25B6;
+        td
+          | Introduce a 
+          span.colored-text
+            span c
+            span o
+            span l
+            span o
+            span r
+            span e
+            span d
+          |  variant
+      tr
+        td.indicator.fragment(data-fragment-index='1') &#x25B6;
+        td Karasev&apos;s proof with a twist
+    .centering
+      img.art.art-2(src='copper_bunny_2.png')
+      img.art.art-3.fragment(src='copper_bunny_1.png' data-fragment-index='1')
+      figcaption
+        small images from boltcity.com
+  section
+    section
+      h3 Karasev&apos;s proof
+      p
+        | Given 3 (continuous) probability measures 
+        span.red-text $m_0$
+        | , 
+        span.green-text $m_1$
+        |  and 
+        span.blue-text $m_2$
+        | .
+      .fragment
+        p Proof by contradiction. Assume for every point $v$,
+        p.centering
+          | $\operatorname{Pr}\big(v \text{ is in} $ 
+          span.colorful-triangle
+          |  $ \big) &lt; p := 2/9.$
+      .fragment
+        p Plane (plus a point at infinity) and sphere are the same.
+        #d3_4.centering
+          span#d3.inline-diagram
+            span#d3_1 $\infty$
+          span.inline-text $\equiv$
+          span#d4.inline-diagram
+            span#d4_1 $\infty$
+    section
+      h3 Preparation
+      ul
+        li.fragment(data-fragment-index='1') Choose a sufficiently fine triangulation of sphere.
+        li.fragment(data-fragment-index='3') Add &quot;buttress&quot; inside the sphere.
+      .centering.div-with-margin
+        figure#d5.fragment(data-fragment-index='2' data-height='380')
+        figure#d6.fragment(data-fragment-index='4' data-height='380')
+    section
+      h3 Auxiliary map
+      div
+        p
+          span.fragment.highlight-red(data-fragment-index='2') Gradually
+          |  build a map from &quot;sphere with buttress&quot; to sphere:
+        .div-with-margin.centering
+          figure#d7(data-height='260')
+          span#d7-5 $\overset{f}{\longrightarrow}$
+          figure#d8(data-height='260')
+        .fragment(data-fragment-index='1')
+          p such that:
+          ol
+            li it is identity when restricted to the sphere;
+            li
+              | it is 
+              span.fragment.highlight-red(data-fragment-index='2') economical
+              | : e.g., image of each &quot;spike&quot; is small.
+    section
+      h3 Build economical map gradually
+      p.fragment Step 1: Vertex $O$ (sphere center) $\mapsto \infty$ (the north pole).
+      p.fragment Step 2: Want $\overline{PO}\mapsto \overline{P\infty}$; need to find line segment $\overline{P\infty}$.
+      .panel.div-with-margin.fragment
+        table.simple.left-aligned
+          tbody
+            tr
+              td.panel-label Claim
+              td
+                | $\operatorname{Pr}\big(\overline{P\infty} \text{ intersects }$ 
+                span.green-to-blue
+                |  $\big)$ $&lt; p$ for some $\overline{P\infty}$.
+      .panel.div-with-margin.fragment
+        table.simple.left-aligned
+          tbody
+            tr
+              td#td-5-3-obs.panel-label Obs
+              td
+                span.white-dot
+                |  is in 
+                span.colorful-triangle
+                |  $\Longleftrightarrow$ 
+                span.red-gray-ray
+                |  intersects 
+                span.green-to-blue
+                | .
+      p.fragment.centering
+        | $\operatorname{Pr}\big($ 
+        span.red-gray-ray
+        |  intersects 
+        span.green-to-blue
+        |  $\big)=\operatorname{Pr}\big($
+        span.white-dot
+        |  is in 
+        span.colorful-triangle
+        |  $\big) &lt; p$
+      p.fragment.centering
+        | $\implies \operatorname{Pr}\big($
+        span.red-gray-ray
+        |  intersects 
+        span.green-to-blue
+        | $\;\big\vert\; $
+        span.red-dot
+        | $\big) &lt; p$ for some 
+        span.red-dot
+    section
+      p
+        | Step 3: Want to define $f$ on $OPQ$. 
+        span.fragment(data-fragment-index='1') Knew $f$ on $OP$, $OQ$, $PQ$.
+      .centering.fragment(data-fragment-index='1')
+        span#d9(data-height='350')
+        span#d9-5 $\overset{f}{\longrightarrow}$
+        span#d10(data-height='350')
+        span.fragment
+          span#d9-6 $\overset{\mathrm{mod2}}{=}$
+          span#d11(data-height='350')
+      p.fragment(data-fragment-index='2') Set $a := m_1(A)$, $b := m_2(A)$, $x := \overline{m}(A) = (a + b)/2$.
+      p.centering(style='margin-top: -16px')
+        span.fragment(data-fragment-index='5') $2x(1-x)\le $
+        span.fragment(data-fragment-index='4') $a(1-b)+b(1-a) \le$
+        span.fragment(data-fragment-index='3')
+          | $\operatorname{Pr}\big($ 
+          span#knot
+          |  int. 
+          span.green-to-blue
+          |  $\big)$
+        span.fragment(data-fragment-index='6') $&lt; 2p$
+      p.centering.fragment(data-fragment-index='7')
+        | $\implies x(1-x) &lt; p = 2/9$. 
+        span.fragment(data-fragment-index='8')  WLOG assume $\overline{m}(A) = x &lt; 1/3$.
+      .dummy.fragment(data-fragment-index='9' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='10' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='11' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='12' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='13' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='14' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='15' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='16' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='17' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='18' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='19' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='20' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='21' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='22' data-toggle='diagram' data-target='#d9')
+      .dummy.fragment(data-fragment-index='23' data-toggle='diagram' data-target='#d10')
+    section
+      h3 Degree argument
+      div
+        p We have found a (continous) map $f$ such that
+        p.centering $\overline{m}\left(f(OPQ)\mathrm{mod2}\right)$
+      .panel.div-with-margin.fragment
+        table.simple.left-aligned
+          tbody
+            tr
+              td.panel-label Def
+              td Degree of map $f$ is $\left|f^{-1}(\text{generic point})\right|$.
+      p.fragment Note there are plenty of points not in $f(\text{spike})\mathrm{mod2}$.
+      .panel.div-with-margin.fragment
+        table.simple.left-aligned
+          tbody
+            tr
+              td.panel-label Obs
+              td
+                span.fragment $\sum$
+                | deg of $f$ on each spike is even.
+            tr.fragment
+              td.panel-label Cor
+              td $\text{deg on sphere} + 2\sum \text{deg on }OPQ$ is even.
+            tr.fragment
+              td.panel-label !
+              td
+                | Degree of identity map is even. 
+                span.fragment Impossible!
+  section.title-slide
+    p
+      small.blue Zilin Jiang
+      br
+      small Carnegie Mellon University
+      br
+      small zj@cmu.edu
+
+block script
+  script(src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')
+  script(src='/js/raphael.js/raphael.min.js')
+  script(src='raphael-diagram.js')

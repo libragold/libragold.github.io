@@ -1,0 +1,163 @@
+section.title-slide
+  h3 Bipartite Algebraic Graphs
+  h3 without Quadrilaterals
+  br
+  p
+    small.blue Zilin Jiang
+    if date
+      br
+      small= institute
+      br
+      small= date
+  p
+    small
+      | Joint work with 
+      span.blue Boris Bukh
+section
+  section
+    h3 Extremal graph problem
+    p
+      | $\operatorname{ex}(n, F)$ &ndash; largest # of edges in an $F$-free graph
+    .panel
+      .panel-header Erd&odblac;s&ndash;Stone&ndash;Simonovits Theorem
+      .panel-body
+        p
+          | $$\operatorname{ex}(n, F) = \left(1 - \frac{1}{\chi - 1}\right){n \choose 2} + o(n^2)$$
+    p.fragment
+      | Degenerate case $\chi = 2$: 
+      span.fragment complete bipartite $K_{s,t}$
+  section
+    h3 Complete bipartite
+    .fragment.panel
+      .panel-header K&ouml;vari&ndash;S&oacute;s&ndash;Tur&aacute;n Theorem
+      .panel-body
+        p $$\operatorname{ex}(n, K_{s,t}) \le c_{s,t}\cdot n^{2-1/s}+o(n^{2-1/s})$$
+    p.fragment Constructions that match the upper bounds:
+    ul
+      li.fragment A bipartite graph whose partite sets are $\mathbb{F}_p^s$,
+      li.fragment
+        | and $\bar{u}\sim\bar{v}$ iff $(\bar{u},\bar{v})$ is on an algebraic hypersurface.
+    table.simple
+      tr.fragment
+        td For $K_{2,2}$,
+        td $x_1y_1+x_2y_2=1$;
+      tr.fragment
+        td For $K_{3,3}$,
+        td $(x_1-y_1)^2+(x_2-y_2)^2+(x_3-y_3)^2=1$.
+  section
+    h3 Questions
+    p What does an extremal $K_{s,t}$-free graph look like?
+    .fragment.panel
+      .panel-header
+        | F&uuml;redi&apos;s result
+      .panel-body
+        p
+          | Every $K_{2,2}$-free graph with $q$ vertices and $\frac{1}{2}q(q+1)^2$ edges is obtained from a projective plane via a polarity with $q+1$ absolute elements.
+    p.fragment What does a $K_{s,t}$-free algebraic graph look like?
+    ul
+      li.fragment Finite field (number theory) is hard.
+      li.fragment Projective algebraic geometry is hard but easier.
+  section
+    h3 Algebraic graphs
+    p.fragment Given hypersurface $H$ in $\mathbb{P}^s\times \mathbb{P}^s$.
+    .panel.fragment
+      .panel-header Example
+      .panel-body
+        p
+          | $$(x_1y_0-x_0y_1)^2+(x_2y_0-x_0y_2)^2$$
+          | $$+(x_3y_0-x_0y_3)^2=x_0^2y_0^2.$$
+    p.fragment
+      | $H$ is said to contain an 
+      span.blue-text $(s,t)$-grid
+      |  if there exist $S, T\subset \mathbb{P}^s$ such that $s = |S|, t = |T|$ and $S\times T \subset H$.
+    p.fragment
+      | $H$ is 
+      span.blue-text almost-$(s,t)$-grid-free
+      |  if there are &quot;big&quot; sets $X,Y\subset \mathbb{P}^s$ such that $H\cap(X\times Y)$ is $(s,t)$-grid-free.
+  section
+    h3 Meta conjecture
+    p.fragment(data-fragment-index='1')
+      | Every almost-$(s,t)$-grid-free hypersurface is equivalent, in a suitable sense, to a hypersurface whose degree in $\bar{y}$ is low.
+    h3.fragment(data-fragment-index='2')
+      | Heuristics
+    p.fragment(data-fragment-index='3')
+      | Suppose deg of $F(\bar{x},\bar{y})$ in $\bar{y}$ is $d$, $\bar{u}_1, \dots, \bar{u}_s$ are points in $\mathbb{P}^s$.
+    p.fragment(data-fragment-index='4')
+      span.fragment(data-fragment-index='5') Generically,
+      |  $F(\bar{u}_1,\bar{y})=\dots=F(\bar{u}_1,\bar{y})=0$ 
+      span.fragment(data-fragment-index='5') has $d^s$ solutions.
+section
+  section
+    h3 Simplest case
+    p Given hypersurface $H \subset \mathbb{P}^1\times \mathbb{P}^1$.
+    .panel.fragment
+      .panel-header The $s=1$ case
+      .panel-body
+        p
+          | If $H$ is almost-$(1,t)$-grid-free, then there exists $F(\bar{x}, \bar{y})$ of degree $&lt; t$ in $\bar{y}$ such that $H$ is almost equal to $\{F = 0\}$.
+  section
+    h3 Partial results
+    p
+      | Given hypersurface $H \subset \mathbb{P}^2\times \mathbb{P}^2$ and a &quot;big&quot; $X \subset \mathbb{P}^2$
+    .panel.fragment
+      .panel-header $s=t=2$ and $Y = \mathbb{P}^2$
+      .panel-body
+        p
+          | If $H\cap(X\times \mathbb{P}^2)$ is $(2,2)$-grid-free, then $\exists F(\bar{x},\bar{y})$ of degree $\le 2$ in $\bar{y}$ such that $H$ is almost equal to $\{F = 0\}$.
+    br
+    .panel.fragment
+      .panel-header $s=t=2$ and $\mathbb{P}^2\setminus Y = \{\bar{v}_1, \dots, \bar{v}_n\}$
+      .panel-body
+        p.fragment
+          | If $H\cap (X\times Y)$ is $(2,2)$-grid-free, then either we are &#x1F604; or $\mathbb{P}^2\times \{\bar{v}_i\}\subset H$ for some $i$.
+  section
+    h3 Proof idea
+    .fragment
+      p
+        | Think of $H\cap (X\times\mathbb{P}^2)$ as a family of algebraic curves in $\mathbb{P}^2$:
+      p $$C(\bar{u}) := \left\{\bar{v}\in\mathbb{P}^2:(\bar{u},\bar{v})\in H\right\}.$$
+    p.fragment
+      | Hypersurface $H$ is $(2,2)$-grid-free if and only if $C(\bar{u})$ and $C(\bar{u}&apos;)$ intersect at $\le 1$ point for distinct $\bar{u},\bar{u}&apos;\in X$.
+    .panel.fragment
+      .panel-header A corollary of Moura&apos;s result
+      .panel-body
+        p
+          | For a generic point $\bar{v}$ on an algebraic curve $C$ in $\mathbb{P}^2$, any algebraic curve $C&apos;$ with $\bar{v}\in C&apos;$ intersects with $C$ at another point 
+          span.fragment unless $C$ is irreducible of degree $\le 2$.
+section
+  section
+    h3 Meta conjecture
+    p.fragment(data-fragment-index='1')
+      | Every almost-$(s,t)$-grid-free hypersurface is equivalent, 
+      span.fragment.highlight-red in a suitable sense
+      | , to a hypersurface whose degree in $\bar{y}$ is low.
+    .panel.fragment(data-fragment-index='6')
+      .panel-header
+        | Examples
+      .panel-body
+        p $H_0 := \left\{x_0y_0+x_1y_1+x_2y_2=0\right\}$
+        p.fragment(data-fragment-index='6')
+          | $H_1 := \left\{x_0y_0^d+x_1y_0^{d-1}y_1+x_2\left(y_0^{d-1}y_2+y_1^d\right)=0\right\}$
+  section
+    h3 Birational automorphism
+    .fragment
+      p
+        | Birational automorphism $\sigma\colon $ defined by
+      p
+        | $$\sigma(y_0:y_1:y_2):=(y_0^d:y_0^{d-1}y_1:y_0^{d-1}y_2+y_1^d)$$
+      p
+        | is a biregular map from $\mathbb{P}^2\setminus\{y_0=0\}$ onto itself.
+    .panel.fragment
+      .panel-header
+        | Conjecture
+      .panel-body
+        p
+          | If $H$ is almost-$(s,t)$-grid-free, then there exists a birational automorphism $\sigma$ such that $H$ is equal, up to $\mathrm{id}\times \sigma$, to a hypersurface of low degree in $\bar{y}$.
+if date
+  section.title-slide
+    p
+      small.blue Zilin Jiang
+      br
+      small= institute
+      br
+      small= email

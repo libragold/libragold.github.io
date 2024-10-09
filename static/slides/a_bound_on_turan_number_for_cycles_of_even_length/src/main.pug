@@ -1,0 +1,209 @@
+include ../../layouts/title_slide.pug
+
+section
+  section
+    h3 Incomplete history
+    p.fragment
+      | $\operatorname{ex}(n, F)$ &ndash; largest # of edges in an $F$-free graph
+    .fragment.panel
+      .panel-header Erd&odblac;s&ndash;Stone&ndash;Simonovits Theorem
+      .panel-body
+        p
+          | $$\operatorname{ex}(n, F) = \left(1 - \frac{1}{\chi - 1}\right){n \choose 2} + o(n^2)$$
+    p.fragment
+      | Degenerate case $\chi = 2$
+    ul.fragment
+      li Complete bipartite $K_{s,t}$
+      li Cycle of even length $C_{2k}$
+  section
+    h3 Even cycles
+    .fragment.centering
+      p
+        img.round-200(src='img/erdos.jpg')
+        img#bondy.round-200.hide(src='img/bondy.png')
+        img#simonovits.round-200.hide(src='img/simonovits.png')
+        img#verstraete.round-200.hide(src='img/verstraete.png')
+        img#pikhurko.round-200.hide(src='img/pikhurko.png')
+        img#bukh.round-200.hide(src='img/bukh.jpg')
+        img#jiang.round-200.hide(src='img/jiang.png')
+      p
+        | Erd&odblac;s: $\operatorname{ex}(n, C_{2k}) \le$ 
+        span.fragment.highlight-red $\gamma_k$
+        |  $n^{1+1/k}$
+    table.simple
+      tr.fragment(data-target='1' data-toggle='avatar')
+        td 1974
+        td Bondy&ndash;Simonovits
+        td $20k$
+        td
+      tr.fragment(data-target='2' data-toggle='avatar')
+        td 2000
+        td Verstra&euml;te
+        td $8(k-1)$
+        td
+      tr.fragment(data-target='3' data-toggle='avatar')
+        td 2012
+        td Pikhurko
+        td $k-1$
+        td
+      tr.fragment(data-target='4' data-toggle='avatar')
+        td 2014
+        td Bukh&ndash;J.
+        td $80\sqrt{k\log k}$
+section
+  h3 Plan of talk
+  table.simple.left-aligned
+    tr
+      td.fragment.indicator(data-fragment-index='2') &#x25B6;
+      td Revisit Pikhurko&apos;s proof
+    tr
+      td
+      td.fragment(data-fragment-index='1') How to make more math?
+  .fragment.centering(data-fragment-index='2')
+    img.art.art-1(src='img/cooper-1.png')
+    figcaption
+      small images from boltcity.com
+section
+  section
+    h3 Combinatorial gadget
+    figure#f0.fragment.centering(data-fragment-index='1')
+      #d0(data-height='375')
+      figcaption
+        small $\Theta$-graph (at least $2k$ vertices)
+    .fragment.panel(data-fragment-index='2' data-toggle='diagram' data-target='#d0')
+      table.simple.left-aligned
+        tr
+          td.panel-label If
+          td
+            | $V(\Theta) = $ 
+            span.highlight-red.fragment.visible(data-fragment-index='2') $A$
+            |  $\cup$ 
+            span.highlight-blue.fragment.visible(data-fragment-index='2') $B$
+            |  is not bipartition
+        tr
+          td.panel-label Then
+          td
+            | Path from 
+            span.highlight-red.fragment.visible(data-fragment-index='2') $A$
+            |  to 
+            span.highlight-blue.fragment.visible(data-fragment-index='2') $B$
+            |  of any possible length
+  section
+    h3 Pikhurko&apos;s proof
+    p.fragment Suppose $G$ is $C_{2k}$-free and $e(G) \ge n^{1+1/k}$
+    p.fragment Take $H\subset G$ of minimum degree $\delta(H) \ge e(G) / n \ge n^{1/k}$
+    figure#f1.fragment.centering
+      #d1(data-height='350')
+    .panel.fragment(data-toggle='diagram' data-target='#d1')
+      table.simple.left-aligned
+        tr
+          td.panel-label Claim
+          td $H_i$ is $\Theta$-free for $i &lt; k$
+  section
+    h3 Proof of the claim
+    figure#f2.centering
+      #d2(data-height='420')
+    p.fragment(data-toggle='diagram' data-target='#d2') Find $y$ the rightmost common ancestor of $\Theta \cap V_i$ in $T$.
+    p
+      span.fragment(data-toggle='diagram' data-target='#d2') Pick $z $ a child of $y$
+      span.fragment(data-toggle='diagram' data-target='#d2')
+      span.fragment , and find $C_{2k}$ using $\Theta$.
+  section
+    h3 Pikhurko&apos;s proof (cont.)
+    .panel.fragment(data-fragment-index='1')
+      table.simple.left-aligned
+        tr.fragment.underlined(data-fragment-index='1')
+          td.panel-label Obs
+          td Bipartite graph of min deg $\ge k$ contains $\Theta$-graph.
+        tr.fragment(data-fragment-index='2')
+          td.panel-label Cor
+          td Average degree of $H_i \le 2k$.
+    p
+    .fragment.panel(data-fragment-index='3')
+      .panel-header.fragment(data-fragment-index='3') Punchline
+      #f3
+        .arrow-to-left.fragment(data-fragment-index='6') $\lesssim 2k$
+        .vertex-1.fragment(data-fragment-index='3') $V_{i}$
+        .arrows
+          .arrow-to-left.fragment(data-fragment-index='8') $\lesssim 2k$
+          .arrow-to-right.fragment(data-fragment-index='7') $\gtrsim \delta$
+        .vertex-2.fragment(data-fragment-index='3') $V_{i+1}$
+      p.centering
+        span.fragment $\frac{v_{i+1}}{v_i}\lesssim \frac{\delta}{k}$
+        span.fragment $\implies \left(\frac{\delta}{k}\right)^k \lesssim n$
+        span.fragment $\implies e(G) \lesssim k\ n^{1+1/k}$
+section
+  h3 Plan of talk
+  table.simple.left-aligned
+    tr
+      td.fragment.indicator.fade-out(data-fragment-index='1') &#x25B6;
+      td Review Pikhurko&apos;s proof
+    tr
+      td.fragment.indicator(data-fragment-index='1') &#x25B6;
+      td How to make more math?
+  .centering
+    img.art.art-2(src='img/cooper-2.png')
+    img.art.art-3.fragment(src='img/cooper-3.png' data-fragment-index='1')
+    figcaption
+      small images from boltcity.com
+section
+  section
+    h3 Trilayered graph
+    figure#f4.fragment.centering(data-fragment-index='1')
+      #d4(data-height='340')
+    ol.fragment(data-fragment-index='2')
+      li
+        | Build 
+        span.fragment.highlight-red(data-fragment-index='5') breath-first search tree
+      li
+        | Find 
+        span.fragment.highlight-red(data-fragment-index='5') degree conditions
+        |  for $\Theta$-free trilayered graph
+      li
+        | Find $C_{2k}$ if trilayered graph contains 
+        span.fragment.highlight-red(data-fragment-index='5') $\Theta$-graph
+  section
+    h3 Well-placed $\Theta$-graph
+    figure#f5.fragment.centering
+      #d5(data-height='550')
+    .dummy.fragment(data-toggle='diagram' data-target='#d5')
+    .dummy.fragment(data-toggle='diagram' data-target='#d5')
+  section
+    h3 Minimum degree condition
+    figure#f6.fragment.centering
+      #d6(data-height='250')
+    p
+    .panel.fragment
+      .panel-header Dichotomy
+      table.simple.left-aligned
+        tr
+          td.panel-label
+          td Large minimum degree
+        tr
+          td.panel-label Implies
+          td Denser trilayered subgraph
+        tr
+          td.panel-label Or
+          td $\Theta$-graph on two levels
+  section
+    h3 Maximum degree condition
+    figure#f7.fragment.centering(data-fragment-index='0')
+      #d7(data-height='350')
+    .fragment.dummy(data-fragment-index='1' data-toggle='diagram' data-target='#d7')
+    .panel.fragment(data-fragment-index='2')
+      table.simple.left-aligned
+        tr.fragment(data-fragment-index='2')
+          td.panel-label Question
+          td Is $Bg$ big?
+        tr.fragment(data-fragment-index='3')
+          td.panel-label Yes
+          td $V_{i+1} = Bg \cup Sm$
+        tr.fragment(data-fragment-index='3')
+          td.panel-label No
+          td $V_{i+1} = Sm$
+if date
+  include ../../layouts/contact.pug
+section.title-slide
+  img.art.stretch(src='img/cooper-4.png')
+  figcaption
+    small images from boltcity.com

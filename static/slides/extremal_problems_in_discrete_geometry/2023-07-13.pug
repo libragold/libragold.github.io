@@ -1,17 +1,10 @@
-doctype html
-html
-  - var head_title = "Extremal problems in Discrete Geometry"
-  - var title = "Extremal Problems in<br> Discrete Geometry"
+extends ../layouts/default.pug
+
+block head
+  include src/head.pug
   - var institute = "Arizona State University"
   - var date = "July 13, 2023"
-  - var revealjs_version = "4.4.0"
-  - var revealjs_theme = "serif"
   - var email = "zilinj@asu.edu"
-  include ../includes/head.pug  
-  body
-    .reveal
-      .slides
-        include main.pug
-    include ../includes/script.pug
-  script.
-    Reveal.configure({ transition: 'fade' })
+
+block main
+  include src/main.pug

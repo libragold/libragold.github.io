@@ -1,0 +1,301 @@
+include ../../layouts/title_slide.pug
+section
+  section
+    h3 Point selection problem
+    figure
+      #d1(data-height="420")
+    p
+      span.fragment Median for plane? 
+      span.dummy.fragment(data-toggle="diagram" data-target="#d1")
+      span.fragment A point in many triangles?
+  section
+    h3 The planar case
+    p Given $n$ points on the plane in general position.
+    .fragment
+      p.blue Boros–Füredi Theorem
+      p
+        | There exists a point in $\ge$
+        span.fragment.highlight-red $\frac{2}{9}$
+        | ${n\choose 3}-O(n^2)$ triangles.
+    .fragment
+      p.blue Bukh–Matoušek–Nivasch Theorem
+      p The constant $\frac{2}{9}$ is the best possible.
+  section
+    h3 Higher dimensional case
+    p Given $n$ points in $\mathbb{R}^d$ in general position.
+    p.fragment A simplex is the convex hull of $d+1$ points.
+    .fragment
+      p.blue Bárány's Theorem
+      p There exists a point in $\ge c_d{n \choose d+1}$ simplices.
+    .fragment
+      p.blue Bukh–Matoušek–Nivasch Theorem
+      p We cannot hope for $c_d > \frac{(d+1)!}{(d+1)^d}$.
+  section
+    div
+      img.avatar(src="barany.png")
+      img.avatar.fragment(src="wagner.png" data-fragment-index='2')
+      img.avatar.fragment(src="gromov.png" data-fragment-index='3')
+    p
+      | Bárány: a point is in $\ge$
+      span.fragment.highlight-red(data-fragment-index='0') $c_d$
+      | $n\choose d+1$ simplices.
+    table.simple
+      tr.fragment(data-fragment-index='1')
+        td 1982
+        td Bárány
+        td $\frac{1}{(d+1)^d}$
+      tr.fragment(data-fragment-index='2')
+        td 2003
+        td Wagner
+        td $\frac{(d^2+1)}{(d+1)^{d+1}}$
+      tr.fragment(data-fragment-index='3')
+        td 2010
+        td Gromov
+        td
+          | $\frac{2d}{(d+1)(d+1)!}$ 
+          span.fragment(data-fragment-index='4') $< \frac{(d+1)!}{(d+1)^d}$
+section
+  h3 Plan of talk
+  p.fragment.grow
+    | Introduce a 
+    span.colored-text colored 
+    | variant
+  p.fragment(data-fragment-index='1') Karasev's proof with a twist
+section
+  section
+    h3
+      span.colored-text Colored 
+      | variant
+    figure
+      #d2(data-height='280')
+    p.fragment
+      | Given 
+      span.red $n$ red 
+      span.green $n$ green 
+      span.blue $n$ blue 
+      | points.
+    .fragment(data-toggle="diagram" data-target="#d2")
+      p.blue Colored Bárány's Theorem
+      p There is a point in at least $pn^3$ colorful triangles.
+  section
+    p.blue Probabilistic Equivalence
+    p
+      | Given 
+      span.red $n$ red 
+      span.green $n$ green 
+      span.blue $n$ blue 
+      | points.
+    p There exists a point in a random colorful triangle with probability $\ge p$.
+    .fragment(data-fragment-index='3')
+      p.blue Continuous Equivalence
+      p
+        | Given probability measures 
+        span.red $m_0$
+        | , 
+        span.green $m_1$
+        | and 
+        span.blue $m_2$
+        | .
+      p
+        | There exists point in a random colorful triangle with probability $\ge$ 
+        span.fragment.highlight-red(data-fragment-index='4') $p$
+        | .
+  section
+    div
+      img.avatar(src="gromov.png")
+      img.fragment.avatar(src="karasev.png" data-fragment-index='2')
+      img.fragment.avatar(src="jiang.png" data-fragment-index='3')
+    table.simple
+      tr
+        td 2010
+        td Gromov
+        td 
+          | $\frac{2}{9}$ 
+          span $\to \frac{2d}{(d+1)(d+1)!}$
+        td $m_i = m_j$
+      tr.fragment(data-fragment-index='2')
+        td 2012
+        td Karasev
+        td 
+          | $\frac{1}{6}$ 
+          span.fragment(data-fragment-index='4') $\to \frac{1}{(d+1)!}$
+        td
+      tr.fragment(data-fragment-index='2')
+        td
+        td
+        td
+          | $\frac{2}{9}$ 
+          span.fragment(data-fragment-index='4') $\to \frac{2d}{(d+1)(d+1)!}$
+        td
+          span.green $m_1$
+          | $=$ 
+          span.blue $m_2$
+      tr.fragment(data-fragment-index='3')
+        td 2014
+        td J.
+        td
+          | $\frac{2}{9}$ 
+          span.fragment(data-fragment-index='4') $\to \frac{2d}{(d+1)(d+1)!}$
+        td
+section
+  h3 Plan of talk
+  p
+    | Introduce a 
+    span.colored-text colored 
+    | variant
+  p.fragment.grow Karasev's proof with a twist
+section
+  section
+    h3 Karasev's proof
+    p 
+      | Given probability measures 
+      span.red $m_0$
+      |, 
+      span.green $m_1$
+      | and 
+      span.blue $m_2$
+      | .
+    .fragment
+      p Proof by contradiction. Assume for every point $v$,
+      p.centering
+        | $\operatorname{Pr}\big(v \text{ is in} $ 
+        span.colorful-triangle
+        | $ \big) < p := 2/9.$
+    .fragment
+      p Plane (plus a point at infinity) and sphere are the same.
+      .centering#d3_4
+        span#d3.inline-diagram
+          span#d3_1 $\infty$
+        span.inline-text $\equiv$
+        span#d4.inline-diagram
+          span#d4_1 $\infty$
+  section
+    .flex-container
+      figure.flex-item
+        #d5(data-height='380')
+        figcaption Choose a sufficiently fine triangulation.
+      figure.flex-item
+        #d6.fragment(data-fragment-index='1' data-height='380')
+        figcaption.fragment(data-fragment-index='1') Add "spikes" inside the sphere.
+  section
+    h3 Auxiliary map
+    div
+      p
+        span.fragment.highlight-red(data-fragment-index='3') Gradually 
+        | build a map such that:
+      div
+        figure#d7(data-height='260')
+        span#d7-5 $\overset{f}{\longrightarrow}$
+        figure#d8(data-height='260')
+      .fragment(data-fragment-index='1')
+      ol
+        li.fragment(data-fragment-index='1') it is identity when restricted to the sphere;
+        li.fragment(data-fragment-index='2')
+          | it is 
+          span.fragment.highlight-red(data-fragment-index='3') economical
+          | : image of each "spike" is "small".
+  section
+    h3 Build economical map gradually
+    p.fragment Step 1: Vertex $O$ (sphere center) $\mapsto \infty$ (the north pole).
+    p.fragment Step 2: Want $\overline{PO}\mapsto \overline{P\infty}$.
+    p.fragment
+      span.red Claim 
+      | $\operatorname{Pr}\big(\overline{P\infty} \text{ intersects }$ 
+      span.green-to-blue
+      | $\big)$ $< p$ for some $\overline{P\infty}$.
+    p.fragment#td-5-3-obs
+      span.red Observation 
+      | $P$ 
+      span.white-dot 
+      | is in 
+      span.colorful-triangle
+      | $\Longleftrightarrow$ 
+      span.red-gray-ray
+      | intersects 
+      span.green-to-blue
+      | .
+    p.fragment.centering
+      | $\operatorname{Pr}\big($ 
+      span.red-gray-ray
+      | intersects 
+      span.green-to-blue
+      | $\big)=\operatorname{Pr}\big($
+      span.white-dot
+      | is in 
+      span.colorful-triangle
+      | $\big) < p$
+    p.fragment.centering
+      | $\implies \operatorname{Pr}\big($
+      span.red-gray-ray
+      | intersects 
+      span.green-to-blue
+      | $\;\big\vert\; $
+      span.red-dot
+      | $\big) < p$ for some 
+      span.red-dot
+  section
+    p Step 3: Want to define $f$ on $OPQ$.
+    div(style="margin-top: -1rem;")
+      span#d9(data-height="350")
+      span#d9-5 $\overset{f}{\longrightarrow}$
+      span#d10(data-height="350")
+      span.fragment
+        span#d9-6 $\overset{\mathrm{mod2}}{=}$
+        span#d11(data-height="350")
+    p(style="margin-top: -0.5rem")
+      span.fragment(data-fragment-index="3") Set $a = \overline{m}(A) = (m_1(A) + m_2(A))/2$.
+      br
+      span
+        span.fragment(data-fragment-index="5") $2a(1-a)\le$ 
+        span.fragment(data-fragment-index="4")
+          | $\operatorname{Pr}\big($ 
+          span#knot
+          | intersects  
+          span.green-to-blue $\big)$
+        span.fragment(data-fragment-index="6") $< 2p$
+      br
+      span.fragment(data-fragment-index="7")
+        | $\implies a(1-a) < p = 2/9$. 
+        span.fragment(data-fragment-index="8") WLOG assume $a < 1/3$.
+    .dummy.fragment(data-fragment-index="9" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="10" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="11" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="12" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="13" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="14" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="15" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="16" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="17" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="18" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="19" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="20" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="21" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="22" data-toggle="diagram" data-target="#d9")
+    .dummy.fragment(data-fragment-index="23" data-toggle="diagram" data-target="#d10")
+  section
+    h3 Degree argument
+    p
+      | Found a map $f$ such that
+      | $\overline{m}\big(f(OPQ)\mathrm{mod2}\big)<\frac{1}{3}$
+      span.fragment $\implies \overline{m}\big(f(\text{spike})\mathrm{mod2}\big) < 1$.
+    p.fragment
+      span.red Definition 
+      span Degree of map $f$ is $\left|f^{-1}(\text{generic point})\right|$.
+    .fragment
+      p
+        span.fragment $\sum$
+        | deg of $f$ on each spike is even.
+      p.fragment $\text{deg on sphere} + 2\sum \text{deg on }OPQ$ is even.
+      p.fragment Degree of identity map is even.
+section
+  h3 Open problems
+  .fragment
+    p.blue $c_3 = ?$
+    p $0.07480 \le c_3 \le 0.09375$
+    p Lower bound by Král', Mach and Sereni
+  .fragment
+    p.blue Selection problem in convexity space
+    p In a convexity space with Radon number $3$, does there exist a point in $\frac{1}{2}\binom{n}{2}$ segments?
+script(src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')
+script(src='/js/raphael.js/raphael.min.js')
+script(src='raphael-diagram.js')

@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    block head
+  body
+    .reveal
+      .slides
+        block main
+    script(src=`/js/reveal.js/dist/reveal.js`)
+    script(src=`/js//reveal.js/plugin/math/math.js`)
+    script.
+      Reveal.initialize({
+        history: true,
+        controls: false,
+        transition: 'fade',
+        keyboard: { 39: 'next', 37: 'prev' },
+        katex: {
+          version: 'latest',
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+          ],
+          ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        },
+        plugins: [ RevealMath.KaTeX ]
+      });
+
+    block script

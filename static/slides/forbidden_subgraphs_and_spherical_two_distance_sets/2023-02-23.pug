@@ -1,17 +1,8 @@
-doctype html
-html
-  - var title = "Forbidden subgraphs and spherical two-distance sets"
-  - var institute = "Arizona State University"
+extends ../layouts/default.pug
+
+block head
+  include src/head.pug
   - var date = "February 23, 2023"
-  - var coauthors = "Alexandr Polyanskii, Jonathan Tidor, Yuan Yao, Shengtong Zhang, and Yufei Zhao"
-  - var email = "zilinj@asu.edu"
-  - var revealjs_version = "4.4.0"
-  - var revealjs_theme = "simple"
-  include ../includes/head.pug
-  body
-    .reveal
-      .slides
-        include ../includes/title_slide.pug
-        include nus.pug
-        include ../includes/contact.pug
-    include ../includes/script.pug
+
+block main
+  include src/nus.pug

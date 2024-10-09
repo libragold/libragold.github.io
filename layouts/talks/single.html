@@ -30,7 +30,7 @@
             {{ if .slides }}<a href="/slides/{{ .slides }}">Slides</a>{{ end }}
             {{ if .blog }}<a href="{{ .blog }}">Blog</a>{{ end }}
             {{ if .video }}<a href="{{ .video }}">Video</a>{{ end }}
-            {{ if .arxiv }}<a href="{{ .publicationUrl }}" target="_blank">Paper</a>{{ end }}
+            {{ if .arxiv }}<a href="https://arxiv.org/pdf/{{ .arxiv }}">Paper</a>{{ end }}
         </div>
     </div>
     {{ end }}

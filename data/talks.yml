@@ -78,7 +78,7 @@
   occasion: "Israel Mathematical Union 2017 Annual Meeting"
   location: "Rimonim Palm Beach, Akko"
   date: 2017-05-28
-  slides: "on_spherical_tarskis_plank_problem/2017-05-28.html"
+  slides: "spherical_tarskis_plank_problem/2017-05-28.html"
   arxiv: "1703.10550"
 - title: "Finding the closest pair of points on two polyhedra"
   occasion: "Nonlinear Analysis and Optimization Seminar"
@@ -104,7 +104,7 @@
   occasion: "School Colloquim"
   location: "Peking University"
   date: 2018-03-16
-  slides: "on_spherical_tarskis_plank_problem/2018-03-16.html"
+  slides: "spherical_tarskis_plank_problem/2018-03-16.html"
   arxiv: "1703.10550"
 - title: "Spherical Tarski's plank problem"
   occasion: "ERC Workshop: Geometric Transversal and Epsilon-Nets"
@@ -150,7 +150,7 @@
   occasion: "Combinatorics Seminar"
   location: "Massachusetts Institute of Technology"
   date: 2018-09-05
-  slides: "on_spherical_tarskis_plank_problem/2018-09-05.html"
+  slides: "spherical_tarskis_plank_problem/2018-09-05.html"
   arxiv: "1703.10550"
 - title: "Rainbow fractional matchings"
   occasion: "Combinatorics Seminar"
@@ -358,9 +358,9 @@
 - title: "Forbidden subgraphs and spherical two-distance sets"
   occasion: "Illinois State University Discrete Mathematics Seminar"
   location: "Virtual (Zoom)"
-  date: 2023-02-16
+  date: 2023-02-23
   arxiv: "2006.06633"
-  slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2023-02-16.html"
+  slides: "forbidden_subgraphs_and_spherical_two_distance_sets/2023-02-23.html"
 - title: "Rainbow odd cycles"
   occasion: "AMS Spring Southeastern Sectional Meeting"
   location: "Georgia Institute of Technology"
@@ -389,7 +389,7 @@
   location: "Virtual (Zoom)"
   date: 2023-07-21
   arxiv: "1703.10550"
-  slides: "on_spherical_tarskis_plank_problem/2023-07-21.html"
+  slides: "spherical_tarskis_plank_problem/2023-07-21.html"
 - title: "Forbidden subgraphs and spherical two-distance sets"
   occasion: "Hebei Normal University Seminar"
   location: "Virtual (Zoom)"
@@ -428,13 +428,16 @@
   location: "Louisiana State University"
   date: 2024-10-11
   arxiv: "2404.13136"
+  slides: "beyond_the_classification_theorem_of_cgss/2024-10-11.html"
 - title: "Rainbow odd cycles"
   occasion: "AMS Fall Western Sectional Meeting"
   location: "University of California, Riverside"
   date: 2024-10-26
   arxiv: "2007.09719"
+  slides: "rainbow_odd_cycles/2024-10-26.html"
 - title: "Beyond the classification theorem of Cameron, Goethals, Seidel and Shult"
   occasion: "AMS Fall Western Sectional Meeting"
   location: "University of California, Riverside"
   date: 2024-10-27
   arxiv: "2404.13136"
+  slides: "beyond_the_classification_theorem_of_cgss/2024-10-27.html"

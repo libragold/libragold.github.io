@@ -1,14 +1,7 @@
-doctype html
-html
-  - var title = "Negligible obstructions and Turán exponents"
-  - var coauthors = "江滔 Tao Jiang and 马杰 Jie Ma"
-  - var revealjs_version = "4.3.1"
-  - var revealjs_theme = "simple"
-  include ../includes/head.pug
-  body
-    .reveal
-      .slides
-        include ../includes/title_slide.pug
-        include main.pug
-    include ../includes/script.pug 
-    
+extends ../layouts/default.pug
+
+block head
+  include src/head.pug
+
+block main
+  include src/main.pug
