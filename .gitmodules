@@ -1,6 +1,6 @@
-[submodule "static/slides/revealjs"]
-	path = static/slides/revealjs
-	url = https://github.com/hakimel/reveal.js.git
-[submodule "static/js/raphael.js"]
-	path = static/js/raphael.js
+[submodule "static/js/vendor/raphael.js"]
+	path = static/js/vendor/raphael.js
 	url = https://github.com/DmitryBaranovskiy/raphael.git
+[submodule "static/js/vendor/reveal.js"]
+	path = static/js/vendor/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
