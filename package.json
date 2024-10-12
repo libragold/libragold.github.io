@@ -1,20 +1,15 @@
 {
-    "name": "libragold.github.io",
-    "version": "1.0.0",
-    "scripts": {
-      "build:slides": "node scripts/build-slides.js",
-      "watch:slides": "nodemon --watch assets/slides --ext pug,pdf,js,css --exec \"npm run build:slides\"",
-      "serve": "hugo server -D",
-      "dev": "npm run build:slides && concurrently \"npm run watch:slides\" \"npm run serve\""
-    },
-    "dependencies": {
-      "pug-cli": "^1.0.0-alpha6",
-      "glob": "^10.4.5",
-      "fs-extra": "^11.2.0"
-    },
-    "devDependencies": {
-      "nodemon": "^3.1.7",
-      "concurrently": "9.0.1"
-    }
+  "name": "libragold.github.io",
+  "version": "1.0.0",
+  "scripts": {
+    "build:pug": "node scripts/build-pug.js",
+    "copy:img": "node scripts/copy-img.js",
+    "copy:src": "node scripts/copy-src.js",
+    "build:slides": "npm run build:pug && npm run copy:img && npm run copy:src"
+  },
+  "dependencies": {
+    "pug-cli": "^1.0.0-alpha6",
+    "glob": "^10.4.5",
+    "fs-extra": "^11.2.0"
   }
-  
+}
