@@ -14,3 +14,4 @@ hugo.linux
 
 # Generated files by node
 /node_modules/
+/static/slides/

@@ -428,7 +428,7 @@
   location: "Louisiana State University"
   date: 2024-10-11
   arxiv: "2404.13136"
-  slides: "beyond_the_classification_theorem_of_cgss/2024-10-11.html"
+  slides: "beyond_classification_theorem/2024-10-11.html"
 - title: "Rainbow odd cycles"
   occasion: "AMS Fall Western Sectional Meeting"
   location: "University of California, Riverside"
@@ -440,4 +440,16 @@
   location: "University of California, Riverside"
   date: 2024-10-27
   arxiv: "2404.13136"
-  slides: "beyond_the_classification_theorem_of_cgss/2024-10-27.html"
+  slides: "beyond_classification_theorem/2024-10-27.html"
+- title: "Beyond the classification theorem of Cameron, Goethals, Seidel and Shult"
+  occasion: "Combinatorics Seminar"
+  location: "Duke University"
+  date: 2024-11-01
+  arxiv: "2404.13136"
+  slides: "beyond_classification_theorem/2024-11-01.html"
+- title: "Beyond the classification theorem of Cameron, Goethals, Seidel and Shult"
+  occasion: "Joint Mathematics Meetings"
+  location: "Seattle Convention Center"
+  date: 2025-01-11
+  arxiv: "2404.13136"
+  slides: "beyond_classification_theorem/2025-01-11.html"

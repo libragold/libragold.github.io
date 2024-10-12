@@ -1,0 +1,288 @@
+include ../../layouts/title_slide.pug
+section(data-auto-animate)
+  img.avatar(src="img/hricha.png")
+  p
+    small
+      | !{coauthors}
+section
+  section(data-auto-animate)
+    h3 $-\lambda^* = -2.0198008871...$
+  section(data-auto-animate)
+    h3 $-\lambda^* = -2.0198008871...$
+    p
+      | the limit of the smallest eigenvalue of
+      img(src='img/e2n.png' width=400)
+      br
+      | (refer to adjacency matrices)
+section
+  section
+    h3 Fundamental problem
+    p Classification and characterization of graphs with bounded eigenvalues
+    p.fragment $\mathcal{G}(\lambda) = \{$ graphs with smallest eigenvalue $\ge -\lambda \}$
+    p.fragment $\mathcal{G}(2) = \{$ graphs with smallest eigenvalue $\ge -2 \}$
+section
+  h3 Outline
+  ul
+    li.fragment.highlight-red History of $\mathcal{G}(2)$
+    li Classify $\mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$
+    li Beyond $\mathcal{G}(\lambda^*)$
+section
+  section(data-auto-animate)
+    h3 History of $\mathcal{G}(2)$
+    p $\mathcal{G}(2) = \{$graphs with smallest eigenvalue $\ge -2 \}$
+    p.fragment(data-fragment-index=1) $\mathcal{G}(2) \supset \{$line graphs$\}$
+    div
+      figure.fragment(data-fragment-index=2)
+        img(src="img/line_graph_1.png" height=120 id="lg1")
+        figcaption
+          | $G$
+        figcaption.fragment(data-fragment-index=4)
+          | vertex-edge
+          br
+          | incidence matrix $B$
+      figure.fragment(data-fragment-index=3)
+        img(src="img/line_graph_2.png" height=100 id="lg2")
+        figcaption
+          | $L(G)$
+        figcaption.fragment(data-fragment-index=5)
+          | adjacency matrix
+          br
+          | $A = B^\intercal B - 2I$
+  section(data-auto-animate)
+    p $\mathcal{G}(2) \supset \{$line graphs$\}$
+    p
+      span.blue Hoffman &middot; 1969
+      |  $\mathcal{G}(2) \supset \{$generalized line graphs$\}$
+    div.fragment
+      figure
+        img(src="img/glg1.png" height=100)
+        figcaption
+          | $G$
+          br
+          | graph with "petals"
+      figure
+        img(src="img/glg2.png" height=100)
+        figcaption
+          | $L(G)$
+          br
+          | edges share exactly one vertex
+  section(data-auto-animate)
+    p
+      span.blue Hoffman &middot; 1969
+      |  $\mathcal{G}(2) \supset \{$generalized line graphs$\}$
+    p
+      span.green Observation
+      |  If $G \in \mathcal{G}(2)$, then components $\in \mathcal{G}(2)$
+    div.fragment
+      p.blue Cameron, Goethals, Seidel, and Shult &middot; 1976
+      ul
+        li $\{$connected $\mathcal{G}(2)\} \setminus \{$connected generalized line graphs$\} = \{$exceptional graphs$\}$
+        li.fragment each is represented by subset of $E_8$ root system
+        li.fragment each has at most $36$ vertices
+section(data-auto-animate)
+  h3 Outline
+  ul
+    li.fragment.custom.un-highlight-red(data-fragment-index=1) History of $\mathcal{G}(2)$
+    li.fragment.highlight-red(data-fragment-index=1) Classify $\mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$
+    li Beyond $\mathcal{G}(\lambda^*)$
+section
+  section(data-auto-animate)
+    h3 Classify $\mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$
+    p.fragment
+      | But 😕 
+      span.fragment why $\lambda^*$?
+    p.fragment
+      span.blue J. and Polyanskii
+      span  $\mathcal{G}(\lambda) \setminus \mathcal{G}(2)$ is finite for $\lambda < \lambda^*$
+    p.fragment(style="margin-bottom:-20px")
+      small.red *Only consider connected graphs from now on
+    p.fragment
+      span.green Observation
+      |  $\{$
+      img(src="img/e2ns.png" height=50 style="margin: 0 0 -15px")
+      | $\} \subset \mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$
+    p.fragment
+      | $\lambda^*$ is smallest s.t. $\mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$ is infinite 
+      span.fragment 🙂
+  section(data-auto-animate)
+    p
+      span.blue J. and Acharya
+      br
+      |  Complete classification of $\mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$
+    p.fragment.green(style="font-family: 'Pixelify Sans', sans-serif;" data-fragment-index=0) Low-res version
+    p.fragment(style="margin-bottom: 12px" data-fragment-index=1)
+      | Every big graph in $\mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$ looks like
+    div.fragment(style="margin: 0" data-fragment-index=1)
+      img(src="img/ape.png" height=100 style="margin: 0")
+    p(style="margin: 0" data-fragment-index=2)
+      small.fragment augmented path extension (ape)
+  section(data-auto-animate)
+    p.green(style="font-family: 'Pixelify Sans', sans-serif;") Low-res version
+    p(style="margin-bottom: 12px")
+      | Every big graph in $\mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$ looks like
+    div
+      img(src="img/ape.png" height=100 style="margin: 0")
+    p(style="margin: 0")
+      small augmented path extension (ape)
+    table
+      tr
+        td.red Questions
+        td.green.fragment(data-fragment-index=4) Answers
+      tr
+        td.fragment(data-fragment-index=1) Classify $F_R$?
+        td.fragment(data-fragment-index=5) 794, at most 14 vertices
+      tr
+        td.fragment(data-fragment-index=2) Describe $\ell$?
+        td.fragment(data-fragment-index=6) For $F_R$, $\ell \ge \ell_0$
+      tr
+        td.fragment(data-fragment-index=3) Enumerate non-apes?
+        td.fragment(data-fragment-index=7)
+          | 4752 mavericks
+          br
+          | at most 19 vertices
+section
+  h3 Outline
+  ul
+    li History of $\mathcal{G}(2)$
+    li.fragment.custom.un-highlight-red(data-fragment-index=1) Classify $\mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$
+    li.fragment.highlight-red(data-fragment-index=1) Beyond $\mathcal{G}(\lambda^*)$
+section
+  section
+    p A notable portion of mavericks look alike
+    img(src="img/tpe.png" height=100 style="margin: 10px 0 0")
+    h3 $-\lambda^{**} = -2.02124$
+    p
+      | the limit of the smallest eigenvalue of
+      img(src='img/f2n.png' width=400)
+  section(data-auto-animate)
+    p.green(style="font-family: 'Pixelify Sans', sans-serif;") Low-res version
+    p
+      span.fragment(data-fragment-index=1) For $\lambda \in (\lambda^*, \lambda^{**})$,
+      br
+      span.fragment(data-fragment-index=1) e
+      span.fragment.custom.disappear(data-fragment-index=1) E
+      | very big graph in $\mathcal{G}(\lambda$
+      span.fragment.custom.disappear(data-fragment-index=1) $^*$
+      | $) \setminus \mathcal{G}(2)$ looks like
+      br
+      img(src="img/ape.png" height=100 style="margin: 10px 0 0")
+    p.fragment(data-fragment-index=0)
+      span.green Observation
+      |  $\{$
+      img(src="img/f2ns.png" height=50 style="margin: 0 0 -15px")
+      | $\} \subset \mathcal{G}(\lambda^{**}) \setminus \mathcal{G}(2)$
+  section(data-auto-animate)
+    p.green(style="font-family: 'Pixelify Sans', sans-serif;") Low-res version
+    p
+      span For $\lambda \in (\lambda^*, \lambda^{**})$,
+      br
+      span every big graph in $\mathcal{G}(\lambda) \setminus \mathcal{G}(2)$ looks like
+      br
+      img(src="img/ape.png" height=100 style="margin: 10px 0 0")
+    table
+      tr
+        td.red Question
+        td.green.fragment(data-fragment-index=4) Answer
+      tr
+        td.fragment(data-fragment-index=1) Classify $F_R$?
+        td.fragment(data-fragment-index=5) Infinite
+section
+  section
+    h3 Proof techniques
+  section(data-auto-animate)
+    p.green(style="font-family: 'Pixelify Sans', sans-serif;") Low-res version
+    p
+      | Every big graph in $\mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$ looks like
+      br
+      img(src="img/ape.png" height=100 style="margin: 10px 0 0")
+    div.fragment
+      p.green Weaker version
+      p(style="margin-bottom: 0")
+        | Every big graph in $\mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$ contains 
+      div
+        img(src="img/e22.png" height=68 style="margin: 10px 0 0")
+  section(data-auto-animate)
+    div
+      p.green Weaker version
+      p(style="margin-bottom: 0")
+        | Every big graph in $\mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$ contains 
+      div
+        img(src="img/e22.png" height=68 style="margin: 10px 0 0")
+    div.fragment
+      p.blue
+        | Cvetković, Doob, and Simić &middot; 1981
+        br
+        | Rao, Singhi, and Vijayan &middot; 1981
+      p If $G$ is not a generalized line graph, then $G$ contains ...
+  section(data-auto-animate)
+    img(src="img/forb.png" height=660)
+  section(data-auto-animate)
+    p
+      span.red Suffices to show
+      br
+      | Every big graph in $\mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$ contains no $F$ in
+    div(style="position:relative")
+      img(src="img/forb.png" height=400 style="margin: 0")
+      div.g4-circle(style="left: 480px; top: 5px; height: 65px; width: 60px;")
+  section
+    p Assume that big $G$ in $\mathcal{G}(\lambda^*) \setminus \mathcal{G}(2)$ contains $F$
+    p
+      span.green Ramsey theorem
+      |  If big $G$ contains $F$, then $G$ contains
+      img(src="img/ext.png" style="margin: 0")
+    p
+      span.blue Lemma
+      |  If 
+      img(src="img/path.png" height=60 style="margin: 0 0 -20px")
+      | $\not\in \mathcal{G}(\lambda^*)$, then the same holds for 
+      img(src="img/path-clique.png" height=60 style="margin: 0 20px -20px")
+      img(src="img/clique.png" height=60 style="margin: 0 20px -20px")
+  section
+    p
+      span.red Check
+      | &nbsp;
+      img(src="img/path.png" height=60 style="margin: 0 0 -16px")
+      | $\not\in \mathcal{G}(\lambda^*)$ for $F$ in
+    div(style="position:relative")
+      img(src="img/forb.png" height=400 style="margin: 0")
+      div.g4-circle(style="left: 480px; top: 5px; height: 65px; width: 60px;")
+section
+  section
+    h3 More proof techniques
+  section
+    p.green Qualitative version
+    p
+      | There exists a finite family $\mathcal{F}$ of rooted graphs s.t.
+      br
+      | every ape in $\mathcal{G}(\lambda^*)$ looks like
+      br
+      img(src="img/ape.png" height=100 style="margin: 10px 0 0")
+      br
+      | for some $F_R \in \mathcal{F}$.
+  section
+    p.blue Linear-algebraic lemma
+    p
+      img(src="img/ape.png" height=60 style="margin: 0 0 -20px")
+      | $\in \mathcal{G}(\lambda^*)$
+      br
+      | if and only if 
+      br
+      img(src="img/ape0.png" height=60 style="margin: 0 0 -20px")
+      | $\in \mathcal{G}(\lambda^*)$
+section
+  section
+    h3 Open problems
+    p.fragment
+      span.red Problem A
+      |  Classify graphs with smallest eigenvalues in $(-\lambda^{**},-\lambda^*)$.
+    p.fragment
+      span.red Problem B
+      |  Classify signed graphs with smallest eigenvalue in $(-\lambda^*,-2)$.
+      br
+      span.fragment Signed graphs are graphs with edges labeled by $+$ or $-$
+      br
+      span.fragment Refer to signed adjacency matrix
+      br
+      span.fragment In particular, classify those that are big.
+if date
+  include ../../layouts/contact.pug

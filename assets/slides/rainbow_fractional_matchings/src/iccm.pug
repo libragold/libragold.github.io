@@ -1,7 +1,7 @@
 include ../../layouts/title_slide.pug
 section
   section
-    img.simple.fade-in(src="rainbow.png" height="100px")
+    img.simple.fade-in(src="img/rainbow.png" height="100px")
     h3 Rainbow phenomena
   section
     .flex-container
@@ -123,7 +123,7 @@ section
   section
     .flex-container
       .flex-1
-        img.avatar(src="pokrovskiy.jpg" style="margin-top: 1.2rem")
+        img.avatar(src="img/pokrovskiy.jpg" style="margin-top: 1.2rem")
       .flex-2
         p.left-aligned
           span.blue Pokrovskiy: 
@@ -135,7 +135,7 @@ section
           | .
     .flex-container.fragment
       .flex-1
-        img.avatar(src="woolbright.jpg" style="margin-top: 1.2rem")
+        img.avatar(src="img/woolbright.jpg" style="margin-top: 1.2rem")
       .flex-2
         p.left-aligned
           span.blue Woolbright: 
@@ -186,7 +186,7 @@ section
       | .
     .flex-container.fragment
       .flex-1
-        img.avatar(src="drisko.jpg" style="margin-top: 1.2rem")
+        img.avatar(src="img/drisko.jpg" style="margin-top: 1.2rem")
       .flex-2
         p.left-aligned
           span.blue Drisko: 
@@ -244,8 +244,8 @@ section
       span.fragment(data-fragment-index="5") a rainbow perfect matching
   section
     figure(style="margin-bottom: 0.25rem")
-      img.avatar(src="aharoni.png")
-      img.avatar(src="berger.png")
+      img.avatar(src="img/aharoni.png")
+      img.avatar(src="img/berger.png")
     .theorem
       p Aharoni–Berger
       p $2n-1$ matchings of size $n$ in a bipartite graph have a rainbow matching of size $n$.
@@ -266,11 +266,11 @@ section
       | $\mathcal{C}$ is a family of sets such that $\sigma \subseteq \tau, \tau \in \mathcal{C} \implies \sigma\in \mathcal{C}$.
     p.fragment
       small $V = \{1,2,3,4\}$, $\mathcal{C} = \{\emptyset, \{1\}, \{2\}, \{3\}, \{4\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}, \{3,4\}\}$
-    img.simple.fragment(src="simplicial_complex_example.png" style='height:400px')
+    img.simple.fragment(src="img/simplicial_complex_example.png" style='height:400px')
   section
     figure(style='margin-bottom: 0.25rem')
-      img.avatar(src="kalai.png")
-      img.avatar(src="meshulam.png")
+      img.avatar(src="img/kalai.png")
+      img.avatar(src="img/meshulam.png")
     .theorem 
       p Kalai–Meshulam
       p Let $V_1, \dots, V_{d+1} \subset V$. If $\mathcal{C}$ is a $d$-Leray simplicial complex on $V$ and no $V_k$ is in $\mathcal{C}$, then a rainbow set is not in $\mathcal{C}$.
@@ -327,7 +327,7 @@ section
       span.fragment 1. Pick $\sigma \in \mathcal{C}$ such that $|\sigma|\le d$
       br
       span.fragment 2. If max face $\tau \supseteq \sigma$ is unique then remove $[\sigma, \tau]$
-    img.fragment.simple(src="collapse.png" height="240px")
+    img.fragment.simple(src="img/collapse.png" height="240px")
     p.fragment
       | $\mathcal{C}$ is 
       span.blue $d$-collapsible 
@@ -369,9 +369,9 @@ section
     p.fragment Rainbow result: Edge sets $E_1, \dots, E_{d+1}$ with $\nu(E_k) \ge n$ have a rainbow set $E$ with $\nu(E) \ge n$.
   section
     figure(style='margin-bottom: 0.25rem')
-      img.avatar(src="aharoni.png")
-      img.avatar(src="holzman.png")
-      img.avatar(src="jiang.png")
+      img.avatar(src="img/aharoni.png")
+      img.avatar(src="img/holzman.png")
+      img.avatar(src="img/jiang.png")
     .theorem
       p Aharoni, Holzman, J.
       p Given $r\in\mathbb{N}$, $n\in\mathbb{N}$ and $r$-partite edge sets $E_1, \dots, E_{rn-r+1}$ with $\nu^*(E_i) \ge n$ there is a rainbow set $E$ with $\nu^*(E) \ge n$.

@@ -31,7 +31,7 @@ section
       span ...
     p.gray
       | the limit of the largest eigenvalue of
-      img(src='e2n.png' width=600)
+      img(src='img/e2n.png' width=600)
 section
   section
     p.fragment.grow(data-fragment-index=1) Forbidden subgraphs
@@ -56,7 +56,7 @@ section
       span set of forbidden subgraphs?
   section(data-auto-animate)
     p $\mathcal{H}(2) = \{$ graphs with spectral radius $\le 2 \}$
-    img(src='dynkin.png' style='margin: 0')
+    img(src='img/dynkin.png' style='margin: 0')
     p
       span.blue Smith 1970: 
       span connected graphs in $\mathcal{H}(2)$ that are maximal under taking general subgraphs
@@ -96,8 +96,8 @@ section
       span.red Bussemaker and Neumaier 1992 
       | For which $\lambda \in \mathbb{R}$ can $\mathcal{G}(\lambda)$ or $\mathcal{H}(\lambda)$ be defined by a finite set of forbidden subgraphs?
     .avatars
-      img.avatar(src="jiang.png")
-      img.avatar(src="polyanskii.png")
+      img.avatar(src="img/jiang.png")
+      img.avatar(src="img/polyanskii.png")
     p
       span.blue J. and Polyanskii 2020 
       | settled $\mathcal{H}(\lambda)$
@@ -120,7 +120,7 @@ section
       br
       span $\lambda < \lambda^* \approx 2.019801$
     p $\lambda_m^*$ is the limit of the largest e.v. of $E_{m,n}$ as $n \to\infty$
-    img(src='emn.png' width=500 style='margin: 0')
+    img(src='img/emn.png' width=500 style='margin: 0')
     p $\lambda_m^*$ increases to $\sqrt{2+\sqrt{5}}$ and $\lambda^* = \lambda^*_2$
 section
   section(data-auto-animate)
@@ -139,9 +139,9 @@ section
   section
     p
       span.blue Goal: 
-      | If $\lambda < 2$ then $G(\lambda)$ can be defined by a finite set of forbidden subgraphs
+      | If $\lambda < 2$ then $\mathcal{G}(\lambda)$ can be defined by a finite set of forbidden subgraphs
     p Really want to forbid $C$ and $D$ but not quite ...
-    img(src='cd.png' width=300 style='margin: 0')
+    img(src='img/cd.png' width=300 style='margin: 0')
     p
       span.blue Fact (van Rooij and Wilf): 
       | Every graph that contains neither $C$ nor $D$ as a subgraph is a line graph.
@@ -149,7 +149,7 @@ section
     p.red Ramsey-type result
     p For every $F$ and $k, l, m$ there exists $N$ such that for every connected graph $G$ with more than $N$ vertices, if no member in $\{S_k\} \cup \mathcal{X}(F, l, m)$ is a subgraph of $G$ then $F$ is not a subgraph of $G$.
     p Here, $\mathcal{X}(F, l, m)$ consists of
-    img(src='ext_family.png')
+    img(src='img/ext_family.png')
   section(data-auto-animate)
     p
       span.blue Step 1: 
@@ -183,13 +183,13 @@ section
   section(data-auto-animate)
     p
       span.blue Goal: 
-      | If $2 \le \lambda < \lambda^*$ then $G(\lambda)$ can be defined by a finite set of forbidden subgraphs
+      | If $2 \le \lambda < \lambda^*$ then $\mathcal{G}(\lambda)$ can be defined by a finite set of forbidden subgraphs
     p Really want to forbid
-    img(src='forb_dn.png' width=350 style='margin: 0')
+    img(src='img/forb_dn.png' width=350 style='margin: 0')
   section(data-auto-animate)
     p
       span.blue Goal: 
-      | If $2 \le \lambda < \lambda^*$ then $G(\lambda)$ can be defined by a finite set of forbidden subgraphs
+      | If $2 \le \lambda < \lambda^*$ then $\mathcal{G}(\lambda)$ can be defined by a finite set of forbidden subgraphs
     p.fragment These are forbidden subgraphs $G_1, \dots, G_{31}$ for $\mathcal{D}_{\infty}$, the family of graphs representable by a subset of $D_n$.
     p.fragment
       span.blue Step 1: 
@@ -201,7 +201,7 @@ section
   section(data-auto-animate)
     p
       span.blue Goal: 
-      | If $\lambda \ge \lambda^*$ then $G(\lambda)$ cannot be defined by a finite set of forbidden subgraphs
+      | If $\lambda \ge \lambda^*$ then $\mathcal{G}(\lambda)$ cannot be defined by a finite set of forbidden subgraphs
     p.fragment
       span.blue Suffices to show
       br
@@ -215,7 +215,7 @@ section
   section(data-auto-animate)
     p Need to fill the gap between $\lambda^*$ and $\sqrt{2+\sqrt{5}}$
     p.red Rowing graph
-    img(src='rowing.png')
+    img(src='img/rowing.png')
     p.fragment
       span.red Key feature: 
       | when the coxswain $v_c$ is removed, a rowing graph becomes a line graph of a caterpillar tree
@@ -259,7 +259,7 @@ section
       span.blue J., Tidor, Yuan, Zhang, Zhao 2021 
       | settled the "equiangular" case $\beta = -\alpha$
   section
-    img(src='mit-team.jpg')
+    img(src='img/mit-team.jpg')
   section
     p $N_{\alpha, \beta}(d) = $ max size of spherical $\{\alpha,\beta\}$-code in $\mathbb{R}^d$
     p
@@ -299,10 +299,10 @@ section
       | family of $\mathcal{H}$ of signed graphs with largest e.v. more than $(1-\alpha)/(\alpha-\beta)$, can choose $\Delta$ such that $G^\pm$ does not contain any member in $\mathcal{H}$ as a subgraph
   section
     .avatars
-      img.avatar(src="jiang.png")
-      img.avatar(src="polyanskii.png")
-    p $G^\mp(\lambda) = \{$ signed graphs with largest e.v. $\le \lambda\}$
-    p $G^\mp(\lambda)$ can be defined by a finite set of forbidden signed subgraphs if and only if $\lambda < \lambda^*$
+      img.avatar(src="img/jiang.png")
+      img.avatar(src="img/polyanskii.png")
+    p $\mathcal{G}^\mp(\lambda) = \{$ signed graphs with largest e.v. $\le \lambda\}$
+    p $\mathcal{G}^\mp(\lambda)$ can be defined by a finite set of forbidden signed subgraphs if and only if $\lambda < \lambda^*$
     p
       span.blue Application 
       | A matching upper bound on $N_{\alpha, \beta}(d)$ for large $d$ when $(1-\alpha)/(\alpha-\beta) < \lambda^*$

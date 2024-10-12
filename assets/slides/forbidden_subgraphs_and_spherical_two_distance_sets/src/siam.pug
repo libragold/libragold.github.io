@@ -23,7 +23,7 @@ section
     p
       | What's the limit of the smallest eigenvalue? 
       span.fragment $-\lambda^*$
-    img(src='e2n.png' width=600)
+    img(src='img/e2n.png' width=600)
     h3.fragment
       span $\lambda^* = \sqrt{\beta}+1/\sqrt{\beta} = $ 
       span(style="font-size:100%") 2.
@@ -94,8 +94,8 @@ section
     p $\mathcal{G}(\lambda) = \{$ graphs with smallest eigenvalue $\ge -\lambda \}$
     p Can $\mathcal{G}(\lambda)$ be defined by finite forbidden subgraphs?
     .avatars
-      img.avatar(src="jiang.png")
-      img.avatar(src="polyanskii.png")
+      img.avatar(src="img/jiang.png")
+      img.avatar(src="img/polyanskii.png")
     p
       span.blue J. and Polyanskii 2022+
       br
@@ -140,12 +140,12 @@ section
     p.red Ramsey-type result
     p For every $F$ and $\ell, m$ there exists $N$ s.t. for every connected graph $G$ with more than $N$ vertices, if no member in $\{K_{1,4}\} \cup \mathcal{X}(F, \ell, m)$ is a subgraph of $G$ then $F$ is not a subgraph of $G$.
     p Here, the extension family $\mathcal{X}(F, \ell, m)$ consists of
-    img(src='ext_family.png')
+    img(src='img/ext_family.png')
   section
     p
       span.blue Step 1: 
       | Find $\ell, m$ such that both $\mathcal{X}(C, \ell, m)$ and $\mathcal{X}(D, \ell, m)$ are disjoint from $\mathcal{G}(\lambda)$
-    img(src='cd.png' width=300 style='margin: 0')
+    img(src='img/cd.png' width=300 style='margin: 0')
     p Forbid $\{K_{1,4}\} \cup \mathcal{X}(C, \ell, m) \cup \mathcal{X}(D, \ell, m)$
     p
       span.blue Fact (van Rooij and Wilf): 
@@ -186,7 +186,7 @@ section
       | For $2 \le \lambda < \lambda^*$, $G(\lambda)$ can be defined by finite forbidden subgraphs
     .container
       .col
-        img(src='forb_dn.png' width=400 style='margin: 0')
+        img(src='img/forb_dn.png' width=400 style='margin: 0')
       .col
         ul
           li Similar Ramsey-type argument

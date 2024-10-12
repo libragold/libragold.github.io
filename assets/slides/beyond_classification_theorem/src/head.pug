@@ -1,0 +1,74 @@
+extends ../../layouts/head.pug
+
+block meta_date
+  - var head_title = "Beyond the classification theorem of Cameron, Geothals, Seidel and Shult"
+  - var title = "Beyond the classification theorem of<br>Cameron, Geothals, Seidel and Shult"
+  - var institute = "Arizona State University"
+  - var coauthors = "Hricha Acharya"
+  - var theme = "simple"
+  - var email = "zilinj@asu.edu"
+
+block css
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap' rel='stylesheet')
+  style.
+    .reveal h3 {
+      font-size: 1.4em;
+    }
+    .reveal figcaption {
+      font-size: 0.5em;
+    }
+    .reveal figure {
+      display: inline-block;
+      margin: 0 2em;
+    }
+    #lg1 {
+      margin: 0;
+    }
+    #lg2 {
+      margin: 10px 0;
+    }
+    .reveal .blue, .reveal .green, .reveal .red {
+      text-underline-offset: 3px;
+      text-decoration-thickness: 3px;
+      text-decoration: underline;
+    }
+    .reveal .blue {
+      text-decoration-color: #a7e0f6;
+    }
+    .reveal .green {
+      text-decoration-color: #a6e1c5;
+    }
+    .reveal .red {
+      text-decoration-color: #ff9fae;
+    }
+    .reveal .fragment.un-highlight-red {
+      color: #ff2c2d;
+    }
+    .reveal .fragment.un-highlight-red.visible {
+      color: black;
+    }
+    .reveal .fragment.disappear {
+      display: inline-block;
+    }
+    .reveal .fragment.disappear.visible {
+      display: none;
+    }
+    .reveal .avatar {
+      border-radius: 50%;
+      height: 160px;
+      width: 160px;
+      margin: 0;
+    }
+    .reveal p.small {
+      font-size: 0.5em;
+    }
+    .reveal table td {
+      border-bottom: none;
+    }
+    .reveal .g4-circle {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+    }
