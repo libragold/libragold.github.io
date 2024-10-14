@@ -1,6 +1,8 @@
 const { getSlideFolders, ensureDestFolder } = require('./utils');
-const { execSync } = require('child_process');
 const glob = require('glob');
+const pug = require('pug');
+const fs = require('fs');
+const path = require('path');
 
 // Process Pug files for each slide folder
 getSlideFolders().forEach(folder => {
@@ -8,11 +10,16 @@ getSlideFolders().forEach(folder => {
 
   const pugFiles = glob.sync(`${folder}/*.pug`);
   if (pugFiles.length > 0) {
-    try {
-      execSync(`pug ${folder}/*.pug --out ${destFolder}`, { stdio: 'inherit' });
-      console.log(`Compiled Pug files in ${folder} to ${destFolder}`);
-    } catch (error) {
-      console.error(`Error compiling Pug files in ${folder}:`, error);
-    }
+    pugFiles.forEach(file => {
+      try {
+        const compiledFunction = pug.compileFile(file);
+        const html = compiledFunction();
+        const destFile = path.join(destFolder, path.basename(file, '.pug') + '.html');
+        fs.writeFileSync(destFile, html);
+        console.log(`Compiled ${file} to ${destFile}`);
+      } catch (error) {
+        console.error(`Error compiling ${file}:`, error);
+      }
+    });
   }
 });

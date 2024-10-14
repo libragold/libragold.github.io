@@ -8,7 +8,7 @@
     "build:slides": "npm run build:pug && npm run copy:img && npm run copy:src"
   },
   "dependencies": {
-    "pug-cli": "^1.0.0-alpha6",
+    "pug": "^3.0.3",
     "glob": "^10.4.5",
     "fs-extra": "^11.2.0"
   }
