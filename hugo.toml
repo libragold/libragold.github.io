@@ -14,3 +14,5 @@ title = "Zilin Jiang"
         name = "Teaching"
         pageRef = "/teaching/"
         weight = 30
+[params]
+umamiWebsiteID = "4841af47-7ff4-40fd-9556-4e59482d4bcd"

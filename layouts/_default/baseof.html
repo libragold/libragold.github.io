@@ -6,8 +6,7 @@
   <title>{{ .Title }}</title>
   <!-- Include custom CSS -->
   <link rel="stylesheet" href="/css/main.css">
-  <!-- Google tag (gtag.js) -->
-  {{ partial "gtag.html" }}
+  {{ partial "umami.html" . }}
 </head>
 <body>
   {{ partial "navbar.html" . }}
