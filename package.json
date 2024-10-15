@@ -8,8 +8,9 @@
     "build:slides": "npm run build:pug && npm run copy:img && npm run copy:src"
   },
   "dependencies": {
-    "pug": "^3.0.3",
+    "fs-extra": "^11.2.0",
     "glob": "^10.4.5",
-    "fs-extra": "^11.2.0"
+    "pug": "^3.0.3",
+    "toml": "^3.0.0"
   }
 }
