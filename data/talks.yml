@@ -412,6 +412,7 @@
   location: "Vanderbilt University"
   date: 2024-04-13
   arxiv: "2404.13136"
+  slides: "beyond_classification_theorem/2024-04-13.pdf"
 - title: "Rainbow odd cycles"
   occasion: "Workshop on Topological Combinatorics"
   location: "L'Institut de Recherche en Informatique Fondamentale"
