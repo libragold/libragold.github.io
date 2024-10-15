@@ -224,6 +224,7 @@
     We give a complete classification of all connected graphs with smallest eigenvalue in $$(-\lambda^*,-2)$$, where $$\lambda^*=\rho^{1/2}+\rho^{-1/2} \approx 2.01980$$, and $$\rho$$ is the unique real root of $$x^3=x+1$$. Our result is the first classification of infinitely many connected graphs with their smallest eigenvalue in $$(-\lambda,-2)$$ for any constant $$\lambda>2$$.
   arxiv: "2404.13136"
   year: 2024
+  slides: "beyond_classification_theorem"
 - title: "On symmetric hollow integer matrices with eigenvalues bounded from below"
   authors:
     - zjiang
