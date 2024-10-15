@@ -5,7 +5,8 @@
     "build:pug": "node scripts/build-pug.js",
     "copy:img": "node scripts/copy-img.js",
     "copy:src": "node scripts/copy-src.js",
-    "build:slides": "npm run build:pug && npm run copy:img && npm run copy:src"
+    "copy:pdf": "node scripts/copy-pdf.js",
+    "build:slides": "npm run build:pug && npm run copy:img && npm run copy:src && npm run copy:pdf"
   },
   "dependencies": {
     "fs-extra": "^11.2.0",
