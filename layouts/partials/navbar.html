@@ -13,6 +13,7 @@
             </li>
             {{ end }}
         </ul>
+        <div class="hover-pill"></div>
     </div>
       
     <script>
@@ -29,6 +30,43 @@
         } else {
             header.classList.remove('scrolled');
         }
+        });
+    </script>
+    <script>
+        const navItems = document.querySelectorAll('.header ul>li');
+        const hoverPill = document.querySelector('.hover-pill');
+        const activeLink = document.querySelector('.header ul>li.active');
+
+        function movePillToLink(link) {
+            const linkRect = link.getBoundingClientRect();
+            const parentRect = link.parentElement.parentElement.getBoundingClientRect();
+
+            hoverPill.style.width = `${linkRect.width}px`;
+            hoverPill.style.left = `${linkRect.left - parentRect.left}px`;
+            hoverPill.style.opacity = '1'; // Make the pill fully visible
+        }
+
+        // Move the pill to the active link on page load
+        if (activeLink) {
+            movePillToLink(activeLink);
+        } else {
+            hoverPill.style.opacity = '0'; // No active link, keep pill transparent
+        }
+
+        navItems.forEach(item => {
+            const link = item.querySelector('a');
+            
+            item.addEventListener('mouseenter', () => {
+                movePillToLink(link);
+            });
+
+            item.addEventListener('mouseleave', () => {
+                if (activeLink) {
+                    movePillToLink(activeLink); // Move back to active link on mouse leave
+                } else {
+                    hoverPill.style.opacity = '0'; // No active link, keep pill transparent
+                }
+            });
         });
     </script>
 </nav>
