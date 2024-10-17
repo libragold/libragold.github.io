@@ -15,14 +15,24 @@ h1,h2,h3 {
 
 /* navbar */
 nav {
-    background: rgba(255,255,255,0.9);
     font-family: 'Spinnaker', sans-serif;
-    border-bottom: 1px solid #93a1a1;
+    
+    border-bottom: 1px solid #fff;
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    backdrop-filter: saturate(180%) blur(12px);
+    background: hsla(0, 0%, 100%, .75);
+
     position: fixed;
     top: 0;
-    padding-top: 40px;
+    padding: 40px 20px 20px;
     width: 700px;
+    margin-left: -20px;
+    margin-right: -20px;
     z-index: 1000;
+}
+nav.header.scrolled {
+    transition: all .6s linear;
+    border-bottom: 1px solid #ccc;
 }
 nav a {
     text-decoration: none;
@@ -233,8 +243,10 @@ nav li > a {
     }
     nav {
         position: relative;
-        padding: 5px;
+        padding: 5px 0 10px;
         width: 100%;
+        margin: 0;
+        border-bottom: 1px solid #ccc;
     }
     nav .menu-collapse {
         height: 0;
@@ -255,6 +267,9 @@ nav li > a {
     }
     nav .show-menu {
         height: 90px;
+    }
+    nav a.brand {
+        margin-left: 5px;
     }
     .menu-icon {
         display: block;

@@ -1,4 +1,4 @@
-<nav aria-label="main navigation">
+<nav aria-label="main navigation" class="header">
     <a class="brand" href="/">{{ $.Site.Title }}</a>
     <div class="menu-icon" onclick="menuIconFunction(this)">
         <div class="bar1"></div>
@@ -20,5 +20,15 @@
             x.classList.toggle("menu-open");
             x.nextElementSibling.classList.toggle("show-menu");
         }
+    </script>
+    <script>
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        });
     </script>
 </nav>
