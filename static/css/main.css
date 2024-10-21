@@ -127,10 +127,10 @@ nav li > a {
     margin-block-start: -12px;
     margin-block-end: 22px;
 }
-#about p, #vita p {
+#about p, #recent p, #vita p {
     font-family: Georgia, Times, "Times New Roman", serif;    
 }
-#about a, #vita a {
+#about a, #recent a, #vita a {
     color: inherit;
     text-decoration-color: var(--highlight-color-yellow);
     /* https://www.color-hex.com/color-palette/103743 */
@@ -143,6 +143,9 @@ nav li > a {
 }
 #about .text-content {
     flex: 1;
+}
+#recent a {
+    text-decoration-color: var(--highlight-color-blue);
 }
 #vita img {
     float: right;
@@ -286,7 +289,7 @@ nav li > a {
     #about {
         margin-block-start: 24px;
         display: block;
-        margin-block-end: 32px;
+        margin-block-end: 18px;
     }
     #about img {
         margin-block-end: -10px;

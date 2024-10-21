@@ -12,6 +12,13 @@
     </section>
     {{ end }}
 
+    <!-- Recent Section -->
+    <section id="recent">
+      {{ with .Site.GetPage "recent.md" }}
+        {{ .Content }}
+      {{ end }}  
+    </section>
+    
     <!-- Vita Section -->
     <section id="vita">
       {{ with .Site.GetPage "education.md" }}
