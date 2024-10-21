@@ -52,6 +52,8 @@ jobs:
         run: npm install
       - name: Build Slides
         run: npm run build:slides
+      - name: Add Umami
+        run: npm run add:umami
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
