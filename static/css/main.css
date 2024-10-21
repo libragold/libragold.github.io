@@ -1,45 +1,53 @@
+:root {
+    --primary-color: #333;
+    --secondary-color: #777;
+    --background-color-light: #eee;
+    --text-color-dark: #0d0d0d;
+    --highlight-color-yellow: #fde995;
+    --highlight-color-blue: #a7e0f6;
+    --highlight-color-purple: #e1a7fb;
+}
+
 body {
     margin: 76px auto 0;
-    max-width: 700px;
+    max-inline-size: 700px;
+    inline-size: 100%;
     line-height: 1.6;
     font-size: 18px;
-    color: #444;
-    width: 100%;
+    color: var(--primary-color);
 }
 section {
-    margin-bottom: 32px;
+    margin-block-end: 32px;
 }
-h1,h2,h3 {
+h1, h2, h3 {
     line-height: 1.2
 }
 
 /* navbar */
 nav {
     font-family: 'Spinnaker', sans-serif;
-    border-bottom: 1px solid #fff;
-    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-block-end: 1px solid #fff;
     backdrop-filter: saturate(180%) blur(12px);
     background: hsla(0, 0%, 100%, .75);
     position: fixed;
     top: 0;
     padding: 20px;
     width: 700px;
-    margin-left: -20px;
-    margin-right: -20px;
+    margin-inline: -20px;
     z-index: 1000;
 }
 nav.header.scrolled {
     transition: all .4s linear;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #efefef;
 }
 nav a {
     text-decoration: none;
-    color: #0d0d0d;
+    color: inherit;
 }
 nav .brand {
     padding: 0px;
     margin: 0;
-    color: black;
+    color: inherit;
     font-size: 24px;
     line-height: 40px;
     text-transform: uppercase;
@@ -54,6 +62,7 @@ nav ul {
     padding: 0;
     height: 40px;
     display: flex;
+    align-items: center;
 }
 nav li {
     line-height: 40px;
@@ -61,7 +70,7 @@ nav li {
 nav li > a {
     letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 0 10px 0 12px;
+    padding-inline: 12px;
     font-size: 14px;
     display: inline-block;
 }
@@ -69,7 +78,7 @@ nav li > a {
     position: absolute;
     bottom: 0;
     height: 40px;
-    background-color: #eee;
+    background-color: var(--background-color-light);
     border-radius: 20px;
     z-index: -1;
     transition: opacity 0.3s linear, left 0.3s ease, width 0.3s ease;
@@ -85,8 +94,8 @@ nav li > a {
 .menu-icon .bar1, .menu-icon .bar2, .menu-icon .bar3 {
     width: 18px;
     height: 2px;
-    background-color: #333;
-    margin: 3px 0;
+    background-color: var(--primary-color);
+    margin-block: 3px;
     transition: 0.4s;
 }
 
@@ -115,21 +124,21 @@ nav li > a {
     display: flex;
     align-items: center;
     gap: 34px;
-    margin-top: -12px;
-    margin-bottom: 22px;
+    margin-block-start: -12px;
+    margin-block-end: 22px;
 }
 #about p, #vita p {
     font-family: Georgia, Times, "Times New Roman", serif;    
 }
 #about a, #vita a {
-    color: #333;
-    text-decoration-color: #fde995;
+    color: inherit;
+    text-decoration-color: var(--highlight-color-yellow);
     /* https://www.color-hex.com/color-palette/103743 */
     text-underline-offset: 3px;
     text-decoration-thickness: 3px;
 }
 #about img {
-    width: 240px;
+    width: 230px;
     border-radius: 6px;
 }
 #about .text-content {
@@ -138,24 +147,25 @@ nav li > a {
 #vita img {
     float: right;
     height: 60px;
+    background-color: white;
+    border-radius: 50%;
 }
 /* writings */
 .writing {
     border: 1px solid #dadce0;
     border-radius: 6px;
-    margin-bottom: 16px;
+    margin-block-end: 16px;
 }
 .writing p {
     margin: 0;
-    color: #222;
     line-height: 1.4;
-    margin-bottom: 2px;
+    margin-block-end: 2px;
 }
 .writing p.title {
     font-size: 16px;
 }
 .writing p.authors a {
-    text-decoration-color: #fde995;
+    text-decoration-color: var(--highlight-color-yellow);
 }
 /* writings and talks */
 #writings .info, #talks .info, #teaching .info {
@@ -165,22 +175,22 @@ nav li > a {
 /* writings and teaching */
 .writing p.authors, .writing p.publication, .course p.title {
     font-size: 14px;
-    color: #777;
+    color: var(--secondary-color);
 }
 .writing p.authors a, .writing p.publication a, .course p.title a {
-    color: #777;
+    color: var(--secondary-color);
     text-underline-offset: 3px;
     text-decoration-thickness: 3px;
 }
 .writing p.publication a, .course p.title a {
-    text-decoration-color: #e1a7fb;
+    text-decoration-color: var(--highlight-color-purple);
 }
 /* talks and teaching */
 .year-group, .institution-group {
     padding: 16px 0 0;
     border: 1px solid #dadce0;
     border-radius: 6px;
-    margin-bottom: 28px;
+    margin-block-end: 28px;
     position: relative;
     font-size: 16px;
 }
@@ -196,14 +206,13 @@ nav li > a {
 }
 .talk p, .course p {
     margin: 0;
-    color: #222;
     line-height: 1.4;
-    margin-bottom: 2px;
+    margin-block-end: 2px;
     font-size: 16px;
 }
 .talk p.title, .talk p.occasion {
     font-size: 14px;
-    color: #777;   
+    color: var(--secondary-color);   
 }
 /* writings, talks, teaching */
 #writings, #talks, #teaching {
@@ -230,7 +239,7 @@ nav li > a {
 }
 .writing .links a, .talk .links a, .course .links a {
     color: #555;
-    text-decoration-color: #a7e0f6;
+    text-decoration-color: var(--highlight-color-blue);
     text-underline-offset: 3px;
     text-decoration-thickness: 3px;
     padding: 0 2px;
@@ -275,12 +284,12 @@ nav li > a {
         float: right;
     }
     #about {
-        margin-top: 24px;
+        margin-block-start: 24px;
         display: block;
-        margin-bottom: 32px;
+        margin-block-end: 32px;
     }
     #about img {
-        margin-bottom: -10px;
+        margin-block-end: -10px;
     }
     #vita img {
         display: none;
