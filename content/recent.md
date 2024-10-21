@@ -3,7 +3,9 @@ title: "Recent"
 draft: false
 ---
 
-I co-organize the Discrete Mathematics Seminar at ASU, where we explore a variety of exciting topics in the field. If you're interested, feel free to check out [our schedule](https://math.la.asu.edu/~discrete/). We'd love to have you join us!
+I co-organize the Discrete Mathematics Seminar at ASU, where we explore a variety of exciting topics in the field. If you're interested, feel free to check out [our schedule](https://math.la.asu.edu/~discrete). We'd love to have you join us!
+
+I also co-organize the Research Innovation in the Mathematical Sciences Seminar, which focuses on designing algorithms to train large models. It's an exciting space for exploring trends and opportunities in mathematical sciences. Check out [our schedule](https://math.la.asu.edu/~rims).
 
 I put together a little tool called [Findliner](/findliner) to help boost my productivity by adding line numbers to PDFs. It’s been really useful for me, and you might find it handy too!
 
