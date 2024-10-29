@@ -125,7 +125,7 @@ nav li > a {
     align-items: center;
     gap: 34px;
     margin-block-start: -12px;
-    margin-block-end: 22px;
+    margin-block-end: 6px;
 }
 #about p, #recent p, #vita p {
     font-family: Georgia, Times, "Times New Roman", serif;    
@@ -146,6 +146,9 @@ nav li > a {
 }
 #recent a {
     text-decoration-color: var(--highlight-color-blue);
+}
+#recent p:first-child {
+    margin-block-start: 0;
 }
 #vita img {
     float: right;
