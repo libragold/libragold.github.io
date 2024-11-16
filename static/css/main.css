@@ -125,7 +125,7 @@ nav li > a {
     align-items: center;
     gap: 34px;
     margin-block-start: -12px;
-    margin-block-end: 6px;
+    margin-block-end: 2px;
 }
 #about p, #recent p, #vita p {
     font-family: Georgia, Times, "Times New Roman", serif;    

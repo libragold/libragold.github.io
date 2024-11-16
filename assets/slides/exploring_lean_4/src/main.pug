@@ -1,0 +1,129 @@
+include ../../layouts/title_slide.pug
+section
+  section
+    p Lean 4 is a dependently typed programming language and interactive theorem prover.
+  section
+    h3 Hello, World!
+    pre
+      code
+        | #eval "Hello, World!"
+        | #check 1
+        | #check true
+        | def x : Int := 10
+        | def double (x : Int) := 2 * x
+        | #check double
+        | def projection (x y : Int) := x
+        | #check projection
+  section
+    h3 What is a Type?
+    p In Lean 4, types classify terms (values).
+    p Types themselves are organized in a hierarchy of universes.
+    pre
+      code
+        | def f (α β : Sort u) (a : α) (b : β) : α := a
+        | #eval f Nat String 1 "hello"
+  section
+    h3 Why Insist on Termination?
+    p Ensures all functions in Lean are total (defined for all inputs).
+    p Aligns with Lean's foundations in constructive mathematics.
+    pre
+      code
+        | #eval 1/2
+        | #eval 1/0
+        | def quicksort : List Int → List Int
+        | | [] => []
+        | | x :: xs =>
+        |   let smaller := xs.filter (fun y => y ≤ x)
+        |   let larger := xs.filter (fun y => y > x)
+        |   quicksort smaller ++ [x] ++ quicksort larger
+        | #eval! quicksort [3,1,4,1,5,9,2,6,5]
+
+  section
+    h3 What is a Proposition?
+    p A proposition is a type in Lean, defined in the universe Prop.
+    pre
+      code
+        | #check 1 + 1 = 2
+  section
+    h3 What is a Proof?
+    p A proof is a value (or term) that inhabits a proposition.
+    p Proving a proposition means constructing a term of the corresponding type.
+    pre
+      code
+        | example : double 4 = 8 := rfl
+        | #check True.intro
+        | theorem trivial' : True := True.intro
+        | theorem implication (P Q : Prop) : P → Q → Q := fun p q => q
+        | def prop := 2 + 2 = 4
+        | #check prop
+        | theorem easy : prop := rfl
+        | def FermatLastTheorem := ∀ x y z n : Nat, n > 2 ∧ x * y * z ≠ 0 → x ^ n + y ^ n ≠ z ^ n
+        | #check FermatLastTheorem
+        | theorem hard : FermatLastTheorem := sorry
+  section
+    h3 The Curry-Howard Correspondence
+    table.small
+      tr
+        th Logic side
+        th Programming side
+      tr
+        td formula
+        td type
+      tr
+        td proof
+        td term
+      tr
+        td formula is true
+        td type has an element
+      tr
+        td formula is false
+        td type does not have an element
+      tr
+        td logical constant ⊤ (truth)
+        td unit type
+      tr
+        td logical constant ⊥ (falsehood)
+        td empty type
+      tr
+        td implication
+        td function type
+      tr
+        td conjunction
+        td product type
+      tr
+        td disjunction
+        td sum type
+      tr
+        td universal quantification
+        td dependent product type
+      tr
+        td existential quantification
+        td dependent sum type
+  section
+    h3 More proofs
+    pre
+      code
+        | def mk_symm (xs : List α) :=
+        |   xs ++ xs.reverse
+        | #eval mk_symm [1,2]
+        | theorem revser_mk_symm : (mk_symm xs).reverse = mk_symm xs := by
+        |   simp [mk_symm]
+        | theorem tst : (xs ++ mk_symm ys).reverse = mk_symm ys ++ xs.reverse := by
+        |   simp [revser_mk_symm]
+        | #print tst
+  section
+    h3 Proof Automation and AI
+    p
+      a(href="https://github.com/jesse-michael-han/lean-gptf") gptf
+  section
+    h3 Resources
+    p
+      a(href="https://lean-lang.org/") Official Homepage of Lean
+    p
+      a(href="https://leanprover.zulipchat.com/") Zulip chat
+    p
+      a(href="https://lean-lang.org/theorem_proving_in_lean4/index.html") Theorem Proving in Lean 4
+    p
+      a(href="https://leanprover-community.github.io/mathematics_in_lean") Mathematics in Lean
+    p
+      a(href="https://lean-lang.org/functional_programming_in_lean") Functional Programming in Lean

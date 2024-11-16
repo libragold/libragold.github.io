@@ -8,6 +8,8 @@ html
         block main
     script(src=`/js/vendor/reveal.js/dist/reveal.js`)
     script(src=`/js/vendor/reveal.js/plugin/math/math.js`)
+    link(rel="stylesheet" href="/js/vendor/reveal.js/plugin/highlight/zenburn.css")
+    script(src=`/js/vendor/reveal.js/plugin/highlight/highlight.js`)
     script.
       Reveal.initialize({
         history: true,
@@ -22,7 +24,7 @@ html
           ],
           ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
         },
-        plugins: [ RevealMath.KaTeX ]
+        plugins: [ RevealMath.KaTeX, RevealHighlight ]
       });
 
     block script

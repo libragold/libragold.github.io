@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Exploring Lean 4</title><meta name="author" content="Zilin Jiang"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/js/vendor/reveal.js/dist/reset.css"><link rel="stylesheet" href="/js/vendor/reveal.js/dist/reveal.css"><link rel="stylesheet" href="/js/vendor/reveal.js/dist/theme/simple.css"><script defer src="https://cloud.umami.is/script.js"></script><style>table.small {
+  font-size: 60%;
+}</style></head><body><div class="reveal"><div class="slides"><section class="title-slide"><h3>Exploring Lean 4</h3><p><small>Zilin Jiang</small><br><small>Arizona State University</small><br><small>November 15, 2024</small><br></p></section><section><section><p>Lean 4 is a dependently typed programming language and interactive theorem prover.</p></section><section><h3>Hello, World!</h3><pre><code>#eval "Hello, World!"
+#check 1
+#check true
+def x : Int := 10
+def double (x : Int) := 2 * x
+#check double
+def projection (x y : Int) := x
+#check projection</code></pre></section><section><h3>What is a Type?</h3><p>In Lean 4, types classify terms (values).</p><p>Types themselves are organized in a hierarchy of universes.</p><pre><code>def f (α β : Sort u) (a : α) (b : β) : α := a
+#eval f Nat String 1 "hello"</code></pre></section><section><h3>Why Insist on Termination?</h3><p>Ensures all functions in Lean are total (defined for all inputs).</p><p>Aligns with Lean's foundations in constructive mathematics.</p><pre><code>#eval 1/2
+#eval 1/0
+def quicksort : List Int → List Int
+| [] => []
+| x :: xs =>
+  let smaller := xs.filter (fun y => y ≤ x)
+  let larger := xs.filter (fun y => y > x)
+  quicksort smaller ++ [x] ++ quicksort larger
+#eval! quicksort [3,1,4,1,5,9,2,6,5]</code></pre></section><section><h3>What is a Proposition?</h3><p>A proposition is a type in Lean, defined in the universe Prop.</p><pre><code>#check 1 + 1 = 2</code></pre></section><section><h3>What is a Proof?</h3><p>A proof is a value (or term) that inhabits a proposition.</p><p>Proving a proposition means constructing a term of the corresponding type.</p><pre><code>example : double 4 = 8 := rfl
+#check True.intro
+theorem trivial' : True := True.intro
+theorem implication (P Q : Prop) : P → Q → Q := fun p q => q
+def prop := 2 + 2 = 4
+#check prop
+theorem easy : prop := rfl
+def FermatLastTheorem := ∀ x y z n : Nat, n > 2 ∧ x * y * z ≠ 0 → x ^ n + y ^ n ≠ z ^ n
+#check FermatLastTheorem
+theorem hard : FermatLastTheorem := sorry</code></pre></section><section><h3>The Curry-Howard Correspondence</h3><table class="small"><tr><th>Logic side</th><th>Programming side</th></tr><tr><td>formula</td><td>type</td></tr><tr><td>proof</td><td>term</td></tr><tr><td>formula is true</td><td>type has an element</td></tr><tr><td>formula is false</td><td>type does not have an element</td></tr><tr><td>logical constant ⊤ (truth)</td><td>unit type</td></tr><tr><td>logical constant ⊥ (falsehood)</td><td>empty type</td></tr><tr><td>implication</td><td>function type</td></tr><tr><td>conjunction</td><td>product type</td></tr><tr><td>disjunction</td><td>sum type</td></tr><tr><td>universal quantification</td><td>dependent product type</td></tr><tr><td>existential quantification</td><td>dependent sum type</td></tr></table></section><section><h3>More proofs</h3><pre><code>def mk_symm (xs : List α) :=
+  xs ++ xs.reverse
+#eval mk_symm [1,2]
+theorem revser_mk_symm : (mk_symm xs).reverse = mk_symm xs := by
+  simp [mk_symm]
+theorem tst : (xs ++ mk_symm ys).reverse = mk_symm ys ++ xs.reverse := by
+  simp [revser_mk_symm]
+#print tst</code></pre></section><section><h3>Proof Automation and AI</h3><p><a href="https://github.com/jesse-michael-han/lean-gptf">gptf</a></p></section><section><h3>Resources</h3><p><a href="https://lean-lang.org/">Official Homepage of Lean</a></p><p><a href="https://leanprover.zulipchat.com/">Zulip chat</a></p><p><a href="https://lean-lang.org/theorem_proving_in_lean4/index.html">Theorem Proving in Lean 4</a></p><p><a href="https://leanprover-community.github.io/mathematics_in_lean">Mathematics in Lean</a></p><p><a href="https://lean-lang.org/functional_programming_in_lean">Functional Programming in Lean</a></p></section></section></div></div><script src="/js/vendor/reveal.js/dist/reveal.js"></script><script src="/js/vendor/reveal.js/plugin/math/math.js"></script><link rel="stylesheet" href="/js/vendor/reveal.js/plugin/highlight/zenburn.css"><script src="/js/vendor/reveal.js/plugin/highlight/highlight.js"></script><script>Reveal.initialize({
+  history: true,
+  controls: false,
+  transition: 'fade',
+  keyboard: { 37: 'prev', 38: 'prev', 39: 'next', 40: 'next' },
+  katex: {
+    version: 'latest',
+    delimiters: [
+      { left: '$$', right: '$$', display: true },
+      { left: '$', right: '$', display: false },
+    ],
+    ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+  },
+  plugins: [ RevealMath.KaTeX, RevealHighlight ]
+});
+</script></body></html>

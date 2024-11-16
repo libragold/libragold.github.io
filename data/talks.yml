@@ -448,6 +448,11 @@
   date: 2024-11-01
   arxiv: "2404.13136"
   slides: "beyond_classification_theorem/2024-11-01.html"
+- title: "Exploring Lean 4"
+  occasion: "Research Innovation in the Mathematical Sciences Seminar"
+  location: "Arizona State University"
+  date: 2024-11-15
+  slides: "exploring_lean_4/2024-11-15.html"
 - title: "Beyond the classification theorem of Cameron, Goethals, Seidel and Shult"
   occasion: "Joint Mathematics Meetings"
   location: "Seattle Convention Center"
