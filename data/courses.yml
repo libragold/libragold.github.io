@@ -2,12 +2,10 @@
   number: "MAT 442"
   semester: "Fall 2024"
   canvas: "https://canvas.asu.edu/courses/193901"
-  ongoing: true
 - title: "Quantum Computation"
   number: "CSE 598"
   semester: "Fall 2024"
   canvas: "https://canvas.asu.edu/courses/193900"
-  ongoing: true
 - title: "Graph Theory I"
   number: "MAT 516"
   semester: "Fall 2023"
