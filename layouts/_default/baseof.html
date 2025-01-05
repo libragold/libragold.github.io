@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ .Title }}</title>
   <!-- Include custom CSS -->
-  <link rel="stylesheet" href="/css/main.css">
+  {{ if hugo.IsProduction }}
+    {{ $css := resources.Get "css/main.css" | minify | fingerprint "sha256" }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+  {{ else }}
+    <link rel="stylesheet" href="/css/main.css">
+  {{ end }}
   {{ partial "umami.html" . }}
 </head>
 <body>
