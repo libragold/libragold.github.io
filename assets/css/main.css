@@ -230,8 +230,7 @@ nav li > a {
 }
 .writing p.title span.new, .talk p span.new, .course p span.new {
     font-size: 10px;
-    color: white;
-    background-color: #ff9fae;
+    background-color: #adfa1d;
     padding: 4px;
     border-radius: 2px;
     vertical-align: 1.5px;

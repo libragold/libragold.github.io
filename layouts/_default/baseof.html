@@ -9,7 +9,8 @@
     {{ $css := resources.Get "css/main.css" | minify | fingerprint "sha256" }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
   {{ else }}
-    <link rel="stylesheet" href="/css/main.css">
+    {{ $css := resources.Get "css/main.css" }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
   {{ end }}
   {{ partial "umami.html" . }}
 </head>
