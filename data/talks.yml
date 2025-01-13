@@ -454,13 +454,16 @@
   date: 2024-11-15
   slides: "exploring_lean_4/2024-11-15.html"
 - title: "Beyond the classification theorem of Cameron, Goethals, Seidel and Shult"
-  occasion: "Joint Mathematics Meetings"
+  occasi"on: "Joint Mathematics Meetings"
   location: "Seattle Convention Center"
   date: 2025-01-11
   arxiv: "2404.13136"
   slides: "beyond_classification_theorem/2025-01-11.html"
 - title: "TBA"
+  occasion: "Frontiers in Combinatorics and Theoretical Computer Science (Workshop)"
+  location: "The Institute for Advanced Study in Mathematics in Hangzhou"
+  date: 2025-06-10
+- title: "TBA"
   occasion: "The 26th Conference of the International Linear Algebra Society"
   location: "National Sun Yat-sen University"
   date: 2025-06-23
-  arxiv: "2404.13136"
