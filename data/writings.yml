@@ -220,15 +220,20 @@
   authors:
     - hacharya
     - zjiang
-  summary: >
-    We give a complete classification of all connected graphs with smallest eigenvalue in $$(-\lambda^*,-2)$$, where $$\lambda^*=\rho^{1/2}+\rho^{-1/2} \approx 2.01980$$, and $$\rho$$ is the unique real root of $$x^3=x+1$$. Our result is the first classification of infinitely many connected graphs with their smallest eigenvalue in $$(-\lambda,-2)$$ for any constant $$\lambda>2$$.
   arxiv: "2404.13136"
   year: 2024
   slides: "beyond_classification_theorem"
 - title: "On symmetric hollow integer matrices with eigenvalues bounded from below"
   authors:
     - zjiang
-  summary: >
-    A hollow matrix is a square matrix whose diagonal entries are all equal to zero. Define $$\lambda^*=\rho^{1/2}+\rho^{-1/2} \approx 2.01980$$, where $$\rho$$ is the unique real root of $$x^3=x+1$$. We show that for every $$\lambda < \lambda^*$$, there exists $$n \in \mathbb{N}$$ such that if a symmetric hollow integer matrix has an eigenvalue less than $$-\lambda$$, then one of its principal submatrices of order at most $$n$$ does as well. However, the same conclusion does not hold for any $$\lambda \ge \lambda^*$$.
   arxiv: "2408.16860"
-  year: 2024
+  journal: "Linear Algebra and its Applications"
+  doi: "https://doi.org/10.1016/j.laa.2025.01.021"
+  year: 2025
+- title: "Median eigenvalues of subcubic graphs"
+  authors:
+    - hacharya
+    - bjeter
+    - zjiang
+  arxiv: "2502.13139"
+  year: 2025
