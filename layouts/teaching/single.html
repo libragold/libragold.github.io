@@ -19,6 +19,7 @@
         {{ end }}
         <div class="course">
             <p>
+                {{ if .upcoming }}<span class="new">UPCOMING</span>{{ end }}
                 {{ if .ongoing }}<span class="new">ONGOING</span>{{ end }}
                 {{ .semester }} &middot; {{ .number }}
             </p>
