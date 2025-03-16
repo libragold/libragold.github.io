@@ -7,6 +7,6 @@
 [submodule "static/findliner"]
 	path = static/findliner
 	url = https://github.com/libragold/findliner-browser.git
-[submodule "static/icpc-training"]
-	path = static/icpc-training
+[submodule "projects/icpc-training"]
+	path = projects/icpc-training
 	url = https://github.com/libragold/icpc-training.git
