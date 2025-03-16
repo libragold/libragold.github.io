@@ -63,6 +63,8 @@ jobs:
         run: |
           mkdir -p static/icpc-training
           cp -r projects/icpc-training/dist/* static/icpc-training/
+      - name: Rewrite asset paths
+        run: sed -i 's|/assets/|/icpc-training/assets/|g' static/icpc-training/index.html
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
