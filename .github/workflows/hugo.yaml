@@ -47,13 +47,22 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20.18.0'  # Ensure you are using the latest LTS version of Node.js
+          node-version: '22.14.0'  # Ensure you are using the latest LTS version of Node.js
       - name: Install Node.js dependencies
         run: npm install
       - name: Build Slides
         run: npm run build:slides
       - name: Add Umami
         run: npm run add:umami
+      - name: Build ICPC Training
+        run: |
+          cd projects/icpc-training
+          npm install
+          npm run build
+      - name: Move icpc-training build output
+        run: |
+          mkdir -p static/icpc-training
+          cp -r projects/icpc-training/dist/* static/icpc-training/
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -66,7 +75,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"          
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
