@@ -4,7 +4,7 @@
     {{ with .Site.GetPage "about.md" }}
     <section id="about">
       {{ with .Params.profile }}
-        <img src="{{ .src | safeURL }}" alt="{{ .label }}">
+        <img id="profile-pic" src="{{ .src | safeURL }}" alt="{{ .label }}" data-april-fools-src="{{ .src_april_fools | safeURL }}">
       {{ end }}
       <div class="text-content">
         {{ .Content }}
@@ -38,4 +38,15 @@
       {{ .Content }}
     </section>
     {{ end }}
+
+    <script>
+      // Check if it's April 1st
+      const today = new Date();
+      if (today.getMonth() === 3 && today.getDate() === 1) {
+        const profilePic = document.getElementById('profile-pic');
+        if (profilePic) {
+          profilePic.src = profilePic.dataset.aprilFoolsSrc;
+        }
+      }
+    </script>
 {{ end }}
