@@ -7,7 +7,7 @@ I co-organize the Discrete Mathematics Seminar at ASU, where we explore a variet
 
 I also co-organize the Research Innovation in the Mathematical Sciences Seminar, which focuses on designing algorithms to train large models. It's an exciting space for exploring trends and opportunities in mathematical sciences. Check out [our schedule](https://math.la.asu.edu/~rims).
 
-Since November 2024, I’ve been coaching ASU’s ICPC team, the Chaiwala Ballers. We placed 4th in the Rocky Mountain Regional Competition and advanced to the [North America Championship](https://nac.icpc.global/home-2025/), which will take place at the University of Central Florida on May 22-27, 2025.
+Since October 2024, I’ve been coaching ASU’s ICPC team, Chaiwala Ballers. We placed 4th in the Rocky Mountain Regional Competition and advanced to the [North America Championship](https://nac.icpc.global/home-2025/), which will take place at the University of Central Florida on May 22-27, 2025.
 
 I put together a little tool called [Findliner](/findliner) to help boost my productivity by adding line numbers to PDFs. It’s been really useful for me, and you might find it handy too!
 
