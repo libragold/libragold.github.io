@@ -143,6 +143,7 @@ nav li > a {
 }
 #about .text-content {
     flex: 1;
+    margin-block: -6px;
 }
 #recent a {
     text-decoration-color: var(--highlight-color-blue);
