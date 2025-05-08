@@ -464,10 +464,11 @@
   location: "Arizona State University"
   date: 2025-04-12
   slides: "extremal_problems_in_discrete_geometry/2025-04-12.html"
-- title: "TBA"
+- title: "Median eigenvalues of subcubic graphs"
   occasion: "Frontiers in Combinatorics and Theoretical Computer Science (Workshop)"
   location: "The Institute for Advanced Study in Mathematics in Hangzhou"
   date: 2025-06-10
+  arxiv: "2502.13139"
 - title: "Median eigenvalues of subcubic graphs"
   occasion: "The 26th Conference of the International Linear Algebra Society"
   location: "National Sun Yat-sen University"
