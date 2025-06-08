@@ -467,10 +467,12 @@
 - title: "Median eigenvalues of subcubic graphs"
   occasion: "Frontiers in Combinatorics and Theoretical Computer Science (Workshop)"
   location: "The Institute for Advanced Study in Mathematics in Hangzhou"
-  date: 2025-06-10
+  date: 2025-06-09
   arxiv: "2502.13139"
+  slides: "median_eigenvalues_of_subcubic_graphs/2025-06-09.html"
 - title: "Median eigenvalues of subcubic graphs"
   occasion: "The 26th Conference of the International Linear Algebra Society"
   location: "National Sun Yat-sen University"
   date: 2025-06-23
   arxiv: "2502.13139"
+  slides: "median_eigenvalues_of_subcubic_graphs/2025-06-23.html"
