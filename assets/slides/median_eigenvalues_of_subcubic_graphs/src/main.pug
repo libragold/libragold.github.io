@@ -4,104 +4,179 @@ section
   // Inline style for flexbox and avatar
   .profile-figures(style="display: flex; justify-content: center; gap: 48px; margin-bottom: 32px;")
     figure(style="display: flex; flex-direction: column; align-items: center; margin: 0;")
-      img(src="img/hricha.png", style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #eee; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 12px;")
+      img(src="img/hricha.png", style="width: 160px; height: 160px; object-fit: cover; border-radius: 50%; margin-bottom: 24px;")
       figcaption 
         small Hricha Acharya
     figure(style="display: flex; flex-direction: column; align-items: center; margin: 0;")
-      img(src="img/benjamin.png", style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #eee; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 12px;")
+      img(src="img/benjamin.png", style="width: 160px; height: 160px; object-fit: cover; border-radius: 50%; margin-bottom: 24px;")
       figcaption
         small Benjamin Jeter
 
 section
   section
-    p Subcubic graphs: max degree at most 3
-    p Eigenvalues of adjacency matrix
-    p $\lambda_1 \ge \dots \ge \lambda_n$
-    p Median eigenvalues
-    p $\lambda_h = \lambda_{\lfloor (n+1)/2 \rfloor}, \lambda_l = \lambda_{\lceil (n+1)/2 \rceil}$
+    p
+      | Subcubic graphs
+      br
+      | maximum degree at most 3
+    p.fragment
+      | Eigenvalues of adjacency matrix
+      br
+      | $\lambda_1 \ge \dots \ge \lambda_n$
+    p.fragment
+      | Median eigenvalues
+      br
+      | $\lambda_h = \lambda_{\lfloor (n+1)/2 \rfloor}, \lambda_l = \lambda_{\lceil (n+1)/2 \rceil}$
   section
     h3 Hückel Model Theory
-    table
+    table(style="font-size: 75%")
       tr
-        th Chemistry
-        th Mathematics 
-      tr 
-        td Organic molecules 
-        td Chemical graphs
-      tr
-        td $\pi$-electron energy levels
-        td Eigenvalues
-      tr
-        td Highest occupied molecular orbital energy
-        td $\lambda_h$
-      tr
-        td Lowest unoccupied molecular orbital energy
-        td $\lambda_l$
-      tr
-        td Kinetic stability
-        td $\lambda_h - \lambda_l$
+        th(style="text-align: center") Chemistry
+        th(style="text-align: center") Mathematics 
+      tr.fragment 
+        td(style="text-align: center") Organic molecules 
+        td(style="text-align: center")
+          | Chemical graphs
+          br
+          | (connected + subcubic)
+      tr.fragment
+        td(style="text-align: center") $\pi$-electron energy levels
+        td(style="text-align: center") Eigenvalues
+      tr.fragment
+        td(style="text-align: center") Highest occupied molecular orbital energy
+        td(style="text-align: center") $\lambda_h$
+      tr.fragment
+        td(style="text-align: center") Lowest unoccupied molecular orbital energy
+        td(style="text-align: center") $\lambda_l$
+      tr.fragment
+        td(style="text-align: center") Kinetic stability
+        td(style="text-align: center") $\lambda_h - \lambda_l$
   section
-    h3 Fowler and Pisanski 2010
+    h3(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Fowler & Pisanski 2010
     p
-      | Computations: most chemical graphs have median eigenvalues in $[1,-1]$
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Computations
+      |  Most chemical graphs have 
+      br 
+      | median eigenvalues in $[-1,1]$
+      span.fragment , with single exception
+    div.fragment
+      figure
+        img(src="img/heawood.png")
+        figcaption Heawood graph
+    p.fragment Eigenvalues $-3, (-\sqrt2)^6, (\sqrt2)^6, 3$
+  section
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #ff9fae") Conjecture
+      |  Median eigenvalues of all but finite chemical graphs are in $[-1,1]$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Optimality
       br
-      | Single exception: Heawood graph
-    figure
-      img(src="img/heawood.png")
-    p Eigenvalues $-3, (-\sqrt2)^6, (\sqrt2)^6, 3$
+      | Guo & Mohar constructed infinitely many bipartite chemical graphs with median eigenvalues $\pm 1$
   section
-    p Conjecture: Median eigenvalues of all but finite chemical graphs are in $[-1,1]$
-    p Optimality of $[-1,1]$: Guo and Mohar constructed ifinitely many bipartite checmical graphs with median eigenvalues $\pm 1$
-  section
-    p Fowler & Pisanski 2010: Subcubic trees
-    p Mohar 2013: Planar bipartite chemical graphs
-    p Mohar 2016: Bipartite checmical graphs except Heawood
-    p Several other supplementary results
-    p.fragment Theorem (Acharya, Jeter, J., 2025) All chemical graphs except Heawood
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Fowler & Pisanski 2010
+      |  Subcubic 
+      em trees
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Mohar 2013
+      em  Planar bipartite 
+      | chemical graphs
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Mohar 2016
+      em  Bipartite 
+      | chemical graphs except Heawood
+    p.fragment Several other supplementary results
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Acharya, Jeter, J., 2025
+      |  All chemical graphs except Heawood
 section
   section
     ul
       li 1% of proof for 99% of cases
       li 99% of proof for 1% of cases
-    p For simplicity, only focus on $\lambda_h \le 1$
+    p.fragment For simplicity, only focus on $\lambda_h \le 1$
   section
     h3 Proof for 99%
-    p Take maximum cut $(A, B)$ of $G$
-    p Additional assumption $\lvert A\rvert < \lvert B\rvert$
-    p Note: maximum degree of $G[B] \le 1$, and $\lambda_1(G[B]) \le 1$
-    p Cauchy interlacing: $\lambda_{1 + \lvert A \rvert}(G) \le 1$, and $\lambda_h(G) \le 1$.
-  section
+    p.fragment Take maximum cut $(A, B)$ of $G$
+    p.fragment Additional assumption $\lvert A\rvert < \lvert B\rvert$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Observation
+      |  Maximum degree of $G[B] \le 1$,
+      br
+      | and $\lambda_1(G[B]) \le 1$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Cauchy interlacing
+      |  $\lambda_{1 + \lvert A \rvert}(G) \le 1$, and $\lambda_h(G) \le 1$.
+  section(data-auto-animate)
     h3 Proof for 1%
-    p where maximum cut $(A, B)$ satisfies $\lvert A\rvert = \lvert B\rvert$
-    p Idea 1: Move $k$ vertices, say $C \subset B$ such that $\lambda_k(G[B \cup C]) \le 1$
-    p Then Cauchy interlacing: $\lambda_{k + \lvert A \setminus C \rvert}(G) \le 1$, and $\lambda_h(G) \le 1$
-    p Note: Most components of $G[B \cup C]$ are independent edges
-    p Goal 1: Find tail reducer $C$
-  section
-    p Idea 1: Move $k$ vertices, say $C \subset B$ such that $\lambda_k(G[B \cup C]) \le 1$
-    p Goal 1: Find tail reducer $C$
-    p.fragment Idea 2: Due to the maximality of cut $(A, B)$, the cut-set of $(A \oplus D, A \oplus D)$ cannot be bigger
-    p.fragment Goal 2: Yield contradiction through cut enhancer $D$
-  section
-    p Fix maximum cut $(A, B)$ of chemical graph $G$
-    p Lemma: If $ab$ is an edge of $G[A]$, then either degree of $a$ is $3$, or $\{ a \}$ is tail reducer
-  section
-    p Organizational tool: Underlying multi-graph $M$
-    p Vertices of $M$: edges of $G[A] \cup G[B]$
-    p Edges of $M$: $k$ edges between $\alpha \in G[A]$ and $\beta \in G[B]$ in $M$ if and only if $k$ edges between $\alpha$ and $\beta$ in $G$
-    p Lemma: If $M$ contains multi-edges between $\alpha$ and $\beta$, then a subset of $\alpha \cup \beta$ is a tail reducer
-  section
-    p Assuming no tail reducer, $M$ is simple and degree $\le 2$
-    p Each component of $M$ is a path of a cycle
-    p Lemma: If $M$ contains a path $\alpha \beta \gamma \delta \epsilon$, then a subset of vertices within distance 8 of $\gamma$ in $G$ is tail reducer
+    p.fragment Maximum cut $(A, B)$ satisfies $\lvert A\rvert = \lvert B\rvert$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Idea 1
+      |  Move $k$ vertices $C \subset A$ s.t.
+      br
+      | $\lambda_k(G[B \cup C]) \le 1$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Cauchy
+      |  $\lambda_{k + \lvert A \setminus C \rvert}(G) \le 1$, and $\lambda_h(G) \le 1$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Note
+      |  Most components of $G[B \cup C]$ are independent edges
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Goal 1
+      |  Finish with 
+      em tail reducer 
+      | $C$
+  section(data-auto-animate)
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Idea 1
+      |  Move $k$ vertices $C \subset A$ s.t.
+      br
+      | $\lambda_k(G[B \cup C]) \le 1$
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Goal 1
+      |  Finish with 
+      em tail reducer 
+      | $C$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Idea 2
+      |  Cut-set of $(A \oplus D, A \oplus D)$ cannot be bigger than that of $(A, B)$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Goal 2
+      |  Contradiction through 
+      em cut enhancer 
+      | $D$
+  section(data-auto-animate)
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Goal 1
+      |  Finish with 
+      em tail reducer 
+      | $C$
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Goal 2
+      |  Contradiction through 
+      em cut enhancer 
+      | $D$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Lemma
+      |  If $ab$ is an edge of $G[A]$, then degree of $a$ is $3$, or $\{ a \}$ is tail reducer
   section
     h3 54 pages, 170 figures
-    p All arguments are "local"
-    p Positive fraction $\epsilon n$ middle eigenvalues $\subset [-1, 1]$
+    p.fragment All arguments are "local"
+    p.fragment Positive fraction $\varepsilon n$ middle eigenvalues $\subset [-1, 1]$
 section
   section
     h3 Further problems
-    p Mohar–Tayfeh-Rezaie 2015: Median eigenvalues of every connected bipartite $G$ with maximum degree at most $d$ are in $[-\sqrt{d-2}, \sqrt{d-2}]$, unless $G$ is the incidence graph of projective plane of order $d-1$
-    p Optimality of $\sqrt{d-2}$ for $d \ge 4$?
-    p Remove bipartiteness? Mohar $\sqrt{d}$.
-    p Improve to $\sqrt{d-1}$? Improve to $\sqrt{d-2}$?
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Mohar & Tayfeh-Rezaie 2015
+      |  Median eigenvalues of every connected 
+      em bipartite 
+      | $G$ with maximum degree at most $d$ are in $[-\sqrt{d-2}, \sqrt{d-2}]$
+      span.fragment , unless $G$ is incidence graph of projective plane of order $d-1$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #ff9fae") Optimality
+      |  of $\sqrt{d-2}$ for $d \ge 4$?
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #ff9fae") Remove bipartiteness
+      | ? 
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Mohar
+      |  $\sqrt{d}$.
+    p.fragment Improve to $\sqrt{d-1}$? Improve to $\sqrt{d-2}$?
