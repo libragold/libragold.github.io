@@ -466,7 +466,7 @@
   slides: "extremal_problems_in_discrete_geometry/2025-04-12.html"
 - title: "Median eigenvalues of subcubic graphs"
   occasion: "Frontiers in Combinatorics and Theoretical Computer Science (Workshop)"
-  location: "The Institute for Advanced Study in Mathematics in Hangzhou"
+  location: "Institute for Advanced Study in Mathematics in Hangzhou"
   date: 2025-06-09
   arxiv: "2502.13139"
   slides: "median_eigenvalues_of_subcubic_graphs/2025-06-09.pdf"
@@ -476,6 +476,12 @@
   date: 2025-06-23
   arxiv: "2502.13139"
   slides: "median_eigenvalues_of_subcubic_graphs/2025-06-23.html"
+- title: "László Fejes Tóth’s zone conjecture"
+  occasion: "The 3rd International Mathematics Summer Camp"
+  location: "Beijing Tangyun Conference Center"
+  date: 2025-07-08
+  arxiv: "1703.10550"
+  slides: "laszlo_fejes_toths_zone_conjecture/2025-07-08.html"
 - title: "Eigenvalue multiplicity and equiangular lines"
   occasion: "International Congress of Basic Science"
   location: "Beijing Institute of Mathematical Sciences and Applications"
