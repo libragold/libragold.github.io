@@ -221,8 +221,8 @@ section
         br
         | $\exists$ $k$-vertex graph $G$ whose adjacency matrix has spectral radius $\lambda$
     ol
-      li.fragment When $k < \infty$, proof needs $n \ge 2^{2^{k^{1+o(1)}}}$.<br>Balla showed $n \ge 2^{k^{Ck}}$; conjecturally $n \ge k^C$.
-      li.fragment When $k = \infty$, $o(d) = O_{\alpha}(d/\log\log d)$.<br>Schildkraut constructed $\Omega_{\alpha}(\log\log d)$.
+      li.fragment When $k < \infty$, proof needs $n \ge 2^{2^{C\lambda k}}$.<br>Balla showed $n \ge 2^{k^{Ck}}$; conjecturally $n \ge k^C$.
+      li.fragment When $k = \infty$, $o(n) = O_{\alpha}(n/\log\log n)$.<br>Schildkraut constructed $\Omega_{\alpha}(\log\log n)$.
 section
   section.eighty-percent
     h3 Connection to Spectral Graph Theory
@@ -231,14 +231,17 @@ section
       br
       | $\Leftrightarrow$ Unit vectors in $\mathbb{R}^n$ with inner product $\pm \alpha$
       br
-      | $\Leftrightarrow$ Graph $G$, where $u \sim v$ in $G$ $\Leftrightarrow$ $\langle u, v\rangle = -\alpha$
+      span.fragment(data-fragment-index="3") $\Leftarrow$
+      span.fragment(data-fragment-index="1") $\Rightarrow$ Graph $G$, where $u \sim v$ in $G$ iff $\langle u, v\rangle = -\alpha$
+      br
+      span.fragment(data-fragment-index="2") s.t. $(1-\alpha) I - 2\alpha A_G + \alpha J \succeq 0$ and rank $\le n$
     p.fragment
       | Equivalently, given $\alpha$ and $n$, find $G$ with max order s.t.
       br
       | $(1-\alpha) I - 2\alpha A_G + \alpha J \succeq 0$ and rank $\le n$
     p.fragment
       span.green Example 
-      | when $\alpha = 1/3$, take $n/2$ copies of 
+      | when $\alpha = 1/5$, take $\lfloor (n-1)/2 \rfloor$ copies of 
       svg(height=44 width=38 viewBox='-4 -10 38 44')
         path(d="M15 0 L30 30 L0 30 L15 0" fill="transparent" stroke="#121426" stroke-width=2)
         circle(cx=15 cy=0 r=4 fill="#121426")
@@ -250,7 +253,7 @@ section
       br
       | $M := (1-\alpha) I - 2\alpha A_G + \alpha J \succeq 0$ and rank $\le n$
     p.fragment
-      | By rank-nullity,
+      | Rank-nullity
       br
       | $E_\alpha(n) \le n + \mathrm{null}(M)$
       span.fragment $\le \mathrm{null}((1-\alpha) I - 2\alpha A_G) + n + 1$
@@ -381,7 +384,7 @@ section
     ul
       li.fragment $H$ is $G$ with small $r$-net removed
       li.fragment
-        | Radius $s$ balls in $H$ have spectral radius $< \lambda - \epsilon$
+        | Radius $s$ balls in $H$ have spectral radius $\le (\lambda^{2r} - 1)^{1/2r}$
         br
         | Vertex removal lowers spectral radius
       li.fragment Bound $\mathrm{mult}(\lambda, H)$ via moments
@@ -396,6 +399,12 @@ section
       | second eigenvalue multiplicity of 
       br
       | an $n$-vertex connected graph of bounded degree?
+    p.fragment
+      | McKenzie, Rasmussen, Srivastava 2021
+      br
+      | For 
+      span.red regular 
+      | graphs, $O(n/\log^c n)$
     p.fragment
       | What is the 
       span.blue maximum 
@@ -418,10 +427,14 @@ section
   section.eighty-percent
     h3 Spherical Two-distance Sets
     p
-      | $E_{\alpha, \beta}(n) = $ max # of unit vectors in $\mathbb{R}^n$
+      | $E_{\alpha, \beta}(n) = $ 
+      span.blue maximum 
+      | number of 
+      span.green unit vectors 
+      | in $\mathbb{R}^n$
       br
-      | with pairwise inner products $\beta < 0 < \alpha$
-    p.fragment Bukh 2005: $E_{\alpha, \beta}(n) = O_{\alpha,\beta}(d)$
+      | such that pairwise inner products are $\beta < 0 < \alpha$
+    p.fragment Bukh 2005: $E_{\alpha, \beta}(n) = O_{\alpha,\beta}(n)$
     p.fragment
       span.red Problem 
       | Determine $\lim_{n\to\infty} E_{\alpha, \beta}(n) /n$
@@ -433,7 +446,7 @@ section
       | where $p = \lfloor -\alpha/\beta\rfloor+1$ and $\lambda = (1-\alpha)/(\alpha - \beta)$
     p.blue.fragment Solved in special cases
     ul
-      li.fragment J., Tidor, Yao, Zhang, Zhao 2023: $p \le 2$ and $\lambda = 1,\sqrt{2},\sqrt{3}$
+      li.fragment J., Tidor, Yao, Zhang, Zhao 2023: $p \le 2$ or $\lambda = 1,\sqrt{2},\sqrt{3}$
       li.fragment
         | J., Polyanskii 2025+: $\lambda < \lambda^* \approx 2.0198$
         br
@@ -441,8 +454,7 @@ section
   section.eighty-percent
     h3 Solution Framework
     ol
-      li.fragment
-        | Forbidden local subgraphs: leverage Gram matrix $\succeq 0$
+      li.fragment Local forbidden subgraphs: leverage Gram matrix $\succeq 0$
       li.fragment Global graph structure: Ramsey theory
         ul
           li Equiangular lines: bounded degree graph
@@ -457,15 +469,23 @@ section
         | Sublinear eigenvalue multiplicity is 
         span.red false 
         | for signed graphs
-      li.fragment J., Polyanskii 2025+: forbidden local subgraphs alone can never break $\lambda^*$ barrier
-      li.fragment J., Wang 2025+: forbidden local subgraphs + global graph structure can never break $\lambda^*$ barrier when $p \ge 3$
+      li.fragment
+        | J., Polyanskii 2025+: local forbidden subgraphs alone can 
+        span.red never 
+        | break $\lambda^*$ barrier
+      li.fragment
+        | J., Wang 2025+: local forbidden subgraphs + global graph structure can 
+        span.red never 
+        | break $\lambda^*$ barrier as soon as $p \ge 3$
 section
   section.eighty-percent
-    h3 Classification of graphs
-    p Graphs with eigenvalues $\ge -\lambda$
+    h3
+      | Classification of graphs
+      br
+      | with eigenvalues $\ge -\lambda$
     ul
-      li.fragment $\lambda = 2$, Cameron, Goethals, Seidel, and Shult 1976
-      li.fragment $\lambda = \lambda^*$, J., Acharya 2025
+      li.fragment Cameron, Goethals, Seidel, and Shult 1976: $\lambda = 2$
+      li.fragment J., Acharya 2025: $\lambda = \lambda^* \approx 2.0198$
       li.fragment
         span.red Problem 
         | Signed graphs with eigenvalues $\ge -\lambda^*$
@@ -473,12 +493,12 @@ section
     h3 Symmetric integer matrix
     ul
       li Vijayakumar 1987: Every symmetric hollow integer matrix has eigenvalue $<-2$ must have principal submatrix of order $\le 10$ with same property
-      li
-        | J. 2024: Determine $\lambda$ such that every every symmetric hollow integer matrix has eigenvalue $<-\lambda$ must have principal submatrix of bounded order with same property
+      li.fragment
+        | J. 2024: Determined $\lambda$ such that every every symmetric hollow integer matrix has eigenvalue $<-\lambda$ must have principal submatrix of bounded order with same property
         br
         span.red Problem 
         | Symmetric integer matrix with spectral radius $\le \lambda$
-      li
+      li.fragment
         | Lehmer's conjecture, McKee and Smyth 2012
         br
         span.red Problem 
