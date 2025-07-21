@@ -1,0 +1,185 @@
+.reveal h1 {
+    background: #121426;
+    color: #fff;
+    position: fixed;
+    font-size: 40px;
+    padding: 0.25em;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.reveal .red {
+    color: #DB4437;
+}
+
+.reveal .slides section .fragment.highlight-red.visible {
+    color: #DB4437;
+}
+
+.reveal .blue {
+    color: #4285F4;
+}
+
+.reveal .green {
+    color: #0F9D58;
+}
+
+.central-dot {
+    background-color: black;
+    height: 1px;
+    width: 1px;
+    position: fixed;
+    left: 50%;
+    right: 50%;
+}
+
+.reveal .small-caps {
+    font-variant: small-caps;
+}
+
+.reveal blockquote {
+    box-shadow: none;
+    background: transparent;
+}
+
+.reveal .slides section .fragment.appeared {
+    visibility: visible;
+    opacity: 1;
+}
+
+.reveal .fragment.visible.fragment-move-left {
+    transform: translate(-3em, 0) scale(2);
+}
+
+.reveal .fragment.visible.fragment-move-right {
+    transform: translate(3em, 0) scale(2);
+}
+
+.reveal .fragment.visible.move-down {
+    transform: translate(0, 125px);
+}
+
+.reveal .fragment.visible.to-ellipse {
+    transform: matrix(1.5,0,0,0.5,-125,200);
+}
+
+.reveal .fragment.visible.move-plank {
+    transform: matrix(1,0.3,-1,0.5,125,65);
+}
+
+.reveal .avatar {
+    border-radius: 50%;
+    height: 2.5em;
+    width: 2.5em;
+    border: none;
+}
+
+.reveal section img.simple {
+    border: none;
+    box-shadow: none;
+}
+
+.ball {
+    display: inline-block;
+    background: #121426;
+    margin: 0;
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    margin: 20px 40px;
+    background: radial-gradient(circle at 30px 30px, #dce6f0, #121426);
+}
+
+.reveal .conjecture {
+    border-radius: 0.5rem;
+    border: 0.5rem solid #DB4437;
+}
+
+.reveal .conjecture > p:first-child {
+    margin: 0;
+    color: white;
+    padding-bottom: 0.5rem;
+    background: #DB4437;
+}
+
+.reveal .conjecture.with-avatar > p:last-child, .reveal .theorem.with-avatar > p:last-child {
+    text-align: left;
+    padding: 0;
+}
+
+.reveal .conjecture.with-avatar > img, .reveal .theorem.with-avatar > img {
+    float: left;
+    margin: 10px 20px 0;
+}
+
+  
+.reveal .theorem {
+    border-radius: 0.5rem;
+    border: 0.5rem solid #4885ed;
+}
+
+.reveal .theorem > p:first-child {
+    margin: 0;
+    color: white;
+    padding-bottom: 0.5rem;
+    background: #4885ed;
+}
+
+.reveal .conjecture > p:last-child, .reveal .theorem > p:last-child {
+    margin: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.reveal .flex-container {
+    display: flex;
+}
+
+.reveal .flex-container > .col {
+    flex: 1
+}
+
+.reveal .eighty-percent {
+    font-size: 80%;
+}
+
+.reveal img.simple {
+    border: none;
+    box-shadow: none;
+}
+
+.reveal .fragment.show-border {
+    border-color: transparent;
+}
+
+.reveal .fragment.visible.show-border {
+    border-color: #4885ed;
+}
+
+.reveal img.inline {
+    border: none;
+    box-shadow: none;
+    height: 1em;
+}
+
+.reveal .photo-with-tag {
+    position: relative;
+}
+
+.reveal .photo-with-tag img {
+    height: 342px;
+    width: 684px;
+}
+
+.reveal .photo-with-tag .tag {
+    position: absolute;
+    font-size: 0.4em;
+    background: rgba(255,255,255,0.75);
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+
+table.td-centered td {
+    text-align: center;
+}
