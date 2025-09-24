@@ -1,0 +1,141 @@
+include ../../layouts/title_slide.pug
+section
+    h3 The New Reality
+    ul
+        li.fragment
+            span AI tools now everywhere.
+            br
+            img(src="img/icons.png" style="width: 360px")
+        li.fragment Students
+            ul 
+                li.fragment can instantly "solve",
+                li.fragment but may not understand.
+        li.fragment Hallucination hazard
+section
+    h3 Faculty Perspective
+    p
+    | When I see AI-assisted work,
+    br
+    | I feel ____________________.
+section
+    h3 Cracks in Traditional Homework
+    ul
+        li.fragment Feedback loop often a week or more → learning gap.
+        li.fragment Grading rewards correctness, not the process.
+        li.fragment Disengagement grows when feedback comes too late.
+section
+    h3 Rethinking the Goal
+    ul
+        li.fragment Imagine a tireless graduate TA.
+        ul
+            li.fragment Works 24/7.
+            li.fragment Prompts thinking.
+            li.fragment Encouraging, patient, passionate.
+            li.fragment Follows the instructor's guidance.
+        li.fragment
+            | If we could give 
+            em every 
+            | student this experience,
+            br
+            | homework could become a true 
+            em space for learning.
+section
+    h3 The Surprise
+    p.fragment This ideal TA exists today
+    figure.fragment
+        img(src="img/tireless_ta.png" style="width: 300px; border-radius: 150px")
+    p.fragment …but it's not a person.
+section
+    h3 Introducing
+    p
+        a(href="semina.ai") semina.ai
+    ul
+        li.fragment Provides immediate, guided feedback.
+        li.fragment Keeps the instructor in the loop.
+        li.fragment Encourages exploration and rewards effort.
+        li.fragment Even catches instructor mistakes.
+section
+    section
+        h3 Student Experience 1
+        p Guided problem-solving: solicits ideas, not answers.
+        p
+            a(target="_blank" href="https://semina.ai/challenges/ttd73bd6mrqennyqwpmgxv77") Live Demo
+        .centering
+            .qrcode(data-code="https://semina.ai/challenges/ttd73bd6mrqennyqwpmgxv77")
+    section
+        h3 Student Experience 2
+        p Low entry barrier: plain text input; learns LaTeX along the way.
+        p
+            a(target="_blank" href="https://semina.ai/challenges/g112khwbpnta6dmsfbb1fk2v") Live Demo
+        .centering
+            .qrcode(data-code="https://semina.ai/challenges/g112khwbpnta6dmsfbb1fk2v")
+    section
+        h3 Student Experience 3
+        p Language flexibility: students can ask or explain in their own language.
+        p
+            a(target="_blank" href="https://semina.ai/challenges/j83msfbjh5rp7bdbrmvsr47x") Live Demo
+        .centering
+            .qrcode(data-code="https://semina.ai/challenges/j83msfbjh5rp7bdbrmvsr47x")
+    section
+        h3 Student Experience 4
+        p Quality control: flags typos or instructor errors.
+        p
+            a(target="_blank" href="https://semina.ai/challenges/ezasyxtgnvqms0yspnffznmr") Live Demo
+        .centering
+            .qrcode(data-code="https://semina.ai/challenges/ezasyxtgnvqms0yspnffznmr")
+section
+    h3 Faculty Experience
+    ul
+        li.fragment Simple onboarding, minimal technical overhead.
+        li.fragment Faculty can iterate and improve problems quickly.
+section
+    h3 Early Phenomena
+    ul
+        li.fragment Persistent engagement
+            ul
+                li Students use it beyond class hours.
+        li.fragment Expanded capacity
+            ul
+                li Faculty save hours each week.
+        li.fragment Organic demand
+            ul 
+                li Students upload problems themselves.
+section
+    h3 Our Team & Vision
+    ul
+        li
+            span Partner Tao
+            ul 
+                li
+                    span ex-TikTok product manager & experienced engineer.
+                    br
+                    img(src="img/tao.png" style="width: 800px")
+        li Long-term goal
+            ul 
+                li a collaborative, open AI platform for learning.
+section
+    h3 Join the Experiment
+    p Help shape the next generation of pedagogy.
+    p Try it now
+
+// Add QR code library and initialization (Pug)
+script(src="https://davidshimjs.github.io/qrcodejs/qrcode.min.js")
+script.
+    (function () {
+      document.addEventListener('DOMContentLoaded', function () {
+        var nodes = document.querySelectorAll('.qrcode');
+        Array.prototype.forEach.call(nodes, function (el) {
+          var code = el.getAttribute('data-code') || el.dataset.code;
+          if (!code) return;
+          el.innerHTML = ''; // ensure empty
+          new QRCode(el, {
+            text: code,
+            width: 160,
+            height: 160,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+          });
+        });
+      });
+    })();

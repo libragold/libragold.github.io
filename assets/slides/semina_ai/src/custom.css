@@ -1,0 +1,10 @@
+.reveal section {
+    font-size: 80%;
+}
+.reveal .centering {
+    text-align: center;
+}
+
+.reveal .qrcode {
+    display: inline-block;
+}
