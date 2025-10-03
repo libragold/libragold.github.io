@@ -213,9 +213,11 @@
     - apolyanskii
   summary: >
     We show that the family of graphs with smallest eigenvalue at least $$-\lambda$$ has a finite forbidden subgraphs characterization if and only if $$\lambda < \lambda^*$$, where $$\lambda^* = \beta^{1/2} + \beta^{-1/2}$$ and $$\beta$$ is the unique real root of $$x^3 = 1 + x$$. We also prove the same conclusion for signed graphs. As a consequence, we establish the asymptotic formula of the maximum cardinality of spherical two-distance set with two fixed inner products $$\alpha$$ and $$\beta$$ for all $$-1 \le \beta < 0 \le \alpha < 1$$ satisfying $$(1-\alpha)/(\alpha-\beta) < \lambda^*$$.
+  journal: "Forum of Mathematics, Sigma"
+  year: 2025
+  doi: "https://doi.org/10.1017/fms.2025.10110"
   arxiv: "2111.10366"
   slides: "forbidden_subgraphs_and_spherical_two_distance_sets"
-  year: 2021
 - title: "Beyond the classification theorem of Cameron, Goethals, Seidel, and Shult"
   authors:
     - hacharya
@@ -226,10 +228,10 @@
 - title: "On symmetric hollow integer matrices with eigenvalues bounded from below"
   authors:
     - zjiang
-  arxiv: "2408.16860"
   journal: "Linear Algebra and its Applications"
   doi: "https://doi.org/10.1016/j.laa.2025.01.021"
   year: 2025
+  arxiv: "2408.16860"
 - title: "Median eigenvalues of subcubic graphs"
   authors:
     - hacharya

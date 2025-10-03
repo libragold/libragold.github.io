@@ -1,0 +1,47 @@
+.reveal section {
+    font-size: 80%;
+}
+.reveal a {
+    text-decoration: underline;
+}
+.reveal .qrcode {
+    display: inline-block;
+}
+.reveal .qrcode img {
+    margin: 18px 0 0 4px;
+}
+/* simple message-bubble styles for .session .right and .left */
+.reveal .session {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin: 0.6em auto;
+    width: 100%;
+    max-width: 800px;
+    align-items: stretch;
+}
+.reveal .session .left,
+.reveal .session .right {
+    display: inline-block;
+    max-width: 75%;
+    padding: 0.6em 0.9em;
+    border-radius: 12px;
+    line-height: 1.35;
+    word-wrap: break-word;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    font-size: 0.95em;
+}
+/* left-aligned (assistant/response) */
+.reveal .session .left {
+    background: #f4f4f6;
+    color: #111;
+    align-self: flex-start;
+    border-bottom-left-radius: 6px;
+}
+/* right-aligned (student/request) */
+.reveal .session .right {
+    background: #0b74de;
+    color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 6px;
+}
