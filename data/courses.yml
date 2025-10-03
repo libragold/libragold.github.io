@@ -5,7 +5,8 @@
 - title: "Freshman / Sophomore / Junior / Senior Problem Seminar"
   number: "MAT 194 / MAT 294 / MAT 394 / MAT 494"
   semester: "Fall 2025"
-  upcoming: true
+  ongoing: true
+  canvas: "https://canvas.asu.edu/courses/237609"
 - title: "Advanced Linear Algebra"
   number: "MAT 442"
   semester: "Fall 2024"
