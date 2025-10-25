@@ -93,9 +93,9 @@
 .reveal a.brand-link::after {
     content: "";
     position: absolute;
-    inset: -4px;
+    inset: -10px;
     border-radius: 999px;
-    box-shadow: 0 0 18px rgba(106, 43, 210, 0.35), 0 0 32px rgba(106, 43, 210, 0.25);
+    box-shadow: 0 0 30px rgba(106, 43, 210, 0.35), 0 0 55px rgba(106, 43, 210, 0.25);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -106,7 +106,7 @@
 }
 
 @keyframes brandGlow {
-    0% { text-shadow: 0 0 6px rgba(106, 43, 210, 0.35), 0 0 16px rgba(106, 43, 210, 0.2); }
-    50% { text-shadow: 0 0 16px rgba(106, 43, 210, 0.55), 0 0 28px rgba(106, 43, 210, 0.35); }
-    100% { text-shadow: 0 0 6px rgba(106, 43, 210, 0.35), 0 0 16px rgba(106, 43, 210, 0.2); }
+    0% { text-shadow: 0 0 12px rgba(106, 43, 210, 0.45), 0 0 28px rgba(106, 43, 210, 0.25); }
+    50% { text-shadow: 0 0 28px rgba(106, 43, 210, 0.75), 0 0 55px rgba(106, 43, 210, 0.4); }
+    100% { text-shadow: 0 0 12px rgba(106, 43, 210, 0.45), 0 0 28px rgba(106, 43, 210, 0.25); }
 }
