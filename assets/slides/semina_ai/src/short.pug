@@ -1,28 +1,43 @@
 include ../../layouts/title_slide.pug
 section
-    h3 AI tools now everywhere
-    img(src="img/icons.png" style="width: 360px")
+    h3 The New Reality
+    .icon-transition
+        img.icon-transition__image.fragment.fade-out(data-fragment-index="1" src="img/icons.png" style="width: 360px")
+        span.icon-transition__question.fragment.fade-in(data-fragment-index="1") ?
+    p AI can solve anything... but are students really learning?
 section
-    h3 The Surprise
+    h3 Cracks in Traditional Homework
+    ul
+        li Slow feedback loop
+        li Focus only on final answers
+        li Low motivation and engagement
+section
+    h3 Imagine
     figure
-        img(src="img/tireless_ta.png" style="width: 300px; border-radius: 150px")
+        img(src="img/cheerful_ta.png" style="width: 300px;")
+        figcaption If every student had a perfect TA...
+section
+    h3 Rethinking
+    figure
+        img(src="img/aha.jpg" style="width: 300px; padding-bottom: 6px; background: white;")
+        figcaption Homework could become a true space for learning.
 section
     h3
         span Introducing 
-        a(target="_blank" href="https://semina.ai") semina.ai
+        a.brand-link(target="_blank" href="https://semina.ai") semina.ai
 section
     section
-        h3 Student Experience 1
+        h3 Demo 1
         .session
             .right.fragment Just tell me the answer.
-            .left.fragment I won't give the answer. Let's work it out step by step.
+            .left.fragment Let's work it out step by step.
         div
             - link1 = "https://semina.ai/challenges/c2nx2z84h73pyw04wh01b0g7"
             a(target="_blank" href=`${link1}`) Try it myself
             br
             .qrcode(data-code=`${link1}`)
     section
-        h3 Student Experience 2
+        h3 Demo 2
         .session 
             .right.fragment How do you type the upside-down A?
             .left.fragment
@@ -35,7 +50,7 @@ section
             br
             .qrcode(data-code=`${link2}`)
     section
-        h3 Student Experience 3
+        h3 Demo 3
         .session
             .right.fragment Avant de commencer la preuve, comment dire cela en anglais?
             .left.fragment Here's the math vocabulary: contrapositive = contraposée, …
@@ -44,27 +59,31 @@ section
             a(target="_blank" href=`${link3}`) Try it myself
             br
             .qrcode(data-code=`${link3}`)
-    section
-        h3 Student Experience 4
-        .session
-            .right.fragment Counterexample with a = 1/4 and b = 1/2 shows the statement is false. Shouldn't a, b be integers?
-            .left.fragment Good point. Yes, the problem should specify that a and b are integers.
-        div
-            - var link4 = "https://semina.ai/challenges/ab0916bh9x2p272z1802t28k"
-            a(target="_blank" href=`${link4}`) Try it myself
-            br
-            .qrcode(data-code=`${link4}`)
 section
     h3 Instructor Experience
+    ul
+        li Create problems.
+        li Add broad hints.
+        li Semina handles the rest.
 section
     h3 Insights & Analytics
+    ul
+        li Understand how students think.
+        li Point out common misconceptions.
+        li Recommend what to focus on next.
+section.student-impact
+    h3 Student Impact
+    figure
+        img(src="img/chat.png" style="width: 200px;")
+    ul
+        li Immediate guidance 
+        li Higher engagement
+        li Improved performance
 section
-    h3 Results
-section
-    h3 Join the Experiment
-    p
-        | Try it now at 
-        a(target="_blank" href="https://semina.ai") semina.ai
+    h3
+        span Join 
+        a.brand-link(target="_blank" href="https://semina.ai") semina.ai
+    p Clone a demo. Try it yourself. See your students learn.
 if date
   include ../../layouts/contact.pug
 
