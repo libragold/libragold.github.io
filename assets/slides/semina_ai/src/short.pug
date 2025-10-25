@@ -1,0 +1,190 @@
+include ../../layouts/title_slide.pug
+section
+    h3 AI tools now everywhere
+    img(src="img/icons.png" style="width: 360px")
+section
+    h3 The Surprise
+    figure
+        img(src="img/tireless_ta.png" style="width: 300px; border-radius: 150px")
+section
+    h3
+        span Introducing 
+        a(target="_blank" href="https://semina.ai") semina.ai
+section
+    section
+        h3 Student Experience 1
+        .session
+            .right.fragment Just tell me the answer.
+            .left.fragment I won't give the answer. Let's work it out step by step.
+        div
+            - link1 = "https://semina.ai/challenges/c2nx2z84h73pyw04wh01b0g7"
+            a(target="_blank" href=`${link1}`) Try it myself
+            br
+            .qrcode(data-code=`${link1}`)
+    section
+        h3 Student Experience 2
+        .session 
+            .right.fragment How do you type the upside-down A?
+            .left.fragment
+                | Use 
+                code \forall
+                |  to get ∀.
+        div
+            - link2 = "https://semina.ai/challenges/c3784rvpybysbde1fs8e0a81"
+            a(target="_blank" href=`${link2}`) Try it myself
+            br
+            .qrcode(data-code=`${link2}`)
+    section
+        h3 Student Experience 3
+        .session
+            .right.fragment Avant de commencer la preuve, comment dire cela en anglais?
+            .left.fragment Here's the math vocabulary: contrapositive = contraposée, …
+        div
+            - link3 = "https://semina.ai/challenges/c2tjt7c3adc3j5j2q6djv1xa"
+            a(target="_blank" href=`${link3}`) Try it myself
+            br
+            .qrcode(data-code=`${link3}`)
+    section
+        h3 Student Experience 4
+        .session
+            .right.fragment Counterexample with a = 1/4 and b = 1/2 shows the statement is false. Shouldn't a, b be integers?
+            .left.fragment Good point. Yes, the problem should specify that a and b are integers.
+        div
+            - var link4 = "https://semina.ai/challenges/ab0916bh9x2p272z1802t28k"
+            a(target="_blank" href=`${link4}`) Try it myself
+            br
+            .qrcode(data-code=`${link4}`)
+section
+    h3 Instructor Experience
+section
+    h3 Insights & Analytics
+section
+    h3 Results
+section
+    h3 Join the Experiment
+    p
+        | Try it now at 
+        a(target="_blank" href="https://semina.ai") semina.ai
+if date
+  include ../../layouts/contact.pug
+
+// Add QR code library and initialization (Pug)
+script(src="https://davidshimjs.github.io/qrcodejs/qrcode.min.js")
+script.
+    (function () {
+      document.addEventListener('DOMContentLoaded', function () {
+        var nodes = document.querySelectorAll('.qrcode');
+        Array.prototype.forEach.call(nodes, function (el) {
+          var code = el.getAttribute('data-code') || el.dataset.code;
+          if (!code) return;
+          el.innerHTML = ''; // ensure empty
+          new QRCode(el, {
+            text: code,
+            width: 160,
+            height: 160,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+          });
+        });
+      });
+    })();
+script.
+    (function () {
+      var typingTimers = new WeakMap();
+      function wrapCharacters(root) {
+        var children = Array.prototype.slice.call(root.childNodes);
+        children.forEach(function (node) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            var value = node.textContent || '';
+            if (!value.trim().length) {
+              if (node.parentNode) {
+                node.parentNode.removeChild(node);
+              }
+              return;
+            }
+            var spanFragment = document.createDocumentFragment();
+            for (var i = 0; i < value.length; i++) {
+              var span = document.createElement('span');
+              span.className = 'fragment-char';
+              span.textContent = value[i];
+              spanFragment.appendChild(span);
+            }
+            if (node.parentNode) {
+              node.parentNode.replaceChild(spanFragment, node);
+            }
+          } else if (node.nodeType === Node.ELEMENT_NODE && node.childNodes.length) {
+            wrapCharacters(node);
+          }
+        });
+      }
+      function resetTyping(fragment) {
+        var timers = typingTimers.get(fragment);
+        if (timers && timers.length) {
+          timers.forEach(function (id) {
+            clearTimeout(id);
+          });
+        }
+        typingTimers.delete(fragment);
+        var chars = fragment.querySelectorAll('.fragment-char');
+        Array.prototype.forEach.call(chars, function (charNode) {
+          charNode.classList.remove('is-visible');
+        });
+      }
+      function playTyping(fragment) {
+        var chars = fragment.querySelectorAll('.fragment-char');
+        if (!chars.length) return;
+        var delay = Number(fragment.dataset.charDelay || 45);
+        var timers = [];
+        Array.prototype.forEach.call(chars, function (charNode, index) {
+          timers.push(setTimeout(function () {
+            charNode.classList.add('is-visible');
+          }, index * delay));
+        });
+        typingTimers.set(fragment, timers);
+      }
+      function ensurePrepared() {
+        var fragments = document.querySelectorAll('.reveal .session .fragment');
+        Array.prototype.forEach.call(fragments, function (fragment) {
+          if (fragment.dataset.typingPrepared) return;
+          fragment.dataset.typingPrepared = 'true';
+          var color = window.getComputedStyle(fragment).color;
+          fragment.dataset.fragmentColor = color;
+          fragment.style.setProperty('--fragment-color', color);
+          wrapCharacters(fragment);
+          fragment.classList.add('fragment-typing');
+          resetTyping(fragment);
+        });
+      }
+      function handleFragmentShown(event) {
+        var fragment = event.fragment;
+        if (!fragment || !fragment.classList.contains('fragment-typing')) return;
+        resetTyping(fragment);
+        playTyping(fragment);
+      }
+      function handleFragmentHidden(event) {
+        var fragment = event.fragment;
+        if (!fragment || !fragment.classList.contains('fragment-typing')) return;
+        resetTyping(fragment);
+      }
+      function initTypingEffect() {
+        ensurePrepared();
+        if (window.Reveal && typeof window.Reveal.addEventListener === 'function') {
+          window.Reveal.addEventListener('fragmentshown', handleFragmentShown);
+          window.Reveal.addEventListener('fragmenthidden', handleFragmentHidden);
+        } else {
+          document.addEventListener('fragmentshown', handleFragmentShown);
+          document.addEventListener('fragmenthidden', handleFragmentHidden);
+        }
+        var visible = document.querySelectorAll('.fragment.fragment-typing.visible, .fragment.fragment-typing.current-fragment');
+        Array.prototype.forEach.call(visible, function (fragment) {
+          resetTyping(fragment);
+          playTyping(fragment);
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTypingEffect);
+      } else {
+        initTypingEffect();
+      }
+    })();

@@ -45,3 +45,15 @@
     align-self: flex-end;
     border-bottom-right-radius: 6px;
 }
+
+/* typewriter effect for session fragments */
+.reveal .session .fragment.fragment-typing {
+    color: transparent !important;
+}
+.reveal .session .fragment.fragment-typing .fragment-char {
+    color: transparent;
+    transition: color 0.1s linear;
+}
+.reveal .session .fragment.fragment-typing .fragment-char.is-visible {
+    color: var(--fragment-color, inherit);
+}
