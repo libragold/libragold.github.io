@@ -7,6 +7,7 @@
     "copy:src": "node scripts/copy-src.js",
     "copy:pdf": "node scripts/copy-pdf.js",
     "build:slides": "npm run build:pug && npm run copy:img && npm run copy:src && npm run copy:pdf",
+    "watch:slide": "node scripts/watch-slide.js",
     "add:umami": "node scripts/add-umami.js"
   },
   "dependencies": {
