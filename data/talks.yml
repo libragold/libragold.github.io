@@ -492,3 +492,14 @@
   location: "Arizona State University"
   date: 2025-09-24
   slides: "semina_ai/2025-09-24.html"
+- title: "Rethinking Exam Preparation in the Age of AI"
+  occasion: "Association for Women in Math ASU Student Chapter Mini Talk"
+  location: "Arizona State University"
+  date: 2025-11-17
+  slides: "semina_ai/2025-11-17.html"
+- title: "Median eigenvalues of subcubic graphs"
+  occasion: "Canadian Mathematical Society Winter Meeting"
+  location: "Chelsea Hotel, Toronto"
+  date: 2025-12-07
+  arxiv: "2502.13139"
+  slides: "median_eigenvalues_of_subcubic_graphs/2025-12-07.html"

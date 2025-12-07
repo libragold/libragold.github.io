@@ -1,0 +1,454 @@
+include ../../layouts/title_slide.pug
+
+section
+  // Inline style for flexbox and avatar
+  .profile-figures(style="display: flex; justify-content: center; gap: 48px; margin-bottom: 32px;")
+    figure(style="display: flex; flex-direction: column; align-items: center; margin: 0;")
+      img(src="img/hricha.png", style="width: 160px; height: 160px; object-fit: cover; border-radius: 50%; margin-bottom: 24px;")
+      figcaption 
+        small Hricha Acharya
+    figure(style="display: flex; flex-direction: column; align-items: center; margin: 0;")
+      img(src="img/benjamin.png", style="width: 160px; height: 160px; object-fit: cover; border-radius: 50%; margin-bottom: 24px;")
+      figcaption
+        small Benjamin Jeter
+
+section
+  section
+    h3 Median eigenvalues of subcubic graphs
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Subcubic graphs
+      br
+      | maximum degree at most 3
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Eigenvalues
+      |  of adjacency matrix
+      br
+      | $\lambda_1 \ge \dots \ge \lambda_n$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Median eigenvalues
+      br
+      | $\lambda_h = \lambda_{\lfloor (n+1)/2 \rfloor}, \lambda_l = \lambda_{\lceil (n+1)/2 \rceil}$
+  section
+    h3 Hückel Model Theory
+    table(style="font-size: 75%")
+      tr
+        th(style="text-align: center") Chemistry
+        th(style="text-align: center") Mathematics 
+      tr.fragment 
+        td(style="text-align: center") Organic molecules 
+        td(style="text-align: center")
+          | Chemical graphs
+          br
+          | (connected + subcubic)
+      tr.fragment
+        td(style="text-align: center") $\pi$-electron energy levels
+        td(style="text-align: center") Eigenvalues
+      tr.fragment
+        td(style="text-align: center") Highest occupied molecular orbital energy
+        td(style="text-align: center") $\lambda_h$
+      tr.fragment
+        td(style="text-align: center") Lowest unoccupied molecular orbital energy
+        td(style="text-align: center") $\lambda_l$
+      tr.fragment
+        td(style="text-align: center") Kinetic stability
+        td(style="text-align: center") $\lambda_h - \lambda_l$
+  section
+    h3 Fowler & Pisanski 2010
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Computations
+      |  Most chemical graphs have 
+      br 
+      | median eigenvalues in $[-1,1]$
+      span.fragment , with single exception
+    div.fragment
+      figure
+        img(src="img/heawood.png")
+        figcaption Heawood graph
+    p.fragment Eigenvalues $-3, (-\sqrt2)^6, (\sqrt2)^6, 3$
+  section
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #ff9fae") Conjecture
+      |  Median eigenvalues of all but finite chemical graphs are in $[-1,1]$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Optimality
+      br
+      | Guo & Mohar constructed infinitely many bipartite chemical graphs with median eigenvalues $\pm 1$
+  section
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Fowler & Pisanski 2010
+      |  Subcubic 
+      em trees
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Mohar 2013
+      em  Planar bipartite 
+      | chemical graphs
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Mohar 2016
+      em  Bipartite 
+      | chemical graphs except Heawood
+    p.fragment Several other supplementary results
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Acharya, Jeter, J., 2025
+      br
+      | All chemical graphs except Heawood
+section
+  section(data-progress-slide="true")
+    style.
+      progress {
+        border-radius: 0.3em;
+        height: 0.6em;
+        width: 10em;
+        overflow: hidden;
+      }
+      progress::-webkit-progress-bar {
+        background-color: #eee;
+        border-radius: 0.3em;
+      }
+      progress::-webkit-progress-value {
+        background-color: #357EC7;
+        border-radius: 0.3em;
+      }
+      progress::-moz-progress-bar {
+        background-color: #4caf50;
+        border-radius: 0.3em;
+      }
+    script.
+      (function() {
+        var progressBar = null;
+        var progressPercent = null;
+        var animationId = null;
+        var startTime = null;
+        var isAnimating = false;
+        
+        function animateProgress() {
+          if (!progressBar || !progressPercent || !isAnimating) return;
+          
+          var elapsed = Date.now() - startTime;
+          var value;
+          
+          if (elapsed < 1000) {
+            // First phase: 0% to 99% in 1 second
+            value = (elapsed / 1000) * 99;
+          } else if (elapsed < 100000) {
+            // Second phase: 99% to 100% in 99 seconds
+            var phase2Elapsed = elapsed - 1000;
+            value = 99 + (phase2Elapsed / 99000) * 1;
+          } else {
+            // Finished
+            value = 100;
+            progressBar.value = value;
+            progressPercent.textContent = '100.00%';
+            isAnimating = false;
+            return;
+          }
+          
+          progressBar.value = value;
+          progressPercent.textContent = value.toFixed(2) + '%';
+          
+          if (isAnimating) {
+            animationId = requestAnimationFrame(animateProgress);
+          }
+        }
+        
+        function startAnimation() {
+          if (!progressBar || !progressPercent) return;
+          
+          // Reset
+          progressBar.value = 0;
+          progressPercent.textContent = '0.00%';
+          startTime = Date.now();
+          isAnimating = true;
+          
+          // Cancel any existing animation
+          if (animationId) {
+            cancelAnimationFrame(animationId);
+          }
+          
+          // Start animation
+          animationId = requestAnimationFrame(animateProgress);
+        }
+        
+        function stopAnimation() {
+          isAnimating = false;
+          if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+          }
+        }
+        
+        function checkAndStart() {
+          var slide = document.querySelector('section[data-progress-slide].present, section.present section[data-progress-slide].present');
+          if (slide) {
+            progressBar = document.getElementById('progress-bar');
+            progressPercent = document.getElementById('progress-percent');
+            if (progressBar && progressPercent) {
+              startAnimation();
+            }
+          }
+        }
+        
+        function handleSlideChanged(event) {
+          // Check if the current slide has the progress bar
+          var currentSlide = event.currentSlide;
+          if (currentSlide && (currentSlide.hasAttribute('data-progress-slide') || currentSlide.querySelector('#progress-bar'))) {
+            progressBar = document.getElementById('progress-bar');
+            progressPercent = document.getElementById('progress-percent');
+            if (progressBar && progressPercent) {
+              startAnimation();
+            }
+          } else {
+            // Stop animation if leaving the slide
+            stopAnimation();
+          }
+        }
+        
+        function init() {
+          // Wait for Reveal.js to be ready
+          if (window.Reveal) {
+            Reveal.addEventListener('slidechanged', handleSlideChanged);
+            Reveal.addEventListener('ready', function() {
+              setTimeout(checkAndStart, 100);
+            });
+            // Check immediately in case slide is already visible
+            setTimeout(checkAndStart, 200);
+          } else {
+            // If Reveal.js not ready, wait and try again
+            setTimeout(init, 100);
+          }
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+        } else {
+          init();
+        }
+      })();
+    h3 Proof
+    div(style="margin-bottom: 1em;")
+      progress#progress-bar(value="0" max="100")
+      div#progress-percent(style="text-align: center; margin-top: 0em; font-size: 0.5em;") 0%
+    ul.fragment
+      li 1% of proof for 99% of cases
+      li 99% of proof for 1% of cases
+    p.fragment For simplicity, only focus on $\lambda_h \le 1$
+  section
+    h3 Proof for 99%
+    p.fragment Take maximum cut $(A, B)$ of $G$
+    p.fragment Additional assumption $\lvert A\rvert < \lvert B\rvert$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Observation
+    p.fragment
+      | Maximum degree of $G[B] \le 1$ 
+      span.fragment and $\lambda_1(G[B]) \le 1$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Cauchy interlacing
+    p.fragment
+      |  $\lambda_{1 + \lvert A \rvert}(G) \le 1$ 
+      span.fragment and $\lambda_h(G) \le 1$
+  section(data-auto-animate)
+    h3 Proof for 1%
+    p.fragment Maximum cut $(A, B)$ satisfies $\lvert A\rvert = \lvert B\rvert$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Idea
+      |  Move $k$ vertices $C$ from $A$ to $B$ s.t.
+      br
+      | $\lambda_k(G[B \cup C]) \le 1$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Cauchy
+      |  $\lambda_{k + \lvert A \setminus C \rvert}(G) \le 1$, and $\lambda_h(G) \le 1$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Note
+      |  Most of $G[B \cup C]$ are independent edges
+      br
+      span.fragment Only care about components that contain $C$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Goal
+      |  Find 
+      em tail reducer 
+      | $C$ 🎉
+  section(data-auto-animate)
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Idea
+      |  Move $k$ vertices $C$ from $A$ to $B$ s.t.
+      br
+      | $\lambda_k(G[B \cup C]) \le 1$
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Goal
+      |  Find 
+      em tail reducer 
+      | $C$ 🎉
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Note
+      |  Cut-set of $(A \oplus D, B \oplus D)$
+      br
+      | cannot be bigger than that of $(A, B)$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Rule
+      |  No 
+      em cut enhancer 
+      | $D$ 💀
+  section(data-auto-animate)
+    h3 The Game
+    p(style="margin-bottom: 0;")
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Goal
+      |  Find 
+      em tail reducer 
+      | $C$ 🎉
+    p(style="margin-top: 0;")
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Rule
+      |  No 
+      em cut enhancer 
+      | $D$ 💀
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Lemma
+      |  If $ab$ is an edge of $G[A]$
+      br
+      | then degree of $a$ is $3$ or $\{ a \}$ is tail reducer
+  section(data-auto-animate)
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Lemma
+      |  If $ab$ is an edge of $G[A]$
+      br
+      | then degree of $a$ is $3$ or $\{ a \}$ is tail reducer
+    svg(width="125" viewBox="60 60 180 80" style="display: block; margin: 0 auto;")
+      // Edge between a and b (horizontal, dark red)
+      line(x1="130" y1="100" x2="170" y2="100" stroke="#8B0000" stroke-width="4")
+      // Node a (dark red circle)
+      circle(cx="100" cy="100" r="30" fill="#8B0000")
+      text(x="100" y="100" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="KaTeX_Math" font-size="48" font-weight="normal") a
+      // Node b (dark red circle)
+      circle(cx="200" cy="100" r="30" fill="#8B0000")
+      text(x="200" y="106" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="KaTeX_Math" font-size="48" font-weight="normal") b
+    p
+      span.fragment Case 1: $a$ is of degree $1$
+      br
+      span.fragment Cut enhancer 💀
+  section(data-auto-animate)
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Lemma
+      |  If $ab$ is an edge of $G[A]$
+      br
+      | then degree of $a$ is $3$ or $\{ a \}$ is tail reducer
+    svg(width="200" viewBox="-30 60 270 175" style="display: block; margin: 0 auto;")
+      // Edge between a and b (horizontal, dark red)
+      line(x1="130" y1="100" x2="170" y2="100" stroke="#8B0000" stroke-width="4")
+      g.fragment(data-fragment-index="1")
+        // Edge between a and c (vertical, black)
+        line(x1="100" y1="130" x2="100" y2="175" stroke="black" stroke-width="4")
+        // Node c (blue square, directly below a)
+        rect(x="75" y="175" width="50" height="50" rx="8" fill="#0000FF")
+        text(x="100" y="200" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="KaTeX_Math" font-size="48" font-weight="normal") c
+      // Node a (dark red circle)
+      circle(cx="100" cy="100" r="30" fill="#8B0000")
+      text(x="100" y="100" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="KaTeX_Math" font-size="48" font-weight="normal") a
+      // Node b (dark red circle)
+      circle(cx="200" cy="100" r="30" fill="#8B0000")
+      text(x="200" y="106" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="KaTeX_Math" font-size="48" font-weight="normal") b
+      g.fragment.fade-out(data-fragment-index="4")
+        g.fragment(data-fragment-index="2")
+          // Edge between new vertex and c (horizontal, black)
+          line(x1="35" y1="200" x2="75" y2="200" stroke="black" stroke-width="4")
+          // New blue square vertex (left of c, no text)
+          rect(x="-15" y="175" width="50" height="50" rx="8" fill="#0000FF")
+    p
+      | Case 2: $a$ is of degree $2$ 
+      span.fragment(data-fragment-index="1") — $a$ has a neighbor $c$ in $B$
+      br
+      span.fragment(data-fragment-index="2") Case 2.1: $c$ has a neighbor in $B$ 
+      span.fragment(data-fragment-index="3") — cut enhancer 💀
+      br
+      span.fragment(data-fragment-index="4") Case 2.2: $c$ has no neighbor in $B$
+      span.fragment(data-fragment-index="5") — tail reducer 🎉
+  section(data-auto-animate)
+    h3 The Game
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Goal
+      |  Find 
+      em tail reducer 
+      | $C$ 🎉
+      br
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Rule
+      |  No 
+      em cut enhancer 
+      | $D$ 💀
+      br
+      span.fragment
+        span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Trick
+        |  Flip 
+        em cut preserver 
+        | ✨
+  section(data-auto-animate)
+    h3 The Game
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Goal
+      |  Find 
+      em tail reducer 
+      | $C$ 🎉
+      br
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Rule
+      |  No 
+      em cut enhancer 
+      | $D$ 💀
+      br
+      span
+        span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Trick
+        |  Flip 
+        em cut preserver 
+        | ✨
+    h3 The Statistics
+    ul
+      li.fragment 24 tail reducers for $\lambda_h \le 1$
+      li.fragment 40 tail reducers for $\lambda_l \ge -1$
+      li.fragment Case 4.4.3.3.3.2.2.2
+      li.fragment 54 pages, 170 figures
+  section
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Acharya, Jeter, J., 2025
+      br
+      | Every chemical graph except Heawood 
+      br
+      | has median eigenvalues in $[-1, 1]$
+    p
+      span.fragment All arguments are "local"
+      br
+      span.fragment Positive fraction $\varepsilon n$ middle eigenvalues $\subset [-1, 1]$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Mohar 2016
+      |  Positive fraction for 
+      em bipartite
+      br
+      | chemical graphs except Heawood
+section
+  section
+    h3 Further problems
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Mohar & Tayfeh-Rezaie 2015
+      |  Median eigenvalues of every connected 
+      em bipartite 
+      | $G$ with maximum degree at most $d$ are in $[-\sqrt{d-2}, \sqrt{d-2}]$
+      span.fragment , unless $G$ is incidence graph of projective plane of order $d-1$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #ff9fae") Optimality
+      |  of $\sqrt{d-2}$ for $d \ge 4$?
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #ff9fae") Remove bipartiteness
+      | ? 
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Mohar
+      |  $\sqrt{d}$.
+    p.fragment Improve to $\sqrt{d-1}$? Improve to $\sqrt{d-2}$?
+if date == "December 7, 2025"
+  section
+    style.
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+    div(style="display: flex; align-items: center; height: 100%;")
+      div(style="width: 50%")
+        div(style="background: white; padding: 10px 10px 30px 10px; border-radius: 8px; box-shadow: 0 8px 16px rgba(0,0,0,0.25); max-width: 100%; max-height: 85vh; overflow: hidden; display: flex; flex-direction: column; align-items: center;")
+          img(src="img/toronto-covid.jpg", style="display: block; width: 100%; height: auto; border-radius: 4px; max-height: calc(85vh - 85px); object-fit: contain;")
+          div(style="margin-top: 5px; margin-bottom: 0; font-family: 'Dancing Script', cursive; font-size: 0.5em; color: #333; text-align: center; font-weight: 500;") Toronto, the summer everything slowed down
+      div(style="width: 50%;")
+        small Zilin Jiang
+        br
+        small= institute
+        br
+        small= email
