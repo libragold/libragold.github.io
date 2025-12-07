@@ -1,5 +1,17 @@
 include ../../layouts/title_slide.pug
 
+style.
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  .reveal .game-font {
+    font-family: 'Press Start 2P', sans-serif;
+  }
+  .reveal h3.game-font {
+    font-size: 1em;
+  }
+  .reveal span.game-font {
+    font-size: 0.8em;
+  }
+  
 section
   // Inline style for flexbox and avatar
   .profile-figures(style="display: flex; justify-content: center; gap: 48px; margin-bottom: 32px;")
@@ -297,7 +309,7 @@ section
       em cut enhancer 
       | $D$ 💀
   section(data-auto-animate)
-    h3 The Game
+    h3.game-font Game
     p(style="margin-bottom: 0;")
       span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Goal
       |  Find 
@@ -369,7 +381,7 @@ section
       span.fragment(data-fragment-index="4") Case 2.2: $c$ has no neighbor in $B$
       span.fragment(data-fragment-index="5") — tail reducer 🎉
   section(data-auto-animate)
-    h3 The Game
+    h3.game-font Game
     p
       span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Goal
       |  Find 
@@ -387,7 +399,7 @@ section
         em cut preserver 
         | ✨
   section(data-auto-animate)
-    h3 The Game
+    h3.game-font Game
     p
       span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Goal
       |  Find 
@@ -404,13 +416,33 @@ section
         |  Flip 
         em cut preserver 
         | ✨
-    h3 The Statistics
+    h3.fragment.game-font Levels
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Underlying multigraph $M$
+    p.fragment
+      | Vertices: edges of $G[A] \cup G[B]$
+      br
+      | Edges: $k$ edges between $\alpha$ and $\beta$ if $G[\alpha, \beta]$ has $k$ edges
+  section(data-auto-animate)
+    h3.game-font Levels
+    p
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a6e1c5") Underlying multigraph $M$
+    ul.fragment
+      li $M$ has multiple edges 
+      li $M$ has an isolated vertex
+      li $M$ contains a $P_5$
+      li $M$ contains a $C_4$
+      li $M$ contains a $P_4$
+      li $M$ contains a $P_3$
+      li $M$ contains a $P_2$
+  section(data-auto-animate)
+    h3.game-font Statistics
     ul
       li.fragment 24 tail reducers for $\lambda_h \le 1$
       li.fragment 40 tail reducers for $\lambda_l \ge -1$
       li.fragment Case 4.4.3.3.3.2.2.2
       li.fragment 54 pages, 170 figures
-  section
+  section(data-auto-animate)
     p
       span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Acharya, Jeter, J., 2025
       br
@@ -430,6 +462,17 @@ section
 section
   section
     h3 Further problems
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Guo & Royle 2025
+      |  Classified all connected cubic graphs without eigenvalues in $(-1, 1)$
+    p.fragment
+      | In particular, classified those 
+      br
+      | with $\lambda_h \ge 1$ and $\lambda_l \le -1$
+    p.fragment
+      span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #ff9fae") Problem
+      |  Classify those with $\lambda_l \ge 1$ or $\lambda_h \le -1$?
+  section
     p.fragment
       span(style="text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #a7e0f6") Mohar & Tayfeh-Rezaie 2015
       |  Median eigenvalues of every connected 
