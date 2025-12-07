@@ -30,28 +30,36 @@ section
       | $\lambda_h = \lambda_{\lfloor (n+1)/2 \rfloor}, \lambda_l = \lambda_{\lceil (n+1)/2 \rceil}$
   section
     h3 Hückel Model Theory
-    table(style="font-size: 75%")
+    style.
+      #table th, #table td {
+        border-bottom: none;
+        text-align: center; width: 50%; vertical-align: middle
+      }
+      #table tr:nth-child(odd) {
+        background-color: #f5f5f5;
+      }
+    table#table(style="font-size: 75%; width: 100%")
       tr
-        th(style="text-align: center") Chemistry
-        th(style="text-align: center") Mathematics 
+        th Chemistry
+        th Mathematics 
       tr.fragment 
-        td(style="text-align: center") Organic molecules 
-        td(style="text-align: center")
+        td Organic molecules 
+        td
           | Chemical graphs
           br
           | (connected + subcubic)
       tr.fragment
-        td(style="text-align: center") $\pi$-electron energy levels
-        td(style="text-align: center") Eigenvalues
+        td $\pi$-electron energy levels
+        td Eigenvalues
       tr.fragment
-        td(style="text-align: center") Highest occupied molecular orbital energy
-        td(style="text-align: center") $\lambda_h$
+        td Highest occupied molecular orbital energy
+        td $\lambda_h$
       tr.fragment
-        td(style="text-align: center") Lowest unoccupied molecular orbital energy
-        td(style="text-align: center") $\lambda_l$
+        td Lowest unoccupied molecular orbital energy
+        td $\lambda_l$
       tr.fragment
-        td(style="text-align: center") Kinetic stability
-        td(style="text-align: center") $\lambda_h - \lambda_l$
+        td Kinetic stability
+        td $\lambda_h - \lambda_l$
   section
     h3 Fowler & Pisanski 2010
     p
