@@ -223,7 +223,9 @@
     - hacharya
     - zjiang
   arxiv: "2404.13136"
-  year: 2024
+  journal: "Combinatorics, Probability and Computing"
+  year: 2025
+  doi: "https://doi.org/10.1017/S0963548325100278"
   slides: "beyond_classification_theorem"
 - title: "On symmetric hollow integer matrices with eigenvalues bounded from below"
   authors:
@@ -245,4 +247,6 @@
     - zjiang
     - zwang
   arxiv: "2505.03014"
-  year: 2025
+  journal: "Proceedings of the American Mathematical Society"
+  year: 2026
+  doi: "https://doi.org/10.1090/proc/17530"
