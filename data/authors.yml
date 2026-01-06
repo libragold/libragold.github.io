@@ -28,7 +28,7 @@ hacharya:
   url: "https://sites.google.com/asu.edu/hrichaacharya"
 ivorobyev:
   name: "Ilya Vorobyev"
-  url: "https://scholar.google.ru/citations?user=sBNnIT0AAAAJ"
+  url: "https://scholar.google.rom/citations?user=sBNnIT0AAAAJ"
 jbriggs:
   name: "Joseph Briggs"
   url: "https://josephguybriggs.wordpress.com"
@@ -62,6 +62,9 @@ rholzman:
   url: "https://holzman.technion.ac.il"
 sflorin:
   name: "Sam H. Florin"
+shuang:
+  name: "Shenwei Huang"
+  url: "https://scholar.google.com/citations?user=akd4P-0AAAAJ"
 szhang:
   name: "Shengtong Zhang"
   url: "https://sites.google.com/view/shengtong-zhang/"
