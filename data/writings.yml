@@ -224,7 +224,7 @@
     - zjiang
   arxiv: "2404.13136"
   journal: "Combinatorics, Probability and Computing"
-  year: 2025
+  year: 2026
   doi: "https://doi.org/10.1017/S0963548325100278"
   slides: "beyond_classification_theorem"
 - title: "On symmetric hollow integer matrices with eigenvalues bounded from below"
@@ -250,3 +250,9 @@
   journal: "Proceedings of the American Mathematical Society"
   year: 2026
   doi: "https://doi.org/10.1090/proc/17530"
+- title: "Subcubic graphs without eigenvalues in $(-1, 1)$"
+  authors:
+    - shuang
+    - zjiang
+  arxiv: "2601.01482"
+  year: 2026
