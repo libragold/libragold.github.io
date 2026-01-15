@@ -192,6 +192,9 @@ nav li > a {
 .writing p.publication a, .course p.title a {
     text-decoration-color: var(--highlight-color-purple);
 }
+.course p.title a.course-material {
+    text-decoration-color: var(--highlight-color-blue);
+}
 /* talks and teaching */
 .year-group, .institution-group {
     padding: 16px 0 0;

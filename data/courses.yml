@@ -1,11 +1,12 @@
 - title: "Competitive Programming and Problem Solving"
   number: "CSE 494"
   semester: "Spring 2026"
-  upcoming: true
+  ongoing: true
+  canvas: "https://canvas.asu.edu/courses/251214"
+  materials: "https://ocw.zilin.one/cse494"
 - title: "Freshman / Sophomore / Junior / Senior Problem Seminar"
   number: "MAT 194 / MAT 294 / MAT 394 / MAT 494"
   semester: "Fall 2025"
-  ongoing: true
   canvas: "https://canvas.asu.edu/courses/237609"
 - title: "Advanced Linear Algebra"
   number: "MAT 442"

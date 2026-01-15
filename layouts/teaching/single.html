@@ -24,10 +24,16 @@
                 {{ .semester }} &middot; {{ .number }}
             </p>
             <p class="title">
-                {{ .title }} &middot;
+                {{ .title }}{{ if or .canvas .archive }} &middot;{{ end }}
                 {{ if .canvas }}<a href="{{.canvas}}">Canvas</a>{{ end }}
+                {{ if and .canvas .archive }} &middot; {{ end }}
                 {{ if .archive }}<a href="{{.archive}}">Archive</a>{{ end }}
             </p>
+            {{ if .materials }}
+            <div class="links">
+                <a href="{{.materials}}">Course Material</a>
+            </div>
+            {{ end }}
         </div>
         {{ $currentYear = $year }}
     {{ end }}
