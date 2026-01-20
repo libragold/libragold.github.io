@@ -512,3 +512,13 @@
   location: "Dongjiao State Guest Hotel, Shanghai"
   date: 2026-01-07
   slides: "eigenvalue_multiplicity_and_equiangular_lines/2026-01-07.html"
+- title: "Subcubic graphs without eigenvalues in (-1,1)"
+  occasion: "Discrete Math and Algorithms Seminar"
+  location: "Arizona State University"
+  date: 2026-01-23
+  arxiv: "2601.01482"
+- title: "Eigenvalues of subcubic graphs"
+  occasion: "Combinatorics Seminar"
+  location: "Emory University"
+  date: 2026-02-26
+  arxiv: "2601.01482"
