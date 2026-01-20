@@ -30,7 +30,16 @@
             {{ if .slides }}<a href="/slides/{{ .slides }}">Slides</a>{{ end }}
             {{ if .blog }}<a href="{{ .blog }}">Blog</a>{{ end }}
             {{ if .video }}<a href="{{ .video }}">Video</a>{{ end }}
-            {{ if .arxiv }}<a href="https://arxiv.org/pdf/{{ .arxiv }}">Paper</a>{{ end }}
+            {{ if .arxiv }}
+            {{ $arxivIds := split .arxiv "," }}
+            {{ if gt (len $arxivIds) 1 }}
+            {{ range $index, $id := $arxivIds }}
+            <a href="https://arxiv.org/pdf/{{ trim $id " " }}">Paper {{ add $index 1 }}</a>
+            {{ end }}
+            {{ else }}
+            <a href="https://arxiv.org/pdf/{{ .arxiv }}">Paper</a>
+            {{ end }}
+            {{ end }}
         </div>
     </div>
     {{ end }}
