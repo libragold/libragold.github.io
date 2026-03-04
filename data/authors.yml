@@ -3,6 +3,8 @@ anaor:
 apolyanskii:
   name: "Alexandr Polyanskii"
   url: "http://polyanskii.com"
+ateets:
+  name: "Adam Teets"
 ayehudayoff:
   name: "Amir Yehudayoff"
   url: "https://yehudayoff.net.technion.ac.il"
@@ -68,6 +70,9 @@ shuang:
 szhang:
   name: "Shengtong Zhang"
   url: "https://sites.google.com/view/shengtong-zhang/"
+tgossett:
+  name: "Theodore Gossett"
+  url: "https://cphof.org/profile/codeforces:tgossett"
 tjiang:
   name: "Tao Jiang"
   url: "https://sites.miamioh.edu/jiangt"
@@ -84,3 +89,6 @@ zjiang:
 zwang:
   name: "Zhiyu Wang"
   url: "https://www.math.lsu.edu/~zhiyuw/"
+zwellner:
+  name: "Zoe Wellner"
+  url: "https://zoewellner.com/"
