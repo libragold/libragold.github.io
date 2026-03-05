@@ -523,3 +523,9 @@
   location: "Emory University"
   date: 2026-02-26
   arxiv: "2502.13139,2601.01482"
+  slides: "eigenvalues_of_subcubic_graphs/2026-02-26.html"
+- title: "Eigenvalue multiplicity and equiangular lines"
+  occasion: "PIMS Distinguished Lectures Series"
+  location: "Virtual (Zoom)"
+  date: 2026-03-27
+  slides: "eigenvalue_multiplicity_and_equiangular_lines/2026-03-27.html"
