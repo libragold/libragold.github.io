@@ -2,21 +2,10 @@
 <section id="teaching">
     <div class="info">{{ .Content }}</div>
 
+    {{ range .Site.Data.courses }}
     <article class="institution-group">
-        <h3>Arizona State University</h3>
-        <!-- Initialize a variable to track the current year -->
-        {{ $currentYear := "" }}
-
-        {{ range .Site.Data.courses }}
-        {{ $year := replaceRE "[^0-9]" "" .semester }}
-        {{ if eq $currentYear "" }}
-        
-        {{ end }}
-        {{ if and (eq $currentYear "2021") (eq $year "2020") }}
-        </article>
-        <article class="institution-group">
-            <h3>Massachusetts Institute of Technology</h3>
-        {{ end }}
+        <h3>{{ .institution }}{{ if .role }}<br><span class="role">{{ .role }}</span>{{ end }}</h3>
+        {{ range .courses }}
         <div class="course">
             <p>
                 {{ if .upcoming }}<span class="new">UPCOMING</span>{{ end }}
@@ -25,18 +14,18 @@
             </p>
             <p class="title">
                 {{ .title }}{{ if or .canvas .archive }} &middot;{{ end }}
-                {{ if .canvas }}<a href="{{.canvas}}">Canvas</a>{{ end }}
+                {{ if .canvas }}<a href="{{ .canvas }}">Canvas</a>{{ end }}
                 {{ if and .canvas .archive }} &middot; {{ end }}
-                {{ if .archive }}<a href="{{.archive}}">Archive</a>{{ end }}
+                {{ if .archive }}<a href="{{ .archive }}">Archive</a>{{ end }}
             </p>
             {{ if .materials }}
             <div class="links">
-                <a href="{{.materials}}">Course Material</a>
+                <a href="{{ .materials }}">Course Material</a>
             </div>
             {{ end }}
         </div>
-        {{ $currentYear = $year }}
-    {{ end }}
+        {{ end }}
     </article>
+    {{ end }}
 </section>
 {{ end }}

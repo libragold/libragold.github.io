@@ -210,6 +210,11 @@ nav li > a {
     padding-bottom: 16px;
     border-bottom: 1px solid #dadce0;
     font-size: 16px;
+    line-height: 1.6;
+}
+.institution-group h3 .role {
+    font-weight: normal;
+    font-size: 1em;
 }
 .talk:not(:last-child), .course:not(:last-child) {
     border-bottom: 1px solid #dadce0;
