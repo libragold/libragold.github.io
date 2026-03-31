@@ -264,3 +264,9 @@
     - zwellner
   arxiv: "2603.02469"
   year: 2026
+- title: "Bounds on median eigenvalues of graphs of bounded degree"
+  authors:
+    - hacharya
+    - szhang
+  year: 2026
+  arxiv: "2603.27434"
