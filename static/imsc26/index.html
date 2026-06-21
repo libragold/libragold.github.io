@@ -830,25 +830,25 @@
   <script>
     const STORAGE_KEY = "imsc2026.calendar.state.v1";
     const GROUPS = {
-      G1: { teams: "Iran, Poland, Vietnam", homeroom: "Nikola Petrovic" },
-      G2: { teams: "Bosnia & Herzegovina, Mongolia", homeroom: "Vlad Matei" },
-      G3: { teams: "Hong Kong-China, Italy", homeroom: "Bojan Basic" },
-      G4: { teams: "Serbia, Uzbekistan", homeroom: "Dinu Serbanescu" },
-      G5: { teams: "Peru, Thailand", homeroom: "Cezar Lupu" },
-      G6: { teams: "Lithuania, Mexico", homeroom: "Stijn Cambie" },
-      G7: { teams: "Brazil, Malaysia", homeroom: "Wei Luo" },
-      G8: { teams: "Kyrgyzstan, South Africa", homeroom: "Dusan Djukic" },
-      G9: { teams: "Czechia, Ireland, International Union (USA, UAE, JPN, UK, CA)", homeroom: "Qiang Shen" },
-      G10: { teams: "Estonia, Indonesia", homeroom: "Andrei Jorza" },
-      G11: { teams: "North Macedonia, Turkmenistan, China-Hubei (Wuhan Economics)", homeroom: "Dorian Croitoru" },
-      G12: { teams: "Bangladesh, Croatia", homeroom: "Alex Song / Sari Ghanem" },
-      G13: { teams: "Cuba, Tajikistan", homeroom: "Andrei Bud" },
-      G14: { teams: "Macau-China, Moldova", homeroom: "Zilin Jiang" },
-      G15: { teams: "Albania, Honduras, Pakistan", homeroom: "Tudor Paisanu" },
-      G16: { teams: "Costa Rica, Iceland, Nepal", homeroom: "Ivan Chan Kai Chin" },
-      G17: { teams: "Montenegro, Myanmar, Uruguay", homeroom: "Cipriana Anghel-Stan" },
-      G18: { teams: "Cameroon, Rwanda", homeroom: "Iulia Cristian" },
-      G19: { teams: "Botswana, Ghana, Uganda", homeroom: "Anca Sfia" }
+      G1: { teams: "Iran, Poland, Vietnam", homeroom: "Nikola Petrovic", location: "311" },
+      G2: { teams: "Bosnia & Herzegovina, Mongolia, International Union I (CA, CAN, UAE, USA)", homeroom: "Vlad Matei", location: "303" },
+      G3: { teams: "Hong Kong-China, Italy", homeroom: "Bojan Basic", location: "306" },
+      G4: { teams: "Serbia, Uzbekistan", homeroom: "Dinu Serbanescu", location: "211" },
+      G5: { teams: "Peru, Thailand", homeroom: "Cezar Lupu", location: "316" },
+      G6: { teams: "Lithuania, Mexico", homeroom: "Stijn Cambie", location: "318" },
+      G7: { teams: "Brazil, Malaysia", homeroom: "Wei Luo", location: "319" },
+      G8: { teams: "Kyrgyzstan, South Africa", homeroom: "Dusan Djukic", location: "201" },
+      G9: { teams: "Czechia, Ireland", homeroom: "Qiang Shen", location: "312" },
+      G10: { teams: "Estonia, Indonesia", homeroom: "Andrei Jorza", location: "203" },
+      G11: { teams: "North Macedonia, Turkmenistan, China-Hubei (Wuhan)", homeroom: "Dorian Croitoru", location: "309" },
+      G12: { teams: "Bangladesh, Croatia", homeroom: "Alex Song / Sari Ghanem", location: "206" },
+      G13: { teams: "Cuba, Tajikistan", homeroom: "Andrei Bud", location: "307" },
+      G14: { teams: "Macau-China, Moldova, International Union II (CA, JPN, UK, USA)", homeroom: "Zilin Jiang", location: "207" },
+      G15: { teams: "Albania, Honduras, Pakistan", homeroom: "Tudor Paisanu", location: "313" },
+      G16: { teams: "Costa Rica, Iceland, Nepal", homeroom: "Ivan Chan Kai Chin", location: "213" },
+      G17: { teams: "Montenegro, Myanmar, Uruguay", homeroom: "Cipriana Anghel-Stan", location: "321" },
+      G18: { teams: "Cameroon, Rwanda", homeroom: "Iulia Cristian", location: "216" },
+      G19: { teams: "Botswana, Uganda, Ghana", homeroom: "Anca Sfia", location: "217" }
     };
 
     const DAY_META = [
@@ -1020,7 +1020,8 @@
               title: parsed.title,
               instructors: [parsed.instructor],
               groups: [group],
-              teams: GROUPS[group].teams
+              teams: GROUPS[group].teams,
+              location: GROUPS[group].location
             });
           });
         });
@@ -1085,6 +1086,22 @@
 
     function formatTime(start, end) {
       return `${start}-${end}`;
+    }
+
+    function groupLocation(group) {
+      return GROUPS[group]?.location ? `Room ${GROUPS[group].location}` : "";
+    }
+
+    function hasGroupLocation(event) {
+      return ["classroom", "test", "problem", "study"].includes(event.kind);
+    }
+
+    function locationForEvent(event) {
+      if (!hasGroupLocation(event)) return "";
+      if (event.kind === "classroom") return groupLocation(event.groups[0]);
+      if (state.perspective === "group") return groupLocation(state.group);
+      const groups = event.groups?.length ? event.groups : GROUP_ORDER;
+      return `Group rooms: ${groups.map(group => `${group} ${GROUPS[group].location}`).join(", ")}`;
     }
 
     function weekStartDate(date) {
@@ -1266,7 +1283,7 @@
       if (state.perspective === "group") {
         const group = GROUPS[state.group];
         title = `${state.group} schedule`;
-        meta = `${group.teams}. Homeroom instructor: ${group.homeroom}.`;
+        meta = `${group.teams}. Homeroom instructor: ${group.homeroom}. Room: ${group.location}.`;
       }
 
       if (state.perspective === "instructor") {
@@ -1334,9 +1351,10 @@
     function renderEventCard(event) {
       const speakerLine = event.instructors?.length ? event.instructors.join(", ") : "";
       const groupLine = event.kind === "classroom" ? `${event.groups[0]}: ${event.teams}` : "";
+      const locationLine = locationForEvent(event);
       const meta = event.children
         ? `${event.children.length} group lectures`
-        : [speakerLine, groupLine].filter(Boolean).join(" | ");
+        : [speakerLine, groupLine, locationLine].filter(Boolean).join(" | ");
       return `
         <article class="event-card" data-kind="${kindForCard(event)}">
           <div class="event-topline">
@@ -1358,7 +1376,7 @@
           ${children.map(event => `
             <div class="group-tile">
               <strong>${event.groups[0]}</strong>
-              <span>${escapeHtml(event.title)} - ${escapeHtml(event.instructors[0])}</span>
+              <span>${escapeHtml(event.title)} - ${escapeHtml(event.instructors[0])} - Room ${escapeHtml(event.location)}</span>
             </div>
           `).join("")}
         </div>
@@ -1394,11 +1412,13 @@
                     const top = Math.max(0, (minutes(event.start) - startMinute) * pxPerMinute);
                     const eventHeight = Math.max(44, (minutes(event.end) - minutes(event.start)) * pxPerMinute - 5);
                     const title = event.kind === "combined" ? `${event.session}: ${event.children.length} group lectures` : `${event.session}: ${event.title}`;
+                    const location = locationForEvent(event);
+                    const tooltip = [title, location].filter(Boolean).join(" | ");
                     const sub = event.kind === "classroom"
-                      ? `${event.groups[0]} | ${event.instructors[0]}`
-                      : (event.instructors.length ? event.instructors.join(", ") : "All groups");
+                      ? `${event.groups[0]} | ${event.instructors[0]} | ${location}`
+                      : [event.instructors.length ? event.instructors.join(", ") : "All groups", location].filter(Boolean).join(" | ");
                     return `
-                      <article class="cal-event" data-kind="${kindForCard(event)}" style="top:${top}px;height:${eventHeight}px" title="${escapeHtml(title)}">
+                      <article class="cal-event" data-kind="${kindForCard(event)}" style="top:${top}px;height:${eventHeight}px" title="${escapeHtml(tooltip)}">
                         <strong>${escapeHtml(formatTime(event.start, event.end))} ${escapeHtml(title)}</strong>
                         <span>${escapeHtml(sub)}</span>
                       </article>
