@@ -1,0 +1,1431 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IMSC 2026 Schedule</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fafafa;
+      --panel: #ffffff;
+      --ink: #181c1f;
+      --muted: #687076;
+      --line: #e4e6e8;
+      --line-strong: #cfd4d8;
+      --accent: #1f5f8b;
+      --accent-soft: #eaf2fb;
+      --red: #a34343;
+      --red-soft: #fbebeb;
+      --gold: #966217;
+      --gold-soft: #f8f0df;
+      --green: #476b3c;
+      --green-soft: #edf4e9;
+      --shadow: 0 12px 28px rgba(24, 28, 31, 0.06);
+      --radius: 8px;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    [hidden] { display: none !important; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    button, select, input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .app-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    header {
+      background: rgba(250, 250, 250, 0.94);
+      color: var(--ink);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar {
+      width: min(1320px, 100%);
+      margin: 0 auto;
+      padding: 18px max(120px, clamp(16px, 3vw, 30px)) 16px clamp(16px, 3vw, 30px);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.35rem, 2.5vw, 2.05rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-weight: 780;
+    }
+
+    .config-button {
+      position: fixed;
+      top: 9px;
+      right: 14px;
+      z-index: 20;
+      min-width: 88px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      color: var(--ink);
+      padding: 0 14px;
+      font-size: 0.9rem;
+      font-weight: 750;
+      line-height: 1;
+    }
+
+    .config-button:hover {
+      border-color: var(--line-strong);
+      background: #f5f6f7;
+    }
+
+    .settings-dialog {
+      width: min(980px, calc(100vw - 24px));
+      max-height: min(760px, calc(100vh - 24px));
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+      color: var(--ink);
+      box-shadow: 0 24px 70px rgba(24, 28, 31, 0.22);
+    }
+
+    .settings-dialog::backdrop {
+      background: rgba(24, 28, 31, 0.34);
+      backdrop-filter: blur(3px);
+    }
+
+    .settings-panel {
+      display: grid;
+      gap: 0;
+    }
+
+    .settings-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 16px 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .settings-head h2 {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    .settings-body {
+      padding: 14px;
+      overflow: auto;
+    }
+
+    .settings-actions {
+      display: flex;
+      justify-content: flex-end;
+      padding: 12px 16px 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .confirm-button {
+      min-height: 38px;
+      border: 0;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: #fff;
+      padding: 0 16px;
+      font-weight: 750;
+    }
+
+    main {
+      width: min(1320px, 100%);
+      margin: 0 auto;
+      padding: clamp(12px, 2.2vw, 24px);
+    }
+
+    .controls {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: minmax(250px, 1.05fr) minmax(250px, 1fr) minmax(250px, 1fr);
+      align-items: start;
+      margin-bottom: 12px;
+    }
+
+    .control-section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+      min-width: 0;
+    }
+
+    .control-title {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .segmented {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #f3f4f5;
+    }
+
+    .segmented button {
+      border: 0;
+      border-right: 1px solid var(--line);
+      padding: 8px 7px;
+      background: transparent;
+      color: var(--ink);
+      min-height: 36px;
+      font-weight: 700;
+      font-size: 0.91rem;
+    }
+
+    .segmented button:last-child {
+      border-right: 0;
+    }
+
+    .segmented button[aria-pressed="true"] {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .select-row {
+      margin-top: 8px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+
+    label {
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 750;
+    }
+
+    select {
+      width: 100%;
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--ink);
+      padding: 0 10px;
+    }
+
+    .switches {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .check {
+      display: inline-flex;
+      gap: 7px;
+      align-items: center;
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 5px 9px;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 650;
+      font-size: 0.82rem;
+    }
+
+    .check input {
+      accent-color: var(--accent);
+      inline-size: 16px;
+      block-size: 16px;
+    }
+
+    .summary-strip {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .summary-title {
+      margin: 0;
+      font-size: clamp(1rem, 1.8vw, 1.28rem);
+      line-height: 1.2;
+      font-weight: 760;
+    }
+
+    .summary-meta {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .pill-row {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      max-width: 100%;
+      border-radius: 999px;
+      padding: 4px 9px;
+      background: #f0f2f4;
+      color: #3c4348;
+      font-size: 0.74rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .content {
+      min-height: 500px;
+      min-width: 0;
+    }
+
+    .day-section {
+      margin-bottom: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      background: #f5f6f7;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .day-header h2 {
+      margin: 0;
+      font-size: 0.98rem;
+      font-weight: 760;
+    }
+
+    .day-header span {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 750;
+    }
+
+    .event-list {
+      display: grid;
+      gap: 8px;
+      padding: 10px;
+    }
+
+    .event-card {
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 10px;
+      background: #fff;
+      display: grid;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .event-card[data-kind="large"] { border-left-color: var(--red); }
+    .event-card[data-kind="combined"] { border-left-color: var(--accent); }
+    .event-card[data-kind="seminar"] { border-left-color: var(--gold); }
+    .event-card[data-kind="guest"] { border-left-color: var(--green); }
+    .event-card[data-kind="test"] { border-left-color: #7c4d9e; }
+    .event-card[data-kind="problem"] { border-left-color: #8a5b25; }
+    .event-card[data-kind="competition"] { border-left-color: #b48a21; }
+
+    .event-topline {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: start;
+      gap: 9px;
+    }
+
+    .time {
+      font-variant-numeric: tabular-nums;
+      font-weight: 800;
+      color: var(--ink);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    .event-title {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--accent);
+      background: var(--accent-soft);
+      white-space: nowrap;
+    }
+
+    .tag.large { color: var(--red); background: var(--red-soft); }
+    .tag.guest { color: var(--green); background: var(--green-soft); }
+    .tag.showcase { color: var(--accent); background: var(--accent-soft); }
+    .tag.seminar { color: var(--gold); background: var(--gold-soft); }
+    .tag.test { color: #7c4d9e; background: #f1e9f8; }
+    .tag.problem { color: #8a5b25; background: #f7eddf; }
+    .tag.competition { color: #7a5b05; background: #fbf1c8; }
+
+    .event-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 7px;
+      margin-top: 2px;
+    }
+
+    .group-tile {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 7px;
+      background: #fcfcfc;
+      min-width: 0;
+    }
+
+    .group-tile strong {
+      display: inline-block;
+      margin-right: 6px;
+      color: var(--accent);
+      font-size: 0.79rem;
+      line-height: inherit;
+      font-weight: 750;
+    }
+
+    .group-tile span {
+      color: var(--muted);
+      font-size: 0.79rem;
+      overflow-wrap: anywhere;
+    }
+
+    .empty {
+      padding: 30px 18px;
+      text-align: center;
+      color: var(--muted);
+      background: #fff;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+    }
+
+    .calendar-wrap {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      contain: inline-size;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .calendar-grid {
+      min-width: 880px;
+      display: grid;
+      grid-template-columns: 66px repeat(var(--day-count), minmax(190px, 1fr));
+    }
+
+    .corner,
+    .cal-day-head {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: #202529;
+      color: #fff;
+      min-height: 54px;
+      border-right: 1px solid rgba(255,255,255,0.14);
+      display: grid;
+      align-content: center;
+      padding: 8px;
+    }
+
+    .corner {
+      left: 0;
+      z-index: 3;
+      color: #d8dde1;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .cal-day-head strong {
+      font-size: 0.92rem;
+      line-height: 1.1;
+    }
+
+    .cal-day-head span {
+      color: #d8dde1;
+      font-size: 0.75rem;
+      margin-top: 3px;
+    }
+
+    .time-rail {
+      position: relative;
+      height: 880px;
+      background: #f3f4f5;
+      border-right: 1px solid var(--line);
+    }
+
+    .rail-label {
+      position: absolute;
+      left: 8px;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .cal-column {
+      position: relative;
+      height: 880px;
+      border-right: 1px solid var(--line);
+      background:
+        repeating-linear-gradient(to bottom, #ffffff 0, #ffffff 79px, #f0f2f4 80px);
+    }
+
+    .cal-event {
+      position: absolute;
+      left: 7px;
+      right: 7px;
+      min-height: 44px;
+      border-radius: var(--radius);
+      padding: 7px 8px;
+      border: 1px solid rgba(31, 95, 139, 0.22);
+      background: var(--accent-soft);
+      color: #173c5a;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(24, 28, 31, 0.08);
+    }
+
+    .cal-event[data-kind="large"] {
+      border-color: rgba(177,59,59,0.28);
+      background: var(--red-soft);
+      color: #5b1c1c;
+    }
+
+    .cal-event[data-kind="combined"] {
+      border-color: rgba(49,93,156,0.28);
+      background: var(--accent-soft);
+      color: #1d3d68;
+    }
+
+    .cal-event[data-kind="seminar"] {
+      border-color: rgba(163,99,19,0.28);
+      background: var(--gold-soft);
+      color: #58350c;
+    }
+
+    .cal-event[data-kind="guest"] {
+      border-color: rgba(83,107,47,0.30);
+      background: var(--green-soft);
+      color: #31411b;
+    }
+
+    .cal-event[data-kind="test"] {
+      border-color: rgba(124,77,158,0.28);
+      background: #f1e9f8;
+      color: #47245f;
+    }
+
+    .cal-event[data-kind="problem"] {
+      border-color: rgba(138,91,37,0.26);
+      background: #f7eddf;
+      color: #573711;
+    }
+
+    .cal-event[data-kind="competition"] {
+      border-color: rgba(180,138,33,0.30);
+      background: #fbf1c8;
+      color: #513d05;
+    }
+
+    .cal-event strong,
+    .cal-event span {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .cal-event strong {
+      font-size: 0.78rem;
+      line-height: 1.1;
+    }
+
+    .cal-event span {
+      margin-top: 3px;
+      font-size: 0.7rem;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 980px) {
+      .topbar,
+      .controls,
+      .summary-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .pill-row {
+        justify-content: flex-start;
+      }
+
+      .calendar-grid {
+        min-width: 760px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      .topbar {
+        width: 100%;
+        max-width: 100vw;
+        padding: 14px 116px 12px 12px;
+        gap: 10px;
+      }
+
+      main {
+        width: 100%;
+        max-width: 100vw;
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.35rem;
+      }
+
+      .controls {
+        gap: 8px;
+        margin-bottom: 10px;
+        max-width: 100%;
+      }
+
+      .control-section {
+        padding: 10px;
+        max-width: 100%;
+      }
+
+      .control-title {
+        margin-bottom: 7px;
+      }
+
+      .segmented button {
+        min-height: 34px;
+        padding: 7px 5px;
+        font-size: 0.86rem;
+      }
+
+      .summary-strip {
+        gap: 8px;
+        padding: 10px;
+        max-width: 100%;
+      }
+
+      .summary-meta {
+        font-size: 0.84rem;
+      }
+
+      .pill-row {
+        display: none;
+      }
+
+      .event-topline {
+        grid-template-columns: 1fr auto;
+        gap: 6px 8px;
+      }
+
+      .time {
+        grid-column: 1 / 3;
+        font-size: 0.86rem;
+      }
+
+      .event-title {
+        font-size: 0.92rem;
+      }
+
+      .tag {
+        width: max-content;
+        max-width: 42vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .group-tile {
+        display: block;
+      }
+
+      .calendar-grid {
+        min-width: 650px;
+        grid-template-columns: 58px repeat(var(--day-count), minmax(160px, 1fr));
+      }
+
+      .settings-dialog {
+        width: calc(100vw - 20px);
+        max-height: calc(100vh - 20px);
+      }
+
+      .settings-body {
+        padding: 10px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .topbar {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .check {
+        flex: 1 1 145px;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <div class="topbar">
+        <h1>IMSC 2026 Schedule</h1>
+        <button type="button" class="config-button" id="openSettings">Settings</button>
+      </div>
+    </header>
+
+    <dialog class="settings-dialog" id="settingsDialog">
+      <div class="settings-panel">
+        <div class="settings-head">
+          <h2>Settings</h2>
+        </div>
+        <div class="settings-body">
+      <section class="controls" aria-label="Calendar controls">
+        <div class="control-section">
+          <p class="control-title">Perspective</p>
+          <div class="segmented" role="group" aria-label="Perspective">
+            <button type="button" data-set="perspective" data-value="overall">Overall</button>
+            <button type="button" data-set="perspective" data-value="instructor">Instructor</button>
+            <button type="button" data-set="perspective" data-value="group">Team</button>
+          </div>
+          <div class="select-row" id="instructorRow">
+            <label for="instructorSelect">Instructor or speaker</label>
+            <select id="instructorSelect"></select>
+          </div>
+          <div class="select-row" id="groupRow">
+            <label for="groupSelect">Team group</label>
+            <select id="groupSelect"></select>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <p class="control-title">View</p>
+          <div class="segmented" role="group" aria-label="View mode">
+            <button type="button" data-set="view" data-value="schedule">Schedule</button>
+            <button type="button" data-set="view" data-value="calendar">Calendar</button>
+          </div>
+          <div class="switches">
+            <label class="check"><input type="checkbox" id="showClassroom"> Classroom lectures</label>
+            <label class="check"><input type="checkbox" id="showLarge"> Camp-wide events</label>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <p class="control-title">Range</p>
+          <div class="segmented" role="group" aria-label="Date range">
+            <button type="button" data-set="range" data-value="weekly">Weekly</button>
+            <button type="button" data-set="range" data-value="daily">Daily</button>
+          </div>
+          <div class="select-row">
+            <label for="dateSelect" id="dateSelectLabel">Focus date</label>
+            <select id="dateSelect"></select>
+          </div>
+        </div>
+      </section>
+        </div>
+        <div class="settings-actions">
+          <button type="button" class="confirm-button" id="confirmSettings">Confirm</button>
+        </div>
+      </div>
+    </dialog>
+
+    <main>
+      <section class="summary-strip" aria-live="polite">
+        <div>
+          <h2 class="summary-title" id="summaryTitle"></h2>
+          <p class="summary-meta" id="summaryMeta"></p>
+        </div>
+        <div class="pill-row" id="summaryPills"></div>
+      </section>
+
+      <section class="content" id="content" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <script>
+    const STORAGE_KEY = "imsc2026.calendar.state.v1";
+    const GROUPS = {
+      G1: { teams: "Iran, Poland, Vietnam", homeroom: "Nikola Petrovic" },
+      G2: { teams: "Bosnia & Herzegovina, Mongolia", homeroom: "Vlad Matei" },
+      G3: { teams: "Hong Kong-China, Italy", homeroom: "Bojan Basic" },
+      G4: { teams: "Serbia, Uzbekistan", homeroom: "Dinu Serbanescu" },
+      G5: { teams: "Peru, Thailand", homeroom: "Cezar Lupu" },
+      G6: { teams: "Lithuania, Mexico", homeroom: "Stijn Cambie" },
+      G7: { teams: "Brazil, Malaysia", homeroom: "Wei Luo" },
+      G8: { teams: "Kyrgyzstan, South Africa", homeroom: "Dusan Djukic" },
+      G9: { teams: "Czechia, Ireland, International Union (USA, UAE, JPN, UK, CA)", homeroom: "Qiang Shen" },
+      G10: { teams: "Estonia, Indonesia", homeroom: "Andrei Jorza" },
+      G11: { teams: "North Macedonia, Turkmenistan, China-Hubei (Wuhan Economics)", homeroom: "Dorian Croitoru" },
+      G12: { teams: "Bangladesh, Croatia", homeroom: "Alex Song / Sari Ghanem" },
+      G13: { teams: "Cuba, Tajikistan", homeroom: "Andrei Bud" },
+      G14: { teams: "Macau-China, Moldova", homeroom: "Zilin Jiang" },
+      G15: { teams: "Albania, Honduras, Pakistan", homeroom: "Tudor Paisanu" },
+      G16: { teams: "Costa Rica, Iceland, Nepal", homeroom: "Ivan Chan Kai Chin" },
+      G17: { teams: "Montenegro, Myanmar, Uruguay", homeroom: "Cipriana Anghel-Stan" },
+      G18: { teams: "Cameroon, Rwanda", homeroom: "Iulia Cristian" },
+      G19: { teams: "Botswana, Ghana, Uganda", homeroom: "Anca Sfia" }
+    };
+
+    const DAY_META = [
+      ["2026-06-22", "Monday", "Jun 22"],
+      ["2026-06-23", "Tuesday", "Jun 23"],
+      ["2026-06-24", "Wednesday", "Jun 24"],
+      ["2026-06-25", "Thursday", "Jun 25"],
+      ["2026-06-26", "Friday", "Jun 26"],
+      ["2026-06-27", "Saturday", "Jun 27"],
+      ["2026-06-29", "Monday", "Jun 29"],
+      ["2026-06-30", "Tuesday", "Jun 30"],
+      ["2026-07-01", "Wednesday", "Jul 1"],
+      ["2026-07-02", "Thursday", "Jul 2"],
+      ["2026-07-06", "Monday", "Jul 6"],
+      ["2026-07-07", "Tuesday", "Jul 7"],
+      ["2026-07-08", "Wednesday", "Jul 8"],
+      ["2026-07-09", "Thursday", "Jul 9"],
+      ["2026-07-10", "Friday", "Jul 10"],
+      ["2026-07-11", "Saturday", "Jul 11"]
+    ].map(([date, weekday, short]) => ({ date, weekday, short }));
+
+    const WEEKS = buildWeeks();
+    const WEEK_ONE_DATES = DAY_META.slice(0, 5).map(day => day.date);
+    const GROUP_ORDER = Object.keys(GROUPS);
+
+    const SESSION_DATA = [
+      {
+        session: "Session 1",
+        start: "09:00",
+        end: "10:30",
+        entries: {
+          G1: ["Algebra 1-Andrei Bud", "Combinatorics 2-Bojan Basic", "Algebra 2-Qiang Shen", "Number Theory 3-Vlad Matei", "Geometry 1-Qiang Shen"],
+          G2: ["Algebra 1-Andrei Jorza", "Combinatorics 3-Nikola Petrovic", "Number Theory 1-Tudor Paisanu", "Combinatorics 2-Bojan Basic", "Algebra 2-Andrei Jorza"],
+          G3: ["Geometry 3-Cipriana Anghel", "Algebra 1-Vlad Matei", "Combinatorics 1-Andrei Bud", "Algebra 2-Qiang Shen", "Number Theory 2-Cezar Lupu"],
+          G4: ["Algebra 1-Iulia Cristian", "Algebra 1-Andrei Jorza", "Geometry 3-Cipriana Anghel", "Number Theory 1-Tudor Paisanu", "Algebra 1-Tudor Paisanu"],
+          G5: ["Algebra 1-Vlad Matei", "Algebra 1-Iulia Cristian", "Geometry 3-Dinu Serbanescu", "Number Theory 2-Andrei Jorza", "Combinatorics 1-Dorian Croitoru"],
+          G6: ["Number Theory 2-Tudor Paisanu", "Geometry 1-Ivan Chan", "Number Theory 1-Iulia Cristian", "Combinatorics 1-Atli Fannar Franklin", "Number Theory 1-Dainius Dzindzalieta"],
+          G7: ["Algebra 1-Wei Luo", "Algebra 1-Qiang Shen", "Number Theory 1-Andrei Jorza", "Geometry 3-Dinu Serbanescu", "Algebra 2-Iulia Cristian"],
+          G8: ["Combinatorics 1-Alex Song", "Number Theory 2-Tudor Paisanu", "Number Theory 1-Vlad Matei", "Geometry 1-Dorian Croitoru", "Algebra 1-Vu Hong Son"],
+          G9: ["Algebra 1-Qiang Shen", "Algebra 1-Andrei Bud", "Number Theory 1-Gia Vuong Chu", "Number Theory 1-Wei Luo", "Combinatorics 1-Wei Luo"],
+          G10: ["Geometry 1-Ivan Chan", "Number Theory 1-Anca Sfia", "Algebra 1-Cezar Lupu", "Number Theory 1-Iulia Cristian", "Geometry 1-Nikola Petrovic"],
+          G11: ["Number Theory 1-Anca Sfia", "Number Theory 1-Stijn Cambie", "Algebra 1-Zilin Jiang", "Algebra 1-Cezar Lupu", "Geometry 3-Cipriana Anghel"],
+          G12: ["Geometry 1-Dinu Serbanescu", "Algebra 1-Wei Luo", "Number Theory 1-Wei Luo", "Combinatorics 1-Andrei Bud", "Combinatorics 1-Ivan Chan"],
+          G13: ["Combinatorics 1-Nikola Petrovic", "Number Theory 1-Cezar Lupu", "Algebra 1-Anca Sfia", "Combinatorics 1-Hein Thant Aung", "Geometry 1-Andrei Bud"],
+          G14: ["Number Theory 1-Cezar Lupu", "Geometry 2-Cipriana Anghel", "Combinatorics 1-Alex Song", "Algebra 1-Ivan Chan", "Algebra 1-Dusan Djukic"],
+          G15: ["Combinatorics 3-Bojan Basic", "Algebra 1-Dusan Djukic", "Geometry 2-Dorian Croitoru", "Geometry 3-Cipriana Anghel", "Number Theory 1-Zilin Jiang"],
+          G16: ["Algebra 1-Dusan Djukic", "Geometry 1-Dinu Serbanescu", "Geometry 2-Ivan Chan", "Number Theory 1-Adeel Farooq", "Combinatorics 1-Francisco Gonzalez"],
+          G17: ["Number Theory 2-Stijn Cambie", "Geometry 1-Alex Song", "Algebra 1-Dusan Djukic", "Combinatorics 1-Zilin Jiang", "Combinatorics 1-Nikola Petrovic"],
+          G18: ["Geometry 2-Dorian Croitoru", "Number Theory 1-Zilin Jiang", "Algebra 1-Adeel Farooq", "Geometry 1-Tamas Babelis", "Algebra 1-Oleg Kosik"],
+          G19: ["Combinatorics 1-Zilin Jiang", "Geometry 2-Dorian Croitoru", "Number Theory 2-Stijn Cambie", "Algebra 1-Anca Sfia", "Algebra 1-Valeriu Gutu"]
+        }
+      },
+      {
+        session: "Session 2",
+        start: "10:45",
+        end: "12:15",
+        entries: {
+          G1: ["Algebra 1-Andrei Jorza", "Combinatorics 2-Zilin Jiang", "Combinatorics 3-Nikola Petrovic", "Number Theory 1-Tudor Paisanu", "Number Theory 2-Cezar Lupu"],
+          G2: ["Algebra 1-Andrei Bud", "Algebra 1-Qiang Shen", "Geometry 1-Qiang Shen", "Number Theory 1-Gia Vuong Chu", "Combinatorics 2-Zilin Jiang"],
+          G3: ["Algebra 1-Iulia Cristian", "Geometry 1-Dorian Croitoru", "Number Theory 1-Tudor Paisanu", "Number Theory 3-Vlad Matei", "Combinatorics 1-Dorian Croitoru"],
+          G4: ["Combinatorics 1-Dorian Croitoru", "Number Theory 2-Tudor Paisanu", "Number Theory 1-Andrei Jorza", "Algebra 2-Qiang Shen", "Number Theory 3-Vlad Matei"],
+          G5: ["Number Theory 2-Tudor Paisanu", "Number Theory 1-Andrei Jorza", "Combinatorics-Atli Fannar Franklin", "Algebra 1-Cezar Lupu", "Geometry 1-Nikola Petrovic"],
+          G6: ["Algebra 1-Vlad Matei", "Combinatorics 2-Bojan Basic", "Algebra 1-Cezar Lupu", "Geometry 3-Dinu Serbanescu", "Algebra 2-Qiang Shen"],
+          G7: ["Combinatorics 1-Bojan Basic", "Geometry 1-Nikola Petrovic", "Number Theory 1-Iulia Cristian", "Number Theory 1-Wei Luo", "Combinatorics 1-Dusan Djukic"],
+          G8: ["Algebra 1-Wei Luo", "Algebra 1-Iulia Cristian", "Combinatorics 1-Dusan Djukic", "Number Theory 2-Andrei Jorza", "Geometry 3-Dinu Serbanescu"],
+          G9: ["Geometry 1-Ivan Chan", "Number Theory 1-Vlad Matei", "Algebra 1-Vu Hong Son", "Combinatorics 1-Andrei Bud", "Algebra 1-Tudor Paisanu"],
+          G10: ["Combinatorics 1-Dusan Djukic", "Algebra 1-Andrei Bud", "Number Theory 2-Vlad Matei", "Algebra 1-Lukas Novak", "Combinatorics 1-Wei Luo"],
+          G11: ["Combinatorics 1-Nikola Petrovic", "Algebra 1-Wei Luo", "Combinatorics 1-Andrei Bud", "Number Theory 1-Iulia Cristian", "Number Theory 2-Andrei Jorza"],
+          G12: ["Geometry 1-Alex Song", "Number Theory 1-Cezar Lupu", "Number Theory 1-Stijn Cambie", "Algebra 1-Ivan Chan", "Algebra 2-Iulia Cristian"],
+          G13: ["Geometry 1-Dinu Serbanescu", "Number Theory 1-Anca Sfia", "Geometry 2-Dorian Croitoru", "Geometry 1-Cipriana Anghel", "Algebra 1-Ivan Chan"],
+          G14: ["Number Theory 1-Anca Sfia", "Geometry 1-Dinu Serbanescu", "Number Theory 1-Wei Luo", "Geometry 1-Dinu Serbanescu", "Combinatorics 1-Hein Thant Aung"],
+          G15: ["Number Theory 1-Cezar Lupu", "Geometry 2-Ivan Chan", "Algebra 1-Zilin Jiang", "Algebra 1-Anca Sfia", "Combinatorics 1-Hani Shaker"],
+          G16: ["Number Theory 2-Stijn Cambie", "Geometry 1-Alex Song", "Algebra 1-Anca Sfia", "Combinatorics 1-Zilin Jiang", "Geometry 1-Andrei Bud"],
+          G17: ["Number Theory 1-Zilin Jiang", "Geometry 2-Cipriana Anghel", "Geometry 2-Ivan Chan", "Number Theory 1-Adeel Farooq", "Algebra 1-Oleg Kosik"],
+          G18: ["Algebra 1-Qiang Shen", "Number Theory 2-Stijn Cambie", "Geometry 2-Cipriana Anghel", "Algebra 1-Alejandro Campos", "Combinatorics 1-Alex Song"],
+          G19: ["Geometry 2-Cipriana Anghel", "Combinatorics 1-Dusan Djukic", "Algebra 1-Alejandro Campos", "Algebra 1-Claudio Espinosa", "Geometry 1-Cipriana Anghel"]
+        }
+      }
+    ];
+
+    const LARGE_EVENTS = [
+      { date: "2026-06-22", start: "14:30", end: "16:00", kind: "showcase", type: "IMO Showcase", session: "IMO Showcase 1", speakers: ["Andrei Jorza", "Andrei Bud", "Cezar Lupu"], title: "Problem 6, IMO 2001; Problem 6, IMO 2002; Problem 2, IMO 2012" },
+      { date: "2026-06-22", start: "16:00", end: "17:30", kind: "showcase", type: "IMO Showcase", session: "IMO Showcase 2", speakers: ["Bojan Basic", "Alex Song", "Wei Luo"], title: "Problem 3, IMO 2017; Problem 3, IMO 2022; Problem 6, IMO 2020" },
+      { date: "2026-06-22", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 1", speakers: ["Cezar Lupu"], title: "An elementary problem equivalent to the Riemann Hypothesis" },
+      { date: "2026-06-23", start: "19:10", end: "20:00", kind: "guest", type: "Guest Lecture", session: "Guest Lecture 1", speakers: ["Yuval Peres"], title: "TBD" },
+      { date: "2026-06-24", start: "13:30", end: "14:30", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 2", speakers: ["Andrei Bud"], title: "Where do we use mathematics, or how mathematics shapes the modern world?" },
+      { date: "2026-06-24", start: "14:30", end: "15:30", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 3", speakers: ["Bojan Basic"], title: "The art of failing to tessellate: An introduction to Heesch's problem" },
+      { date: "2026-06-24", start: "15:45", end: "17:15", kind: "showcase", type: "IMO Showcase", session: "IMO Showcase 3", speakers: ["Stijn Cambie", "Nikola Petrovic", "Dusan Djukic"], title: "Problem 2, IMO 2020; Problem 6, IMO 2022; Problem 6, IMO 2017" },
+      { date: "2026-06-24", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 4", speakers: ["Zilin Jiang"], title: "Finding Linear Algebra in the Wrong Places" },
+      { date: "2026-06-25", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 5", speakers: ["Tudor Paisanu"], title: "A combinatorial construction of the fundamental group of a graph" },
+      { date: "2026-06-26", start: "15:45", end: "17:15", kind: "showcase", type: "IMO Showcase", session: "IMO Showcase 4", speakers: ["Anca Sfia", "Tudor Paisanu", "Qiang Shen"], title: "Problem 5, IMO 2024; Problem 6, IMO 2003; Problem 6, IMO 2004" },
+      { date: "2026-06-29", start: "19:10", end: "20:00", kind: "guest", type: "Guest Lecture", session: "Guest Lecture 2", speakers: ["Zhengwei Liu"], title: "TBD" },
+      { date: "2026-06-30", start: "16:00", end: "17:30", kind: "showcase", type: "IMO Showcase", session: "IMO Showcase 5", speakers: ["Zilin Jiang", "Ivan Chan Kai Chin", "Dorian Croitoru"], title: "Problem 3, IMO 2012; Problem 3, IMO 2023; Problem 3, IMO 2003" },
+      { date: "2026-06-30", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 6", speakers: ["Iulia Cristian"], title: "Blood coagulation, gel formation, and rain models: What do they have in common?" },
+      { date: "2026-07-01", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 7", speakers: ["Cipriana Anghel-Stan"], title: "Magic identities in hyperbolic geometry" },
+      { date: "2026-07-06", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 8", speakers: ["Andrei Jorza"], title: "Simulating randomness on a computer" },
+      { date: "2026-07-07", start: "19:10", end: "20:00", kind: "guest", type: "Guest Lecture", session: "Guest Lecture 3", speakers: ["Vladimir Markovic"], title: "TBD" },
+      { date: "2026-07-08", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 9", speakers: ["Stijn Cambie"], title: "Resolution of 2 problems by Erdos et al. from the graph theory collection" },
+      { date: "2026-07-09", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 10", speakers: ["Nikola Petrovic"], title: "Six ways to solve a problem" }
+    ];
+
+    const TEST_EVENTS = [
+      { date: "2026-06-25", start: "13:30", end: "18:00", kind: "test", type: "Mock Test", session: "Mock Test 1", title: "Algebra" },
+      { date: "2026-06-26", start: "13:30", end: "15:00", kind: "problem", type: "Problem Session", session: "Problem Session 1", title: "Solutions of Mock Test 1" },
+      { date: "2026-06-27", start: "09:30", end: "14:00", kind: "test", type: "Mock Test", session: "Mock Test 2", title: "Combinatorics" },
+      { date: "2026-06-27", start: "15:30", end: "17:00", kind: "problem", type: "Problem Session", session: "Problem Session 2", title: "Solutions of Mock Test 2" },
+      { date: "2026-06-29", start: "13:30", end: "18:00", kind: "test", type: "Mock Test", session: "Mock Test 3", title: "Geometry" },
+      { date: "2026-06-30", start: "13:30", end: "15:00", kind: "problem", type: "Problem Session", session: "Problem Session 3", title: "Solutions of Mock Test 3" },
+      { date: "2026-07-01", start: "13:30", end: "18:00", kind: "test", type: "Mock Test", session: "Mock Test 4", title: "Number Theory" },
+      { date: "2026-07-02", start: "13:30", end: "15:00", kind: "problem", type: "Problem Session", session: "Problem Session 4", title: "Solutions of Mock Test 4" },
+      { date: "2026-07-10", start: "09:30", end: "14:00", kind: "competition", type: "Competition", session: "IMSC 2026 Competition Day 1", title: "Final Competition" },
+      { date: "2026-07-11", start: "09:30", end: "14:00", kind: "competition", type: "Competition", session: "IMSC 2026 Competition Day 2", title: "Final Competition" }
+    ];
+
+    const state = {
+      perspective: "overall",
+      instructor: "Zilin Jiang",
+      group: "G14",
+      view: "schedule",
+      range: "weekly",
+      date: "2026-06-22",
+      showClassroom: true,
+      showLarge: true,
+      ...loadState()
+    };
+    let draftState = { ...state };
+
+    const allEvents = buildEvents();
+    const instructors = Array.from(new Set([
+      ...allEvents.flatMap(event => event.instructors || []),
+      ...Object.values(GROUPS).flatMap(group => group.homeroom.split(" / "))
+    ])).sort((a, b) => a.localeCompare(b));
+
+    function normalizeName(name) {
+      const cleaned = name
+        .trim()
+        .replace(/^[(]+/, "");
+      const aliases = {
+        "Ziling Jiang": "Zilin Jiang",
+        "Cipriana Anghel": "Cipriana Anghel-Stan",
+        "Ivan Chan": "Ivan Chan Kai Chin"
+      };
+      return aliases[cleaned] || cleaned;
+    }
+
+    function parseLecture(raw) {
+      const cut = raw.lastIndexOf("-");
+      if (cut === -1) return { title: raw.trim(), instructor: "" };
+      return {
+        title: raw.slice(0, cut).trim(),
+        instructor: normalizeName(raw.slice(cut + 1))
+      };
+    }
+
+    function buildEvents() {
+      const events = [];
+      SESSION_DATA.forEach(session => {
+        GROUP_ORDER.forEach(group => {
+          session.entries[group].forEach((raw, index) => {
+            const parsed = parseLecture(raw);
+            events.push({
+              id: `${session.session}-${group}-${index}`,
+              date: WEEK_ONE_DATES[index],
+              start: session.start,
+              end: session.end,
+              kind: "classroom",
+              type: "Classroom Lecture",
+              session: session.session,
+              title: parsed.title,
+              instructors: [parsed.instructor],
+              groups: [group],
+              teams: GROUPS[group].teams
+            });
+          });
+        });
+      });
+
+      LARGE_EVENTS.forEach((event, index) => {
+        events.push({
+          ...event,
+          id: `large-${index}`,
+          instructors: event.speakers.map(normalizeName),
+          groups: GROUP_ORDER
+        });
+      });
+
+      TEST_EVENTS.forEach((event, index) => {
+        events.push({
+          ...event,
+          id: `test-${index}`,
+          instructors: [],
+          groups: GROUP_ORDER,
+          global: true
+        });
+      });
+
+      return events.sort(compareEvents);
+    }
+
+    function loadState() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+      } catch {
+        return {};
+      }
+    }
+
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    function minutes(time) {
+      const [hours, mins] = time.split(":").map(Number);
+      return hours * 60 + mins;
+    }
+
+    function compareEvents(a, b) {
+      return a.date.localeCompare(b.date) || minutes(a.start) - minutes(b.start) || a.title.localeCompare(b.title);
+    }
+
+    function dayFor(date) {
+      return DAY_META.find(day => day.date === date);
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    function formatTime(start, end) {
+      return `${start}-${end}`;
+    }
+
+    function weekStartDate(date) {
+      const focus = new Date(`${date}T12:00:00`);
+      const day = focus.getDay() || 7;
+      const monday = new Date(focus);
+      monday.setDate(focus.getDate() - day + 1);
+      return monday.toISOString().slice(0, 10);
+    }
+
+    function buildWeeks() {
+      const weeks = new Map();
+      DAY_META.forEach(day => {
+        const start = weekStartDate(day.date);
+        if (!weeks.has(start)) weeks.set(start, []);
+        weeks.get(start).push(day.date);
+      });
+      return Array.from(weeks.entries()).map(([value, dates]) => {
+        const first = dayFor(dates[0]);
+        const last = dayFor(dates[dates.length - 1]);
+        return {
+          value,
+          dates,
+          label: first.date === last.date
+            ? `Week of ${first.short}`
+            : `Week of ${first.short}-${last.short}`
+        };
+      }).sort((a, b) => a.value.localeCompare(b.value));
+    }
+
+    function normalizedDateForRange(date, range) {
+      if (range === "daily") {
+        return DAY_META.some(day => day.date === date) ? date : DAY_META[0].date;
+      }
+      const start = weekStartDate(date);
+      return WEEKS.some(week => week.value === start) ? start : WEEKS[0].value;
+    }
+
+    function dateRange() {
+      if (state.range === "daily") return [state.date];
+      const week = WEEKS.find(item => item.value === weekStartDate(state.date));
+      return week ? week.dates : WEEKS[0].dates;
+    }
+
+    function appliesToPerspective(event) {
+      if (event.global) return true;
+      if (state.perspective === "overall") return true;
+      if (state.perspective === "group") {
+        return event.kind !== "classroom" || event.groups.includes(state.group);
+      }
+      return event.instructors.includes(state.instructor);
+    }
+
+    function filteredBaseEvents() {
+      const dates = new Set(dateRange());
+      return allEvents.filter(event => {
+        if (!dates.has(event.date)) return false;
+        if (event.kind === "classroom" && !state.showClassroom) return false;
+        if (event.kind !== "classroom" && !state.showLarge) return false;
+        return appliesToPerspective(event);
+      });
+    }
+
+    function displayEvents() {
+      const events = filteredBaseEvents();
+      if (state.perspective !== "overall") return events;
+
+      const combined = [];
+      const groups = new Map();
+      events.forEach(event => {
+        if (event.kind !== "classroom") {
+          combined.push(event);
+          return;
+        }
+        const key = `${event.date}|${event.start}|${event.end}|${event.session}`;
+        if (!groups.has(key)) {
+          groups.set(key, {
+            id: `combined-${key}`,
+            date: event.date,
+            start: event.start,
+            end: event.end,
+            kind: "combined",
+            type: "Classroom Lectures",
+            session: event.session,
+            title: "classroom lectures",
+            instructors: [],
+            groups: [],
+            children: []
+          });
+        }
+        groups.get(key).children.push(event);
+      });
+      groups.forEach(group => {
+        group.children.sort((a, b) => a.groups[0].localeCompare(b.groups[0], undefined, { numeric: true }));
+        group.groups = group.children.flatMap(event => event.groups);
+        group.instructors = Array.from(new Set(group.children.flatMap(event => event.instructors))).sort();
+        combined.push(group);
+      });
+      return combined.sort(compareEvents);
+    }
+
+    function setupControls() {
+      const instructorSelect = document.getElementById("instructorSelect");
+      instructorSelect.innerHTML = instructors.map(name => `<option value="${escapeHtml(name)}">${escapeHtml(name)}</option>`).join("");
+      const groupSelect = document.getElementById("groupSelect");
+      groupSelect.innerHTML = GROUP_ORDER.map(group => {
+        const label = `${group}: ${GROUPS[group].teams}`;
+        return `<option value="${group}">${escapeHtml(label)}</option>`;
+      }).join("");
+
+      document.querySelectorAll("[data-set]").forEach(button => {
+        button.addEventListener("click", () => {
+          draftState[button.dataset.set] = button.dataset.value;
+          if (button.dataset.set === "range") {
+            draftState.date = normalizedDateForRange(draftState.date, draftState.range);
+          }
+          syncControls(draftState);
+        });
+      });
+      instructorSelect.addEventListener("change", () => {
+        draftState.instructor = instructorSelect.value;
+      });
+      groupSelect.addEventListener("change", () => {
+        draftState.group = groupSelect.value;
+      });
+      document.getElementById("dateSelect").addEventListener("change", event => {
+        draftState.date = event.target.value;
+      });
+      document.getElementById("showClassroom").addEventListener("change", event => {
+        draftState.showClassroom = event.target.checked;
+      });
+      document.getElementById("showLarge").addEventListener("change", event => {
+        draftState.showLarge = event.target.checked;
+      });
+
+      document.getElementById("openSettings").addEventListener("click", () => {
+        draftState = { ...state };
+        syncControls(draftState);
+        document.getElementById("settingsDialog").showModal();
+      });
+      document.getElementById("confirmSettings").addEventListener("click", () => {
+        Object.assign(state, draftState);
+        state.date = normalizedDateForRange(state.date, state.range);
+        saveState();
+        render();
+        document.getElementById("settingsDialog").close();
+      });
+    }
+
+    function syncControls(source = state) {
+      const dateSelect = document.getElementById("dateSelect");
+      const dateOptions = source.range === "weekly"
+        ? WEEKS.map(week => `<option value="${week.value}">${escapeHtml(week.label)}</option>`)
+        : DAY_META.map(day => `<option value="${day.date}">${day.weekday}, ${day.short}</option>`);
+      document.getElementById("dateSelectLabel").textContent = source.range === "weekly" ? "Week" : "Date";
+      dateSelect.innerHTML = dateOptions.join("");
+      source.date = normalizedDateForRange(source.date, source.range);
+
+      document.querySelectorAll("[data-set]").forEach(button => {
+        button.setAttribute("aria-pressed", String(source[button.dataset.set] === button.dataset.value));
+      });
+      document.getElementById("instructorRow").hidden = source.perspective !== "instructor";
+      document.getElementById("groupRow").hidden = source.perspective !== "group";
+      document.getElementById("instructorSelect").value = source.instructor;
+      document.getElementById("groupSelect").value = source.group;
+      dateSelect.value = source.date;
+      document.getElementById("showClassroom").checked = source.showClassroom;
+      document.getElementById("showLarge").checked = source.showLarge;
+    }
+
+    function renderSummary(events) {
+      const dates = dateRange();
+      const firstDay = dayFor(dates[0]);
+      const lastDay = dayFor(dates[dates.length - 1]);
+      let title = "Overall camp schedule";
+      let meta = "All group lectures and camp-wide events.";
+      const pills = [`${events.length} visible items`, state.range === "daily" ? "Daily" : "Weekly", state.view === "schedule" ? "Schedule" : "Calendar"];
+
+      if (state.perspective === "group") {
+        const group = GROUPS[state.group];
+        title = `${state.group} schedule`;
+        meta = `${group.teams}. Homeroom instructor: ${group.homeroom}.`;
+      }
+
+      if (state.perspective === "instructor") {
+        const homerooms = GROUP_ORDER.filter(group => GROUPS[group].homeroom.split(" / ").includes(state.instructor));
+        title = `${state.instructor}'s schedule`;
+        meta = homerooms.length
+          ? `Homeroom: ${homerooms.map(group => `${group} (${GROUPS[group].teams})`).join(", ")}.`
+          : "Teaching, showcase, seminar, and guest lecture appearances.";
+      }
+
+      if (firstDay && lastDay) {
+        pills.push(firstDay.date === lastDay.date ? `${firstDay.weekday}, ${firstDay.short}` : `${firstDay.short}-${lastDay.short}`);
+      }
+
+      document.getElementById("summaryTitle").textContent = title;
+      document.getElementById("summaryMeta").textContent = meta;
+      document.getElementById("summaryPills").innerHTML = pills.map(pill => `<span class="pill">${escapeHtml(pill)}</span>`).join("");
+    }
+
+    function renderSchedule(events) {
+      const content = document.getElementById("content");
+      if (!events.length) {
+        content.innerHTML = `<div class="empty">No events match this selection.</div>`;
+        return;
+      }
+      content.innerHTML = dateRange().map(date => {
+        const day = dayFor(date);
+        const dayEvents = events.filter(event => event.date === date);
+        if (!day || !dayEvents.length) return "";
+        return `
+          <section class="day-section">
+            <div class="day-header">
+              <h2>${day.weekday}</h2>
+              <span>${day.short}, 2026</span>
+            </div>
+            <div class="event-list">
+              ${dayEvents.map(renderEventCard).join("")}
+            </div>
+          </section>
+        `;
+      }).join("") || `<div class="empty">No events match this selection.</div>`;
+    }
+
+    function tagClass(event) {
+      if (event.kind === "guest") return "guest";
+      if (event.kind === "showcase") return "showcase large";
+      if (event.kind === "seminar") return "seminar large";
+      if (event.kind === "test") return "test";
+      if (event.kind === "problem") return "problem";
+      if (event.kind === "competition") return "competition";
+      if (event.kind === "combined") return "showcase";
+      return "";
+    }
+
+    function kindForCard(event) {
+      if (event.kind === "guest") return "guest";
+      if (event.kind === "seminar") return "seminar";
+      if (event.kind === "showcase") return "large";
+      if (event.kind === "problem") return "problem";
+      if (event.kind === "competition") return "competition";
+      if (event.kind === "test") return "test";
+      return event.kind;
+    }
+
+    function renderEventCard(event) {
+      const speakerLine = event.instructors?.length ? event.instructors.join(", ") : "";
+      const groupLine = event.kind === "classroom" ? `${event.groups[0]}: ${event.teams}` : "";
+      const meta = event.children
+        ? `${event.children.length} group lectures`
+        : [speakerLine, groupLine].filter(Boolean).join(" | ");
+      return `
+        <article class="event-card" data-kind="${kindForCard(event)}">
+          <div class="event-topline">
+            <div class="time">${formatTime(event.start, event.end)}</div>
+            <div>
+              <h3 class="event-title">${escapeHtml(event.session)}${event.kind === "classroom" ? ` - ${escapeHtml(event.title)}` : `: ${escapeHtml(event.title)}`}</h3>
+              ${meta ? `<p class="event-meta">${escapeHtml(meta)}</p>` : ""}
+            </div>
+            <span class="tag ${tagClass(event)}">${escapeHtml(event.type)}</span>
+          </div>
+          ${event.children ? renderMiniGrid(event.children) : ""}
+        </article>
+      `;
+    }
+
+    function renderMiniGrid(children) {
+      return `
+        <div class="mini-grid">
+          ${children.map(event => `
+            <div class="group-tile">
+              <strong>${event.groups[0]}</strong>
+              <span>${escapeHtml(event.title)} - ${escapeHtml(event.instructors[0])}</span>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderCalendar(events) {
+      const content = document.getElementById("content");
+      const dates = dateRange();
+      const startMinute = 8 * 60 + 30;
+      const endMinute = 20 * 60 + 30;
+      const height = 880;
+      const pxPerMinute = height / (endMinute - startMinute);
+      const hours = [];
+      for (let hour = 9; hour <= 20; hour++) hours.push(hour);
+
+      content.innerHTML = `
+        <div class="calendar-wrap">
+          <div class="calendar-grid" style="--day-count: ${dates.length}">
+            <div class="corner">Time</div>
+            ${dates.map(date => {
+              const day = dayFor(date);
+              return `<div class="cal-day-head"><strong>${day.weekday}</strong><span>${day.short}, 2026</span></div>`;
+            }).join("")}
+            <div class="time-rail">
+              ${hours.map(hour => `<span class="rail-label" style="top:${(hour * 60 - startMinute) * pxPerMinute}px">${String(hour).padStart(2, "0")}:00</span>`).join("")}
+            </div>
+            ${dates.map(date => {
+              const dayEvents = events.filter(event => event.date === date);
+              return `
+                <div class="cal-column">
+                  ${dayEvents.map(event => {
+                    const top = Math.max(0, (minutes(event.start) - startMinute) * pxPerMinute);
+                    const eventHeight = Math.max(44, (minutes(event.end) - minutes(event.start)) * pxPerMinute - 5);
+                    const title = event.kind === "combined" ? `${event.session}: ${event.children.length} group lectures` : `${event.session}: ${event.title}`;
+                    const sub = event.kind === "classroom"
+                      ? `${event.groups[0]} | ${event.instructors[0]}`
+                      : (event.instructors.length ? event.instructors.join(", ") : "All groups");
+                    return `
+                      <article class="cal-event" data-kind="${kindForCard(event)}" style="top:${top}px;height:${eventHeight}px" title="${escapeHtml(title)}">
+                        <strong>${escapeHtml(formatTime(event.start, event.end))} ${escapeHtml(title)}</strong>
+                        <span>${escapeHtml(sub)}</span>
+                      </article>
+                    `;
+                  }).join("")}
+                </div>
+              `;
+            }).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    function render() {
+      if (!instructors.includes(state.instructor)) state.instructor = instructors[0];
+      if (!GROUPS[state.group]) state.group = GROUP_ORDER[0];
+      if (!DAY_META.some(day => day.date === state.date)) state.date = DAY_META[0].date;
+      state.date = normalizedDateForRange(state.date, state.range);
+      syncControls();
+      const events = displayEvents();
+      renderSummary(events);
+      if (state.view === "calendar") renderCalendar(events);
+      else renderSchedule(events);
+    }
+
+    setupControls();
+    render();
+  </script>
+</body>
+</html>
