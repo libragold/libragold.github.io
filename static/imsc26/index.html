@@ -653,7 +653,8 @@
 
     const EXCURSION_EVENTS = [
       { date: "2026-06-28", start: "09:00", end: "15:45", kind: "excursion", type: "Excursion", session: "Excursion", title: "Mutianyu Great Wall" },
-      { date: "2026-07-03", start: "09:00", end: "15:45", kind: "excursion", type: "Excursion", session: "Excursion", title: "Temple of Heaven" }
+      { date: "2026-07-03", start: "09:00", end: "15:45", kind: "excursion", type: "Excursion", session: "Excursion", title: "Temple of Heaven" },
+      { date: "2026-07-06", start: "09:00", end: "15:00", kind: "excursion", type: "Excursion", session: "Excursion", title: "Yanqi Lake West Mountain Trail and BIMSA" }
     ];
 
     const STAFF_EVENTS = [
@@ -668,7 +669,8 @@
       { date: "2026-07-08", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination Day 3", title: "", staffOnly: true, audience: "instructors-leaders" },
       { date: "2026-07-08", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination Day 3", title: "", staffOnly: true, audience: "instructors-leaders" },
       { date: "2026-07-09", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination Day 4", title: "", staffOnly: true, audience: "instructors-leaders" },
-      { date: "2026-07-09", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination Day 4", title: "", staffOnly: true, audience: "instructors-leaders" }
+      { date: "2026-07-09", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination Day 4", title: "", staffOnly: true, audience: "instructors-leaders" },
+      { date: "2026-07-09", start: "21:00", end: "22:30", kind: "staff", type: "Jury Meeting", session: "Jury Meeting and Finalization", title: "Results", location: "Grand Ballroom", staffOnly: true, audience: "instructors-leaders" }
     ];
 
     const TEST_EVENTS = [
@@ -680,8 +682,8 @@
       { date: "2026-06-30", start: "13:30", end: "15:00", kind: "problem", type: "Problem Session", session: "Problem Session 3", title: "Solutions of Mock Test 3" },
       { date: "2026-07-01", start: "13:30", end: "18:00", kind: "test", type: "Mock Test", session: "Mock Test 4", title: "Number Theory" },
       { date: "2026-07-02", start: "13:30", end: "15:00", kind: "problem", type: "Problem Session", session: "Problem Session 4", title: "Solutions of Mock Test 4" },
-      { date: "2026-07-04", start: "09:30", end: "14:00", kind: "competition", type: "Competition", session: "IMSC 2026 Competition Day 1", title: "", location: "Grand Ballroom" },
-      { date: "2026-07-05", start: "09:30", end: "14:00", kind: "competition", type: "Competition", session: "IMSC 2026 Competition Day 2", title: "", location: "Grand Ballroom" }
+      { date: "2026-07-04", start: "09:30", end: "14:00", kind: "competition", type: "Competition", session: "IMSC 2026 Competition Day 1", title: "Entrance opens at 9:00", location: "Grand Ballroom" },
+      { date: "2026-07-05", start: "09:30", end: "14:00", kind: "competition", type: "Competition", session: "IMSC 2026 Competition Day 2", title: "Entrance opens at 9:00", location: "Grand Ballroom" }
     ];
 
     const state = {
@@ -751,7 +753,8 @@
           ...event,
           id: `large-${index}`,
           instructors: event.speakers.map(normalizeName),
-          groups: GROUP_ORDER
+          groups: GROUP_ORDER,
+          location: event.location || (event.kind === "seminar" || event.kind === "showcase" ? "Grand Ballroom" : "")
         });
       });
 
@@ -1191,7 +1194,7 @@
       if (event.kind === "showcase") {
         return event.title
           .split(";")
-          .map((problem, index) => [event.instructors[index], problem.trim()].filter(Boolean).join(" · "))
+          .map((problem, index) => [event.instructors[index], problem.trim(), event.location].filter(Boolean).join(" · "))
           .join(separator);
       }
       if (event.kind === "seminar" || event.kind === "guest") {
@@ -1221,7 +1224,7 @@
     function renderEventCard(event, now = new Date()) {
       const detailLine = eventDetailLine(event);
       const groupLine = event.kind === "classroom" && state.perspective === "overall" ? `${event.instructors[0]} · ${event.groups[0]} (${event.teams})` : "";
-      const locationLine = event.kind === "problem" || event.kind === "philosophy" || ((event.kind === "classroom" || event.kind === "test") && state.perspective !== "overall") ? "" : locationForEvent(event);
+      const locationLine = event.kind === "problem" || event.kind === "philosophy" || event.kind === "showcase" || ((event.kind === "classroom" || event.kind === "test") && state.perspective !== "overall") ? "" : locationForEvent(event);
       const meta = event.children
         ? detailLine
         : [detailLine, groupLine, locationLine].filter(Boolean).join(" · ");
