@@ -1171,9 +1171,11 @@
       if (event.kind === "combined") return event.session;
       if (event.kind === "classroom" && state.perspective !== "overall") return `${event.session}: ${event.title}`;
       if (event.kind === "classroom") return `${event.session} · ${event.title}`;
-      if (event.kind === "philosophy") return `${event.session} ${event.parallelLabel}`;
+      if (event.kind === "philosophy") return event.session;
       if (event.kind === "showcase" || event.kind === "seminar" || event.kind === "guest") return event.session;
-      if (event.kind === "test" || event.kind === "problem" || event.kind === "excursion") return event.session;
+      if (event.kind === "test") return `${event.session}: ${event.title}`;
+      if (event.kind === "excursion") return `${event.session}: ${event.title}`;
+      if (event.kind === "problem") return event.session;
       if (!event.title) return event.session;
       return `${event.session}: ${event.title}`;
     }
@@ -1191,18 +1193,21 @@
           .join(separator);
       }
       if (event.kind === "seminar" || event.kind === "guest") {
-        return [event.instructors?.[0], event.title].filter(Boolean).join(" · ");
+        const title = event.title === "TBD" ? "" : event.title;
+        return [event.instructors?.[0], title].filter(Boolean).join(" · ");
       }
       if (event.kind === "philosophy") {
         return [
-          event.instructors.join(" / "),
-          state.perspective === "group" ? state.group : event.teams.join(", ")
+          event.instructors.join(", "),
+          `${event.parallelLabel} (${event.teams.join(", ")})`,
+          event.location
         ].filter(Boolean).join(" · ");
       }
       if (event.kind === "test" && state.perspective !== "overall") {
-        return `${event.title} · ${event.instructors.join(" / ")} · ${event.groups[0]} (${event.teams}) · ${groupLocation(event.groups[0])}`;
+        return `${event.instructors.join(" / ")} · ${event.groups[0]} (${event.teams}) · ${groupLocation(event.groups[0])}`;
       }
-      if (event.kind === "test" || event.kind === "problem" || event.kind === "excursion") {
+      if (event.kind === "excursion") return "";
+      if (event.kind === "test" || event.kind === "problem") {
         return event.title;
       }
       if (event.kind === "classroom" && state.perspective !== "overall") {
@@ -1214,7 +1219,7 @@
     function renderEventCard(event, now = new Date()) {
       const detailLine = eventDetailLine(event);
       const groupLine = event.kind === "classroom" && state.perspective === "overall" ? `${event.instructors[0]} · ${event.groups[0]} (${event.teams})` : "";
-      const locationLine = event.kind === "problem" || ((event.kind === "classroom" || event.kind === "test") && state.perspective !== "overall") ? "" : locationForEvent(event);
+      const locationLine = event.kind === "problem" || event.kind === "philosophy" || ((event.kind === "classroom" || event.kind === "test") && state.perspective !== "overall") ? "" : locationForEvent(event);
       const meta = event.children
         ? detailLine
         : [detailLine, groupLine, locationLine].filter(Boolean).join(" · ");
