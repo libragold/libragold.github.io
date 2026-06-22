@@ -62,10 +62,10 @@
     .topbar {
       width: min(1320px, 100%);
       margin: 0 auto;
-      padding: 18px max(120px, clamp(16px, 3vw, 30px)) 16px clamp(16px, 3vw, 30px);
+      padding: 16px clamp(12px, 3vw, 30px);
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
       align-items: center;
     }
 
@@ -78,18 +78,15 @@
     }
 
     .config-button {
-      position: fixed;
-      top: 9px;
-      right: 14px;
-      z-index: 20;
-      min-width: 88px;
-      height: 36px;
+      justify-self: end;
+      min-width: clamp(64px, 8vw, 88px);
+      height: clamp(30px, 3.2vw, 36px);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--panel);
       color: var(--ink);
-      padding: 0 14px;
-      font-size: 0.9rem;
+      padding: 0 clamp(9px, 1.4vw, 14px);
+      font-size: clamp(0.78rem, 1.4vw, 0.9rem);
       font-weight: 750;
       line-height: 1;
     }
@@ -166,7 +163,7 @@
     .controls {
       display: grid;
       gap: 10px;
-      grid-template-columns: minmax(250px, 1.05fr) minmax(250px, 1fr) minmax(250px, 1fr);
+      grid-template-columns: minmax(250px, 1fr);
       align-items: start;
       margin-bottom: 12px;
     }
@@ -241,37 +238,8 @@
       padding: 0 10px;
     }
 
-    .switches {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-
-    .check {
-      display: inline-flex;
-      gap: 7px;
-      align-items: center;
-      min-height: 34px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 5px 9px;
-      background: #fff;
-      color: var(--ink);
-      font-weight: 650;
-      font-size: 0.82rem;
-    }
-
-    .check input {
-      accent-color: var(--accent);
-      inline-size: 16px;
-      block-size: 16px;
-    }
-
     .summary-strip {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      display: block;
       gap: 12px;
       align-items: center;
       background: #ffffff;
@@ -292,27 +260,7 @@
       margin: 4px 0 0;
       color: var(--muted);
       font-size: 0.9rem;
-    }
-
-    .pill-row {
-      display: flex;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      min-height: 28px;
-      max-width: 100%;
-      border-radius: 999px;
-      padding: 4px 9px;
-      background: #f0f2f4;
-      color: #3c4348;
-      font-size: 0.74rem;
-      font-weight: 800;
-      white-space: nowrap;
+      white-space: pre-line;
     }
 
     .content {
@@ -365,6 +313,8 @@
       display: grid;
       gap: 7px;
       min-width: 0;
+      position: relative;
+      overflow: hidden;
     }
 
     .event-card[data-kind="large"] { border-left-color: var(--red); }
@@ -375,7 +325,46 @@
     .event-card[data-kind="problem"] { border-left-color: #8a5b25; }
     .event-card[data-kind="competition"] { border-left-color: #b48a21; }
 
+    .event-card[data-status="past"] {
+      border-color: #e8eaec;
+      border-left-color: #c9ced3;
+      background: #f8f9fa;
+      box-shadow: none;
+    }
+
+    .event-card[data-status="past"] .time,
+    .event-card[data-status="past"] .event-title,
+    .event-card[data-status="past"] .event-meta,
+    .event-card[data-status="past"] .group-tile,
+    .event-card[data-status="past"] .group-tile strong,
+    .event-card[data-status="past"] .group-tile span {
+      color: #81888e;
+    }
+
+    .event-card[data-status="past"] .tag {
+      color: #777f86;
+      background: #eef0f1;
+    }
+
+    .event-card[data-status="current"] {
+      border-color: rgba(31, 95, 139, 0.38);
+      box-shadow: 0 12px 24px rgba(31, 95, 139, 0.10);
+    }
+
+    .event-progress {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: var(--progress);
+      height: 1px;
+      background: rgba(31, 95, 139, 0.28);
+      pointer-events: none;
+      z-index: 0;
+    }
+
     .event-topline {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: auto minmax(0, 1fr) auto;
       align-items: start;
@@ -421,9 +410,12 @@
       font-size: 0.84rem;
       line-height: 1.4;
       overflow-wrap: anywhere;
+      white-space: pre-line;
     }
 
     .mini-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 7px;
@@ -440,7 +432,6 @@
 
     .group-tile strong {
       display: inline-block;
-      margin-right: 6px;
       color: var(--accent);
       font-size: 0.79rem;
       line-height: inherit;
@@ -462,173 +453,55 @@
       border-radius: var(--radius);
     }
 
-    .calendar-wrap {
-      width: 100%;
-      max-width: 100%;
-      min-width: 0;
-      overflow-x: auto;
-      overflow-y: hidden;
-      overscroll-behavior-x: contain;
-      -webkit-overflow-scrolling: touch;
-      contain: inline-size;
+    .timeline-toggle {
+      display: flex;
+      justify-content: flex-start;
+      margin: 0 0 12px;
+    }
+
+    .timeline-toggle button {
+      min-height: 36px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--ink);
+      padding: 0 12px;
+      font-size: 0.86rem;
+      font-weight: 750;
+    }
+
+    .timeline-toggle button:hover {
+      border-color: var(--line-strong);
+      background: #f5f6f7;
+    }
+
+    .completion-card {
+      padding: 24px 18px;
+      margin-bottom: 12px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: #fff;
     }
 
-    .calendar-grid {
-      min-width: 880px;
-      display: grid;
-      grid-template-columns: 66px repeat(var(--day-count), minmax(190px, 1fr));
+    .completion-card h2 {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.3;
     }
 
-    .corner,
-    .cal-day-head {
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      background: #202529;
-      color: #fff;
-      min-height: 54px;
-      border-right: 1px solid rgba(255,255,255,0.14);
-      display: grid;
-      align-content: center;
-      padding: 8px;
-    }
-
-    .corner {
-      left: 0;
-      z-index: 3;
-      color: #d8dde1;
-      font-size: 0.75rem;
-      font-weight: 800;
-    }
-
-    .cal-day-head strong {
-      font-size: 0.92rem;
-      line-height: 1.1;
-    }
-
-    .cal-day-head span {
-      color: #d8dde1;
-      font-size: 0.75rem;
-      margin-top: 3px;
-    }
-
-    .time-rail {
-      position: relative;
-      height: 880px;
-      background: #f3f4f5;
-      border-right: 1px solid var(--line);
-    }
-
-    .rail-label {
-      position: absolute;
-      left: 8px;
-      transform: translateY(-50%);
+    .completion-card p {
+      margin: 6px 0 0;
       color: var(--muted);
-      font-size: 0.72rem;
-      font-weight: 800;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .cal-column {
-      position: relative;
-      height: 880px;
-      border-right: 1px solid var(--line);
-      background:
-        repeating-linear-gradient(to bottom, #ffffff 0, #ffffff 79px, #f0f2f4 80px);
-    }
-
-    .cal-event {
-      position: absolute;
-      left: 7px;
-      right: 7px;
-      min-height: 44px;
-      border-radius: var(--radius);
-      padding: 7px 8px;
-      border: 1px solid rgba(31, 95, 139, 0.22);
-      background: var(--accent-soft);
-      color: #173c5a;
-      overflow: hidden;
-      box-shadow: 0 8px 16px rgba(24, 28, 31, 0.08);
-    }
-
-    .cal-event[data-kind="large"] {
-      border-color: rgba(177,59,59,0.28);
-      background: var(--red-soft);
-      color: #5b1c1c;
-    }
-
-    .cal-event[data-kind="combined"] {
-      border-color: rgba(49,93,156,0.28);
-      background: var(--accent-soft);
-      color: #1d3d68;
-    }
-
-    .cal-event[data-kind="seminar"] {
-      border-color: rgba(163,99,19,0.28);
-      background: var(--gold-soft);
-      color: #58350c;
-    }
-
-    .cal-event[data-kind="guest"] {
-      border-color: rgba(83,107,47,0.30);
-      background: var(--green-soft);
-      color: #31411b;
-    }
-
-    .cal-event[data-kind="test"] {
-      border-color: rgba(124,77,158,0.28);
-      background: #f1e9f8;
-      color: #47245f;
-    }
-
-    .cal-event[data-kind="problem"] {
-      border-color: rgba(138,91,37,0.26);
-      background: #f7eddf;
-      color: #573711;
-    }
-
-    .cal-event[data-kind="competition"] {
-      border-color: rgba(180,138,33,0.30);
-      background: #fbf1c8;
-      color: #513d05;
-    }
-
-    .cal-event strong,
-    .cal-event span {
-      display: block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .cal-event strong {
-      font-size: 0.78rem;
-      line-height: 1.1;
-    }
-
-    .cal-event span {
-      margin-top: 3px;
-      font-size: 0.7rem;
-      opacity: 0.85;
+      font-size: 0.9rem;
+      line-height: 1.45;
     }
 
     @media (max-width: 980px) {
-      .topbar,
       .controls,
       .summary-strip {
         grid-template-columns: 1fr;
       }
 
-      .pill-row {
-        justify-content: flex-start;
-      }
-
-      .calendar-grid {
-        min-width: 760px;
-      }
     }
 
     @media (max-width: 640px) {
@@ -641,8 +514,8 @@
       .topbar {
         width: 100%;
         max-width: 100vw;
-        padding: 14px 116px 12px 12px;
-        gap: 10px;
+        padding: 12px;
+        gap: 8px;
       }
 
       main {
@@ -686,18 +559,20 @@
         font-size: 0.84rem;
       }
 
-      .pill-row {
-        display: none;
-      }
-
       .event-topline {
-        grid-template-columns: 1fr auto;
+        grid-template-columns: minmax(0, 1fr) auto;
         gap: 6px 8px;
       }
 
       .time {
-        grid-column: 1 / 3;
+        grid-column: 1;
+        grid-row: 1;
         font-size: 0.86rem;
+      }
+
+      .event-topline > div:nth-child(2) {
+        grid-column: 1 / 3;
+        grid-row: 2;
       }
 
       .event-title {
@@ -705,6 +580,9 @@
       }
 
       .tag {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
         width: max-content;
         max-width: 42vw;
         overflow: hidden;
@@ -719,11 +597,6 @@
         display: block;
       }
 
-      .calendar-grid {
-        min-width: 650px;
-        grid-template-columns: 58px repeat(var(--day-count), minmax(160px, 1fr));
-      }
-
       .settings-dialog {
         width: calc(100vw - 20px);
         max-height: calc(100vh - 20px);
@@ -735,18 +608,10 @@
     }
 
     @media (max-width: 420px) {
-      .topbar {
-        grid-template-columns: 1fr;
-      }
-
       h1 {
         max-width: none;
       }
 
-      .check {
-        flex: 1 1 145px;
-        justify-content: center;
-      }
     }
   </style>
 </head>
@@ -765,7 +630,7 @@
           <h2>Settings</h2>
         </div>
         <div class="settings-body">
-      <section class="controls" aria-label="Calendar controls">
+      <section class="controls" aria-label="Schedule controls">
         <div class="control-section">
           <p class="control-title">Perspective</p>
           <div class="segmented" role="group" aria-label="Perspective">
@@ -782,30 +647,6 @@
             <select id="groupSelect"></select>
           </div>
         </div>
-
-        <div class="control-section">
-          <p class="control-title">View</p>
-          <div class="segmented" role="group" aria-label="View mode">
-            <button type="button" data-set="view" data-value="schedule">Schedule</button>
-            <button type="button" data-set="view" data-value="calendar">Calendar</button>
-          </div>
-          <div class="switches">
-            <label class="check"><input type="checkbox" id="showClassroom"> Classroom lectures</label>
-            <label class="check"><input type="checkbox" id="showLarge"> Camp-wide events</label>
-          </div>
-        </div>
-
-        <div class="control-section">
-          <p class="control-title">Range</p>
-          <div class="segmented" role="group" aria-label="Date range">
-            <button type="button" data-set="range" data-value="weekly">Weekly</button>
-            <button type="button" data-set="range" data-value="daily">Daily</button>
-          </div>
-          <div class="select-row">
-            <label for="dateSelect" id="dateSelectLabel">Focus date</label>
-            <select id="dateSelect"></select>
-          </div>
-        </div>
       </section>
         </div>
         <div class="settings-actions">
@@ -820,7 +661,6 @@
           <h2 class="summary-title" id="summaryTitle"></h2>
           <p class="summary-meta" id="summaryMeta"></p>
         </div>
-        <div class="pill-row" id="summaryPills"></div>
       </section>
 
       <section class="content" id="content" aria-live="polite"></section>
@@ -870,9 +710,9 @@
       ["2026-07-11", "Saturday", "Jul 11"]
     ].map(([date, weekday, short]) => ({ date, weekday, short }));
 
-    const WEEKS = buildWeeks();
     const WEEK_ONE_DATES = DAY_META.slice(0, 5).map(day => day.date);
     const GROUP_ORDER = Object.keys(GROUPS);
+    const INSTRUCTOR_WIDE_KINDS = new Set(["showcase", "seminar", "guest"]);
 
     const SESSION_DATA = [
       {
@@ -967,11 +807,7 @@
       perspective: "overall",
       instructor: "Zilin Jiang",
       group: "G14",
-      view: "schedule",
-      range: "weekly",
-      date: "2026-06-22",
-      showClassroom: true,
-      showLarge: true,
+      showPastEvents: false,
       ...loadState()
     };
     let draftState = { ...state };
@@ -1051,7 +887,13 @@
 
     function loadState() {
       try {
-        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+        const next = {};
+        if (["overall", "instructor", "group"].includes(saved.perspective)) next.perspective = saved.perspective;
+        if (typeof saved.instructor === "string") next.instructor = saved.instructor;
+        if (typeof saved.group === "string") next.group = saved.group;
+        if (typeof saved.showPastEvents === "boolean") next.showPastEvents = saved.showPastEvents;
+        return next;
       } catch {
         return {};
       }
@@ -1064,6 +906,30 @@
     function minutes(time) {
       const [hours, mins] = time.split(":").map(Number);
       return hours * 60 + mins;
+    }
+
+    function localDateString(date = new Date()) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    }
+
+    function eventDateTime(event, timeKey) {
+      return new Date(`${event.date}T${event[timeKey]}:00`);
+    }
+
+    function eventStatus(event, now = new Date()) {
+      if (now >= eventDateTime(event, "end")) return "past";
+      if (now >= eventDateTime(event, "start")) return "current";
+      return "future";
+    }
+
+    function eventProgress(event, now = new Date()) {
+      const start = eventDateTime(event, "start").getTime();
+      const end = eventDateTime(event, "end").getTime();
+      const elapsed = now.getTime() - start;
+      return Math.min(100, Math.max(0, (elapsed / (end - start)) * 100));
     }
 
     function compareEvents(a, b) {
@@ -1104,46 +970,8 @@
       return `Group rooms: ${groups.map(group => `${group} ${GROUPS[group].location}`).join(", ")}`;
     }
 
-    function weekStartDate(date) {
-      const focus = new Date(`${date}T12:00:00`);
-      const day = focus.getDay() || 7;
-      const monday = new Date(focus);
-      monday.setDate(focus.getDate() - day + 1);
-      return monday.toISOString().slice(0, 10);
-    }
-
-    function buildWeeks() {
-      const weeks = new Map();
-      DAY_META.forEach(day => {
-        const start = weekStartDate(day.date);
-        if (!weeks.has(start)) weeks.set(start, []);
-        weeks.get(start).push(day.date);
-      });
-      return Array.from(weeks.entries()).map(([value, dates]) => {
-        const first = dayFor(dates[0]);
-        const last = dayFor(dates[dates.length - 1]);
-        return {
-          value,
-          dates,
-          label: first.date === last.date
-            ? `Week of ${first.short}`
-            : `Week of ${first.short}-${last.short}`
-        };
-      }).sort((a, b) => a.value.localeCompare(b.value));
-    }
-
-    function normalizedDateForRange(date, range) {
-      if (range === "daily") {
-        return DAY_META.some(day => day.date === date) ? date : DAY_META[0].date;
-      }
-      const start = weekStartDate(date);
-      return WEEKS.some(week => week.value === start) ? start : WEEKS[0].value;
-    }
-
     function dateRange() {
-      if (state.range === "daily") return [state.date];
-      const week = WEEKS.find(item => item.value === weekStartDate(state.date));
-      return week ? week.dates : WEEKS[0].dates;
+      return DAY_META.map(day => day.date);
     }
 
     function appliesToPerspective(event) {
@@ -1152,6 +980,7 @@
       if (state.perspective === "group") {
         return event.kind !== "classroom" || event.groups.includes(state.group);
       }
+      if (INSTRUCTOR_WIDE_KINDS.has(event.kind)) return true;
       return event.instructors.includes(state.instructor);
     }
 
@@ -1159,8 +988,6 @@
       const dates = new Set(dateRange());
       return allEvents.filter(event => {
         if (!dates.has(event.date)) return false;
-        if (event.kind === "classroom" && !state.showClassroom) return false;
-        if (event.kind !== "classroom" && !state.showLarge) return false;
         return appliesToPerspective(event);
       });
     }
@@ -1215,9 +1042,6 @@
       document.querySelectorAll("[data-set]").forEach(button => {
         button.addEventListener("click", () => {
           draftState[button.dataset.set] = button.dataset.value;
-          if (button.dataset.set === "range") {
-            draftState.date = normalizedDateForRange(draftState.date, draftState.range);
-          }
           syncControls(draftState);
         });
       });
@@ -1227,16 +1051,6 @@
       groupSelect.addEventListener("change", () => {
         draftState.group = groupSelect.value;
       });
-      document.getElementById("dateSelect").addEventListener("change", event => {
-        draftState.date = event.target.value;
-      });
-      document.getElementById("showClassroom").addEventListener("change", event => {
-        draftState.showClassroom = event.target.checked;
-      });
-      document.getElementById("showLarge").addEventListener("change", event => {
-        draftState.showLarge = event.target.checked;
-      });
-
       document.getElementById("openSettings").addEventListener("click", () => {
         draftState = { ...state };
         syncControls(draftState);
@@ -1244,7 +1058,6 @@
       });
       document.getElementById("confirmSettings").addEventListener("click", () => {
         Object.assign(state, draftState);
-        state.date = normalizedDateForRange(state.date, state.range);
         saveState();
         render();
         document.getElementById("settingsDialog").close();
@@ -1252,14 +1065,6 @@
     }
 
     function syncControls(source = state) {
-      const dateSelect = document.getElementById("dateSelect");
-      const dateOptions = source.range === "weekly"
-        ? WEEKS.map(week => `<option value="${week.value}">${escapeHtml(week.label)}</option>`)
-        : DAY_META.map(day => `<option value="${day.date}">${day.weekday}, ${day.short}</option>`);
-      document.getElementById("dateSelectLabel").textContent = source.range === "weekly" ? "Week" : "Date";
-      dateSelect.innerHTML = dateOptions.join("");
-      source.date = normalizedDateForRange(source.date, source.range);
-
       document.querySelectorAll("[data-set]").forEach(button => {
         button.setAttribute("aria-pressed", String(source[button.dataset.set] === button.dataset.value));
       });
@@ -1267,23 +1072,16 @@
       document.getElementById("groupRow").hidden = source.perspective !== "group";
       document.getElementById("instructorSelect").value = source.instructor;
       document.getElementById("groupSelect").value = source.group;
-      dateSelect.value = source.date;
-      document.getElementById("showClassroom").checked = source.showClassroom;
-      document.getElementById("showLarge").checked = source.showLarge;
     }
 
     function renderSummary(events) {
-      const dates = dateRange();
-      const firstDay = dayFor(dates[0]);
-      const lastDay = dayFor(dates[dates.length - 1]);
       let title = "Overall camp schedule";
       let meta = "All group lectures and camp-wide events.";
-      const pills = [`${events.length} visible items`, state.range === "daily" ? "Daily" : "Weekly", state.view === "schedule" ? "Schedule" : "Calendar"];
 
       if (state.perspective === "group") {
         const group = GROUPS[state.group];
         title = `${state.group} schedule`;
-        meta = `${group.teams}. Homeroom instructor: ${group.homeroom}. Room: ${group.location}.`;
+        meta = `${group.teams}.\nHomeroom instructor: ${group.homeroom}. Room: ${group.location}.`;
       }
 
       if (state.perspective === "instructor") {
@@ -1294,13 +1092,8 @@
           : "Teaching, showcase, seminar, and guest lecture appearances.";
       }
 
-      if (firstDay && lastDay) {
-        pills.push(firstDay.date === lastDay.date ? `${firstDay.weekday}, ${firstDay.short}` : `${firstDay.short}-${lastDay.short}`);
-      }
-
       document.getElementById("summaryTitle").textContent = title;
       document.getElementById("summaryMeta").textContent = meta;
-      document.getElementById("summaryPills").innerHTML = pills.map(pill => `<span class="pill">${escapeHtml(pill)}</span>`).join("");
     }
 
     function renderSchedule(events) {
@@ -1309,27 +1102,83 @@
         content.innerHTML = `<div class="empty">No events match this selection.</div>`;
         return;
       }
-      content.innerHTML = dateRange().map(date => {
+      const now = new Date();
+      const today = localDateString(now);
+      const firstDate = DAY_META[0].date;
+      const hasPastDayEvents = events.some(event => event.date < today);
+      const hasCurrentOrFutureEvents = events.some(event => eventStatus(event, now) !== "past");
+      const shouldShowPastToggle = today > firstDate && hasPastDayEvents;
+      const sections = [];
+      let insertedToggle = false;
+
+      if (!hasCurrentOrFutureEvents) {
+        if (shouldShowPastToggle) sections.push(renderPastToggle());
+        sections.push(renderCompletionCard());
+        if (!state.showPastEvents) {
+          content.innerHTML = sections.join("");
+          bindPastToggle();
+          return;
+        }
+      }
+
+      dateRange().forEach(date => {
         const day = dayFor(date);
         const dayEvents = events.filter(event => event.date === date);
-        if (!day || !dayEvents.length) return "";
-        return `
+        if (!day || !dayEvents.length) return;
+        if (!state.showPastEvents && date < today) return;
+        if (!insertedToggle && shouldShowPastToggle && date >= today) {
+          sections.push(renderPastToggle());
+          insertedToggle = true;
+        }
+        sections.push(`
           <section class="day-section">
             <div class="day-header">
               <h2>${day.weekday}</h2>
               <span>${day.short}, 2026</span>
             </div>
             <div class="event-list">
-              ${dayEvents.map(renderEventCard).join("")}
+              ${dayEvents.map(event => renderEventCard(event, now)).join("")}
             </div>
           </section>
-        `;
-      }).join("") || `<div class="empty">No events match this selection.</div>`;
+        `);
+      });
+      if (!insertedToggle && shouldShowPastToggle && state.showPastEvents && hasCurrentOrFutureEvents) {
+        sections.unshift(renderPastToggle());
+      }
+      content.innerHTML = sections.join("") || `<div class="empty">No events match this selection.</div>`;
+      bindPastToggle();
+    }
+
+    function renderPastToggle() {
+      return `
+        <div class="timeline-toggle">
+          <button type="button" id="pastToggle">${state.showPastEvents ? "Hide past events" : "Show past events"}</button>
+        </div>
+      `;
+    }
+
+    function renderCompletionCard() {
+      return `
+        <article class="completion-card">
+          <h2>All scheduled events have wrapped up.</h2>
+          <p>Thanks for being part of IMSC 2026.</p>
+        </article>
+      `;
+    }
+
+    function bindPastToggle() {
+      const button = document.getElementById("pastToggle");
+      if (!button) return;
+      button.addEventListener("click", () => {
+        state.showPastEvents = !state.showPastEvents;
+        saveState();
+        render();
+      });
     }
 
     function tagClass(event) {
       if (event.kind === "guest") return "guest";
-      if (event.kind === "showcase") return "showcase large";
+      if (event.kind === "showcase") return "large";
       if (event.kind === "seminar") return "seminar large";
       if (event.kind === "test") return "test";
       if (event.kind === "problem") return "problem";
@@ -1348,19 +1197,53 @@
       return event.kind;
     }
 
-    function renderEventCard(event) {
-      const speakerLine = event.instructors?.length ? event.instructors.join(", ") : "";
-      const groupLine = event.kind === "classroom" ? `${event.groups[0]}: ${event.teams}` : "";
-      const locationLine = locationForEvent(event);
+    function eventDisplayTitle(event) {
+      if (event.kind === "combined") return event.session;
+      if (event.kind === "classroom" && state.perspective !== "overall") return `${event.session}: ${event.title}`;
+      if (event.kind === "classroom") return `${event.session} · ${event.title}`;
+      if (event.kind === "showcase" || event.kind === "seminar" || event.kind === "guest") return event.session;
+      if (event.kind === "test" || event.kind === "problem") return event.session;
+      return `${event.session}: ${event.title}`;
+    }
+
+    function eventDetailLine(event, separator = "\n") {
+      if (event.kind === "combined") {
+        return `${event.children.length} group lectures`;
+      }
+      if (event.kind === "showcase") {
+        return event.title
+          .split(";")
+          .map((problem, index) => [problem.trim(), event.instructors[index]].filter(Boolean).join(" · "))
+          .join(separator);
+      }
+      if (event.kind === "seminar" || event.kind === "guest") {
+        return [event.title, event.instructors?.[0]].filter(Boolean).join(" · ");
+      }
+      if (event.kind === "test" || event.kind === "problem") {
+        return event.title;
+      }
+      if (event.kind === "classroom" && state.perspective !== "overall") {
+        return `${event.instructors[0]} · ${event.groups[0]} (${event.teams}) · ${groupLocation(event.groups[0])}`;
+      }
+      return event.instructors?.length ? event.instructors.join(", ") : "";
+    }
+
+    function renderEventCard(event, now = new Date()) {
+      const detailLine = eventDetailLine(event);
+      const groupLine = event.kind === "classroom" && state.perspective === "overall" ? `${event.groups[0]} · ${event.teams}` : "";
+      const locationLine = event.kind === "test" || event.kind === "problem" || (event.kind === "classroom" && state.perspective !== "overall") ? "" : locationForEvent(event);
       const meta = event.children
-        ? `${event.children.length} group lectures`
-        : [speakerLine, groupLine, locationLine].filter(Boolean).join(" | ");
+        ? detailLine
+        : [detailLine, groupLine, locationLine].filter(Boolean).join(" | ");
+      const status = eventStatus(event, now);
+      const progress = status === "current" ? eventProgress(event, now).toFixed(2) : "";
       return `
-        <article class="event-card" data-kind="${kindForCard(event)}">
+        <article class="event-card" data-kind="${kindForCard(event)}" data-status="${status}">
+          ${status === "current" ? `<span class="event-progress" style="--progress:${progress}%"></span>` : ""}
           <div class="event-topline">
             <div class="time">${formatTime(event.start, event.end)}</div>
             <div>
-              <h3 class="event-title">${escapeHtml(event.session)}${event.kind === "classroom" ? ` - ${escapeHtml(event.title)}` : `: ${escapeHtml(event.title)}`}</h3>
+              <h3 class="event-title">${escapeHtml(eventDisplayTitle(event))}</h3>
               ${meta ? `<p class="event-meta">${escapeHtml(meta)}</p>` : ""}
             </div>
             <span class="tag ${tagClass(event)}">${escapeHtml(event.type)}</span>
@@ -1376,58 +1259,9 @@
           ${children.map(event => `
             <div class="group-tile">
               <strong>${event.groups[0]}</strong>
-              <span>${escapeHtml(event.title)} - ${escapeHtml(event.instructors[0])} - Room ${escapeHtml(event.location)}</span>
+              <span>${escapeHtml(event.title)} &middot; ${escapeHtml(event.instructors[0])} &middot; Room ${escapeHtml(event.location)}</span>
             </div>
           `).join("")}
-        </div>
-      `;
-    }
-
-    function renderCalendar(events) {
-      const content = document.getElementById("content");
-      const dates = dateRange();
-      const startMinute = 8 * 60 + 30;
-      const endMinute = 20 * 60 + 30;
-      const height = 880;
-      const pxPerMinute = height / (endMinute - startMinute);
-      const hours = [];
-      for (let hour = 9; hour <= 20; hour++) hours.push(hour);
-
-      content.innerHTML = `
-        <div class="calendar-wrap">
-          <div class="calendar-grid" style="--day-count: ${dates.length}">
-            <div class="corner">Time</div>
-            ${dates.map(date => {
-              const day = dayFor(date);
-              return `<div class="cal-day-head"><strong>${day.weekday}</strong><span>${day.short}, 2026</span></div>`;
-            }).join("")}
-            <div class="time-rail">
-              ${hours.map(hour => `<span class="rail-label" style="top:${(hour * 60 - startMinute) * pxPerMinute}px">${String(hour).padStart(2, "0")}:00</span>`).join("")}
-            </div>
-            ${dates.map(date => {
-              const dayEvents = events.filter(event => event.date === date);
-              return `
-                <div class="cal-column">
-                  ${dayEvents.map(event => {
-                    const top = Math.max(0, (minutes(event.start) - startMinute) * pxPerMinute);
-                    const eventHeight = Math.max(44, (minutes(event.end) - minutes(event.start)) * pxPerMinute - 5);
-                    const title = event.kind === "combined" ? `${event.session}: ${event.children.length} group lectures` : `${event.session}: ${event.title}`;
-                    const location = locationForEvent(event);
-                    const tooltip = [title, location].filter(Boolean).join(" | ");
-                    const sub = event.kind === "classroom"
-                      ? `${event.groups[0]} | ${event.instructors[0]} | ${location}`
-                      : [event.instructors.length ? event.instructors.join(", ") : "All groups", location].filter(Boolean).join(" | ");
-                    return `
-                      <article class="cal-event" data-kind="${kindForCard(event)}" style="top:${top}px;height:${eventHeight}px" title="${escapeHtml(tooltip)}">
-                        <strong>${escapeHtml(formatTime(event.start, event.end))} ${escapeHtml(title)}</strong>
-                        <span>${escapeHtml(sub)}</span>
-                      </article>
-                    `;
-                  }).join("")}
-                </div>
-              `;
-            }).join("")}
-          </div>
         </div>
       `;
     }
@@ -1435,17 +1269,17 @@
     function render() {
       if (!instructors.includes(state.instructor)) state.instructor = instructors[0];
       if (!GROUPS[state.group]) state.group = GROUP_ORDER[0];
-      if (!DAY_META.some(day => day.date === state.date)) state.date = DAY_META[0].date;
-      state.date = normalizedDateForRange(state.date, state.range);
       syncControls();
       const events = displayEvents();
       renderSummary(events);
-      if (state.view === "calendar") renderCalendar(events);
-      else renderSchedule(events);
+      renderSchedule(events);
     }
 
     setupControls();
     render();
+    setInterval(() => {
+      if (!document.getElementById("settingsDialog").open) render();
+    }, 60000);
   </script>
 </body>
 </html>
