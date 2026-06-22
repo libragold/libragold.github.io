@@ -60,7 +60,7 @@
     }
 
     .topbar {
-      width: min(1320px, 100%);
+      width: min(960px, 100%);
       margin: 0 auto;
       padding: 16px clamp(12px, 3vw, 30px);
       display: grid;
@@ -155,7 +155,7 @@
     }
 
     main {
-      width: min(1320px, 100%);
+      width: min(960px, 100%);
       margin: 0 auto;
       padding: clamp(12px, 2.2vw, 24px);
     }
@@ -305,6 +305,7 @@
     }
 
     .event-card {
+      --event-color: var(--accent);
       border: 1px solid var(--line);
       border-left: 4px solid var(--accent);
       border-radius: var(--radius);
@@ -317,13 +318,13 @@
       overflow: hidden;
     }
 
-    .event-card[data-kind="large"] { border-left-color: var(--red); }
-    .event-card[data-kind="combined"] { border-left-color: var(--accent); }
-    .event-card[data-kind="seminar"] { border-left-color: var(--gold); }
-    .event-card[data-kind="guest"] { border-left-color: var(--green); }
-    .event-card[data-kind="test"] { border-left-color: #7c4d9e; }
-    .event-card[data-kind="problem"] { border-left-color: #8a5b25; }
-    .event-card[data-kind="competition"] { border-left-color: #b48a21; }
+    .event-card[data-kind="large"] { --event-color: var(--red); border-left-color: var(--event-color); }
+    .event-card[data-kind="combined"] { --event-color: var(--accent); border-left-color: var(--event-color); }
+    .event-card[data-kind="seminar"] { --event-color: var(--gold); border-left-color: var(--event-color); }
+    .event-card[data-kind="guest"] { --event-color: var(--green); border-left-color: var(--event-color); }
+    .event-card[data-kind="test"] { --event-color: #7c4d9e; border-left-color: var(--event-color); }
+    .event-card[data-kind="problem"] { --event-color: #8a5b25; border-left-color: var(--event-color); }
+    .event-card[data-kind="competition"] { --event-color: #b48a21; border-left-color: var(--event-color); }
 
     .event-card[data-status="past"] {
       border-color: #e8eaec;
@@ -347,8 +348,9 @@
     }
 
     .event-card[data-status="current"] {
-      border-color: rgba(31, 95, 139, 0.38);
-      box-shadow: 0 12px 24px rgba(31, 95, 139, 0.10);
+      border-color: var(--line);
+      border-left-color: var(--event-color);
+      box-shadow: 0 12px 24px rgba(24, 28, 31, 0.08);
     }
 
     .event-progress {
@@ -357,7 +359,7 @@
       right: 0;
       top: var(--progress);
       height: 1px;
-      background: rgba(31, 95, 139, 0.28);
+      background: color-mix(in srgb, var(--event-color) 38%, transparent);
       pointer-events: none;
       z-index: 0;
     }
@@ -376,7 +378,7 @@
       font-weight: 800;
       color: var(--ink);
       white-space: nowrap;
-      padding-top: 2px;
+      line-height: 1.25;
     }
 
     .event-title {
@@ -561,7 +563,7 @@
 
       .event-topline {
         grid-template-columns: minmax(0, 1fr) auto;
-        gap: 6px 8px;
+        gap: 0 8px;
       }
 
       .time {
@@ -1213,11 +1215,11 @@
       if (event.kind === "showcase") {
         return event.title
           .split(";")
-          .map((problem, index) => [problem.trim(), event.instructors[index]].filter(Boolean).join(" · "))
+          .map((problem, index) => [event.instructors[index], problem.trim()].filter(Boolean).join(" · "))
           .join(separator);
       }
       if (event.kind === "seminar" || event.kind === "guest") {
-        return [event.title, event.instructors?.[0]].filter(Boolean).join(" · ");
+        return [event.instructors?.[0], event.title].filter(Boolean).join(" · ");
       }
       if (event.kind === "test" || event.kind === "problem") {
         return event.title;
@@ -1230,7 +1232,7 @@
 
     function renderEventCard(event, now = new Date()) {
       const detailLine = eventDetailLine(event);
-      const groupLine = event.kind === "classroom" && state.perspective === "overall" ? `${event.groups[0]} · ${event.teams}` : "";
+      const groupLine = event.kind === "classroom" && state.perspective === "overall" ? `${event.instructors[0]} · ${event.groups[0]} (${event.teams})` : "";
       const locationLine = event.kind === "test" || event.kind === "problem" || (event.kind === "classroom" && state.perspective !== "overall") ? "" : locationForEvent(event);
       const meta = event.children
         ? detailLine
@@ -1259,7 +1261,7 @@
           ${children.map(event => `
             <div class="group-tile">
               <strong>${event.groups[0]}</strong>
-              <span>${escapeHtml(event.title)} &middot; ${escapeHtml(event.instructors[0])} &middot; Room ${escapeHtml(event.location)}</span>
+              <span>${escapeHtml(event.instructors[0])} &middot; ${escapeHtml(event.title)} &middot; Room ${escapeHtml(event.location)}</span>
             </div>
           `).join("")}
         </div>
