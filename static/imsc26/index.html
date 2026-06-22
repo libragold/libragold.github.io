@@ -721,18 +721,19 @@
 
     function buildEvents() {
       const events = [];
-      SESSION_DATA.forEach(session => {
+      SESSION_DATA.forEach((session, sessionIndex) => {
         GROUP_ORDER.forEach(group => {
           session.entries[group].forEach((raw, index) => {
             const parsed = parseLecture(raw);
+            const lectureSession = `Session ${index * SESSION_DATA.length + sessionIndex + 1}`;
             events.push({
-              id: `${session.session}-${group}-${index}`,
+              id: `${lectureSession}-${group}-${index}`,
               date: WEEK_ONE_DATES[index],
               start: session.start,
               end: session.end,
               kind: "classroom",
               type: "Classroom Lecture",
-              session: session.session,
+              session: lectureSession,
               title: parsed.title,
               instructors: [parsed.instructor],
               groups: [group],
@@ -991,7 +992,7 @@
             kind: "combined",
             type: event.kind === "classroom" ? "Classroom Lectures" : event.type,
             session: event.session,
-            title: event.kind,
+            title: event.title,
             instructors: [],
             groups: [],
             children: []
@@ -1168,6 +1169,7 @@
     }
 
     function eventDisplayTitle(event) {
+      if (event.kind === "combined" && event.children[0]?.kind === "test") return `${event.session}: ${event.title}`;
       if (event.kind === "combined") return event.session;
       if (event.kind === "classroom" && state.perspective !== "overall") return `${event.session}: ${event.title}`;
       if (event.kind === "classroom") return `${event.session} · ${event.title}`;
@@ -1182,9 +1184,7 @@
 
     function eventDetailLine(event, separator = "\n") {
       if (event.kind === "combined") {
-        if (event.children[0]?.kind === "test") return `${event.children.length} group mock tests`;
-        if (event.children[0]?.kind === "philosophy") return `${event.children.length} parallel sessions`;
-        return `${event.children.length} group lectures`;
+        return "";
       }
       if (event.kind === "showcase") {
         return event.title
@@ -1260,6 +1260,9 @@
         return `${event.instructors.join(" / ")} · ${event.teams.join(", ")} · ${event.location}`;
       }
       const location = String(event.location).startsWith("Room ") ? event.location : `Room ${event.location}`;
+      if (event.kind === "test") {
+        return `${event.instructors.join(" / ")} · ${location}`;
+      }
       return `${event.instructors.join(" / ")} · ${event.title} · ${location}`;
     }
 
