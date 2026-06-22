@@ -161,12 +161,12 @@
       overflow: hidden;
     }
 
-    .event-card[data-audience="everyone"] { --event-color: #326b63; border-left-color: var(--event-color); }
-    .event-card[data-audience="instructors-students"] { --event-color: #1f5f8b; border-left-color: var(--event-color); }
-    .event-card[data-audience="instructors-leaders"] { --event-color: #596579; border-left-color: var(--event-color); }
-    .event-card[data-audience="leaders-students"] { --event-color: #8a5b25; border-left-color: var(--event-color); }
-    .event-card[data-audience="instructors"] { --event-color: #7a5d8f; border-left-color: var(--event-color); }
-    .event-card[data-audience="students"] { --event-color: #b48a21; border-left-color: var(--event-color); }
+    .event-card[data-audience="everyone"] { --event-color: #4b5563; border-left-color: var(--event-color); }
+    .event-card[data-audience="instructors-students"] { --event-color: #7c3aed; border-left-color: var(--event-color); }
+    .event-card[data-audience="instructors-leaders"] { --event-color: #b45309; border-left-color: var(--event-color); }
+    .event-card[data-audience="leaders-students"] { --event-color: #0f766e; border-left-color: var(--event-color); }
+    .event-card[data-audience="instructors"] { --event-color: #dc2626; border-left-color: var(--event-color); }
+    .event-card[data-audience="students"] { --event-color: #2563eb; border-left-color: var(--event-color); }
 
     .event-card[data-status="past"] {
       border-color: #e8eaec;
@@ -240,12 +240,12 @@
       white-space: nowrap;
     }
 
-    .tag.everyone { color: #326b63; background: #e9f4f1; }
-    .tag.instructors-students { color: #1f5f8b; background: #eaf2fb; }
-    .tag.instructors-leaders { color: #596579; background: #edf0f4; }
-    .tag.leaders-students { color: #8a5b25; background: #f7eddf; }
-    .tag.instructors { color: #6a4b81; background: #f1eaf6; }
-    .tag.students { color: #7a5b05; background: #fbf1c8; }
+    .tag.everyone { color: #374151; background: #eef0f3; }
+    .tag.instructors-students { color: #6d28d9; background: #f0e9ff; }
+    .tag.instructors-leaders { color: #92400e; background: #fef3c7; }
+    .tag.leaders-students { color: #0f766e; background: #ccfbf1; }
+    .tag.instructors { color: #b91c1c; background: #fee2e2; }
+    .tag.students { color: #1d4ed8; background: #dbeafe; }
 
     .event-meta {
       margin: 0;
@@ -656,18 +656,18 @@
     ];
 
     const STAFF_EVENTS = [
-      { date: "2026-07-03", start: "09:00", end: "12:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting for IMSC 2026 Competition", title: "", location: "Room 106", staffOnly: true },
-      { date: "2026-07-03", start: "13:30", end: "18:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting for IMSC 2026 Competition", title: "", location: "Room 106", staffOnly: true },
-      { date: "2026-07-03", start: "19:00", end: "23:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting for IMSC 2026 Competition", title: "", location: "Room 106", staffOnly: true },
+      { date: "2026-07-03", start: "09:00", end: "12:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting for IMSC 2026 Competition", title: "", location: "Room 106", staffOnly: true, audience: "instructors-leaders" },
+      { date: "2026-07-03", start: "13:30", end: "18:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting for IMSC 2026 Competition", title: "", location: "Room 106", staffOnly: true, audience: "instructors-leaders" },
+      { date: "2026-07-03", start: "19:00", end: "23:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting for IMSC 2026 Competition", title: "", location: "Room 106", staffOnly: true, audience: "instructors-leaders" },
       { date: "2026-07-05", start: "19:00", end: "21:00", kind: "staff", type: "Coordinators Meeting", session: "Coordinators Meeting", title: "", location: "Room 106", staffOnly: true },
-      { date: "2026-07-06", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination 1", title: "", staffOnly: true },
-      { date: "2026-07-06", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination 1", title: "", staffOnly: true },
-      { date: "2026-07-07", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination 2", title: "", staffOnly: true },
-      { date: "2026-07-07", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination 2", title: "", staffOnly: true },
-      { date: "2026-07-08", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination 3", title: "", staffOnly: true },
-      { date: "2026-07-08", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination 3", title: "", staffOnly: true },
-      { date: "2026-07-09", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination 4", title: "", staffOnly: true },
-      { date: "2026-07-09", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination 4", title: "", staffOnly: true }
+      { date: "2026-07-06", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination Day 1", title: "", staffOnly: true, audience: "instructors-leaders" },
+      { date: "2026-07-06", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination Day 1", title: "", staffOnly: true, audience: "instructors-leaders" },
+      { date: "2026-07-07", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination Day 2", title: "", staffOnly: true, audience: "instructors-leaders" },
+      { date: "2026-07-07", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination Day 2", title: "", staffOnly: true, audience: "instructors-leaders" },
+      { date: "2026-07-08", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination Day 3", title: "", staffOnly: true, audience: "instructors-leaders" },
+      { date: "2026-07-08", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination Day 3", title: "", staffOnly: true, audience: "instructors-leaders" },
+      { date: "2026-07-09", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination Day 4", title: "", staffOnly: true, audience: "instructors-leaders" },
+      { date: "2026-07-09", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination Day 4", title: "", staffOnly: true, audience: "instructors-leaders" }
     ];
 
     const TEST_EVENTS = [
@@ -679,8 +679,8 @@
       { date: "2026-06-30", start: "13:30", end: "15:00", kind: "problem", type: "Problem Session", session: "Problem Session 3", title: "Solutions of Mock Test 3" },
       { date: "2026-07-01", start: "13:30", end: "18:00", kind: "test", type: "Mock Test", session: "Mock Test 4", title: "Number Theory" },
       { date: "2026-07-02", start: "13:30", end: "15:00", kind: "problem", type: "Problem Session", session: "Problem Session 4", title: "Solutions of Mock Test 4" },
-      { date: "2026-07-10", start: "09:30", end: "14:00", kind: "competition", type: "Competition", session: "IMSC 2026 Competition Day 1", title: "Final Competition" },
-      { date: "2026-07-11", start: "09:30", end: "14:00", kind: "competition", type: "Competition", session: "IMSC 2026 Competition Day 2", title: "Final Competition" }
+      { date: "2026-07-10", start: "09:30", end: "14:00", kind: "competition", type: "Competition", session: "IMSC 2026 Competition Day 1", title: "" },
+      { date: "2026-07-11", start: "09:30", end: "14:00", kind: "competition", type: "Competition", session: "IMSC 2026 Competition Day 2", title: "" }
     ];
 
     const state = {
@@ -1156,6 +1156,7 @@
     }
 
     function audienceForEvent(event) {
+      if (event.audience) return event.audience;
       if (event.kind === "classroom" || event.kind === "combined" || event.kind === "problem" || event.kind === "philosophy" || event.kind === "test" || event.kind === "competition") {
         return "instructors-students";
       }
