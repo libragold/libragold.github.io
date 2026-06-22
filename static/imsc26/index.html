@@ -49,183 +49,13 @@
     .app-shell {
       min-height: 100vh;
       display: grid;
-      grid-template-rows: auto 1fr;
-    }
-
-    header {
-      background: rgba(250, 250, 250, 0.94);
-      color: var(--ink);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(12px);
-    }
-
-    .topbar {
-      width: min(960px, 100%);
-      margin: 0 auto;
-      padding: 16px clamp(12px, 3vw, 30px);
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 12px;
-      align-items: center;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(1.35rem, 2.5vw, 2.05rem);
-      line-height: 1.08;
-      letter-spacing: 0;
-      font-weight: 780;
-    }
-
-    .config-button {
-      justify-self: end;
-      min-width: clamp(64px, 8vw, 88px);
-      height: clamp(30px, 3.2vw, 36px);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel);
-      color: var(--ink);
-      padding: 0 clamp(9px, 1.4vw, 14px);
-      font-size: clamp(0.78rem, 1.4vw, 0.9rem);
-      font-weight: 750;
-      line-height: 1;
-    }
-
-    .config-button:hover {
-      border-color: var(--line-strong);
-      background: #f5f6f7;
-    }
-
-    .settings-dialog {
-      width: min(980px, calc(100vw - 24px));
-      max-height: min(760px, calc(100vh - 24px));
-      padding: 0;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--panel);
-      color: var(--ink);
-      box-shadow: 0 24px 70px rgba(24, 28, 31, 0.22);
-    }
-
-    .settings-dialog::backdrop {
-      background: rgba(24, 28, 31, 0.34);
-      backdrop-filter: blur(3px);
-    }
-
-    .settings-panel {
-      display: grid;
-      gap: 0;
-    }
-
-    .settings-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 16px 16px 12px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .settings-head h2 {
-      margin: 0;
-      font-size: 1rem;
-      line-height: 1.2;
-    }
-
-    .settings-body {
-      padding: 14px;
-      overflow: auto;
-    }
-
-    .settings-actions {
-      display: flex;
-      justify-content: flex-end;
-      padding: 12px 16px 16px;
-      border-top: 1px solid var(--line);
-    }
-
-    .confirm-button {
-      min-height: 38px;
-      border: 0;
-      border-radius: var(--radius);
-      background: var(--ink);
-      color: #fff;
-      padding: 0 16px;
-      font-weight: 750;
+      grid-template-rows: 1fr;
     }
 
     main {
       width: min(960px, 100%);
       margin: 0 auto;
       padding: clamp(12px, 2.2vw, 24px);
-    }
-
-    .controls {
-      display: grid;
-      gap: 10px;
-      grid-template-columns: minmax(250px, 1fr);
-      align-items: start;
-      margin-bottom: 12px;
-    }
-
-    .control-section {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 12px;
-      min-width: 0;
-    }
-
-    .control-title {
-      margin: 0 0 8px;
-      color: var(--muted);
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .segmented {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: 1fr;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: #f3f4f5;
-    }
-
-    .segmented button {
-      border: 0;
-      border-right: 1px solid var(--line);
-      padding: 8px 7px;
-      background: transparent;
-      color: var(--ink);
-      min-height: 36px;
-      font-weight: 700;
-      font-size: 0.91rem;
-    }
-
-    .segmented button:last-child {
-      border-right: 0;
-    }
-
-    .segmented button[aria-pressed="true"] {
-      background: var(--ink);
-      color: #fff;
-    }
-
-    .select-row {
-      margin-top: 8px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 6px;
-    }
-
-    label {
-      color: var(--muted);
-      font-size: 0.74rem;
-      font-weight: 750;
     }
 
     select {
@@ -242,11 +72,14 @@
       display: block;
       gap: 12px;
       align-items: center;
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 12px;
+      background: rgba(250, 250, 250, 0.94);
+      border-bottom: 1px solid var(--line);
+      padding: 8px 0 10px;
       margin-bottom: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
     }
 
     .summary-title {
@@ -256,11 +89,21 @@
       font-weight: 760;
     }
 
-    .summary-meta {
-      margin: 4px 0 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-      white-space: pre-line;
+    .schedule-title-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 360px);
+      align-items: center;
+      gap: 8px;
+    }
+
+    .schedule-heading {
+      white-space: nowrap;
+    }
+
+    .schedule-view-select {
+      width: 100%;
+      justify-self: end;
+      min-width: 0;
     }
 
     .content {
@@ -318,13 +161,12 @@
       overflow: hidden;
     }
 
-    .event-card[data-kind="large"] { --event-color: var(--red); border-left-color: var(--event-color); }
-    .event-card[data-kind="combined"] { --event-color: var(--accent); border-left-color: var(--event-color); }
-    .event-card[data-kind="seminar"] { --event-color: var(--gold); border-left-color: var(--event-color); }
-    .event-card[data-kind="guest"] { --event-color: var(--green); border-left-color: var(--event-color); }
-    .event-card[data-kind="test"] { --event-color: #7c4d9e; border-left-color: var(--event-color); }
-    .event-card[data-kind="problem"] { --event-color: #8a5b25; border-left-color: var(--event-color); }
-    .event-card[data-kind="competition"] { --event-color: #b48a21; border-left-color: var(--event-color); }
+    .event-card[data-audience="everyone"] { --event-color: #326b63; border-left-color: var(--event-color); }
+    .event-card[data-audience="instructors-students"] { --event-color: #1f5f8b; border-left-color: var(--event-color); }
+    .event-card[data-audience="instructors-leaders"] { --event-color: #596579; border-left-color: var(--event-color); }
+    .event-card[data-audience="leaders-students"] { --event-color: #8a5b25; border-left-color: var(--event-color); }
+    .event-card[data-audience="instructors"] { --event-color: #7a5d8f; border-left-color: var(--event-color); }
+    .event-card[data-audience="students"] { --event-color: #b48a21; border-left-color: var(--event-color); }
 
     .event-card[data-status="past"] {
       border-color: #e8eaec;
@@ -398,13 +240,12 @@
       white-space: nowrap;
     }
 
-    .tag.large { color: var(--red); background: var(--red-soft); }
-    .tag.guest { color: var(--green); background: var(--green-soft); }
-    .tag.showcase { color: var(--accent); background: var(--accent-soft); }
-    .tag.seminar { color: var(--gold); background: var(--gold-soft); }
-    .tag.test { color: #7c4d9e; background: #f1e9f8; }
-    .tag.problem { color: #8a5b25; background: #f7eddf; }
-    .tag.competition { color: #7a5b05; background: #fbf1c8; }
+    .tag.everyone { color: #326b63; background: #e9f4f1; }
+    .tag.instructors-students { color: #1f5f8b; background: #eaf2fb; }
+    .tag.instructors-leaders { color: #596579; background: #edf0f4; }
+    .tag.leaders-students { color: #8a5b25; background: #f7eddf; }
+    .tag.instructors { color: #6a4b81; background: #f1eaf6; }
+    .tag.students { color: #7a5b05; background: #fbf1c8; }
 
     .event-meta {
       margin: 0;
@@ -498,26 +339,11 @@
       line-height: 1.45;
     }
 
-    @media (max-width: 980px) {
-      .controls,
-      .summary-strip {
-        grid-template-columns: 1fr;
-      }
-
-    }
-
     @media (max-width: 640px) {
       html,
       body {
         max-width: 100%;
         overflow-x: hidden;
-      }
-
-      .topbar {
-        width: 100%;
-        max-width: 100vw;
-        padding: 12px;
-        gap: 8px;
       }
 
       main {
@@ -526,39 +352,19 @@
         padding: 10px;
       }
 
-      h1 {
-        font-size: 1.35rem;
-      }
-
-      .controls {
-        gap: 8px;
-        margin-bottom: 10px;
-        max-width: 100%;
-      }
-
-      .control-section {
-        padding: 10px;
-        max-width: 100%;
-      }
-
-      .control-title {
-        margin-bottom: 7px;
-      }
-
-      .segmented button {
-        min-height: 34px;
-        padding: 7px 5px;
-        font-size: 0.86rem;
-      }
-
       .summary-strip {
         gap: 8px;
-        padding: 10px;
+        padding: 8px 0 10px;
         max-width: 100%;
       }
 
-      .summary-meta {
-        font-size: 0.84rem;
+      .schedule-title-row {
+        grid-template-columns: max-content minmax(0, 1fr);
+        gap: 7px;
+      }
+
+      .schedule-view-select {
+        grid-column: 2;
       }
 
       .event-topline {
@@ -598,70 +404,21 @@
       .group-tile {
         display: block;
       }
-
-      .settings-dialog {
-        width: calc(100vw - 20px);
-        max-height: calc(100vh - 20px);
-      }
-
-      .settings-body {
-        padding: 10px;
-      }
     }
 
     @media (max-width: 420px) {
-      h1 {
-        max-width: none;
-      }
-
     }
   </style>
 </head>
 <body>
   <div class="app-shell">
-    <header>
-      <div class="topbar">
-        <h1>IMSC 2026 Schedule</h1>
-        <button type="button" class="config-button" id="openSettings">Settings</button>
-      </div>
-    </header>
-
-    <dialog class="settings-dialog" id="settingsDialog">
-      <div class="settings-panel">
-        <div class="settings-head">
-          <h2>Settings</h2>
-        </div>
-        <div class="settings-body">
-      <section class="controls" aria-label="Schedule controls">
-        <div class="control-section">
-          <p class="control-title">Perspective</p>
-          <div class="segmented" role="group" aria-label="Perspective">
-            <button type="button" data-set="perspective" data-value="overall">Overall</button>
-            <button type="button" data-set="perspective" data-value="instructor">Instructor</button>
-            <button type="button" data-set="perspective" data-value="group">Team</button>
-          </div>
-          <div class="select-row" id="instructorRow">
-            <label for="instructorSelect">Instructor or speaker</label>
-            <select id="instructorSelect"></select>
-          </div>
-          <div class="select-row" id="groupRow">
-            <label for="groupSelect">Team group</label>
-            <select id="groupSelect"></select>
-          </div>
-        </div>
-      </section>
-        </div>
-        <div class="settings-actions">
-          <button type="button" class="confirm-button" id="confirmSettings">Confirm</button>
-        </div>
-      </div>
-    </dialog>
-
     <main>
       <section class="summary-strip" aria-live="polite">
         <div>
-          <h2 class="summary-title" id="summaryTitle"></h2>
-          <p class="summary-meta" id="summaryMeta"></p>
+          <div class="summary-title schedule-title-row" aria-label="Schedule controls">
+            <span class="schedule-heading">IMSC 2026 Schedule</span>
+            <select class="schedule-view-select" id="scheduleViewSelect" aria-label="Schedule view"></select>
+          </div>
         </div>
       </section>
 
@@ -673,8 +430,8 @@
     const STORAGE_KEY = "imsc2026.calendar.state.v1";
     const GROUPS = {
       G1: { teams: "Iran, Poland, Vietnam", homeroom: "Nikola Petrovic", location: "311" },
-      G2: { teams: "Bosnia & Herzegovina, Mongolia, International Union I (CA, CAN, UAE, USA)", homeroom: "Vlad Matei", location: "303" },
-      G3: { teams: "Hong Kong-China, Italy", homeroom: "Bojan Basic", location: "306" },
+      G2: { teams: "Bosnia & Herzegovina, Mongolia, International Union I", homeroom: "Vlad Matei", location: "303" },
+      G3: { teams: "Hong Kong China, Italy", homeroom: "Bojan Basic", location: "306" },
       G4: { teams: "Serbia, Uzbekistan", homeroom: "Dinu Serbanescu", location: "211" },
       G5: { teams: "Peru, Thailand", homeroom: "Cezar Lupu", location: "316" },
       G6: { teams: "Lithuania, Mexico", homeroom: "Stijn Cambie", location: "318" },
@@ -682,16 +439,108 @@
       G8: { teams: "Kyrgyzstan, South Africa", homeroom: "Dusan Djukic", location: "201" },
       G9: { teams: "Czechia, Ireland", homeroom: "Qiang Shen", location: "312" },
       G10: { teams: "Estonia, Indonesia", homeroom: "Andrei Jorza", location: "203" },
-      G11: { teams: "North Macedonia, Turkmenistan, China-Hubei (Wuhan)", homeroom: "Dorian Croitoru", location: "309" },
+      G11: { teams: "North Macedonia, Turkmenistan, China Hubei Wuhan", homeroom: "Dorian Croitoru", location: "309" },
       G12: { teams: "Bangladesh, Croatia", homeroom: "Alex Song / Sari Ghanem", location: "206" },
       G13: { teams: "Cuba, Tajikistan", homeroom: "Andrei Bud", location: "307" },
-      G14: { teams: "Macau-China, Moldova, International Union II (CA, JPN, UK, USA)", homeroom: "Zilin Jiang", location: "207" },
+      G14: { teams: "Macau China, Moldova, International Union II", homeroom: "Zilin Jiang", location: "207" },
       G15: { teams: "Albania, Honduras, Pakistan", homeroom: "Tudor Paisanu", location: "313" },
       G16: { teams: "Costa Rica, Iceland, Nepal", homeroom: "Ivan Chan Kai Chin", location: "213" },
       G17: { teams: "Montenegro, Myanmar, Uruguay", homeroom: "Cipriana Anghel-Stan", location: "321" },
       G18: { teams: "Cameroon, Rwanda", homeroom: "Iulia Cristian", location: "216" },
       G19: { teams: "Botswana, Uganda, Ghana", homeroom: "Anca Sfia", location: "217" }
     };
+
+    const TEAM_ORDER = [
+      "Albania",
+      "Bangladesh",
+      "Bosnia & Herzegovina",
+      "Botswana",
+      "Brazil",
+      "Cameroon",
+      "China Hubei Wuhan",
+      "Costa Rica",
+      "Croatia",
+      "Cuba",
+      "Czechia",
+      "Estonia",
+      "Ghana",
+      "Honduras",
+      "Hong Kong China",
+      "Iceland",
+      "Indonesia",
+      "International Union I",
+      "International Union II",
+      "Iran",
+      "Ireland",
+      "Italy",
+      "Kyrgyzstan",
+      "Lithuania",
+      "Macau China",
+      "Malaysia",
+      "Mexico",
+      "Moldova",
+      "Mongolia",
+      "Montenegro",
+      "Myanmar",
+      "Nepal",
+      "North Macedonia",
+      "Pakistan",
+      "Peru",
+      "Poland",
+      "Rwanda",
+      "Serbia",
+      "South Africa",
+      "Tajikistan",
+      "Thailand",
+      "Turkmenistan",
+      "Uganda",
+      "Uruguay",
+      "Uzbekistan",
+      "Vietnam"
+    ];
+
+    const LECTURE_GROUP_TEAMS = {
+      G1: ["Iran", "Poland", "Vietnam"],
+      G2: ["Bosnia & Herzegovina", "Mongolia", "International Union I"],
+      G3: ["Hong Kong China", "Italy"],
+      G4: ["Serbia", "Uzbekistan"],
+      G5: ["Peru", "Thailand"],
+      G6: ["Lithuania", "Mexico"],
+      G7: ["Brazil", "Malaysia"],
+      G8: ["Kyrgyzstan", "South Africa"],
+      G9: ["Czechia", "Ireland"],
+      G10: ["Estonia", "Indonesia"],
+      G11: ["North Macedonia", "Turkmenistan", "China Hubei Wuhan"],
+      G12: ["Bangladesh", "Croatia"],
+      G13: ["Cuba", "Tajikistan"],
+      G14: ["Macau China", "Moldova", "International Union II"],
+      G15: ["Albania", "Honduras", "Pakistan"],
+      G16: ["Costa Rica", "Iceland", "Nepal"],
+      G17: ["Montenegro", "Myanmar", "Uruguay"],
+      G18: ["Cameroon", "Rwanda"],
+      G19: ["Botswana", "Uganda", "Ghana"]
+    };
+
+    const TEAM_TO_LECTURE_GROUP = Object.fromEntries(
+      Object.entries(LECTURE_GROUP_TEAMS).flatMap(([group, teams]) => teams.map(team => [team, group]))
+    );
+
+    const PHILOSOPHY_GROUPS = [
+      { session: "H1", teams: ["Iceland", "Vietnam", "Uganda", "Cuba", "Mongolia"], instructors: ["Iulia Cristian", "Dusan Djukic"], location: "Room 316" },
+      { session: "H2", teams: ["Italy", "Moldova", "Ghana", "Uruguay", "Turkmenistan"], instructors: ["Cipriana Anghel-Stan", "Zilin Jiang"], location: "Room 321" },
+      { session: "H3", teams: ["Croatia", "Thailand", "Rwanda", "Mexico", "Kyrgyzstan"], instructors: ["Andrei Bud", "Qiang Shen"], location: "Room 313" },
+      { session: "H4", teams: ["Poland", "Pakistan", "South Africa", "Peru", "Tajikistan"], instructors: ["Vlad Matei", "Bojan Basic"], location: "Room 309" },
+      { session: "H5", teams: ["Estonia", "Malaysia", "Cameroon", "Honduras", "Iran"], instructors: ["Stijn Cambie", "Andrei Jorza"], location: "Room 211" },
+      { session: "H6", teams: ["Albania", "Bangladesh", "Botswana", "Brazil", "International Union II"], instructors: ["Dinu Serbanescu", "Wei Luo"], location: "Room 318" },
+      { session: "H7", teams: ["Czechia", "Myanmar", "North Macedonia", "Costa Rica"], instructors: ["Tudor Paisanu", "Nikola Petrovic"], location: "Room 303" },
+      { session: "H8", teams: ["Montenegro", "Nepal", "Ireland", "Hong Kong China"], instructors: ["Cezar Lupu", "Alex Song"], location: "Room 306" },
+      { session: "H9", teams: ["Lithuania", "Serbia", "Macau China", "Indonesia"], instructors: ["Anca Sfia", "Sari Ghanem"], location: "Room 319" },
+      { session: "H10", teams: ["Bosnia & Herzegovina", "China Hubei Wuhan", "International Union I", "Uzbekistan"], instructors: ["Dorian Croitoru", "Ivan Chan Kai Chin"], location: "Room 307" }
+    ];
+
+    const TEAM_TO_PHILOSOPHY_GROUP = Object.fromEntries(
+      PHILOSOPHY_GROUPS.flatMap(group => group.teams.map(team => [team, group]))
+    );
 
     const DAY_META = [
       ["2026-06-22", "Monday", "Jun 22"],
@@ -700,10 +549,13 @@
       ["2026-06-25", "Thursday", "Jun 25"],
       ["2026-06-26", "Friday", "Jun 26"],
       ["2026-06-27", "Saturday", "Jun 27"],
+      ["2026-06-28", "Sunday", "Jun 28"],
       ["2026-06-29", "Monday", "Jun 29"],
       ["2026-06-30", "Tuesday", "Jun 30"],
       ["2026-07-01", "Wednesday", "Jul 1"],
       ["2026-07-02", "Thursday", "Jul 2"],
+      ["2026-07-03", "Friday", "Jul 3"],
+      ["2026-07-05", "Sunday", "Jul 5"],
       ["2026-07-06", "Monday", "Jul 6"],
       ["2026-07-07", "Tuesday", "Jul 7"],
       ["2026-07-08", "Wednesday", "Jul 8"],
@@ -714,7 +566,6 @@
 
     const WEEK_ONE_DATES = DAY_META.slice(0, 5).map(day => day.date);
     const GROUP_ORDER = Object.keys(GROUPS);
-    const INSTRUCTOR_WIDE_KINDS = new Set(["showcase", "seminar", "guest"]);
 
     const SESSION_DATA = [
       {
@@ -774,22 +625,49 @@
     const LARGE_EVENTS = [
       { date: "2026-06-22", start: "14:30", end: "16:00", kind: "showcase", type: "IMO Showcase", session: "IMO Showcase 1", speakers: ["Andrei Jorza", "Andrei Bud", "Cezar Lupu"], title: "Problem 6, IMO 2001; Problem 6, IMO 2002; Problem 2, IMO 2012" },
       { date: "2026-06-22", start: "16:00", end: "17:30", kind: "showcase", type: "IMO Showcase", session: "IMO Showcase 2", speakers: ["Bojan Basic", "Alex Song", "Wei Luo"], title: "Problem 3, IMO 2017; Problem 3, IMO 2022; Problem 6, IMO 2020" },
-      { date: "2026-06-22", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 1", speakers: ["Cezar Lupu"], title: "An elementary problem equivalent to the Riemann Hypothesis" },
-      { date: "2026-06-23", start: "19:10", end: "20:00", kind: "guest", type: "Guest Lecture", session: "Guest Lecture 1", speakers: ["Yuval Peres"], title: "TBD" },
-      { date: "2026-06-24", start: "13:30", end: "14:30", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 2", speakers: ["Andrei Bud"], title: "Where do we use mathematics, or how mathematics shapes the modern world?" },
-      { date: "2026-06-24", start: "14:30", end: "15:30", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 3", speakers: ["Bojan Basic"], title: "The art of failing to tessellate: An introduction to Heesch's problem" },
+      { date: "2026-06-22", start: "19:10", end: "20:00", kind: "seminar", type: "Seminar", session: "Seminar 1", speakers: ["Cezar Lupu"], title: "An elementary problem equivalent to the Riemann Hypothesis" },
+      { date: "2026-06-23", start: "19:10", end: "20:00", kind: "guest", type: "Distinguished Lecture", session: "Distinguished Lecture 1", speakers: ["Yuval Peres"], title: "TBD", location: "Grand Ballroom" },
+      { date: "2026-06-24", start: "13:30", end: "14:30", kind: "seminar", type: "Seminar", session: "Seminar 2", speakers: ["Andrei Bud"], title: "Where do we use mathematics, or how mathematics shapes the modern world?" },
+      { date: "2026-06-24", start: "14:30", end: "15:30", kind: "seminar", type: "Seminar", session: "Seminar 3", speakers: ["Bojan Basic"], title: "The art of failing to tessellate: An introduction to Heesch's problem" },
       { date: "2026-06-24", start: "15:45", end: "17:15", kind: "showcase", type: "IMO Showcase", session: "IMO Showcase 3", speakers: ["Stijn Cambie", "Nikola Petrovic", "Dusan Djukic"], title: "Problem 2, IMO 2020; Problem 6, IMO 2022; Problem 6, IMO 2017" },
-      { date: "2026-06-24", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 4", speakers: ["Zilin Jiang"], title: "Finding Linear Algebra in the Wrong Places" },
-      { date: "2026-06-25", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 5", speakers: ["Tudor Paisanu"], title: "A combinatorial construction of the fundamental group of a graph" },
+      { date: "2026-06-24", start: "19:10", end: "20:00", kind: "seminar", type: "Seminar", session: "Seminar 4", speakers: ["Zilin Jiang"], title: "Finding Linear Algebra in the Wrong Places" },
+      { date: "2026-06-25", start: "19:10", end: "20:00", kind: "seminar", type: "Seminar", session: "Seminar 5", speakers: ["Tudor Paisanu"], title: "A combinatorial construction of the fundamental group of a graph" },
       { date: "2026-06-26", start: "15:45", end: "17:15", kind: "showcase", type: "IMO Showcase", session: "IMO Showcase 4", speakers: ["Anca Sfia", "Tudor Paisanu", "Qiang Shen"], title: "Problem 5, IMO 2024; Problem 6, IMO 2003; Problem 6, IMO 2004" },
-      { date: "2026-06-29", start: "19:10", end: "20:00", kind: "guest", type: "Guest Lecture", session: "Guest Lecture 2", speakers: ["Zhengwei Liu"], title: "TBD" },
+      { date: "2026-06-29", start: "19:10", end: "20:00", kind: "guest", type: "Distinguished Lecture", session: "Distinguished Lecture 2", speakers: ["Zhengwei Liu"], title: "TBD", location: "Grand Ballroom" },
       { date: "2026-06-30", start: "16:00", end: "17:30", kind: "showcase", type: "IMO Showcase", session: "IMO Showcase 5", speakers: ["Zilin Jiang", "Ivan Chan Kai Chin", "Dorian Croitoru"], title: "Problem 3, IMO 2012; Problem 3, IMO 2023; Problem 3, IMO 2003" },
-      { date: "2026-06-30", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 6", speakers: ["Iulia Cristian"], title: "Blood coagulation, gel formation, and rain models: What do they have in common?" },
-      { date: "2026-07-01", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 7", speakers: ["Cipriana Anghel-Stan"], title: "Magic identities in hyperbolic geometry" },
-      { date: "2026-07-06", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 8", speakers: ["Andrei Jorza"], title: "Simulating randomness on a computer" },
-      { date: "2026-07-07", start: "19:10", end: "20:00", kind: "guest", type: "Guest Lecture", session: "Guest Lecture 3", speakers: ["Vladimir Markovic"], title: "TBD" },
-      { date: "2026-07-08", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 9", speakers: ["Stijn Cambie"], title: "Resolution of 2 problems by Erdos et al. from the graph theory collection" },
-      { date: "2026-07-09", start: "19:10", end: "20:00", kind: "seminar", type: "Optional Seminar", session: "Optional Seminar 10", speakers: ["Nikola Petrovic"], title: "Six ways to solve a problem" }
+      { date: "2026-06-30", start: "19:10", end: "20:00", kind: "seminar", type: "Seminar", session: "Seminar 6", speakers: ["Iulia Cristian"], title: "Blood coagulation, gel formation, and rain models: What do they have in common?" },
+      { date: "2026-07-01", start: "19:10", end: "20:00", kind: "seminar", type: "Seminar", session: "Seminar 7", speakers: ["Cipriana Anghel-Stan"], title: "Magic identities in hyperbolic geometry" },
+      { date: "2026-07-06", start: "19:10", end: "20:00", kind: "seminar", type: "Seminar", session: "Seminar 8", speakers: ["Andrei Jorza"], title: "Simulating randomness on a computer" },
+      { date: "2026-07-07", start: "19:10", end: "20:00", kind: "guest", type: "Distinguished Lecture", session: "Distinguished Lecture 3", speakers: ["Vladimir Markovic"], title: "TBD", location: "Grand Ballroom" },
+      { date: "2026-07-08", start: "19:10", end: "20:00", kind: "seminar", type: "Seminar", session: "Seminar 9", speakers: ["Stijn Cambie"], title: "Resolution of 2 problems by Erdos et al. from the graph theory collection" },
+      { date: "2026-07-09", start: "19:10", end: "20:00", kind: "seminar", type: "Seminar", session: "Seminar 10", speakers: ["Nikola Petrovic"], title: "Six ways to solve a problem" }
+    ];
+
+    const CAMP_EVENTS = [
+      { date: "2026-06-22", start: "13:30", end: "14:30", kind: "ceremony", type: "Ceremony", session: "Welcome Session", title: "", location: "Grand Ballroom" },
+      { date: "2026-06-23", start: "15:00", end: "18:00", kind: "ceremony", type: "Ceremony", session: "Opening Ceremony", title: "", location: "Grand Ballroom" },
+      { date: "2026-06-23", start: "20:00", end: "22:00", kind: "meeting", type: "Meeting", session: "Instructors and Team Leaders Meeting", title: "", location: "Grand Ballroom" },
+      { date: "2026-07-10", start: "16:30", end: "20:00", kind: "ceremony", type: "Ceremony", session: "Award Ceremony and Banquet", title: "", location: "Grand Ballroom" }
+    ];
+
+    const EXCURSION_EVENTS = [
+      { date: "2026-06-28", start: "09:00", end: "15:45", kind: "excursion", type: "Excursion", session: "Excursion", title: "Mutianyu Great Wall" },
+      { date: "2026-07-03", start: "09:00", end: "15:45", kind: "excursion", type: "Excursion", session: "Excursion", title: "Temple of Heaven" }
+    ];
+
+    const STAFF_EVENTS = [
+      { date: "2026-07-03", start: "09:00", end: "12:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting for IMSC 2026 Competition", title: "", location: "Room 106", staffOnly: true },
+      { date: "2026-07-03", start: "13:30", end: "18:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting for IMSC 2026 Competition", title: "", location: "Room 106", staffOnly: true },
+      { date: "2026-07-03", start: "19:00", end: "23:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting for IMSC 2026 Competition", title: "", location: "Room 106", staffOnly: true },
+      { date: "2026-07-05", start: "19:00", end: "21:00", kind: "staff", type: "Coordinators Meeting", session: "Coordinators Meeting", title: "", location: "Room 106", staffOnly: true },
+      { date: "2026-07-06", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination 1", title: "", staffOnly: true },
+      { date: "2026-07-06", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination 1", title: "", staffOnly: true },
+      { date: "2026-07-07", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination 2", title: "", staffOnly: true },
+      { date: "2026-07-07", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination 2", title: "", staffOnly: true },
+      { date: "2026-07-08", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination 3", title: "", staffOnly: true },
+      { date: "2026-07-08", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination 3", title: "", staffOnly: true },
+      { date: "2026-07-09", start: "09:00", end: "12:00", kind: "staff", type: "Coordination", session: "Coordination 4", title: "", staffOnly: true },
+      { date: "2026-07-09", start: "13:30", end: "18:00", kind: "staff", type: "Coordination", session: "Coordination 4", title: "", staffOnly: true }
     ];
 
     const TEST_EVENTS = [
@@ -808,16 +686,16 @@
     const state = {
       perspective: "overall",
       instructor: "Zilin Jiang",
-      group: "G14",
+      group: "International Union II",
       showPastEvents: false,
       ...loadState()
     };
-    let draftState = { ...state };
 
     const allEvents = buildEvents();
     const instructors = Array.from(new Set([
-      ...allEvents.flatMap(event => event.instructors || []),
-      ...Object.values(GROUPS).flatMap(group => group.homeroom.split(" / "))
+      ...allEvents
+        .filter(event => event.kind === "classroom")
+        .flatMap(event => event.instructors || [])
     ])).sort((a, b) => a.localeCompare(b));
 
     function normalizeName(name) {
@@ -859,6 +737,7 @@
               instructors: [parsed.instructor],
               groups: [group],
               teams: GROUPS[group].teams,
+              teamList: LECTURE_GROUP_TEAMS[group],
               location: GROUPS[group].location
             });
           });
@@ -874,13 +753,71 @@
         });
       });
 
+      CAMP_EVENTS.forEach((event, index) => {
+        events.push({
+          ...event,
+          id: `camp-${index}`,
+          instructors: [],
+          groups: GROUP_ORDER
+        });
+      });
+
+      EXCURSION_EVENTS.forEach((event, index) => {
+        events.push({
+          ...event,
+          id: `excursion-${index}`,
+          instructors: [],
+          groups: GROUP_ORDER
+        });
+      });
+
+      PHILOSOPHY_GROUPS.forEach((group, index) => {
+        events.push({
+          id: `philosophy-${index}`,
+          date: "2026-07-02",
+          start: "16:00",
+          end: "17:30",
+          kind: "philosophy",
+          type: "Philosophy & Socializing",
+          session: "Philosophy & Socializing",
+          parallelLabel: group.session,
+          title: group.teams.join(", "),
+          instructors: group.instructors,
+          groups: [],
+          teams: group.teams,
+          location: group.location
+        });
+      });
+
+      STAFF_EVENTS.forEach((event, index) => {
+        events.push({
+          ...event,
+          id: `staff-${index}`,
+          instructors: [],
+          groups: GROUP_ORDER
+        });
+      });
+
       TEST_EVENTS.forEach((event, index) => {
+        if (event.kind === "test") {
+          GROUP_ORDER.forEach(group => {
+            events.push({
+              ...event,
+              id: `test-${index}-${group}`,
+              instructors: GROUPS[group].homeroom.split(" / "),
+              groups: [group],
+              teams: GROUPS[group].teams,
+              teamList: LECTURE_GROUP_TEAMS[group],
+              location: GROUPS[group].location
+            });
+          });
+          return;
+        }
         events.push({
           ...event,
           id: `test-${index}`,
           instructors: [],
-          groups: GROUP_ORDER,
-          global: true
+          groups: GROUP_ORDER
         });
       });
 
@@ -893,12 +830,24 @@
         const next = {};
         if (["overall", "instructor", "group"].includes(saved.perspective)) next.perspective = saved.perspective;
         if (typeof saved.instructor === "string") next.instructor = saved.instructor;
-        if (typeof saved.group === "string") next.group = saved.group;
+        if (typeof saved.group === "string") next.group = migrateSelectedTeam(saved.group);
         if (typeof saved.showPastEvents === "boolean") next.showPastEvents = saved.showPastEvents;
         return next;
       } catch {
         return {};
       }
+    }
+
+    function migrateSelectedTeam(value) {
+      const aliases = {
+        "Hong Kong-China": "Hong Kong China",
+        "Macau-China": "Macau China",
+        "China-Hubei (Wuhan)": "China Hubei Wuhan"
+      };
+      if (aliases[value]) return aliases[value];
+      if (TEAM_ORDER.includes(value)) return value;
+      if (GROUPS[value]) return LECTURE_GROUP_TEAMS[value]?.[0] || TEAM_ORDER[0];
+      return TEAM_ORDER[0];
     }
 
     function saveState() {
@@ -956,6 +905,10 @@
       return `${start}-${end}`;
     }
 
+    function selectedLectureGroup() {
+      return TEAM_TO_LECTURE_GROUP[state.group];
+    }
+
     function groupLocation(group) {
       return GROUPS[group]?.location ? `Room ${GROUPS[group].location}` : "";
     }
@@ -965,9 +918,10 @@
     }
 
     function locationForEvent(event) {
+      if (event.location) return event.location;
       if (!hasGroupLocation(event)) return "";
       if (event.kind === "classroom") return groupLocation(event.groups[0]);
-      if (state.perspective === "group") return groupLocation(state.group);
+      if (state.perspective === "group") return groupLocation(selectedLectureGroup());
       const groups = event.groups?.length ? event.groups : GROUP_ORDER;
       return `Group rooms: ${groups.map(group => `${group} ${GROUPS[group].location}`).join(", ")}`;
     }
@@ -977,13 +931,35 @@
     }
 
     function appliesToPerspective(event) {
-      if (event.global) return true;
       if (state.perspective === "overall") return true;
+      if (state.perspective === "instructor") return eventInvolvesInstructor(event);
       if (state.perspective === "group") {
-        return event.kind !== "classroom" || event.groups.includes(state.group);
+        if (event.kind === "classroom" || event.kind === "test") return event.groups.includes(selectedLectureGroup());
+        if (event.kind === "philosophy") return event.teams.includes(state.group);
+        return eventInvolvesTeam(event);
       }
-      if (INSTRUCTOR_WIDE_KINDS.has(event.kind)) return true;
-      return event.instructors.includes(state.instructor);
+      return false;
+    }
+
+    function eventInvolvesInstructor(event) {
+      const audience = audienceForEvent(event);
+      if (audience === "everyone" || audience === "instructors" || audience === "instructors-leaders") return true;
+      if (audience !== "instructors-students") return false;
+      if (event.kind === "classroom" || event.kind === "test") return event.instructors.includes(state.instructor);
+      if (event.kind === "philosophy") return event.instructors.includes(state.instructor);
+      return true;
+    }
+
+    function eventInvolvesTeam(event) {
+      const audience = audienceForEvent(event);
+      return [
+        "everyone",
+        "instructors-students",
+        "instructors-leaders",
+        "leaders-students",
+        "leaders",
+        "students"
+      ].includes(audience);
     }
 
     function filteredBaseEvents() {
@@ -1001,7 +977,7 @@
       const combined = [];
       const groups = new Map();
       events.forEach(event => {
-        if (event.kind !== "classroom") {
+        if (event.kind !== "classroom" && event.kind !== "test" && event.kind !== "philosophy") {
           combined.push(event);
           return;
         }
@@ -1013,9 +989,9 @@
             start: event.start,
             end: event.end,
             kind: "combined",
-            type: "Classroom Lectures",
+            type: event.kind === "classroom" ? "Classroom Lectures" : event.type,
             session: event.session,
-            title: "classroom lectures",
+            title: event.kind,
             instructors: [],
             groups: [],
             children: []
@@ -1024,7 +1000,7 @@
         groups.get(key).children.push(event);
       });
       groups.forEach(group => {
-        group.children.sort((a, b) => a.groups[0].localeCompare(b.groups[0], undefined, { numeric: true }));
+        group.children.sort((a, b) => (a.parallelLabel || a.groups[0]).localeCompare(b.parallelLabel || b.groups[0], undefined, { numeric: true }));
         group.groups = group.children.flatMap(event => event.groups);
         group.instructors = Array.from(new Set(group.children.flatMap(event => event.instructors))).sort();
         combined.push(group);
@@ -1033,69 +1009,50 @@
     }
 
     function setupControls() {
-      const instructorSelect = document.getElementById("instructorSelect");
-      instructorSelect.innerHTML = instructors.map(name => `<option value="${escapeHtml(name)}">${escapeHtml(name)}</option>`).join("");
-      const groupSelect = document.getElementById("groupSelect");
-      groupSelect.innerHTML = GROUP_ORDER.map(group => {
-        const label = `${group}: ${GROUPS[group].teams}`;
-        return `<option value="${group}">${escapeHtml(label)}</option>`;
-      }).join("");
+      const scheduleViewSelect = document.getElementById("scheduleViewSelect");
+      scheduleViewSelect.innerHTML = `
+        <optgroup label="Overall">
+          <option value="overall">Overall</option>
+        </optgroup>
+        <optgroup label="Instructor">
+          ${instructors.map(name => `<option value="instructor:${escapeHtml(name)}">${escapeHtml(name)}</option>`).join("")}
+        </optgroup>
+        <optgroup label="Team">
+          ${TEAM_ORDER.map(team => `<option value="team:${escapeHtml(team)}">${escapeHtml(team)}</option>`).join("")}
+        </optgroup>
+      `;
 
-      document.querySelectorAll("[data-set]").forEach(button => {
-        button.addEventListener("click", () => {
-          draftState[button.dataset.set] = button.dataset.value;
-          syncControls(draftState);
-        });
-      });
-      instructorSelect.addEventListener("change", () => {
-        draftState.instructor = instructorSelect.value;
-      });
-      groupSelect.addEventListener("change", () => {
-        draftState.group = groupSelect.value;
-      });
-      document.getElementById("openSettings").addEventListener("click", () => {
-        draftState = { ...state };
-        syncControls(draftState);
-        document.getElementById("settingsDialog").showModal();
-      });
-      document.getElementById("confirmSettings").addEventListener("click", () => {
-        Object.assign(state, draftState);
+      scheduleViewSelect.addEventListener("change", () => {
+        applyScheduleSelection(scheduleViewSelect.value);
         saveState();
         render();
-        document.getElementById("settingsDialog").close();
       });
     }
 
     function syncControls(source = state) {
-      document.querySelectorAll("[data-set]").forEach(button => {
-        button.setAttribute("aria-pressed", String(source[button.dataset.set] === button.dataset.value));
-      });
-      document.getElementById("instructorRow").hidden = source.perspective !== "instructor";
-      document.getElementById("groupRow").hidden = source.perspective !== "group";
-      document.getElementById("instructorSelect").value = source.instructor;
-      document.getElementById("groupSelect").value = source.group;
+      document.getElementById("scheduleViewSelect").value = scheduleSelectionValue(source);
     }
 
-    function renderSummary(events) {
-      let title = "Overall camp schedule";
-      let meta = "All group lectures and camp-wide events.";
+    function scheduleSelectionValue(source = state) {
+      if (source.perspective === "instructor") return `instructor:${source.instructor}`;
+      if (source.perspective === "group") return `team:${source.group}`;
+      return "overall";
+    }
 
-      if (state.perspective === "group") {
-        const group = GROUPS[state.group];
-        title = `${state.group} schedule`;
-        meta = `${group.teams}.\nHomeroom instructor: ${group.homeroom}. Room: ${group.location}.`;
+    function applyScheduleSelection(value) {
+      if (value === "overall") {
+        state.perspective = "overall";
+        return;
       }
-
-      if (state.perspective === "instructor") {
-        const homerooms = GROUP_ORDER.filter(group => GROUPS[group].homeroom.split(" / ").includes(state.instructor));
-        title = `${state.instructor}'s schedule`;
-        meta = homerooms.length
-          ? `Homeroom: ${homerooms.map(group => `${group} (${GROUPS[group].teams})`).join(", ")}.`
-          : "Teaching, showcase, seminar, and guest lecture appearances.";
+      if (value.startsWith("instructor:")) {
+        state.perspective = "instructor";
+        state.instructor = value.slice("instructor:".length);
+        return;
       }
-
-      document.getElementById("summaryTitle").textContent = title;
-      document.getElementById("summaryMeta").textContent = meta;
+      if (value.startsWith("team:")) {
+        state.perspective = "group";
+        state.group = value.slice("team:".length);
+      }
     }
 
     function renderSchedule(events) {
@@ -1179,14 +1136,7 @@
     }
 
     function tagClass(event) {
-      if (event.kind === "guest") return "guest";
-      if (event.kind === "showcase") return "large";
-      if (event.kind === "seminar") return "seminar large";
-      if (event.kind === "test") return "test";
-      if (event.kind === "problem") return "problem";
-      if (event.kind === "competition") return "competition";
-      if (event.kind === "combined") return "showcase";
-      return "";
+      return audienceForEvent(event);
     }
 
     function kindForCard(event) {
@@ -1196,20 +1146,42 @@
       if (event.kind === "problem") return "problem";
       if (event.kind === "competition") return "competition";
       if (event.kind === "test") return "test";
+      if (event.kind === "excursion") return "excursion";
+      if (event.kind === "ceremony") return "ceremony";
+      if (event.kind === "meeting") return "meeting";
+      if (event.kind === "philosophy") return "philosophy";
+      if (event.kind === "staff") return "staff";
       return event.kind;
+    }
+
+    function audienceForEvent(event) {
+      if (event.kind === "classroom" || event.kind === "combined" || event.kind === "problem" || event.kind === "philosophy" || event.kind === "test" || event.kind === "competition") {
+        return "instructors-students";
+      }
+      if (event.kind === "excursion") return "students";
+      if (event.kind === "meeting") return "instructors-leaders";
+      if (event.kind === "staff") return "instructors";
+      if (event.kind === "showcase" || event.kind === "seminar" || event.kind === "guest" || event.kind === "ceremony") {
+        return "everyone";
+      }
+      return "everyone";
     }
 
     function eventDisplayTitle(event) {
       if (event.kind === "combined") return event.session;
       if (event.kind === "classroom" && state.perspective !== "overall") return `${event.session}: ${event.title}`;
       if (event.kind === "classroom") return `${event.session} · ${event.title}`;
+      if (event.kind === "philosophy") return `${event.session} ${event.parallelLabel}`;
       if (event.kind === "showcase" || event.kind === "seminar" || event.kind === "guest") return event.session;
-      if (event.kind === "test" || event.kind === "problem") return event.session;
+      if (event.kind === "test" || event.kind === "problem" || event.kind === "excursion") return event.session;
+      if (!event.title) return event.session;
       return `${event.session}: ${event.title}`;
     }
 
     function eventDetailLine(event, separator = "\n") {
       if (event.kind === "combined") {
+        if (event.children[0]?.kind === "test") return `${event.children.length} group mock tests`;
+        if (event.children[0]?.kind === "philosophy") return `${event.children.length} parallel sessions`;
         return `${event.children.length} group lectures`;
       }
       if (event.kind === "showcase") {
@@ -1221,7 +1193,16 @@
       if (event.kind === "seminar" || event.kind === "guest") {
         return [event.instructors?.[0], event.title].filter(Boolean).join(" · ");
       }
-      if (event.kind === "test" || event.kind === "problem") {
+      if (event.kind === "philosophy") {
+        return [
+          event.instructors.join(" / "),
+          state.perspective === "group" ? state.group : event.teams.join(", ")
+        ].filter(Boolean).join(" · ");
+      }
+      if (event.kind === "test" && state.perspective !== "overall") {
+        return `${event.title} · ${event.instructors.join(" / ")} · ${event.groups[0]} (${event.teams}) · ${groupLocation(event.groups[0])}`;
+      }
+      if (event.kind === "test" || event.kind === "problem" || event.kind === "excursion") {
         return event.title;
       }
       if (event.kind === "classroom" && state.perspective !== "overall") {
@@ -1233,14 +1214,15 @@
     function renderEventCard(event, now = new Date()) {
       const detailLine = eventDetailLine(event);
       const groupLine = event.kind === "classroom" && state.perspective === "overall" ? `${event.instructors[0]} · ${event.groups[0]} (${event.teams})` : "";
-      const locationLine = event.kind === "test" || event.kind === "problem" || (event.kind === "classroom" && state.perspective !== "overall") ? "" : locationForEvent(event);
+      const locationLine = event.kind === "problem" || ((event.kind === "classroom" || event.kind === "test") && state.perspective !== "overall") ? "" : locationForEvent(event);
       const meta = event.children
         ? detailLine
-        : [detailLine, groupLine, locationLine].filter(Boolean).join(" | ");
+        : [detailLine, groupLine, locationLine].filter(Boolean).join(" · ");
       const status = eventStatus(event, now);
       const progress = status === "current" ? eventProgress(event, now).toFixed(2) : "";
+      const audience = audienceForEvent(event);
       return `
-        <article class="event-card" data-kind="${kindForCard(event)}" data-status="${status}">
+        <article class="event-card" data-kind="${kindForCard(event)}" data-audience="${audience}" data-status="${status}">
           ${status === "current" ? `<span class="event-progress" style="--progress:${progress}%"></span>` : ""}
           <div class="event-topline">
             <div class="time">${formatTime(event.start, event.end)}</div>
@@ -1260,27 +1242,36 @@
         <div class="mini-grid">
           ${children.map(event => `
             <div class="group-tile">
-              <strong>${event.groups[0]}</strong>
-              <span>${escapeHtml(event.instructors[0])} &middot; ${escapeHtml(event.title)} &middot; Room ${escapeHtml(event.location)}</span>
+              <strong>${escapeHtml(event.parallelLabel || event.groups[0])}</strong>
+              <span>${escapeHtml(miniGridDetail(event))}</span>
             </div>
           `).join("")}
         </div>
       `;
     }
 
+    function miniGridDetail(event) {
+      if (event.kind === "philosophy") {
+        return `${event.instructors.join(" / ")} · ${event.teams.join(", ")} · ${event.location}`;
+      }
+      const location = String(event.location).startsWith("Room ") ? event.location : `Room ${event.location}`;
+      return `${event.instructors.join(" / ")} · ${event.title} · ${location}`;
+    }
+
     function render() {
+      const previousState = JSON.stringify(state);
       if (!instructors.includes(state.instructor)) state.instructor = instructors[0];
-      if (!GROUPS[state.group]) state.group = GROUP_ORDER[0];
+      if (!TEAM_ORDER.includes(state.group)) state.group = migrateSelectedTeam(state.group);
+      if (JSON.stringify(state) !== previousState) saveState();
       syncControls();
       const events = displayEvents();
-      renderSummary(events);
       renderSchedule(events);
     }
 
     setupControls();
     render();
     setInterval(() => {
-      if (!document.getElementById("settingsDialog").open) render();
+      render();
     }, 60000);
   </script>
 </body>
