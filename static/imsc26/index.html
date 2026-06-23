@@ -675,13 +675,13 @@
 
     const TEST_EVENTS = [
       { date: "2026-06-25", start: "13:30", end: "18:00", kind: "test", type: "Mock Test", session: "Mock Test 1", title: "Algebra" },
-      { date: "2026-06-26", start: "13:30", end: "15:00", kind: "problem", type: "Problem Session", session: "Problem Session 1", title: "Solutions of Mock Test 1" },
+      { date: "2026-06-26", start: "13:30", end: "15:00", kind: "problem", type: "Problem Session", session: "Problem Session 1", title: "Mock Test 1 Discussion" },
       { date: "2026-06-27", start: "09:30", end: "14:00", kind: "test", type: "Mock Test", session: "Mock Test 2", title: "Combinatorics" },
-      { date: "2026-06-27", start: "15:30", end: "17:00", kind: "problem", type: "Problem Session", session: "Problem Session 2", title: "Solutions of Mock Test 2" },
+      { date: "2026-06-27", start: "15:30", end: "17:00", kind: "problem", type: "Problem Session", session: "Problem Session 2", title: "Mock Test 2 Discussion" },
       { date: "2026-06-29", start: "13:30", end: "18:00", kind: "test", type: "Mock Test", session: "Mock Test 3", title: "Geometry" },
-      { date: "2026-06-30", start: "13:30", end: "15:00", kind: "problem", type: "Problem Session", session: "Problem Session 3", title: "Solutions of Mock Test 3" },
+      { date: "2026-06-30", start: "13:30", end: "15:00", kind: "problem", type: "Problem Session", session: "Problem Session 3", title: "Mock Test 3 Discussion" },
       { date: "2026-07-01", start: "13:30", end: "18:00", kind: "test", type: "Mock Test", session: "Mock Test 4", title: "Number Theory" },
-      { date: "2026-07-02", start: "13:30", end: "15:00", kind: "problem", type: "Problem Session", session: "Problem Session 4", title: "Solutions of Mock Test 4" },
+      { date: "2026-07-02", start: "13:30", end: "15:00", kind: "problem", type: "Problem Session", session: "Problem Session 4", title: "Mock Test 4 Discussion" },
       { date: "2026-07-04", start: "09:30", end: "14:00", kind: "competition", type: "Competition", session: "IMSC 2026 Competition Day 1", title: "Entrance opens at 9:00", location: "Grand Ballroom" },
       { date: "2026-07-05", start: "09:30", end: "14:00", kind: "competition", type: "Competition", session: "IMSC 2026 Competition Day 2", title: "Entrance opens at 9:00", location: "Grand Ballroom" }
     ];
@@ -804,11 +804,11 @@
       });
 
       TEST_EVENTS.forEach((event, index) => {
-        if (event.kind === "test") {
+        if (event.kind === "test" || event.kind === "problem") {
           GROUP_ORDER.forEach(group => {
             events.push({
               ...event,
-              id: `test-${index}-${group}`,
+              id: `${event.kind}-${index}-${group}`,
               instructors: GROUPS[group].homeroom.split(" / "),
               groups: [group],
               teams: GROUPS[group].teams,
@@ -939,7 +939,7 @@
       if (state.perspective === "overall") return true;
       if (state.perspective === "instructor") return eventInvolvesInstructor(event);
       if (state.perspective === "group") {
-        if (event.kind === "classroom" || event.kind === "test") return event.groups.includes(selectedLectureGroup());
+        if (event.kind === "classroom" || event.kind === "test" || event.kind === "problem") return event.groups.includes(selectedLectureGroup());
         if (event.kind === "philosophy") return event.teams.includes(state.group);
         return eventInvolvesTeam(event);
       }
@@ -950,7 +950,7 @@
       const audience = audienceForEvent(event);
       if (audience === "everyone" || audience === "instructors" || audience === "instructors-leaders") return true;
       if (audience !== "instructors-students") return false;
-      if (event.kind === "classroom" || event.kind === "test") return event.instructors.includes(state.instructor);
+      if (event.kind === "classroom" || event.kind === "test" || event.kind === "problem") return event.instructors.includes(state.instructor);
       if (event.kind === "philosophy") return event.instructors.includes(state.instructor);
       return true;
     }
@@ -982,7 +982,7 @@
       const combined = [];
       const groups = new Map();
       events.forEach(event => {
-        if (event.kind !== "classroom" && event.kind !== "test" && event.kind !== "philosophy") {
+        if (event.kind !== "classroom" && event.kind !== "test" && event.kind !== "problem" && event.kind !== "philosophy") {
           combined.push(event);
           return;
         }
@@ -1174,7 +1174,7 @@
     }
 
     function eventDisplayTitle(event) {
-      if (event.kind === "combined" && event.children[0]?.kind === "test") return `${event.session}: ${event.title}`;
+      if (event.kind === "combined" && (event.children[0]?.kind === "test" || event.children[0]?.kind === "problem")) return `${event.session}: ${event.title}`;
       if (event.kind === "combined") return event.session;
       if (event.kind === "classroom" && state.perspective !== "overall") return `${event.session}: ${event.title}`;
       if (event.kind === "classroom") return `${event.session} · ${event.title}`;
@@ -1183,7 +1183,7 @@
       if (event.kind === "test") return `${event.session}: ${event.title}`;
       if (event.kind === "excursion") return `${event.session}: ${event.title}`;
       if (event.kind === "competition") return event.session;
-      if (event.kind === "problem") return event.session;
+      if (event.kind === "problem") return `${event.session}: ${event.title}`;
       if (!event.title) return event.session;
       return `${event.session}: ${event.title}`;
     }
@@ -1209,14 +1209,14 @@
           event.location
         ].filter(Boolean).join(" · ");
       }
-      if (event.kind === "test" && state.perspective !== "overall") {
+      if ((event.kind === "test" || event.kind === "problem") && state.perspective !== "overall") {
         return `${event.instructors.join(" / ")} · ${event.groups[0]} (${event.teams}) · ${groupLocation(event.groups[0])}`;
       }
       if (event.kind === "competition") {
         return [event.location, event.title].filter(Boolean).join(" · ");
       }
       if (event.kind === "excursion") return "";
-      if (event.kind === "test" || event.kind === "problem") {
+      if (event.kind === "test") {
         return event.title;
       }
       if (event.kind === "classroom" && state.perspective !== "overall") {
@@ -1269,7 +1269,7 @@
         return `${event.instructors.join(" / ")} · ${event.teams.join(", ")} · ${event.location}`;
       }
       const location = String(event.location).startsWith("Room ") ? event.location : `Room ${event.location}`;
-      if (event.kind === "test") {
+      if (event.kind === "test" || event.kind === "problem") {
         return `${event.instructors.join(" / ")} · ${location}`;
       }
       return `${event.instructors.join(" / ")} · ${event.title} · ${location}`;
