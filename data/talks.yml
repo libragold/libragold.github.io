@@ -532,3 +532,8 @@
   location: "Shandong University"
   date: 2026-06-12
   slides: "eigenvalues_of_subcubic_graphs/2026-06-12.html"
+- title: "Finding linear algebra in the wrong places"
+  occasion: "4th International Mathematics Summer Camp, Optional seminar"
+  location: "Beijing Yanqi Lake International Convention & Exhibition Center"
+  date: 2026-06-24
+  slides: "five_miniatures_of_linear_algebra/2026-06-24.html"

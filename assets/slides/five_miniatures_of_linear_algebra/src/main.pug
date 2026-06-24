@@ -1,11 +1,14 @@
 section.title-slide
-  h3 关于线性代数的五个小故事
+  h3
+    | Finding linear algebra
+    br
+    | in the wrong places
   p
-    small.red 姜子麟
+    small.red Zilin Jiang
     br
-    small 以色列理工学院
+    small Arizona State University
     br
-    small 2018 年 3 月 14 日 于 北京大学
+    small June 24, 2026
 section
   section
     img.stretch(src="img/book_1.jpg")
@@ -13,44 +16,42 @@ section
     img.stretch(src="img/book_2.png")
   section
     img.no-shadow.stretch(src="img/book_3.jpg")
-  section
-    img.stretch(src="img/book_5.jpg")
 section
   section
-    h3 五个小故事
-    p.fragment.highlight-red 奇数小镇
-    p 奇数距离
-    p 三角区域
-    p 零钱风波
-    p 等角线集
+    h3 Five miniatures
+    p.fragment.highlight-red Oddtown
+    p Odd distances
+    p Triangle regions
+    p Rounding trouble
+    p Equiangular lines
   section
-    h3.red 奇数小镇
-    p 奇数小镇上生活着 $n$ 个居民
+    h3.red Oddtown
+    p Oddtown has $n$ residents
     ol.fragment
-      li 任何一个俱乐部只能有奇数个会员
-      li 任何两个俱乐部只能有偶数个公共会员
-    p.fragment 最多可能组建多少个俱乐部呢？
+      li Every club must have an odd number of members
+      li Any two clubs must have an even number of common members
+    p.fragment What is the maximum number of clubs?
   section
     img.stretch.no-shadow(src="img/odd_town.jpg")
     table
       tbody
         thead
           td 
-          td 居民 1
-          td 居民 2
-          td 居民 3
+          td Resident 1
+          td Resident 2
+          td Resident 3
         tr
-          td 俱乐部 1
+          td Club 1
           td 1
           td 1
           td 0
         tr
-          td 俱乐部 2
+          td Club 2
           td 1
           td 1
           td 1
         tr
-          td 俱乐部 3
+          td Club 3
           td 0
           td 1
           td 1
@@ -72,29 +73,33 @@ section
       span.fragment(data-fragment-index=5) $ \le n$
   section
     img.stretch.no-shadow(src="img/book_4.jpg")
-    p 偶数小镇上生活着 $n$ 个居民
+    p Even Town has $n$ residents
     ol.fragment(data-fragment-index=1)
-      li 任何一个俱乐部只能有偶数个会员
-      li 任何两个俱乐部只能有偶数个公共会员
+      li Every club must have an even number of members
+      li Any two clubs must have an even number of common members
     p
-      span.fragment(data-fragment-index=2) 最多可能组建多少个
-      span.fragment(data-fragment-index=3) 不同的
-      span.fragment(data-fragment-index=2) 俱乐部呢？
+      span.fragment(data-fragment-index=2) What is the maximum number of
+      | #{' '}
+      span.fragment(data-fragment-index=3) distinct
+      | #{' '}
+      span.fragment(data-fragment-index=2) clubs?
 section
   section
-    h3 五个小故事
-    p 奇数小镇
-    p.fragment.highlight-red 奇数距离
-    p 三角区域
-    p 零钱风波
-    p 等角线集
+    h3 Five miniatures
+    p Oddtown
+    p.fragment.highlight-red Odd distances
+    p Triangle regions
+    p Rounding trouble
+    p Equiangular lines
   section
-    h3.red 奇数距离
-    p.fragment.shrink 平面上存在两两之间距离为奇数的三个点吗？
-    p.fragment.fade-up 平面上存在两两之间距离为奇数的四个点吗？
+    h3.red Odd distances
+    p.fragment.shrink Can the plane contain three points whose pairwise distances are all odd?
+    p.fragment.fade-up Can the plane contain four points whose pairwise distances are all odd?
     p.fragment
-      span 假设存在这样的四个点 
-      span.fragment $(0,0) = $ 
+      span Suppose such four points exist:
+      | #{' '}
+      span.fragment $(0,0) = $
+      | #{' '}
       span $\mathbf{p_0}, \mathbf{p_1}, \mathbf{p_2}, \mathbf{p_3} \in \mathbb{R}^2$
   section
     p
@@ -109,122 +114,135 @@ section
     p
       span $M := 2AA^T \equiv \begin{bmatrix}0 & 1 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0 \end{bmatrix}$
       span.fragment $\implies \det(M) \equiv 0$
-    p.fragment.red 怎么办？
+    p.fragment.red What now?
   section
     p $$2AA^T = \begin{bmatrix}2\mathbf{p_1} \cdot \mathbf{p_1} & 2\mathbf{p_1}\cdot\mathbf{p_2} & 2\mathbf{p_1}\cdot\mathbf{p_3} \\ 2\mathbf{p_2}\cdot\mathbf{p_1} & 2\mathbf{p_2}\cdot\mathbf{p_2} & 2\mathbf{p_2}\cdot\mathbf{p_3} \\ 2\mathbf{p_3}\cdot\mathbf{p_1} & 2\mathbf{p_3}\cdot\mathbf{p_2} & 2\mathbf{p_3}\cdot\mathbf{p_3} \end{bmatrix}$$
     p
-      span.fragment $\mathbf{p_1} \cdot \mathbf{p_1} =$ 
-      span.fragment 奇数的平方 
+      span.fragment $\mathbf{p_1} \cdot \mathbf{p_1} =$
+      | #{' '}
+      span.fragment square of an odd number
       span.fragment $\equiv 1 \pmod{8}$
     p
-      span.fragment $2\mathbf{p_1} \cdot \mathbf{p_2} = |\mathbf{p_1}|^2 + |\mathbf{p_2}|^2 - |\mathbf{p_1} - \mathbf{p_2}|^2$ 
+      span.fragment $2\mathbf{p_1} \cdot \mathbf{p_2} = |\mathbf{p_1}|^2 + |\mathbf{p_2}|^2 - |\mathbf{p_1} - \mathbf{p_2}|^2$
+      | #{' '}
       span.fragment $\equiv 1 \pmod{8}$
   section
     p $$2AA^T \equiv \begin{bmatrix}2 & 1 & 1 \\ 1 & 2 & 1 \\ 1 & 1 & 2 \end{bmatrix}$$
     p.fragment(data-fragment-index=1) $$\implies \det(2AA^T) \equiv 4 \pmod{8}$$
     p
-      span.fragment(data-fragment-index=3) $3 =$ 
-      span.fragment(data-fragment-index=2) $\mathrm{rank}(M)$ 
-      span.fragment(data-fragment-index=6) $\le$ 
-      span.fragment(data-fragment-index=4) $\mathrm{rank}(A)$ 
+      span.fragment(data-fragment-index=3) $3 =$
+      | #{' '}
+      span.fragment(data-fragment-index=2) $\mathrm{rank}(M)$
+      | #{' '}
+      span.fragment(data-fragment-index=6) $\le$
+      | #{' '}
+      span.fragment(data-fragment-index=4) $\mathrm{rank}(A)$
+      | #{' '}
       span.fragment(data-fragment-index=5) $ \le 2$
   section
-    h3 思考题
-    p 空间中至多有几个点，两两之间距离为奇数？
+    h3 Problem
+    p What is the maximum number of points in space whose pairwise distances are all odd?
 section
   section
-    h3 五个小故事
-    p 奇数小镇
-    p 奇数距离
-    p.fragment.highlight-red 三角区域
-    p 零钱风波
-    p 等角线集
+    h3 Five miniatures
+    p Oddtown
+    p Odd distances
+    p.fragment.highlight-red Triangle regions
+    p Rounding trouble
+    p Equiangular lines
   section
-    h3.red 三角区域
+    h3.red Triangle regions
     p
-      span 平面上 $n$ 条直线
-      span.fragment （无三线共点，无两线平行）
+      span $n$ lines in the plane
+      | #{' '}
+      span.fragment (no three concurrent, no two parallel)
     img.no-shadow.stretch(src="img/triangle.png")
     p
-      span 至少有多少个三角区域？
-      span.fragment 至少 $n-2$ 个？
+      span How many triangular regions must there be?
+      | #{' '}
+      span.fragment At least $n-2$?
   section
-    p 观察：稍微移动直线，区域形状基本不变
+    p Observation: if we move the lines slightly, the regions barely change
     p
-      span.fragment(data-fragment-index=2) 固定某两条直线，
-      span.fragment(data-fragment-index=1) 能否平移
-      span.fragment(data-fragment-index=2) 其余 $n-2$ 条
-      span.fragment(data-fragment-index=1) 直线，
+      span.fragment(data-fragment-index=2) Fix two lines.
+      | #{' '}
+      span.fragment(data-fragment-index=1) Can we translate
+      | #{' '}
+      span.fragment(data-fragment-index=2) the other $n-2$
+      | #{' '}
+      span.fragment(data-fragment-index=1) lines
       br
-      span.fragment(data-fragment-index=1) 且保持三角区域不变？
+      span.fragment(data-fragment-index=1) while preserving all triangular regions?
     img.fragment.no-shadow(src="img/triangle_move.png" data-fragment-index=3)
   section
     img.stretch.no-shadow(src="img/triangle_speed.png")
     p.fragment
-      span 保持三角区域 $\Leftrightarrow$ 直线速率满足
-      span.fragment.highlight-red 线性
-      span 约束方程
+      span Preserving triangular regions $\Leftrightarrow$ the line velocities satisfy
+      | #{' '}
+      span.fragment.highlight-red linear
+      | #{' '}
+      span constraints
   section
-    p 反证法，假设三角区域 $< n-2$ 个
-    p.fragment 约束方程个数 $<$ 未知数（速率）个数
+    p Proof by contradiction: suppose there are $< n-2$ triangular regions
+    p.fragment Number of constraints $<$ number of unknowns (velocities)
     p
-      span.fragment $\implies$ 存在非零解
-      span.fragment ，即直线可以匀速运动起来！
+      span.fragment $\implies$ there is a nonzero solution
+      span.fragment , so the lines can move at constant velocity!
     p.fragment
-      span 某三条直线第一次共点
-      span.fragment.fade-out ？
+      span The first moment when three lines become concurrent
+      span.fragment.fade-out ?
   section
-    p 在第一次三线共点之前，每个区域形状基本不变
-    p.fragment 但在这之前一点点……
+    p Before the first triple intersection, every region is essentially unchanged
+    p.fragment But just before that moment...
     img.no-shadow.fragment(src="img/triangle_small.png")
 section
   section
-    h3 五个小故事
-    p 奇数小镇
-    p 奇数距离
-    p 三角区域
-    p.fragment.highlight-red 零钱风波
-    p 等角线集
+    h3 Five miniatures
+    p Oddtown
+    p Odd distances
+    p Triangle regions
+    p.fragment.highlight-red Rounding trouble
+    p Equiangular lines
   section
-    h3.red 零钱风波
-    p 某网店正在处理订单，
-    p 突然所有小于 1 元的硬币都被作废了！
-    p 网店该如何取整每个商品价格，
-    p 使得每个订单的总价变化不大？
+    h3.red Rounding trouble
+    p An online shop is processing orders.
+    p Suddenly all coins worth less than one dollar are abolished!
+    p How should the shop round each item price
+    p so that every order total changes only a little?
   section
     p 
-      span 假设商品编号 $1, 2, \dots, n$
-      span.fragment ，价格小数部分为 $c_i$
-    p.fragment 订单 $S_1, \dots, S_m \subset \{1, 2, \dots, n\}$
-    h3.red.fragment Beck–Fiala 定理 
-    p.fragment 如果每个 $i$ 出现在至多 $d$ 个 $S_k$ 中，
-    p.fragment 则存在 $z_1, \dots, z_n \in \{0,1\}$
-    p.fragment 使得 $\left|\sum_{i \in S_k} z_i - \sum_{i \in S_k}c_i\right| < d$ 对每个 $S_k$ 成立。
+      span Suppose the items are $1, 2, \dots, n$
+      span.fragment , and the fractional part of item $i$ is $c_i$
+    p.fragment Orders $S_1, \dots, S_m \subset \{1, 2, \dots, n\}$
+    h3.red.fragment Beck-Fiala theorem
+    p.fragment If each $i$ appears in at most $d$ sets $S_k$,
+    p.fragment then there are $z_1, \dots, z_n \in \{0,1\}$
+    p.fragment such that $\left|\sum_{i \in S_k} z_i - \sum_{i \in S_k}c_i\right| < d$ for every $S_k$.
   section
-    p.red.fragment 让价格运动起来？
+    p.red.fragment Let the prices move?
     p.fragment $c_i \in (0,1) \to x_i \in [0,1] \to z_i \in \{0,1\}$
-    p.fragment 约定：如果 $x_i$ 变为 0 或 1 后，其值就固定不动了
-    p.fragment 固定前称 $x_i$ 在浮动
-    p.red.fragment 价格浮动的时候，哪些 $S_k$ 令人担心？
-    p.fragment 称含有超过 $d$ 个浮动商品的订单为危险的
-    p.fragment 浮动商品越来越少，危险订单越来越少
+    p.fragment Rule: once $x_i$ reaches 0 or 1, it stays fixed
+    p.fragment Before it is fixed, we say $x_i$ is floating
+    p.red.fragment While prices are floating, which $S_k$ should worry us?
+    p.fragment Call an order dangerous if it contains more than $d$ floating items
+    p.fragment Fewer and fewer items float, so fewer and fewer orders are dangerous
   section
-    p.red.fragment 如何让价格运动起来，且保持危险订单总价不变？
-    p.fragment 危险订单 $\Leftrightarrow$ 浮动价格 $x_i$ 的线性约束条件
-    p.fragment 约束条件的个数 $<$ 浮动价格的个数？
-    p.fragment 存在非零解 $\implies$ 可以让浮动价格匀速运动起来
-    p.fragment 直到某个浮动价格第一次到达 0 或 1
+    p.red.fragment How can prices move while every dangerous order total stays fixed?
+    p.fragment Dangerous orders $\Leftrightarrow$ linear constraints on the floating prices $x_i$
+    p.fragment Number of constraints $<$ number of floating prices?
+    p.fragment Nonzero solution $\implies$ floating prices can move at constant velocity
+    p.fragment until some floating price first reaches 0 or 1
     p.fragment
-      span 在订单脱离危险之后，
+      span After an order stops being dangerous,
       br
-      span 其 $d$ 个浮动商品最多带来总价变化 $< d$。
+      span its at most $d$ floating items can change the total by $< d$.
   section
-    h3.red 差异理论 Discrepancy Theory
+    h3.red Discrepancy theory
     p.fragment $S_1, \dots, S_m \subset \{1,2,\dots, n\}$
-    p.fragment 给定赋值 $f\colon \{1,2,\dots, n\} \to \{-1, 1\}$
-    p.fragment 给 $f$ 打分为 $\chi(f) = \max_k |\sum_{i\in S_k}f(i)|$
-    p.fragment 如果每个 $i$ 出现在出现在至多 $d$ 个 $S_k$ 中，
-    p.fragment 则 $\min_f\chi(f)$ 至多是？
+    p.fragment Given a coloring $f\colon \{1,2,\dots, n\} \to \{-1, 1\}$
+    p.fragment Score it by $\chi(f) = \max_k |\sum_{i\in S_k}f(i)|$
+    p.fragment If each $i$ appears in at most $d$ sets $S_k$,
+    p.fragment how large can $\min_f\chi(f)$ be?
   section
     table
       tbody
@@ -242,97 +260,177 @@ section
           td $2d-\log^* d$
         tr.fragment(data-fragment-index=4)
           td
-          td 猜想
+          td Conjecture
           td $O(\sqrt{d})$
 section
   section
-    h3 五个小故事
-    p 奇数小镇
-    p 奇数距离
-    p 三角区域
-    p 零钱风波
-    p.fragment.highlight-red 等角线集
+    h3 Five miniatures
+    p Oddtown
+    p Odd distances
+    p Triangle regions
+    p Rounding trouble
+    p.fragment.highlight-red Equiangular lines
   section
-    h3.red 等角线集
-    p.fragment.shrink 平面上至多能放置多少条直线使得两两夹角相等？
-    p.fragment 空间中至多能放置多少条等角线？
+    h3.red Equiangular lines
+    p.fragment.shrink How many lines can we place in the plane so that all pairwise angles are equal?
+    p.fragment How many equiangular lines can we place in space?
     p
-      span.fragment 3 条？
-      span.fragment 4 条？
-      span.fragment 6 条？
+      span.fragment 3 lines?
+      | #{' '}
+      span.fragment 4 lines?
+      | #{' '}
+      span.fragment 6 lines?
   section
-    p 等角线上取单位列向量 $v_1, \dots, v_n \in \mathbb{R}^3$
+    p Choose unit column vectors $v_1, \dots, v_n \in \mathbb{R}^3$ on the equiangular lines
     p
       span.fragment $v_iv_i^T$
-      span.fragment 是 3 x 3 对称矩阵
+      | #{' '}
+      span.fragment is a 3 x 3 symmetric matrix
     p
-      span.fragment.red 3 x 3 对称矩阵构成几维线性空间？
-      span.fragment 6 维！
+      span.fragment.red What is the dimension of the space of 3 x 3 symmetric matrices?
+      | #{' '}
+      span.fragment 6!
   section
-    p.red 对称矩阵 $v_1v_1^T, \dots, v_nv_n^T$ 线性无关吗？
-    p.fragment 假设 $a_1v_1v_1^T + \dots + a_nv_nv_n^T = 0$
+    p.red Are the symmetric matrices $v_1v_1^T, \dots, v_nv_n^T$ linearly independent?
+    p.fragment Suppose $a_1v_1v_1^T + \dots + a_nv_nv_n^T = 0$
     p.fragment $\implies v_1^T(a_1v_1v_1^T + \dots + a_nv_nv_n^T)v_1 = 0$
     p.fragment $\implies a_1 + a_2 \alpha^2 + \dots + a_n \alpha^2 = 0$
     p.fragment $\implies (1-\alpha^2)a_1 + \alpha^2(a_1 + \dots + a_n) = 0$
     p.fragment $\implies \dots \implies a_1 = \dots = a_n = 0$
   section
-    h3.red 等角线问题
-    p $n$ 维空间中夹角为 $\arccos\alpha$ 的等角线最多 $N_\alpha(n)$ 个
+    h3.red The equiangular lines problem
+    p In $d$ dimensions, let $N_\alpha(d)$ be the maximum number of equiangular lines with angle $\arccos\alpha$
     table
       tbody
         tr.fragment
           td 1973
           td Neumann
           td
-            span $N_\alpha(n) \le 2n$
+            span $N_\alpha(d) \le 2d$
             br
-            span 除非 $1/\alpha$ 是奇数
+            span unless $1/\alpha$ is an odd integer
         tr.fragment
           td 1973
           td Lemmens–Seidel
-          td $N_{1/3}(n) \approx 2n$
+          td $N_{1/3}(d) \approx 2d$
         tr.fragment
           td 1989
           td Neumaier
-          td $N_{1/5}(n) \approx 3n/2$
+          td $N_{1/5}(d) \approx 3d/2$
         tr.fragment
           td 2016
           td Bukh
-          td $N_\alpha(n) \le 2^{c/\alpha^2}n$
+          td $N_\alpha(d) \le 2^{c/\alpha^2}d$
   section
     table
       tbody
         tr.fragment
           td 2018
-          td Balla–Dräxler–Keevash–Sudakov
           td
-            span $N_\alpha(n) \lesssim 1.93n$
+            span Balla–Dräxler–
             br
-            span 当 $\alpha\neq 1/3$
+            span Keevash–Sudakov
+          td
+            span $N_\alpha(d) \lesssim 1.93d$
+            br
+            span when $\alpha\neq 1/3$
         tr.fragment
-          td 2018+
+          td 2020
           td J.–Polyanskii
           td
-            span $N_\alpha(n) \approx c_\alpha n$ 当
+            span $N_\alpha(d) \approx c_\alpha d$ when
             br
             span $\alpha \ge 1/(1+2\sqrt{2+\sqrt{5}})$
             br
-            span $N_{1/(1+2\sqrt{2})}(n) \approx 3n/2$
+            span $N_{1/(1+2\sqrt{2})}(d) \approx 3d/2$
         tr.fragment
           td
           td
           td
-            span $N_\alpha(n) \lesssim 1.49n$ 当
+            span $N_\alpha(d) \lesssim 1.49d$ when
             br
             span $\alpha\neq 1/3, 1/5, 1/(1+2\sqrt{2})$
         tr.fragment
           td
-          td 猜想
-          td $N_{1/7}(n) \approx 4n/3$
+          td Conjecture
+          td
+            span $N_{1/(2k-1)}(d) \approx \frac{k}{k-1}d$
+            br
+            span In particular, $N_{1/7}(d) \approx 4d/3$
+  section.annals-slide(data-auto-animate)
+    .photo-with-tag
+      img.no-shadow.equiangular-team(src="img/equiangular_team.png")
+      .tag(style="top: 250px; left: 45px") Zilin Jiang
+      .tag(style="top: 225px; left: 180px") Jonathan Tidor
+      .tag(style="top: 220px; left: 305px") Yufei Zhao
+      .tag(style="top: 240px; left: 430px") Yuan Yao
+      .tag(style="top: 275px; left: 535px") Shengtong Zhang
+    p.fragment(data-id="annals-authors") J., Tidor, Yao, Zhang, Zhao 2021 Annals of Mathematics
+    p.fragment(data-id="annals-theorem")
+      span $N_\alpha(d) = \left\lfloor \frac{k}{k-1}(d-1) \right\rfloor$ for $d \ge d_0(\alpha)$ if $k(\lambda) < \infty$;
+      br
+      span $N_\alpha(d) = d+o(d)$ otherwise,
+    p.fragment(data-id="annals-definition")
+      span where $\lambda = \frac{1-\alpha}{2\alpha}$ and $k(\lambda)$ is the smallest integer $k$ such that
+      br
+      span there exists a $k$-vertex graph whose adjacency matrix has spectral radius $\lambda$.
+  section.annals-slide.result-slide(data-auto-animate)
+    p(data-id="annals-authors") J., Tidor, Yao, Zhang, Zhao 2021 Annals of Mathematics
+    p(data-id="annals-theorem")
+      span $N_\alpha(d) = \left\lfloor \frac{k}{k-1}(d-1) \right\rfloor$ for $d \ge d_0(\alpha)$ if $k(\lambda) < \infty$;
+      br
+      span $N_\alpha(d) = d+o(d)$ otherwise,
+    p(data-id="annals-definition")
+      span where $\lambda = \frac{1-\alpha}{2\alpha}$ and $k(\lambda)$ is the smallest integer $k$ such that
+      br
+      span there exists a $k$-vertex graph whose adjacency matrix has spectral radius $\lambda$.
+    table.result-table.fragment
+      tbody
+        tr
+          td $\alpha$
+          td $\lambda$
+          td $G$
+          td $k$
+          td $N_\alpha(d)$
+        tr
+          td $\tfrac{1}{3}$
+          td $1$
+          td
+            svg(height=40 width=42 viewBox='-4 -8 38 40')
+              path(d="M0 16 L30 16" fill="transparent" stroke="#121426" stroke-width=2)
+              circle(cx=0 cy=16 r=4 fill="#121426")
+              circle(cx=30 cy=16 r=4 fill="#121426")
+          td $2$
+          td $2d$
+        tr
+          td $\tfrac{1}{5}$
+          td $2$
+          td
+            svg(height=44 width=38 viewBox='-4 -10 38 44')
+              path(d="M15 0 L30 30 L0 30 L15 0" fill="transparent" stroke="#121426" stroke-width=2)
+              circle(cx=15 cy=0 r=4 fill="#121426")
+              circle(cx=30 cy=30 r=4 fill="#121426")
+              circle(cx=0 cy=30 r=4 fill="#121426")
+          td $3$
+          td $\tfrac{3d}{2}$
+        tr
+          td $\tfrac{1}{7}$
+          td $3$
+          td
+            svg(viewBox='-4 -10 38 42' width=34 height=45)
+              path(d="M0 0 L30 0 L30 30 L0 30 L0 0 L30 30 M30 0 L0 30" fill="transparent" stroke="#121426" stroke-width=2)
+              circle(cx=30 cy=0 r=4 fill="#121426")
+              circle(cx=30 cy=30 r=4 fill="#121426")
+              circle(cx=0 cy=30 r=4 fill="#121426")
+              circle(cx=0 cy=0 r=4 fill="#121426")
+          td $4$
+          td $\tfrac{4d}{3}$
+  section
+    img.stretch(src="img/book_5.jpg")
 
 section
-  small.red 姜子麟
+  small.red Zilin Jiang
   br
-  small 以色列理工学院
+  small Arizona State University
   br
-  small jiangzilin@technion.ac.il
+  small zilinj@asu.edu

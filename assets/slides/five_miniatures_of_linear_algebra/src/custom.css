@@ -12,3 +12,37 @@
   margin-top: 16px;
   margin-bottom: 16px;
 }
+.reveal .annals-slide p {
+  font-size: 28px;
+}
+.reveal .annals-slide .equiangular-team {
+  width: 684px;
+  height: 342px;
+  margin: 4px 0;
+  border-radius: 8px;
+}
+.reveal .annals-slide .photo-with-tag {
+  position: relative;
+  display: inline-block;
+  width: 684px;
+  height: 350px;
+}
+.reveal .annals-slide .tag {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 0 5px;
+  white-space: nowrap;
+}
+.reveal .annals-slide.result-slide p {
+  font-size: 26px;
+}
+.reveal .annals-slide .result-table {
+  font-size: 24px;
+  margin: 8px auto 0;
+}
+.reveal .annals-slide .result-table td {
+  text-align: center;
+  vertical-align: middle;
+}
