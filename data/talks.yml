@@ -537,3 +537,8 @@
   location: "Beijing Yanqi Lake International Convention & Exhibition Center"
   date: 2026-06-24
   slides: "five_miniatures_of_linear_algebra/2026-06-24.html"
+- title: "Eigenvalues of subcubic graphs"
+  occasion: "Combinatorics Seminar"
+  location: "Beijing Institute of Mathematical Sciences and Applications"
+  date: 2026-06-26
+  slides: "eigenvalues_of_subcubic_graphs/2026-06-26.html"
