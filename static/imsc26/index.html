@@ -567,6 +567,7 @@
     ].map(([date, weekday, short]) => ({ date, weekday, short }));
 
     const WEEK_ONE_DATES = DAY_META.slice(0, 5).map(day => day.date);
+    const WEEK_TWO_DATES = DAY_META.slice(7, 11).map(day => day.date);
     const GROUP_ORDER = Object.keys(GROUPS);
 
     const SESSION_DATA = [
@@ -624,6 +625,61 @@
       }
     ];
 
+    const WEEK_TWO_SESSION_DATA = [
+      {
+        session: "Session 1",
+        start: "09:00",
+        end: "10:30",
+        entries: {
+          G1: ["Algebra ??-??", "Combinatorics ??-??", "Geometry ??-??", "Number Theory 1-Dusan Djukic"],
+          G2: ["Number Theory 2-Cezar Lupu", "Geometry ??-??", "Combinatorics ??-??", "Algebra ??-??"],
+          G3: ["Combinatorics 1-Stijn Cambie", "Geometry 1-Qiang Shen", "Algebra ??-??", "Number Theory ??-??"],
+          G4: ["Combinatorics ??-??", "Number Theory 1-Stijn Cambie", "Geometry 1-Dorian Croitoru", "Algebra ??-??"],
+          G5: ["Algebra ??-??", "Combinatorics ??-??", "Geometry ??-??", "Number Theory ??-??"],
+          G6: ["Algebra 1-Tudor Paisanu", "Number Theory 1-Dusan Djukic", "Algebra 2-Andrei Jorza", "Combinatorics 1-Anca Sfia"],
+          G7: ["Algebra 1-Zilin Jiang", "Combinatorics 1-Anca Sfia", "TBD", "TBD"],
+          G8: ["Algebra 1-Ahmad Sarfraz", "TBD", "TBD", "Geometry 1-Nikola Petrovic"],
+          G9: ["TBD", "Combinatorics 1-Ahmad Sarfraz", "TBD", "Number Theory 2-Vlad Matei"],
+          G10: ["Algebra ??-??", "Combinatorics ??-??", "Geometry ??-??", "TBD"],
+          G11: ["Combinatorics 1-Borna Vukorepa", "TBD", "Number Theory 1-Bojan Basic", "Geometry 1-Dorian Croitoru"],
+          G12: ["Geometry 1-Sari Ghanem", "TBD", "Number Theory 2-Vlad Matei", "Geometry 1-Andrei Bud"],
+          G13: ["Combinatorics 1-Ivan Chan", "Number Theory 1-Bojan Basic", "TBD", "TBD"],
+          G14: ["Number Theory 1-Bojan Basic", "Geometry 1-Andrei Bud", "TBD", "Geometry 2-Sari Ghanem"],
+          G15: ["Geometry 1-Cipriana Anghel", "TBD", "Number Theory 1-Dusan Djukic", "TBD"],
+          G16: ["Combinatorics 1-Wei Luo", "TBD", "Geometry 1-Cipriana Anghel", "TBD"],
+          G17: ["Algebra 1-Valeriu Gutu", "Algebra 1-Claudio Espinosa", "Geometry 1-Sari Ghanem", "TBD"],
+          G18: ["Algebra 2-Iulia Cristian", "TBD", "TBD", "TBD"],
+          G19: ["Algebra ??-??", "Combinatorics ??-??", "Geometry ??-??", "Number Theory ??-??"]
+        }
+      },
+      {
+        session: "Session 2",
+        start: "10:45",
+        end: "12:15",
+        entries: {
+          G1: ["Algebra 2-Andrei Jorza", "Number Theory 1-Stijn Cambie", "Geometry ??-??", "Combinatorics 1-Bojan Basic"],
+          G2: ["Algebra ??-??", "Combinatorics 1-Anca Sfia", "Geometry ??-??", "Number Theory 1-Dusan Djukic"],
+          G3: ["Algebra ??-??", "Combinatorics 1-Bojan Basic", "Geometry ??-??", "Number Theory ??-??"],
+          G4: ["Number Theory 2-Cezar Lupu", "Combinatorics 2-Zilin Jiang", "TBD", "TBD"],
+          G5: ["Combinatorics 1-Stijn Cambie", "Algebra 1-Tudor Paisanu", "TBD", "Combinatorics 1-Anca Sfia"],
+          G6: ["Algebra ??-??", "Combinatorics 1-Stijn Cambie", "Geometry ??-??", "Number Theory ??-??"],
+          G7: ["Algebra ??-??", "Combinatorics 3-Nikola Petrovic", "Geometry ??-??", "Number Theory 1-Vlad Matei"],
+          G8: ["TBD", "Combinatorics 1-Ahmad Sarfraz", "Algebra 2-Iulia Cristian", "Geometry 1-Qiang Shen"],
+          G9: ["Algebra 1-Ahmad Sarfraz", "TBD", "TBD", "Geometry 2-Dinu Serbanescu"],
+          G10: ["Algebra 1-Lukas Novak", "Geometry 2-Dinu Serbanescu", "TBD", "TBD"],
+          G11: ["Algebra ??-??", "Combinatorics ??-??", "Geometry 2-Dinu Serbanescu", "Number Theory ??-??"],
+          G12: ["Algebra ??-??", "Combinatorics ??-??", "Geometry ??-??", "Number Theory ??-??"],
+          G13: ["Geometry 1-Sari Ghanem", "TBD", "TBD", "TBD"],
+          G14: ["Geometry 2-Dinu Serbanescu", "Combinatorics 1-Ivan Chan", "Geometry 2-Sari Ghanem", "TBD"],
+          G15: ["TBD", "Combinatorics 1-Wei Luo", "TBD", "Combinatorics 1-Stijn Cambie"],
+          G16: ["Algebra ??-??", "Combinatorics ??-??", "Geometry ??-??", "Number Theory ??-??"],
+          G17: ["Algebra ??-??", "Combinatorics ??-??", "Geometry ??-??", "Number Theory ??-??"],
+          G18: ["Algebra ??-??", "Combinatorics ??-??", "Geometry ??-??", "Number Theory ??-??"],
+          G19: ["Algebra ??-??", "Combinatorics ??-??", "Geometry ??-??", "Geometry 2-Sari Ghanem"]
+        }
+      }
+    ];
+
     const LARGE_EVENTS = [
       { date: "2026-06-22", start: "14:30", end: "16:00", kind: "showcase", type: "IMO Showcase", session: "IMO Showcase 1", speakers: ["Andrei Jorza", "Andrei Bud", "Cezar Lupu"], title: "Problem 6, IMO 2001; Problem 6, IMO 2002; Problem 2, IMO 2012" },
       { date: "2026-06-22", start: "16:00", end: "17:30", kind: "showcase", type: "IMO Showcase", session: "IMO Showcase 2", speakers: ["Bojan Basic", "Alex Song", "Wei Luo"], title: "Problem 3, IMO 2017; Problem 3, IMO 2022; Problem 6, IMO 2020" },
@@ -659,6 +715,9 @@
     ];
 
     const STAFF_EVENTS = [
+      { date: "2026-07-02", start: "09:00", end: "12:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting", title: "", location: "Room 106", staffOnly: true, audience: "instructors-leaders" },
+      { date: "2026-07-02", start: "13:30", end: "18:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting", title: "", location: "Room 106", staffOnly: true, audience: "instructors-leaders" },
+      { date: "2026-07-02", start: "19:00", end: "23:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting", title: "", location: "Room 106", staffOnly: true, audience: "instructors-leaders" },
       { date: "2026-07-03", start: "09:00", end: "12:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting", title: "", location: "Room 106", staffOnly: true, audience: "instructors-leaders" },
       { date: "2026-07-03", start: "13:30", end: "18:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting", title: "", location: "Room 106", staffOnly: true, audience: "instructors-leaders" },
       { date: "2026-07-03", start: "19:00", end: "23:00", kind: "staff", type: "Jury Meeting", session: "Jury Meeting", title: "", location: "Room 106", staffOnly: true, audience: "instructors-leaders" },
@@ -690,6 +749,8 @@
     const LECTURE_FULL_TITLES = {
       "Adeel Farooq|Algebra 1": "Burnside's lemma and Polya's enumeration theorem",
       "Adeel Farooq|Number Theory 1": "Divisibility theory",
+      "Ahmad Sarfraz|Algebra 1": "Functions and functional equations",
+      "Ahmad Sarfraz|Combinatorics 1": "Partitions and Configurations",
       "Alejandro Campos|Algebra 1": "Philosophy of inequalities",
       "Alex Song|Combinatorics 1": "Combinatorial geometry",
       "Alex Song|Geometry 1": "Geometry duality",
@@ -789,6 +850,7 @@
       ...allEvents
         .filter(event => event.kind === "classroom")
         .flatMap(event => event.instructors || [])
+        .filter(instructor => instructor && instructor !== "TBD")
     ])).sort((a, b) => a.localeCompare(b));
 
     function normalizeName(name) {
@@ -798,17 +860,33 @@
       const aliases = {
         "Ziling Jiang": "Zilin Jiang",
         "Cipriana Anghel": "Cipriana Anghel-Stan",
-        "Ivan Chan": "Ivan Chan Kai Chin"
+        "Ivan Chan": "Ivan Chan Kai Chin",
+        "??": "TBD",
+        "": "TBD"
       };
       return aliases[cleaned] || cleaned;
     }
 
+    function normalizeLectureCode(title) {
+      const cleaned = title
+        .trim()
+        .replace(/^Alegebra\b/i, "Algebra")
+        .replace(/\s*\?+\s*$/g, "")
+        .trim();
+      if (!cleaned || /^lecture$/i.test(cleaned) || cleaned === "??") return "TBD";
+      return cleaned;
+    }
+
     function parseLecture(raw) {
-      const cut = raw.lastIndexOf("-");
-      if (cut === -1) return { title: raw.trim(), instructor: "" };
+      const cleaned = String(raw || "").trim();
+      if (!cleaned || /^lecture$/i.test(cleaned) || cleaned === "TBD") {
+        return { title: "TBD", instructor: "TBD" };
+      }
+      const cut = cleaned.lastIndexOf("-");
+      if (cut === -1) return { title: normalizeLectureCode(cleaned), instructor: "TBD" };
       return {
-        title: raw.slice(0, cut).trim(),
-        instructor: normalizeName(raw.slice(cut + 1))
+        title: normalizeLectureCode(cleaned.slice(0, cut)),
+        instructor: normalizeName(cleaned.slice(cut + 1))
       };
     }
 
@@ -818,26 +896,31 @@
 
     function buildEvents() {
       const events = [];
-      SESSION_DATA.forEach((session, sessionIndex) => {
-        GROUP_ORDER.forEach(group => {
-          session.entries[group].forEach((raw, index) => {
-            const parsed = parseLecture(raw);
-            const lectureSession = `Session ${index * SESSION_DATA.length + sessionIndex + 1}`;
-            events.push({
-              id: `${lectureSession}-${group}-${index}`,
-              date: WEEK_ONE_DATES[index],
-              start: session.start,
-              end: session.end,
-              kind: "classroom",
-              type: "Classroom Lecture",
-              session: lectureSession,
-              title: parsed.title,
-              fullTitle: lectureFullTitle(parsed.instructor, parsed.title),
-              instructors: [parsed.instructor],
-              groups: [group],
-              teams: GROUPS[group].teams,
-              teamList: LECTURE_GROUP_TEAMS[group],
-              location: GROUPS[group].location
+      [
+        { dates: WEEK_ONE_DATES, sessions: SESSION_DATA, sessionOffset: 0 },
+        { dates: WEEK_TWO_DATES, sessions: WEEK_TWO_SESSION_DATA, sessionOffset: WEEK_ONE_DATES.length * SESSION_DATA.length }
+      ].forEach((week, weekIndex) => {
+        week.sessions.forEach((session, sessionIndex) => {
+          GROUP_ORDER.forEach(group => {
+            session.entries[group].forEach((raw, index) => {
+              const parsed = parseLecture(raw);
+              const lectureSession = `Session ${week.sessionOffset + index * week.sessions.length + sessionIndex + 1}`;
+              events.push({
+                id: `classroom-${weekIndex}-${lectureSession}-${group}`,
+                date: week.dates[index],
+                start: session.start,
+                end: session.end,
+                kind: "classroom",
+                type: "Classroom Lecture",
+                session: lectureSession,
+                title: parsed.title,
+                fullTitle: lectureFullTitle(parsed.instructor, parsed.title),
+                instructors: [parsed.instructor],
+                groups: [group],
+                teams: GROUPS[group].teams,
+                teamList: LECTURE_GROUP_TEAMS[group],
+                location: GROUPS[group].location
+              });
             });
           });
         });
