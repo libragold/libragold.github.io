@@ -894,6 +894,14 @@
       return LECTURE_FULL_TITLES[`${instructor}|${lectureCode}`] || "";
     }
 
+    function homeroomInstructors(group, date) {
+      if (group === "G12") {
+        if (date < "2026-06-26") return ["Alex Song"];
+        if (date >= "2026-06-27") return ["Sari Ghanem"];
+      }
+      return GROUPS[group].homeroom.split(" / ");
+    }
+
     function buildEvents() {
       const events = [];
       [
@@ -987,7 +995,7 @@
             events.push({
               ...event,
               id: `${event.kind}-${index}-${group}`,
-              instructors: GROUPS[group].homeroom.split(" / "),
+              instructors: homeroomInstructors(group, event.date),
               groups: [group],
               teams: GROUPS[group].teams,
               teamList: LECTURE_GROUP_TEAMS[group],
