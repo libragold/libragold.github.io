@@ -1,0 +1,50 @@
+.reveal section {
+  font-size: 82%;
+}
+
+.reveal .red {
+  color: #c62828;
+}
+
+.reveal .question {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  border: 2px solid #222;
+  border-radius: 6px;
+  background: #f7f7f7;
+  font-weight: 600;
+}
+
+.reveal table.dictionary,
+.reveal table.story,
+.reveal table.bits {
+  margin: 0.8em auto;
+}
+
+.reveal table.dictionary th,
+.reveal table.dictionary td,
+.reveal table.story td,
+.reveal table.bits td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.35em 0.75em;
+  text-align: center;
+}
+
+.reveal table.dictionary th {
+  color: #c62828;
+  font-weight: 600;
+}
+
+.reveal table.story td:first-child,
+.reveal table.bits td:first-child {
+  color: #c62828;
+  font-weight: 600;
+}
+
+.reveal .reference {
+  font-size: 0.55em;
+}
+
+.reveal blockquote {
+  width: 82%;
+}

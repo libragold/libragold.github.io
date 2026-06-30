@@ -1,0 +1,219 @@
+include ../../layouts/title_slide.pug
+
+section
+  section
+    h3 Twenty Questions
+    p I choose a number from $1$ to $N$.
+    p.fragment You ask yes/no questions.
+    p.fragment Each answer gives one bit.
+  section
+    h3 Counting transcripts
+    p $$q\text{ yes/no answers} \quad \Rightarrow \quad 2^q\text{ possible transcripts}.$$
+    p.fragment If all answers are truthful, binary search is optimal.
+    p.fragment.red What if I am allowed to lie?
+
+section
+  section
+    h3 Ulam's one-lie game
+    p How many yes/no questions are needed
+    p to determine a number from $1$ to $10^6$
+    p if one answer may be a lie?
+  section
+    h3 Why $20$ is not enough
+    p $2^{20} = 1{,}048{,}576$
+    p.fragment Enough for truthful Twenty Questions.
+    p.fragment But a transcript may be corrupted.
+  section
+    h3 One true transcript
+    p With $q$ answers, one true transcript can become:
+    ul
+      li.fragment itself
+      li.fragment the transcript with answer $1$ flipped
+      li.fragment the transcript with answer $2$ flipped
+      li.fragment $\dots$
+      li.fragment the transcript with answer $q$ flipped
+    p.fragment So it occupies about $q+1$ transcripts.
+  section
+    h3 A coding bound
+    p $$N(q+1)\le 2^q.$$
+    p.fragment For $N=10^6$, this rules out $q=24$.
+    p.fragment $25$ questions are enough.
+    p.reference.fragment
+      a(target="_blank" href="https://web.mat.bham.ac.uk/D.Osthus/simpleliar2.pdf") Ulam's liar game with one lie
+
+section
+  section
+    h3 The dictionary
+    table.dictionary
+      tbody
+        tr
+          th Guessing game
+          th Coding theory
+        tr.fragment
+          td secret number $x$
+          td message
+        tr.fragment
+          td truthful answer string
+          td codeword
+        tr.fragment
+          td lie
+          td bit error
+        tr.fragment
+          td allowed lies
+          td error model
+        tr.fragment
+          td Bob's final set
+          td decoded list
+  section
+    h3 Two error models
+    p Classical Ulam game:
+    p $$\text{at most } e \text{ lies total}.$$
+    p.fragment IMO 2012 Problem 3:
+    p.fragment $$\text{no } k+1 \text{ consecutive lies}.$$
+  section
+    h3 IMO 2012 Problem 3
+    p Alice chooses a positive integer $x$.
+    p.fragment Bob asks yes/no questions.
+    p.fragment Alice may lie, but not $k+1$ times in a row.
+    p.fragment Bob must end with a list of at most $n$ possible values.
+  section
+    h3 The threshold
+    p If $n\ge 2^k$, Bob can always win.
+    p.fragment For large $k$, a list of size about $1.99^k$ may still be too small.
+    p.reference.fragment
+      a(target="_blank" href="https://www.imo-official.org/problems/IMO2012SL.pdf") IMO 2012 official shortlist
+
+section
+  section
+    h3 The main proof
+    p We prove why $2^k$ candidates are enough.
+    p.fragment It is enough to show:
+    blockquote.fragment
+      | If Bob knows $x\in T$ and $|T|>2^k$,
+      br
+      | then Bob can eliminate one element of $T$.
+  section
+    h3 Why the lemma wins
+    p Start with all positive integers still possible.
+    p.fragment Whenever more than $2^k$ remain, eliminate one.
+    p.fragment Stop when at most $2^k$ remain.
+    p.fragment That final set is Bob's list.
+  section
+    h3 Choose candidates
+    p Take $2^k+1$ candidates from $T$.
+    p Call them
+    p $$a,\quad 0,1,\dots,2^k-1.$$
+    p.fragment Think of $0,1,\dots,2^k-1$ as all binary strings of length $k$.
+  section
+    h3 The special candidate
+    p Bob asks:
+    p.question.fragment Is $x=a$?
+    p.fragment If Alice says "no" $k+1$ times in a row,
+    p.fragment one of those answers must be true.
+    p.fragment.red Then $x\neq a$.
+  section
+    h3 The other branch
+    p Otherwise, Alice eventually says "yes".
+    p.fragment Bob stops asking about $a$ immediately.
+    p.fragment Now he asks $k$ bit questions about the other candidates.
+  section
+    h3 Bit questions
+    p Label each other candidate by a string
+    p $$b_1b_2\dots b_k\in\{0,1\}^k.$$
+    p.fragment Bob asks:
+    p.question.fragment Is the first bit $0$?
+    p.question.fragment Is the second bit $0$?
+    p.fragment $\dots$
+    p.question.fragment Is the $k$th bit $0$?
+  section
+    h3 The missing string
+    p Alice gives $k$ answers to these bit questions.
+    p.fragment There is exactly one binary string $y$
+    p.fragment for which all $k$ bit answers are false.
+    table.bits.fragment
+      tbody
+        tr
+          td Alice says
+          td yes
+          td no
+          td no
+          td yes
+        tr
+          td forced bit of $y$
+          td 1
+          td 0
+          td 0
+          td 1
+  section
+    h3 Why $y$ is impossible
+    p Suppose $x=y$.
+    p.fragment The earlier answer "yes" to $x=a$ was false.
+    p.fragment The next $k$ bit answers were also false for $y$.
+    p.fragment So Alice just gave $k+1$ consecutive lies.
+    p.fragment.red Impossible.
+  section
+    h3 One number eliminated
+    p Therefore $x\neq y$.
+    p.fragment Bob has eliminated one candidate from $T$.
+    p.fragment This proves the lemma.
+  section
+    h3 Coding interpretation
+    p The $2^k$ strings are $k$-bit codewords.
+    p.fragment Bob first forces one suspicious answer.
+    p.fragment Then the $k$ bit tests make one codeword disagree with everything.
+    p.fragment That would create a forbidden error block of length $k+1$.
+
+section
+  section
+    h3 Why it is almost sharp
+    p Why not hope for a much smaller final list?
+    p.fragment Alice can spread uncertainty among many candidates.
+  section
+    h3 Recent inconsistency
+    p For each candidate $i$, define
+    p $$m_i=\text{number of consecutive recent answers inconsistent with }i.$$
+    p.fragment Candidate $i$ dies only if
+    p.fragment $$m_i=k+1.$$
+    p.fragment Alice wants to keep every $m_i\le k$.
+  section
+    h3 A weight for danger
+    p Choose $1.99<\lambda<2$ and set
+    p $$\Phi=\sum_i \lambda^{m_i}.$$
+    p.fragment Large $m_i$ means candidate $i$ is close to dying.
+    p.fragment So it receives large weight.
+  section
+    h3 Alice's strategy
+    p When Bob asks a question, Alice chooses the answer
+    p that keeps $\Phi$ smaller.
+    p.fragment The official proof shows:
+    p.fragment if initially there are about $\lambda^k$ candidates,
+    p.fragment Alice can keep $\Phi<\lambda^{k+1}$ forever.
+  section
+    h3 What that means
+    p If some candidate reached $m_i=k+1$,
+    p then its contribution alone would be $\lambda^{k+1}$.
+    p.fragment But $\Phi<\lambda^{k+1}$.
+    p.fragment So no candidate is ever eliminated.
+    p.fragment Bob cannot force a list that small.
+
+section
+  section
+    h3 The story
+    table.story
+      tbody
+        tr.fragment
+          td Ordinary Twenty Questions
+          td binary search
+        tr.fragment
+          td Ulam's game
+          td error-correcting codes
+        tr.fragment
+          td IMO 2012 P3
+          td list decoding with no long run of errors
+  section
+    h3 Closing
+    p Ordinary Twenty Questions is binary search.
+    p.fragment Ulam's game is error-correcting codes.
+    p.fragment IMO 2012 P3 is list decoding with a special rule:
+    p.fragment errors are allowed, but not $k+1$ in a row.
+    p.fragment.red The threshold $2^k$ comes from the $k$ bits Bob can use after forcing one suspicious answer.
