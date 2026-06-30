@@ -14,10 +14,43 @@ section
 
 section
   section
+    h3 Ulam's one-lie game
+    p Classical version:
+    p How many yes/no questions are needed
+    p to determine a number from $1$ to $10^6$
+    p if one answer may be a lie?
+  section
+    h3 Why $20$ is not enough
+    p $2^{20}=1{,}048{,}576$
+    p.fragment Enough for truthful Twenty Questions.
+    p.fragment But now one answer may be corrupted.
+  section
+    h3 One true transcript
+    p With $q$ answers, one true transcript can become:
+    ul
+      li.fragment itself
+      li.fragment the transcript with answer $1$ flipped
+      li.fragment the transcript with answer $2$ flipped
+      li.fragment $\dots$
+      li.fragment the transcript with answer $q$ flipped
+    p.fragment So one secret number occupies about $q+1$ possible transcripts.
+  section
+    h3 A coding bound
+    p Therefore a necessary condition is
+    p $$N(q+1)\le 2^q.$$
+    p.fragment For $N=10^6$, this rules out $q=24$.
+    p.fragment $25$ questions are enough.
+  section
+    h3 The lesson
+    p Truthful Twenty Questions is binary search.
+    p.fragment Ulam's liar game is error correction.
+    p.fragment The answers form a word, and a lie is a bit error.
+
+section
+  section
     h3 IMO 2012 Problem 3
-    p.fragment This is not just a coding story.
-    p.fragment It was Problem 3 at the 2012 International Mathematical Olympiad.
-    p.reference.fragment Proposed by David Arthur, Canada.
+    p The official problem is called the liar's guessing game.
+    p.fragment Proposed by David Arthur, Canada.
   section.statement
     h3 Original statement
     p The liar's guessing game is played between two players $A$ and $B$.
@@ -272,6 +305,9 @@ section
         tr.fragment
           td Ordinary Twenty Questions
           td binary search
+        tr.fragment
+          td Ulam's one-lie game
+          td error correction
         tr.fragment
           td Lies
           td bit errors
