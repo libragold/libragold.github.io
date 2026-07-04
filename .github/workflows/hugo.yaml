@@ -68,6 +68,8 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Remove Git metadata from Pages artifact
+        run: find public -name .git -prune -exec rm -rf {} +
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
