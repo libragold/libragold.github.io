@@ -7,6 +7,3 @@
 [submodule "static/findliner"]
 	path = static/findliner
 	url = https://github.com/libragold/findliner-browser.git
-[submodule "static/imsc26"]
-	path = static/imsc26
-	url = https://github.com/libragold/imsc-official.git
