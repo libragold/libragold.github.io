@@ -1,0 +1,148 @@
+.reveal .coauthor-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2.3rem;
+  margin-top: 1.2rem;
+}
+
+.reveal .coauthor-grid figure {
+  width: 230px;
+  margin: 0;
+}
+
+.reveal .coauthor-avatar {
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(18, 20, 38, 0.2);
+}
+
+.reveal .photo-pending {
+  color: #777;
+  font-style: italic;
+}
+
+.reveal .construction-race,
+.reveal .surprise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.reveal .construction-card,
+.reveal .surprise-card {
+  min-height: 255px;
+  padding: 0.7rem 1rem;
+  border: 6px solid #4885ed;
+  border-radius: 0.5rem;
+}
+
+.reveal .construction-card.exceptional,
+.reveal .surprise-card.found {
+  border-color: #db4437;
+}
+
+.reveal .construction-card h4,
+.reveal .surprise-card h4 {
+  margin: -0.7rem -1rem 0.6rem;
+  padding: 0.35rem;
+  color: white;
+  background: #4885ed;
+}
+
+.reveal .construction-card.exceptional h4,
+.reveal .surprise-card.found h4 {
+  background: #db4437;
+}
+
+.reveal .cherry-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.15rem;
+}
+
+.reveal .cherry-row line,
+.reveal .forbidden-card line {
+  stroke: #121426;
+  stroke-width: 3;
+}
+
+.reveal .cherry-row circle,
+.reveal .forbidden-card circle {
+  fill: white;
+  stroke: #121426;
+  stroke-width: 3;
+}
+
+.reveal .classification-table {
+  width: 100%;
+  margin: 0.55rem auto;
+  font-size: 0.58em;
+}
+
+.reveal .classification-table th,
+.reveal .classification-table td {
+  padding: 0.17em 0.25em;
+}
+
+.reveal .switching-box {
+  margin: 1rem auto;
+  padding: 0.6rem;
+  border-left: 8px solid #4285f4;
+  background: #eef5ff;
+}
+
+.reveal .forbidden-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.45rem;
+}
+
+.reveal .forbidden-card {
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  background: #ececec;
+}
+
+.reveal .forbidden-card svg {
+  width: 100%;
+  height: 100px;
+}
+
+.reveal .proof-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 1.2rem;
+}
+
+.reveal .proof-step {
+  width: 180px;
+  min-height: 180px;
+  padding: 0.55rem;
+  border-radius: 0.5rem;
+  background: #eef5ff;
+}
+
+.reveal .proof-step span {
+  display: inline-grid;
+  width: 1.6em;
+  height: 1.6em;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: #4285f4;
+}
+
+.reveal .proof-arrow {
+  color: #4285f4;
+  font-size: 1.4em;
+}
+
+.reveal .surprise-card {
+  min-height: 230px;
+}
