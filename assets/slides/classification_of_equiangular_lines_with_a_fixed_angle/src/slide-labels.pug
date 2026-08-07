@@ -1,0 +1,23 @@
+script.
+  (() => {
+    const reveal = document.querySelector('.reveal');
+    const slides = Array.from(document.querySelectorAll('.reveal .slides section'))
+      .filter((section) => !Array.from(section.children).some((child) => child.tagName === 'SECTION'));
+
+    slides.forEach((slide, index) => {
+      const label = `Slide ${String(index + 1).padStart(2, '0')}`;
+      slide.dataset.slideLabel = label;
+
+      const badge = document.createElement('span');
+      badge.className = 'slide-reference-label';
+      badge.textContent = label;
+      badge.setAttribute('aria-hidden', 'true');
+      slide.appendChild(badge);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key.toLowerCase() === 'l' && !event.metaKey && !event.ctrlKey && !event.altKey) {
+        reveal.classList.toggle('show-slide-reference-labels');
+      }
+    });
+  })();

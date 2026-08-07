@@ -1,13 +1,17 @@
 .reveal .coauthor-grid {
   display: flex;
   justify-content: center;
-  gap: 2.3rem;
+  gap: 0.75rem;
   margin-top: 1.2rem;
 }
 
 .reveal .coauthor-grid figure {
-  width: 230px;
+  width: 270px;
   margin: 0;
+}
+
+.reveal .coauthor-grid figcaption {
+  white-space: nowrap;
 }
 
 .reveal .coauthor-avatar {
@@ -17,6 +21,121 @@
   border: 0;
   border-radius: 50%;
   box-shadow: 0 8px 24px rgba(18, 20, 38, 0.2);
+}
+
+.reveal .topic-roadmap-list {
+  width: 88%;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.48);
+  list-style-position: inside;
+}
+
+.reveal .topic-roadmap-list li {
+  margin: 0.3em 0;
+  padding: 0.45em 0.65em;
+  border-radius: 0.4rem;
+  text-align: left;
+}
+
+.reveal .topic-roadmap-list li.active {
+  color: white;
+  background: #4285f4;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
+}
+
+.reveal .classification-conclusion-first p {
+  font-size: 1.15em;
+}
+
+.reveal .classification-conclusion-first p:last-child {
+  color: #db4437;
+  font-weight: 700;
+}
+
+.reveal .motivation-spectral-table {
+  width: 98%;
+  margin: 0.8rem auto 0;
+  font-size: 0.78em;
+}
+
+.reveal .motivation-spectral-table td {
+  padding: 0.45em 0.55em;
+}
+
+.reveal .classification-result-table {
+  width: calc(100% - 1rem);
+  margin: 0.5rem auto;
+  font-size: 0.82em;
+}
+
+.reveal .classification-result-table td {
+  padding: 0.42em 0.25em;
+}
+
+.reveal .classification-result-table tr:last-child td {
+  padding: 0.65em 0.35em;
+}
+
+.reveal .classification-exception-summary {
+  margin: 0.55rem 0 0;
+}
+
+.reveal .generic-family-notation {
+  position: relative;
+  height: 1.35em;
+  margin: 0.45rem 0 0.6rem;
+  font-size: 1.45em;
+}
+
+.reveal .generic-family-notation .notation-state {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  background: white;
+  text-align: center;
+}
+
+.reveal .generic-family-notation .notation-state:last-child {
+  z-index: 2;
+}
+
+.reveal .generic-graph-row {
+  display: flex;
+  min-height: 150px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.reveal .generic-family-graph {
+  margin: 0;
+}
+
+.reveal .generic-family-graph line {
+  stroke: #121426;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.reveal .generic-family-graph circle {
+  fill: white;
+  stroke: #121426;
+  stroke-width: 4;
+}
+
+.reveal .generic-graph-separator {
+  font-size: 1.25em;
+}
+
+.reveal .generic-family-operation {
+  margin: 0.45em 0;
+}
+
+.reveal .history-cell .fragment.history-highlight-change.current-fragment,
+.reveal .history-name {
+  color: #e67700;
 }
 
 .reveal .photo-pending {
@@ -58,6 +177,40 @@
   background: #db4437;
 }
 
+.reveal .rank-objective {
+  margin: 0 0 0.45rem;
+  font-size: 1em;
+}
+
+.reveal .rank-comparison-slide {
+  font-size: 70%;
+}
+
+.reveal .rank-constructions {
+  margin-top: 0.35rem;
+}
+
+.reveal .rank-constructions .construction-card {
+  min-height: 205px;
+  padding-top: 0.45rem;
+  padding-bottom: 0.35rem;
+}
+
+.reveal .rank-constructions .construction-card p {
+  margin: 0.28em 0;
+}
+
+.reveal .second-multiplicity-theorem {
+  margin-top: 0.55rem;
+}
+
+.reveal .construction-summary {
+  margin: 0.45rem 0 0;
+  color: #db4437;
+  font-size: 1em;
+  font-weight: 700;
+}
+
 .reveal .cherry-row {
   display: flex;
   justify-content: center;
@@ -96,20 +249,29 @@
 }
 
 .reveal .forbidden-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  width: 94%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   gap: 0.45rem;
 }
 
 .reveal .forbidden-card {
-  padding: 0.4rem;
+  display: flex;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem;
   border-radius: 0.4rem;
   background: #ececec;
 }
 
 .reveal .forbidden-card svg {
-  width: 100%;
-  height: 100px;
+  display: block;
+  width: auto;
+  height: auto;
 }
 
 .reveal .proof-flow {
@@ -143,6 +305,160 @@
   font-size: 1.4em;
 }
 
+.reveal .forbidden-proof-list {
+  width: 78%;
+  margin: 0.55rem auto 0;
+  text-align: left;
+}
+
+.reveal .open-problem-question {
+  padding: 0.75rem;
+  color: white;
+  background: #db4437;
+}
+
+.reveal .open-problem-question > p:first-child,
+.reveal .open-problem-question > p:last-child {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background: transparent;
+}
+
+.reveal .open-problem-results {
+  margin-top: 0.8em;
+}
+
 .reveal .surprise-card {
   min-height: 230px;
+}
+
+.reveal .slide-reference-label {
+  position: absolute;
+  right: 0;
+  bottom: -1.7rem;
+  z-index: 20;
+  padding: 0.18rem 0.42rem;
+  border: 1px solid rgba(18, 20, 38, 0.22);
+  border-radius: 0.3rem;
+  color: rgba(18, 20, 38, 0.62);
+  background: rgba(255, 255, 255, 0.82);
+  font-family: monospace;
+  font-size: 0.34em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.reveal:not(.show-slide-reference-labels) .slide-reference-label {
+  display: none;
+}
+
+.reveal .rotating-icosahedron {
+  overflow: visible;
+  filter: drop-shadow(0 5px 7px rgba(18, 20, 38, 0.14));
+}
+
+.reveal .dimension-examples {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 0.4rem;
+}
+
+.reveal .dimension-examples figure {
+  margin: 0;
+}
+
+.reveal .dimension-examples figcaption {
+  margin-top: 0.1rem;
+  font-size: 0.72em;
+}
+
+.reveal .ordinary-line-table,
+.reveal .fixed-angle-line-table {
+  max-height: 20rem;
+  overflow: hidden;
+}
+
+.reveal .comparison-table-offstage {
+  max-height: 0;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(-2.5rem);
+}
+
+.reveal .dimension-value-table {
+  margin: 0.12em auto;
+}
+
+.reveal .spectral-order-layout {
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.45rem;
+}
+
+.reveal .spectral-order-layout > .col:first-child {
+  flex: 0 0 41%;
+}
+
+.reveal .spectral-order-layout > .col:last-child {
+  flex: 0 0 57%;
+}
+
+.reveal .spectral-order-definition p {
+  margin: 0;
+  font-size: 0.88em;
+}
+
+.reveal .spectral-order-layout table {
+  margin: 0 auto;
+}
+
+.reveal .compact-team-photo {
+  margin-bottom: -4.7rem;
+  transform: scale(0.8);
+  transform-origin: top center;
+}
+
+.reveal .line-graph-dictionary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-top: 0.5rem;
+  column-gap: 1.8rem;
+}
+
+.reveal .line-graph-dictionary > div {
+  min-height: 1.8em;
+  margin: 0;
+  padding: 0.32em 0.5em;
+}
+
+.reveal .line-graph-dictionary .dictionary-heading {
+  padding-bottom: 0.42em;
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.reveal .rotating-icosahedron line {
+  stroke: #121426;
+  stroke-linecap: round;
+  transition: opacity 120ms linear;
+}
+
+.reveal .rotating-icosahedron line.rear-edge {
+  stroke-dasharray: 4 5;
+}
+
+.reveal .rotating-icosahedron line.icosahedron-diagonal {
+  stroke: #0f9d58;
+  stroke-width: 2.8;
+  stroke-dasharray: none;
+  opacity: 0.82;
+}
+
+.reveal .rotating-icosahedron circle {
+  fill: #fff;
+  stroke: #121426;
 }
