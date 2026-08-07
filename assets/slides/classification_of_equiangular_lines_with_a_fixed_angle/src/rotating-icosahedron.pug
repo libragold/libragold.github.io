@@ -1,0 +1,120 @@
+script.
+  (() => {
+    const svg = document.querySelector('[data-rotating-icosahedron]');
+    if (!svg) return;
+
+    const phi = (1 + Math.sqrt(5)) / 2;
+    const vertices = [
+      [0, -1, -phi], [0, -1, phi], [0, 1, -phi], [0, 1, phi],
+      [-1, -phi, 0], [-1, phi, 0], [1, -phi, 0], [1, phi, 0],
+      [-phi, 0, -1], [phi, 0, -1], [-phi, 0, 1], [phi, 0, 1]
+    ];
+    const edges = [];
+    const diagonals = [[0, 3], [1, 2], [4, 7], [5, 6], [8, 11], [9, 10]];
+    const namespace = 'http://www.w3.org/2000/svg';
+
+    function makeLayer(className) {
+      const layer = document.createElementNS(namespace, 'g');
+      layer.classList.add(className);
+      svg.appendChild(layer);
+      return layer;
+    }
+
+    for (let i = 0; i < vertices.length; i += 1) {
+      for (let j = i + 1; j < vertices.length; j += 1) {
+        const distanceSquared = vertices[i].reduce(
+          (sum, coordinate, axis) => sum + (coordinate - vertices[j][axis]) ** 2,
+          0
+        );
+        if (Math.abs(distanceSquared - 4) < 0.001) edges.push([i, j]);
+      }
+    }
+
+    // Keep the green diagonals between the rear and front surface edges. This
+    // gives the wireframe proper depth at crossings while it rotates.
+    const rearEdgeLayer = makeLayer('icosahedron-rear-edges');
+    const diagonalLayer = makeLayer('icosahedron-diagonals');
+    const frontEdgeLayer = makeLayer('icosahedron-front-edges');
+    const vertexLayer = makeLayer('icosahedron-vertices');
+
+    const edgeElements = edges.map(() => {
+      const line = document.createElementNS(namespace, 'line');
+      rearEdgeLayer.appendChild(line);
+      return line;
+    });
+    const diagonalElements = diagonals.map(() => {
+      const line = document.createElementNS(namespace, 'line');
+      line.classList.add('icosahedron-diagonal');
+      diagonalLayer.appendChild(line);
+      return line;
+    });
+    const vertexElements = vertices.map(() => {
+      const circle = document.createElementNS(namespace, 'circle');
+      vertexLayer.appendChild(circle);
+      return circle;
+    });
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const start = performance.now();
+
+    function project(vertex, angle) {
+      const [x, y, z] = vertex;
+      const cosY = Math.cos(angle);
+      const sinY = Math.sin(angle);
+      const xY = x * cosY + z * sinY;
+      const zY = -x * sinY + z * cosY;
+      const tilt = -0.28;
+      const cosX = Math.cos(tilt);
+      const sinX = Math.sin(tilt);
+      const yX = y * cosX - zY * sinX;
+      const zX = y * sinX + zY * cosX;
+      const perspective = 4.8 / (4.8 - zX);
+
+      return {
+        x: 102 + xY * 46 * perspective,
+        y: 102 + yX * 46 * perspective,
+        z: zX,
+        scale: perspective
+      };
+    }
+
+    function draw(now) {
+      const angle = reducedMotion ? 0.7 : ((now - start) / 18000) * Math.PI * 2;
+      const points = vertices.map((vertex) => project(vertex, angle));
+
+      edges.forEach(([from, to], index) => {
+        const line = edgeElements[index];
+        const depth = (points[from].z + points[to].z) / 2;
+        const targetLayer = depth < 0 ? rearEdgeLayer : frontEdgeLayer;
+        if (line.parentNode !== targetLayer) targetLayer.appendChild(line);
+        line.setAttribute('x1', points[from].x.toFixed(2));
+        line.setAttribute('y1', points[from].y.toFixed(2));
+        line.setAttribute('x2', points[to].x.toFixed(2));
+        line.setAttribute('y2', points[to].y.toFixed(2));
+        line.setAttribute('stroke-width', depth < 0 ? '1.35' : '2.15');
+        line.setAttribute('opacity', depth < 0 ? '0.28' : '0.88');
+        line.classList.toggle('rear-edge', depth < 0);
+      });
+
+      diagonals.forEach(([from, to], index) => {
+        const line = diagonalElements[index];
+        line.setAttribute('x1', points[from].x.toFixed(2));
+        line.setAttribute('y1', points[from].y.toFixed(2));
+        line.setAttribute('x2', points[to].x.toFixed(2));
+        line.setAttribute('y2', points[to].y.toFixed(2));
+      });
+
+      points.forEach((point, index) => {
+        const circle = vertexElements[index];
+        circle.setAttribute('cx', point.x.toFixed(2));
+        circle.setAttribute('cy', point.y.toFixed(2));
+        circle.setAttribute('r', (2.7 * point.scale).toFixed(2));
+        circle.setAttribute('stroke-width', point.z < 0 ? '1' : '1.6');
+        circle.setAttribute('opacity', point.z < 0 ? '0.48' : '1');
+      });
+
+      if (!reducedMotion) requestAnimationFrame(draw);
+    }
+
+    requestAnimationFrame(draw);
+  })();
