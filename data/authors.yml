@@ -38,6 +38,9 @@ jbriggs:
 jma:
   name: "Jie Ma"
   url: "http://staff.ustc.edu.cn/~jiema"
+jlim:
+  name: "Jeck Lim"
+  url: "https://sites.google.com/view/jecklim"
 jtidor:
   name: "Jonathan Tidor"
   url: "https://web.stanford.edu/~jtidor"
@@ -71,6 +74,9 @@ shuang:
 szhang:
   name: "Shengtong Zhang"
   url: "https://sites.google.com/view/shengtong-zhang/"
+sparvatikar:
+  name: "Skand Parvatikar"
+  url: "https://mscs.uic.edu/profiles/ssparv/"
 tgossett:
   name: "Theodore Gossett"
   url: "https://cphof.org/profile/codeforces:tgossett"

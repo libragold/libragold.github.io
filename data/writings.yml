@@ -271,3 +271,10 @@
     - szhang
   year: 2026
   arxiv: "2603.27434"
+- title: "Unbalancing unit vectors"
+  authors:
+    - zjiang
+    - jlim
+    - sparvatikar
+  year: 2026
+  arxiv: "2609.31389"
