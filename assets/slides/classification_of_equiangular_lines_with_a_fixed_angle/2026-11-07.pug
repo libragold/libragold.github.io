@@ -1,0 +1,14 @@
+extends ../layouts/default.pug
+
+block head
+  include src/head.pug
+  - var institute = "Arizona State University"
+  - var date = "November 7, 2026"
+  - var email = "zilinj@asu.edu"
+
+block main
+  include src/main.pug
+
+block script
+  include src/slide-labels.pug
+  include src/rotating-icosahedron.pug
