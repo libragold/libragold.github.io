@@ -770,17 +770,18 @@ section
         br
         | 2023 Schildkraut: $\lambda=2\sqrt{u^2+1}-1$ for any integer $u\ge10^5$
 
-section.eighty-percent.last-theorem-slide
-  h3 One last theorem
-  .theorem.fragment
-    p Theorem
-    p This was a great workshop.
-  p.fragment
-    strong Proof.
-    = " "
-    | Left as an exercise to the participants.
-  p.fragment
-    | Many thanks to the organizers for making it happen.
+if typeof includeWorkshopSlide === 'undefined' || includeWorkshopSlide
+  section.eighty-percent.last-theorem-slide
+    h3 One last theorem
+    .theorem.fragment
+      p Theorem
+      p This was a great workshop.
+    p.fragment
+      strong Proof.
+      = " "
+      | Left as an exercise to the participants.
+    p.fragment
+      | Many thanks to the organizers for making it happen.
 
 if date
   include ../../layouts/contact.pug
